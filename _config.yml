@@ -426,7 +426,7 @@ page:
         - key: rel
           value: stylesheet
         - key: href
-          value: /public/css/fengwei.css # 可以像我一样定制自己的css
+          value: /public/css/wu-kan.css # 可以像我一样定制自己的css
   script: # 需要在正文后调用的脚本
     - var:
         - key: src
