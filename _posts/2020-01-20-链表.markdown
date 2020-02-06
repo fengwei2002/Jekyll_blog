@@ -1,0 +1,8 @@
+---
+layout: post
+title: 链表
+categories: [笔记]
+tags: [算法]
+date: 2020-01-17 
+---
+[链表，有时间仔细看](https://baike.baidu.com/item/%E9%93%BE%E8%A1%A8)

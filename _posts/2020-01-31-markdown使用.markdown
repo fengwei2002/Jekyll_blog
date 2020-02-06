@@ -1,0 +1,75 @@
+---
+layout: post
+title: markdown使用
+categories: [方法]
+tags: [杂项note]
+date: 2020-01-31
+---
+
+## 根据vsxode插件纠正书写错误  
+
+Fenced code blocks should be surrounded by blank lines  
+代码块头尾都应该用一个空白行包含起来，达到更加美观的效果
+
+Lists should be surrounded by blank lines  
+列\-这种点时，用空白行分隔上下文，list应该被包含起来，看上去更加简洁
+
+标题也应该用空白行包含起来，看上去不是一大堆
+
+因为标题可以使用侧面搜索栏，所以使用三\#小标题，可以达到更完整的使用体验
+
+
+
+具体看
+[markdown](https://www.jianshu.com/p/1e402922ee32)
+
+在blog里面添加图片时\!\[\]\(\)分别填写链接和说明
+
+用vscode提交blog会更加方便快捷
+## 写作习惯
+
+发现还是下面这样写最好用
+```markdown
+# title1
+
+...
+
+## title2.1
+
+...
+
+### title3.1
+
+...
+
+## title2.2
+
+...
+
+```
+它的好处是，目前常见的 markdown 渲染引擎都内置了基于标题的文章结构分析工具，还可以直接生成文章的目录树。
+
+而不用这样结构的写法查找起来并不方便
+
+## 多层分点
+```markdown
+- ...
+  - ....
+    - .....
+```
+两个空格后加\-符号，再空格开始书写
+
+## 使用图床？
+
+等我学了计算机网络和部分前端操作再全面更新
+
+## 换行
+在行尾添加两个空格加回车表示换行：
+
+\-\-\-
+layout: post  
+title: 标题  
+categories: \[侧目录\]  
+tags: \[首页目录\]  
+date: 2020-01-31 日期    
+\-\-\-

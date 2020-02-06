@@ -1,0 +1,56 @@
+---
+layout: post
+title: 第一章：绪论
+tags: [数据结构（邓俊辉）]
+categories: [网课]
+date: 2020-02-06
+---
+## 计算
+
+### 清华Oj使用
+
+[共有四次作业](https://dsa.cs.tsinghua.edu.cn/oj/foyer.shtml)
+
+computer science should be called computing science,for the same  
+reason why surgery（手术） is not called knife science  
+\- [E.Dijkstra](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra) 
+
+### 绳索计算机及其算法
+
+- 输入：直线l和上面任意一点A  
+- 输出：经过A的一条垂线  
+
+- 算法：
+  - 古埃及人  
+    红十字边框，共12段绳索，利用345直角三角形  
+    将四和三点固定一个，同时拉直剩余的3+5  
+    这时就出现了垂线  
+
+### 尺规计算机及其算法
+
+- 找一个线段的两个三等分点
+- 算法：
+  - 利用直角三角形等分性质。  
+    直角边画出三等分点，做垂线在斜边的交点就是三等分点  
+
+>子程序->平行线作法
+
+### 算法  
+
+计算：借助工具，遵循一定规则，明确而机械的进行  
+正确性，确定性，可行性，有穷性
+
+- 有穷性  
+  - 序列hailstone(n)
+    奇数3n+1偶数n/2，1->1
+    对于任意n，hailstone<正无穷？（未证明）
+so 程序不等于算法  
+
+### 好的算法，好的计算过程
+
+正确，健壮，可读，**效率**
+
+## 计算模型
+
+DSA 度量(To measure is to know)
+
