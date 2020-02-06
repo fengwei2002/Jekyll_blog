@@ -23,7 +23,7 @@
 #  - jekyll-titles-from-headings
 #  - jekyll-relative-links
 
-
+# repository: wu-kan/wu-kan.gitub.io
 # 以下是github会自动生成的配置项，见https://jekyll.github.io/github-metadata/site.github/
 #github:
 #{
@@ -91,8 +91,8 @@
 
 # 以下四个配置项为空时jekyll-github-metadata会帮你生成
 title: fengwei
-description: test
-url: https://fengwei2002.github.io/ #等以后弄个专属域名
+description: '<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=52 src="//music.163.com/outchain/player?type=0&id=155059595&auto=0&height=32"></iframe>' # 不知道怎么写介绍，放个音乐吧
+url: https://fengwei2002.github.io
 # baseurl: '' # 假如你的博客是建在某个目录下的，请在这里加上目录名，并且下面配置的所有链接里的`/public`前也要加，即`/your_baseurl/public`。这一项结尾不要有'/'。
 
 markdown: kramdown
@@ -102,7 +102,7 @@ kramdown: # 见https://kramdown.gettalong.org/options.html
     disable: true # 关掉默认的高亮，换用prismjs
 
 permalink: /posts/:categories/:title # 博文目录
-author: fengwei
+author: WuK
 timezone: Asia/Shanghai # 解决githubpage显示时间不正确的问题，见https://www.iana.org/time-zones
 future: false # 不发布时间在未来的文章
 # limit_posts: 999 # 限制博文数量
@@ -150,23 +150,23 @@ page404:
 archive:
   posts_count:
     enable: true
-    alert: 篇博文，冲
-  # script:
-  #   - var:
-  #       - key: src
-  #         value: //cdn.jsdelivr.net/npm/canvas-nest.js/dist/canvas-nest.js
-  #       - key: defer
-  #         value: defer
-  #       - key: color
-  #         value: "255,0,255" # 线段颜色，RGB三色
-  #       - key: pointColor
-  #         value: "255,0,255" # 端点颜色，RGB三色
-  #       - key: opacity
-  #         value: "1" # 透明度
-  #       - key: count
-  #         value: "41" # 粒子数量
-  #       - key: zIndex
-  #         value: "-1"
+    alert: 篇博文。长路漫漫！
+  script:
+#    - var:
+#        - key: src
+#          value: //cdn.jsdelivr.net/npm/canvas-nest.js/dist/canvas-nest.js
+#        - key: defer
+#          value: defer
+#        - key: color
+#          value: "0,0,0" # 线段颜色，RGB三色
+#        - key: pointColor
+#          value: "0,0,0" # 端点颜色，RGB三色
+#        - key: opacity
+#          value: "1" # 透明度
+#        - key: count
+#          value: "31" # 粒子数量
+#        - key: zIndex
+#          value: "-1"
 
 comments:
   valine: true # 需要在script中引入
@@ -206,23 +206,34 @@ post:
       enable: true
       unit: 次
     copyright: '<i class="fab fa-creative-commons"></i> <a rel="license" href="//creativecommons.org/licenses/by-sa/4.0/deed.zh">BY-SA 4.0</a>（除特别声明或转载文章外）'
-  # reward:
-  #   enable: true
-  #   text: 如果这篇博客帮助到你，可以请我喝一杯咖啡~
-  #   img: # 万一真的有人打赏呢~
-  #     
+  reward:
+      enable: true
+    # text: 如果这篇博客帮助到你，可以请我喝一杯咖啡~
+    # img: # 万一真的有人打赏呢~
+    #   - id: wechat
+    #     src: //cdn.jsdelivr.net/gh/wu-kan/wu-kan.github.io@b7944209783f1be5ad1faed8694841bf1fb1ee7f/public/image/wechatpay.webp
+    #   - id: wechatappreciate
+    #     src: //cdn.jsdelivr.net/gh/wu-kan/wu-kan.github.io@b7944209783f1be5ad1faed8694841bf1fb1ee7f/public/image/wechatappreciate.webp
+    #   - id: qq
+    #     src: //cdn.jsdelivr.net/gh/wu-kan/wu-kan.github.io@b7944209783f1be5ad1faed8694841bf1fb1ee7f/public/image/qqpay.webp
+    #   - id: alipay
+    #     src: //cdn.jsdelivr.net/gh/wu-kan/wu-kan.github.io@b7944209783f1be5ad1faed8694841bf1fb1ee7f/public/image/alipay.webp
+
 page:
   body:
     theme-base: theme-base-0d # 可选的值08~0f
     layout-reverse: true # 开启后sidebar在右边，反之左边
     sidebar-overlay: true # 开启后正文不随sidebar移动而移动
-  sidebar:
-    avatar: # 侧边栏显示的头像
-      enable: true
-      img: /public/image/new.jpg  # 头像的地址
-      info: | # 头像背后的信息，<br/>代表换行
-        <br/>山西大学<br/>19级在读<br/>软件工程<br/>FENGWE
-     social:  #相关信息
+  
+sidebar:
+  avatar: # 侧边栏显示的头像。。
+    enable: true
+    img: /public/image/new.jpg   # 头像的地址
+    info:  <br/>山西大学<br/>19级在读<br/>软件工程<br/> <br/>FENGWEI # 头像背后的信息、
+  social:  #相关信息
+    - title: rss
+      href: /atom.xml
+      class: "fas fa-rss"
     - title: psychonaut1@foxmail.com # email
       href: mailto:psychonaut1@foxmail.com
       class: "fas fa-envelope"
@@ -276,7 +287,7 @@ page:
       alert: <i class="fas fa-edit fa-fw"></i>
     run_time:
       enable: true
-      start_time: "02/06/2020 11:03:56" # 这是第一篇博客的时间
+      start_time: "10/04/2017 11:03:56" # 这是我第一篇CSDN博客的时间
       alert: <i class="fas fa-cog fa-spin fa-fw"></i>
       day: 天
       hour: 时
@@ -284,6 +295,7 @@ page:
       second: 秒
     copyright:
       enable: true
+      text: '<a class="github-button" aria-label="Star wu-kan/wu-kan.github.io on GitHub" href="https://github.com/wu-kan/wu-kan.github.io" data-icon="octicon-star" data-show-count="true">Star</a>'
   head: # 删改前确定知道自己在做什么
     - tag: meta # Enable responsiveness on mobile devices
       var:
@@ -354,7 +366,7 @@ page:
         - key: rel
           value: apple-touch-icon-precomposed
         - key: href
-          value:  /public/image/new.jpg
+          value: /public/image/new.jpg
     - tag: link # 小图标，同上
       var:
         - key: rel
