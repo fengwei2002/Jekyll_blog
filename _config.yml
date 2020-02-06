@@ -207,16 +207,16 @@ post:
     copyright: '<i class="fab fa-creative-commons"></i> <a rel="license" href="//creativecommons.org/licenses/by-sa/4.0/deed.zh">BY-SA 4.0</a>（除特别声明或转载文章外）'
   reward:
     enable: true
-    text: 如果这篇博客帮助到你，可以请我喝一杯咖啡~
-    img: # 万一真的有人打赏呢~
-      - id: wechat
-        src: //cdn.jsdelivr.net/gh/wu-kan/wu-kan.github.io@b7944209783f1be5ad1faed8694841bf1fb1ee7f/public/image/wechatpay.webp
-      - id: wechatappreciate
-        src: //cdn.jsdelivr.net/gh/wu-kan/wu-kan.github.io@b7944209783f1be5ad1faed8694841bf1fb1ee7f/public/image/wechatappreciate.webp
-      - id: qq
-        src: //cdn.jsdelivr.net/gh/wu-kan/wu-kan.github.io@b7944209783f1be5ad1faed8694841bf1fb1ee7f/public/image/qqpay.webp
-      - id: alipay
-        src: //cdn.jsdelivr.net/gh/wu-kan/wu-kan.github.io@b7944209783f1be5ad1faed8694841bf1fb1ee7f/public/image/alipay.webp
+    # text: 如果这篇博客帮助到你，可以请我喝一杯咖啡~
+    # img: # 万一真的有人打赏呢~
+    #   - id: wechat
+    #     src: //cdn.jsdelivr.net/gh/wu-kan/wu-kan.github.io@b7944209783f1be5ad1faed8694841bf1fb1ee7f/public/image/wechatpay.webp
+    #   - id: wechatappreciate
+    #     src: //cdn.jsdelivr.net/gh/wu-kan/wu-kan.github.io@b7944209783f1be5ad1faed8694841bf1fb1ee7f/public/image/wechatappreciate.webp
+    #   - id: qq
+    #     src: //cdn.jsdelivr.net/gh/wu-kan/wu-kan.github.io@b7944209783f1be5ad1faed8694841bf1fb1ee7f/public/image/qqpay.webp
+    #   - id: alipay
+    #     src: //cdn.jsdelivr.net/gh/wu-kan/wu-kan.github.io@b7944209783f1be5ad1faed8694841bf1fb1ee7f/public/image/alipay.webp
 
 page:
   body:
@@ -226,34 +226,31 @@ page:
   sidebar:
     avatar: # 侧边栏显示的头像
       enable: true
-      img: //gravatar.loli.net/avatar/a12c5fff23dde00df79af9aca4e7b6e4?d=wavatar&s=600 # 头像的地址
+      img: /public/image/new.jpg  # 头像的地址
       info: | # 头像背后的信息，<br/>代表换行
-        <br/>SYSU19级在读
-        <br/>计科超算方向
-        <br/>ASC
+        <br/>山西大学19级
+        <br/>软件工程
+        <br/>FENGWEI
     social:
       - title: rss
-        href: /atom.xml
-        class: "fas fa-rss"
-      - title: wu.kan@foxmail.com # email
-        href: mailto:wu.kan@foxmail.com
-        class: "fas fa-envelope"
-      - title: github
-        href: //github.com/wu-kan
-        class: "fab fa-github"
-      - title: WuK # codeforces
-        href: //codeforces.com/profile/WuK
-        class: "fas fa-chart-bar fw"
-      - title: WuK # vjudge
-        href: //vjudge.net/user/WuK
-        class: "fas fa-smile"
-      - title: 942759535 # qq
-        class: "fab fa-qq"
-      - title: Wu-_-Kan # weixin
-        class: "fab fa-weixin"
-      - title: zhihu
-        href: //www.zhihu.com/people/wu.kan/activities
-        class: "fab fa-zhihu"
+      href: /atom.xml
+      class: "fas fa-rss"
+    - title: psychonaut1@foxmail.com # email
+      href: mailto:psychonaut1@foxmail.com
+      class: "fas fa-envelope"
+    - title: github
+      href: //github.com/fengwei2002?tab=repositories
+      class: "fab fa-github"
+    - title: codeforce # codeforces
+      href: //codeforces.com/profile/KONNG
+      class: "fas fa-chart-bar fw"
+    - title: 2480417969 # qq
+      class: "fab fa-qq"
+    - title: fwei142857 # weixin
+      class: "fab fa-weixin"
+    - title: zhihu
+      href: //www.zhihu.com/people/e2df61ca5f33cb1e72e27be2cefd18ba
+      class: "fab fa-zhihu"
     nav:
       - title: '<i class="fas fa-home fa-fw"></i> 首页'
         href: /
