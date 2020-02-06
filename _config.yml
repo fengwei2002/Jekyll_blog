@@ -224,32 +224,35 @@ page:
     theme-base: theme-base-0d # 可选的值08~0f
     layout-reverse: true # 开启后sidebar在右边，反之左边
     sidebar-overlay: true # 开启后正文不随sidebar移动而移动
-  
-sidebar:
-  avatar: # 侧边栏显示的头像。。
-    enable: true
-    img: /public/image/new.jpg   # 头像的地址
-    info:  <br/>山西大学<br/>19级在读<br/>软件工程<br/> <br/>FENGWEI # 头像背后的信息、
-  social:  #相关信息
-    - title: rss
-      href: /atom.xml
-      class: "fas fa-rss"
-    - title: psychonaut1@foxmail.com # email
-      href: mailto:psychonaut1@foxmail.com
-      class: "fas fa-envelope"
-    - title: github
-      href: //github.com/fengwei2002?tab=repositories
-      class: "fab fa-github"
-    - title: codeforce # codeforces
-      href: //codeforces.com/profile/KONNG
-      class: "fas fa-chart-bar fw"
-    - title: 2480417969 # qq
-      class: "fab fa-qq"
-    - title: fwei142857 # weixin
-      class: "fab fa-weixin"
-    - title: zhihu
-      href: //www.zhihu.com/people/e2df61ca5f33cb1e72e27be2cefd18ba
-      class: "fab fa-zhihu"
+   sidebar:
+    avatar: # 侧边栏显示的头像
+      enable: true
+      img: /public/image/new.jpg # 头像的地址
+      info: | # 头像背后的信息，<br/>代表换行
+        <br/>山西大学
+        <br/>软件工程
+        <br/>19级在读
+        <br/>fengwei
+    social:
+      - title: rss
+        href: /atom.xml
+        class: "fas fa-rss"
+      - title: wu.kan@foxmail.com # email
+        href: mailto:psyvhonaut1@foxmail.com
+        class: "fas fa-envelope"
+      - title: github
+        href: //github.com/fengwei2002
+        class: "fab fa-github"
+      - title: codeforces
+        href:  //codeforces.com/profile/KONNG
+        class: "fas fa-chart-bar fw"
+      - title: 2480417969 # qq
+        class: "fab fa-qq"
+      - title: fwei142857 # weixin
+        class: "fab fa-weixin"
+      - title: zhihu
+        href: //www.zhihu.com/people/e2df61ca5f33cb1e72e27be2cefd18ba
+        class: "fab fa-zhihu"
     nav:
       - title: '<i class="fas fa-home fa-fw"></i> 首页'
         href: /
