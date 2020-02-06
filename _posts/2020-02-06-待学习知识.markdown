@@ -1,0 +1,33 @@
+---
+layout: post
+title: 待完成
+tags: [深入理解计算机系统]
+categories: [待解决]
+date: 2020-02-06
+---
+
+- [x]html css JavaScript
+  - 熟悉WEB前端技术,对符合WEB标准的网站重构有丰富经验,有成功作品；
+  - 理解并掌握Javascript语言核心技术DOM、BOM、Ajax、JSON等，对Javascript框架应用(如jQuery/bootstrap等)有一定的经验；
+  - 对CSS/JS性能优化有了解优先；
+  - 对用户体验、交互操作流程、及用户需求有一定了解；
+  - 至少熟悉nodejs/go/php/java 或一种其他类似后台技术，对前后端联合开发的技术原理有全面认识。
+  - 对DNS/HTTP和相关的其他底层网络协议有比较全面的了解
+  - 熟悉JS/TS/AJAX/HTML5/CSS等前端开发技术
+
+- [x]算法两本书
+  - To-蓝桥杯国奖
+
+- 深入理解计算机系统
+
+- 数据结构
+
+- stl
+
+- c++/python做牛客网上面的项目
+
+- git使用
+
+- 熟悉 linux 开发环境，熟悉 C++ 和 Python 语言。linux/shell；
+
+- 熟悉机器学习、自然语言处理、数据挖掘
