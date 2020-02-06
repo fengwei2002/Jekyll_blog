@@ -150,7 +150,7 @@ page404:
 archive:
   posts_count:
     enable: true
-    alert: 篇博文。冲
+    alert: 篇博文，冲
   # script:
   #   - var:
   #       - key: src
