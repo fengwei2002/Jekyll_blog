@@ -23,7 +23,7 @@
 #  - jekyll-titles-from-headings
 #  - jekyll-relative-links
 
-# repository: wu-kan/wu-kan.gitub.io
+# repository: https://github.com/fengwei2002/fengwei2002.github.io
 # 以下是github会自动生成的配置项，见https://jekyll.github.io/github-metadata/site.github/
 #github:
 #{
@@ -110,15 +110,15 @@ future: false # 不发布时间在未来的文章
 
 index:
   showtag:
-  - 题解
-  - 算法
   - 深入理解计算机系统
   - 算法竞赛入门经典
   - Linux系统
   - 数据结构（邓俊辉）
   - C++ STL笔记
-  - 人生经验
+  - 题解
+  - 算法
   - 杂项note
+  - target
   script:
 #    - var:
 #        - key: src

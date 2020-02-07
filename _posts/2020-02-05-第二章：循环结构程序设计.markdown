@@ -5,18 +5,13 @@ categories: [笔记]
 tags: [算法竞赛入门经典]
 date: 2020-02-05
 ---
-
 ## 输出所有形为aabb的完全平方数
 
 - 当需要循环遍历一个数字时，要用多重循环，而不应该单层循环直接跑完,使用哪些数字就应该循环出哪些数字，不做无用功
 - 要使用伪代码思考和描述算法
 - 判断一个数是否为完全平方数时，使用开平方后判断是否为整数的方法
-  - floor函数：取不大于x的最大整数\<math.h>
-    一般改成四舍五入就是floor（x+0.5），减小误差的影响
-  - sqrt函数：math.h头文件的函数原型为 float sqrt (float),double sqrt (double),double long sqrt(double long)
-    返回值可以为int，函数参数不能为int
-
-***
+  - floor函数：取不大于x的最大整数<math.h> 一般改成四舍五入就是floor（x+0.5），减小误差的影响
+  - sqrt函数：math.h头文件的函数原型为 float sqrt (float),double sqrt (double),double long sqrt(double long) 返回值可以为int，函数参数不能为int
 
 ```cpp
 #include <iostream>
@@ -36,18 +31,14 @@ int main (){
     return 0;
 }
 ```
-
->第二种情况时，内部储存中1-\>0.99999；floor值就为0，
-浮点数运算可能存在误差，在进行浮点数比较时，应考虑到浮点误差  
+>第二种情况时，内部储存中1->0.99999；floor值就为0， 浮点数运算可能存在误差，在进行浮点数比较时，应考虑到浮点误差  
 枚举，避免开平方根操作  
 for循环里添加if(<1000) continue ;if(>9999) break，控制条件更简洁  
 32*32=1024  
 
-
 ## [3n+1猜想](https://zh.wikipedia.org/wiki/%E8%80%83%E6%8B%89%E5%85%B9%E7%8C%9C%E6%83%B3)
 
-- 奇数变为3n+1，否则变为一半，最后变为1，输入n输出变换次数  
-```n%2==1```*循环终止条件在计算之后而不是计算之前就使用do while 循环*  
-
+奇数变为3n+1，否则变为一半，最后变为1，输入n输出变换次数  
+n%2==1循环终止条件在计算之后而不是计算之前就使用do while 循环  
 
 ## 习题 P 34
