@@ -1,9 +1,0 @@
----
-layout: post
-title:  markdown中插入数学公式，使用代办项功能
-categories: [方法]
-tags: [杂项note]
-date: 2020-02-06
----
-
-https://juejin.im/post/5a6721bd518825733201c4a2

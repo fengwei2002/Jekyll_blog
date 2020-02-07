@@ -8,19 +8,19 @@ date: 2020-02-06
 
 ## To Do
 
-- 深入理解计算机系统
+- [ ] 深入理解计算机系统
 
-- 算法两本书
+- [ ] 算法两本书
 
-- 熟悉Unix/Linux Shell和常见的命令行
+- [ ] 熟悉Unix/Linux Shell和常见的命令行
 
-- 学习一门脚本语言，例如Python
+- [ ] 学习一门脚本语言，例如Python
 
-- vscode用好
+- [ ] vscode用好
 
-- 学习Web基础（HTML/CSS/JS) + 服务器端技术 (LAMP)
+- [ ] 学习Web基础（HTML/CSS/JS) + 服务器端技术 (LAMP)
 
-- 简单的学习Java，html5
+- [ ] 简单的学习Java，html5
 
 ## 尽量完成
 
