@@ -91,7 +91,7 @@
 
 # 以下四个配置项为空时jekyll-github-metadata会帮你生成
 title: fengwei
-description: '19级在读' # 不知道怎么写介绍，放个音乐吧
+description: '19级在读' # 不知道怎么写介绍
 url: https://fengwei2002.github.io
 # baseurl: '' # 假如你的博客是建在某个目录下的，请在这里加上目录名，并且下面配置的所有链接里的`/public`前也要加，即`/your_baseurl/public`。这一项结尾不要有'/'。
 
@@ -151,21 +151,21 @@ archive:
     enable: true
     alert: 篇博文。长路漫漫！
   script:
-#    - var:
-#        - key: src
-#          value: //cdn.jsdelivr.net/npm/canvas-nest.js/dist/canvas-nest.js
-#        - key: defer
-#          value: defer
-#        - key: color
-#          value: "0,0,0" # 线段颜色，RGB三色
-#        - key: pointColor
-#          value: "0,0,0" # 端点颜色，RGB三色
-#        - key: opacity
-#          value: "1" # 透明度
-#        - key: count
-#          value: "31" # 粒子数量
-#        - key: zIndex
-#          value: "-1"
+    - var:
+        - key: src
+          value: //cdn.jsdelivr.net/npm/canvas-nest.js/dist/canvas-nest.js
+        - key: defer
+          value: defer
+        - key: color
+          value: "255,0,255" # 线段颜色，RGB三色
+        - key: pointColor
+          value: "255,0,255" # 端点颜色，RGB三色
+        - key: opacity
+          value: "1" # 透明度
+        - key: count
+          value: "41" # 粒子数量
+        - key: zIndex
+          value: "-1"
 
 comments:
   valine: true # 需要在script中引入
@@ -296,7 +296,6 @@ page:
       second: 秒
     copyright:
       enable: true
-      text: '<a class="github-button" aria-label="Star wu-kan/wu-kan.github.io on GitHub" href="https://github.com/wu-kan/wu-kan.github.io" data-icon="octicon-star" data-show-count="true">Star</a>'
   head: # 删改前确定知道自己在做什么
     - tag: meta # Enable responsiveness on mobile devices
       var:
@@ -439,7 +438,7 @@ page:
         - key: rel
           value: stylesheet
         - key: href
-          value: /public/css/wu-kan.css # 可以像我一样定制自己的css
+          value: /public/css/fengwei.css # 可以像我一样定制自己的css
   script: # 需要在正文后调用的脚本
     - var:
         - key: src
