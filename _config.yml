@@ -151,21 +151,21 @@ archive:
     enable: true
     alert: 篇博文。长路漫漫！
   script:
-    - var:
-        - key: src
-          value: //cdn.jsdelivr.net/npm/canvas-nest.js/dist/canvas-nest.js
-        - key: defer
-          value: defer
-        - key: color
-          value: "255,0,255" # 线段颜色，RGB三色
-        - key: pointColor
-          value: "255,0,255" # 端点颜色，RGB三色
-        - key: opacity
-          value: "1" # 透明度
-        - key: count
-          value: "41" # 粒子数量
-        - key: zIndex
-          value: "-1"
+  #   - var:
+  #       - key: src
+  #         value: //cdn.jsdelivr.net/npm/canvas-nest.js/dist/canvas-nest.js
+  #       - key: defer
+  #         value: defer
+  #       - key: color
+  #         value: "255,0,255" # 线段颜色，RGB三色
+  #       - key: pointColor
+  #         value: "255,0,255" # 端点颜色，RGB三色
+  #       - key: opacity
+  #         value: "1" # 透明度
+  #       - key: count
+  #         value: "41" # 粒子数量
+  #       - key: zIndex
+  #         value: "-1"
 
 comments:
   valine: true # 需要在script中引入
