@@ -18,8 +18,6 @@ Lists should be surrounded by blank lines
 
 因为标题可以使用侧面搜索栏，所以使用三\#小标题，可以达到更完整的使用体验
 
-
-
 具体看
 [markdown](https://www.jianshu.com/p/1e402922ee32)
 
@@ -47,16 +45,19 @@ Lists should be surrounded by blank lines
 ...
 
 ```
+
 它的好处是，目前常见的 markdown 渲染引擎都内置了基于标题的文章结构分析工具，还可以直接生成文章的目录树。
 
 而不用这样结构的写法查找起来并不方便
 
 ## 多层分点
+
 ```markdown
 - ...
   - ....
     - .....
 ```
+
 两个空格后加\-符号，再空格开始书写
 
 ## 使用图床？
@@ -64,6 +65,7 @@ Lists should be surrounded by blank lines
 等我学了计算机网络和部分前端操作再全面更新
 
 ## 换行
+
 在行尾添加两个空格加回车表示换行：
 
 \-\-\-
@@ -73,3 +75,12 @@ categories: \[侧目录\]
 tags: \[首页目录\]  
 date: 2020-01-31 日期    
 \-\-\-
+
+
+## 代办项使用
+
+语法：横框+ 空格+方括号（方括号中必须有空格或者x） + **空格** + 文本  
+\- \[ \] test
+
+## 添加数学公式
+
