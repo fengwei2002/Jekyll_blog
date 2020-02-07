@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 用好重定向和管道
-categories: [笔记]
+categories: [网课]
 tags: [Linux系统]
 date: 2020-01-27
 --- 

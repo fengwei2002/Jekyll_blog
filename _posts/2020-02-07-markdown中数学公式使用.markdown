@@ -1,7 +1,7 @@
 ---
 layout: post
-title: markdown数学公式使用方法
-categories: [方法]
+title: markdown数学公式
+categories: [语法]
 tags: [杂项note]
 date: 2020-02-07
 ---

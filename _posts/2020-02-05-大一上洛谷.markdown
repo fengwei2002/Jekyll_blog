@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 大一上学期（总）
-categories: [遗留问题]
+categories: [待解决]
 tags: [题解]
 date: 2020-02-05
 ---

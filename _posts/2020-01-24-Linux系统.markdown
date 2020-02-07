@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 第一章 ：Linux操作系统编程基础知识
-categories: [笔记]
+categories: [网课]
 tags: [Linux系统]
 date: 2020-01-24
 --- 
