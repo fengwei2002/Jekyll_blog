@@ -7,7 +7,7 @@ body {
 }
 @media (min-aspect-ratio: 2400/1850) {
   body {
-    background-image: url(//cdn.jsdelivr.net/gh/wu-kan/wu-kan.github.io@b7944209783f1be5ad1faed8694841bf1fb1ee7f/public/image/71932901_p0.webp);
+    background-image: url(https://raw.githubusercontent.com/fengwei2002/fengwei2002.github.io/master/public/image/179692.jpg);
     background-size: 100vw auto;
   }
 }
