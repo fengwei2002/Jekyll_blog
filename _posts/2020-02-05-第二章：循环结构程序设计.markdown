@@ -144,8 +144,57 @@ int main() {
 }
 ```
 
-### ==韩信点兵==
+### 韩信点兵
 
 韩信点兵的计算方法，它的意思是：凡是用3个一数剩下的余数，将它用70去乘（因为70是5与7的倍数，而又是以3去除余1的数）；5个一数剩下的余数，将它用21去乘（因为21是3与7的倍数，又是以5去除余1的数）；7个一数剩下的余数，将它用15去乘（因为15是3与5的倍数，又是以7去除余1的数），将这些数加起来，若超过105，就减掉105，如果剩下来的数目还是比105大，就再减去105，直到得数比105小为止。这样，所得的数就是原来的数了
+
+- 循环遍历，出现符合条件的break即可，`for (int i=10;i<=100;i++)`  
+- 中国剩余定理 `70` `21` `15` `105` 
+
+### 倒三角形
+
+```cpp
+#include<iostream>
+using namespace std;
+int main() {
+    int n = 0;
+    cin >> n;
+    for (int i = 0; i<=n ; i++){
+        for (int m = 0; m<i ; m++) {
+            cout << ' ';
+        }
+        for (int j = n-i; j >=0; j--) {
+            cout << "# ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+```
+
+### 子序列的和
+
+- n=m=0;这个条件要分开写，不支持连等操作；
+
+```cpp
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main() {
+    int n, m;
+    for(;;){
+        cin >> n >> m;
+        if (n == 0&&m==0 )break;
+        double end = 0;
+        for (int i = n; i <= m; i++) {
+            end = (1.0 / pow((double)i, 2.0)) + end;
+        }
+        printf("%.5lf", end);
+    }
+    return 0;
+}
+```
+
+### 分数化小数
 
 ```cpp
