@@ -216,9 +216,9 @@ page:
       enable: true
       img: /public/image/new.jpg  # 头像的地址
       info: | # 头像背后的信息，<br/>代表换行
-        <br/>山西大学
-        <br/>软件工程
-        <br/>FENGWEI
+        <br/>
+        <br/>
+        <br/>FengWei
     social:
     - title: rss
       href: /atom.xml
