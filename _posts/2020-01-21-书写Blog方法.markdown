@@ -8,11 +8,11 @@ date: 2020-01-21
 
 
 \-\-\-
-layout: post//blog目录
-title:  \[\]//内容是标题
-categories: \[ \]//侧面标签分类
-tags: \[ \]//首页的目录
-date: 2020-01-21//日期
+layout: post//blog目录  
+title:  \[\]//内容是标题  
+categories: \[ \]//侧面标签分类  
+tags: \[ \]//首页的目录  
+date: 2020-01-21//日期  
 \-\-\-
 
-github支持markdown
+github支持markdown  
