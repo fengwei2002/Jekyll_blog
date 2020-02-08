@@ -15,4 +15,4 @@ tags: \[ \]//首页的目录
 date: 2020-01-21//日期  
 \-\-\-
 
-github支持markdown  
+[github支持markdown](https://www.jianshu.com/p/f86e22eaa2f1)
