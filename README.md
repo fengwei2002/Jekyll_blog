@@ -6,7 +6,7 @@ sidebar_open: true
 ---
 
 ## Began
-
+- [Fork](https://github.com/fengwei2002/fengwei2002.github.io)到你的仓库，并在设置里开启 gh-pages
 - 修改_config.yml为你自己的信息
 - 删除_post/下的博文和public/image/文件夹下的图片，开始写你自己的文章
 - [How To Use Markdown](https://fengwei2002.github.io/posts/%E6%96%B9%E6%B3%95/markdown%E4%BD%BF%E7%94%A8)
@@ -15,21 +15,30 @@ sidebar_open: true
 ## Blog完善历程
 
 ***
+*以后会有新域名*
+
+## 2020-02-08
+
+- [x] $\KaTeX$ 行间公式[KATEX](https://katex.org/docs/libs.html)
+- [x] 所有插件完全使用 js 加载
+- [ ] 博客结构调整，把/public目录迁移到 jekyll 默认的/assets
+- [ ] 全站使用 webp 图片，加快访问速度
 
 ## 2020-02-06
 
 - [x] 修复搜索博文bug
 - [x] 修改博文目录
-- [x] 添加鼠标指针特效 （花里胡哨
+- [ ] 添加鼠标指针特效 （花里胡哨
 
 ## 2020-02-06------>
 
-- [x] 发现侧面搜索博文那里出现NaN NaN NaN的bug
-- [ ] 所以得学习前端web开发
-- [ ] Xhtml+css  -------TAT
+- [x] 修复侧面搜索博文那里出现NaN NaN NaN的bug
+- [ ] 前端web开发
+- [ ] html+css+js  -------TAT
 
-## 2020-1-20------->2020-2-5
+## 2020-1-14------->2020-2-5
 
-- 在 Github 上成功部署博客（删除一些花里胡哨
-- 添加非全屏壁纸  （关闭彩带背景
+- [在 Github 上成功部署博客](https://github.com/poole/lanyon)
+- 添加全局透明
+- 添加非全屏壁纸  
 - 修改代码块选中效果  

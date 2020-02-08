@@ -56,3 +56,11 @@ Lists should be surrounded by blank lines
 >图片与markdown融为一体
 
 用[base64转码工具](https://c.runoob.com/front-end/59)得到字符串表示的图片，然后将字符串复制到链接处，便得到可以直接查看的图片，不用上传到仓库并且点击链接调用，但是会影响编辑时的效果，所以应该在写完blog后再进行上传base64转码
+
+
+
+## 高亮一段文字
+
+用两个等于号包含起来，就会实现高亮文字的效果
+
+\=\=test\=\===test==

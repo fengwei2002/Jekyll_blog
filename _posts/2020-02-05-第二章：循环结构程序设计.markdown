@@ -41,4 +41,111 @@ for循环里添加if(<1000) continue ;if(>9999) break，控制条件更简洁
 奇数变为3n+1，否则变为一半，最后变为1，输入n输出变换次数  
 n%2==1循环终止条件在计算之后而不是计算之前就使用do while 循环  
 
+
+## 阶乘之和
+
+> 计算$S=1！+2！+3！+n!$的末六位（不含前导0）$n<=10^6$
+
+1. 直接计算后对100000取余（溢出）
+2. 要计算只包含加法减法和乘法的整数表达式除以正整数$n$的余数,可以在*每次运算*后对n取余，结果不变（解决了溢出问题）
+3. 使用time.h来获取程序运行时间（每秒）```(double)clock()/CLOCK_PER_SEC```,使用这个来大概估计n的规模和运行时间的关系
+4. 打表查看后发现940313最后开始一直不变，这是因为$25!$末尾有6个0，所以添加```if(n>25) n=25;```（解决了效率问题）
+
+```cpp
+#include<iostream>
+using namespace std; 
+#include<time.h>
+int main (){
+    const int MOD=1000000;
+    int n,s=0;
+    cin>>n;
+    if(n>25) n=25;
+    for(int i=1;i<=n;i++){
+        int factorial=1;
+        for(int j=1;j<=i;j++){
+             factroial=(factorial * i % MOD);
+            s=(s + factorial) % MOD;
+        }
+    }
+    cout<<s;
+    cout<<(double)clock()/CLOCK_PER_SEC;
+    return 0;
+}
+```
+
+## 输入输出
+
+INF=1000000000，max=-INF，min=INF，这样避免了人为的“假想无穷大值”，并且程序界面更加美观
+
+在main函数入口处添加
+```cpp
+freopen("input.txt',"r",stdin);
+freopen("ourput.txt","w",stdout);
+```
+
+### 示例：
+
+```c
+#define LOCAL
+#include<stdio.h>
+#define INF 1000000000
+int main (){
+    #ifdef LOCAL
+        freopen("input.txt',"r",stdin);
+        freopen("ourput.txt","w",stdout);
+    #endif //只有定义了符号LOCAl，才编译两条freopen语句
+    然后正常写main函数
+}
+```
+
+只要在比赛提交时删除```#define LOCAL```即可，重要的测试语句要注释掉而不是删除掉  
+
+### 当要求文件输入输出，但禁止重定向
+
+fout fin fopen fscanf fprintf fclose 
+
+```c
+int main(){
+    FILE *fin,*fout;
+    fin=fopen("data.in","rb");
+    fout=fopen("data.out","wb");
+    while(fscanf(fin,"%d",&x)==1){
+
+    }
+    fprintf(fout,"%d",max);
+    fclose(fin);
+    fclose(fout);
+}
+```
+
+>多数据处理时，计算完一组数据要重置部分变量
+
 ## 习题 P 34
+
+### 水仙花数
+
+double pow(double x, double y)
+
+```cpp
+#include <iostream>
+using namespace std;
+int main() {
+	for (int a = 1; a < 10; a++) {
+		for (int b = 0; b < 10; b++) {
+			for (int c = 0; c < 10; c++) {
+				int median = a * 100 + b * 10 + c;
+				if (pow(a, 3) + pow(b, 3) + pow(c, 3) == median) {
+					cout << median<<" ";
+				}
+			}
+		}
+	}
+	return 0;
+}
+```
+
+### ==韩信点兵==
+
+韩信点兵的计算方法，它的意思是：凡是用3个一数剩下的余数，将它用70去乘（因为70是5与7的倍数，而又是以3去除余1的数）；5个一数剩下的余数，将它用21去乘（因为21是3与7的倍数，又是以5去除余1的数）；7个一数剩下的余数，将它用15去乘（因为15是3与5的倍数，又是以7去除余1的数），将这些数加起来，若超过105，就减掉105，如果剩下来的数目还是比105大，就再减去105，直到得数比105小为止。这样，所得的数就是原来的数了
+
+```cpp
