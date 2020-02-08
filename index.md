@@ -1,6 +1,6 @@
 ---
 layout: index
-title: psychonautBlog
+title: Feng Wei's Personal Blog
 ---
 ## Contact
 
@@ -18,4 +18,5 @@ title: psychonautBlog
 - 博客: ==**<https://fengwei2002.github.io/>**==
 
 ## Education
+
 山西大学
