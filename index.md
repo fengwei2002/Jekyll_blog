@@ -24,12 +24,8 @@ title: psychonaut
 
 ## Education
 
-***
-
-山西大学
+>山西大学
 
 ## Project
 
-***
-
-To Be Done  
+>To Be Done  
