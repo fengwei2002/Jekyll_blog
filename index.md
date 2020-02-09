@@ -13,7 +13,7 @@ title: psychonaut
 - 微信: **fwei142857**
 - QQ: **2480417969--2938256681**
 
-- 网易云
+- 网易云：
 **psychonaut1**
 - 博客: 
   - *<https://fengwei2002.github.io/>*
