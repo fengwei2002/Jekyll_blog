@@ -15,8 +15,9 @@ title: psychonaut
 
 - 网易云
 **psychonaut1**
-- 博客: *<https://fengwei2002.github.io/>*
-
+- 博客: 
+  - *<https://fengwei2002.github.io/>*
+  - *<http://feng-w.cn/>*
 ## Education
 
 山西大学
