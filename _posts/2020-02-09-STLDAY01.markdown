@@ -89,13 +89,13 @@ public:
 
 ## 函数模板实例
 
-对char类型和int类型数组double进行排序
+对char，double类型和int类型数组进行排序
 
 ```cpp
 #include<iostream>
 using namespace std;
-
-void print_array(int* array, int len) {
+template<typename T>
+void print_array(T* array, int len) {
     for (int i = 0; i < len; i++) {
         cout << array[i] << ' ';
     }
@@ -106,8 +106,9 @@ void swap_two(T& a, T& b) {
     b = a;
     a = median;
 }
-//每次进循环时flag为true，当最后一步执行true=false时，返回值为false，跳出循环
-void bubble_sort(int* array, int len) {
+template<class T>
+// 每次进循环时flag为true，当最后一步执行true = false时，返回值为false，跳出循环
+void bubble_sort(T* array, int len) {
     for (bool flag = false; flag = !flag; len--) {
         for (int i = 1; i <= len; i++) {
             if (array[i] > array[i - 1]) {
@@ -118,24 +119,20 @@ void bubble_sort(int* array, int len) {
     }
 }
 
+template<class T>
+int getlen(T *array) {
+    return sizeof(array) / sizeof(T);
+}
 int main() {
-    int array[] = { 2,1,4,3 };
-    int len = sizeof(array) / sizeof(int);
+    //int array[] = { 2,1,4,3 };
+    //cout << sizeof(array) << sizeof(int);
+    char array[] = { 'a','b','c' };
+    int len = getlen(array);
     print_array(array, len);
     bubble_sort(array, len);
     print_array(array, len);
-    return 0;
 }
 ```
 
-
-
-
-
-
-
-
-
-
-
+切记使用模板时不会发生强制类型转换；所以函数参数列表在使用时不一定需要全部为模板类型
 
