@@ -1,6 +1,6 @@
 ---
 layout: post
-title: STLDAY01
+title: STL DAY01
 categories: [笔记]
 tags: [C++ STL笔记]
 date: 2020-02-09 01:29:56
@@ -49,51 +49,84 @@ void test01(){
 但当有调用模板函数的需求时，就在函数名后加上`<>`
 (通过空模板实参列表的语法规定编译器只能通过模板匹配)`mm<>();`
 
-## 模板函数实现过程
+### 模板函数实现过程
 
-//流程图
-cpp->预编译器->index.i->
-index.i->编译器->index.s（生成汇编文件）
-index .s->汇编器->目标文件，.obj(win).o(linux)
+函数模板通过具体类型调用产生不同函数  
+
+cpp->预编译器->index.i->  
+(进行两次编译)
+index.i->编译器->index.s（生成的汇编文件就变为具体函数了）  
+index .s->汇编器->目标文件.obj(win).o(linux)  
 
 链接器，将.o文件合并为可执行文件exe
+>linux操作去复习一下
 
-g++,cpp,gcc
+调用`my_add(int ,int)`的时候编译器就会生成一个具体的函数供调用  
+变成汇编文件时，根据实际调用函数$n$的次数就变为$n$个函数  
 
+## 单个模板类的基本语法
 
-g++ -E index.cpp -o index.i
-(ESC)
-vim index.i
-(打开 index.i)//define变没，头文件添加到文件中
+```cpp
+template<class T>
+class Person{
+public:
+    person(T id,T age){
+        this->ID=id;
+        this->AGE=age;
+    }
+    void show(){
+        cout<<ID<<' '<<AGE；
+    }
+public:
+    T ID;
+    T AGE;
+}
+```
 
-g++ -S index.i -o index.s(打开.s)
-vim index.s
-发现全部变为汇编语言
+函数模板在调用时，可以自动类型推导  
+类模板必须显示指定类型
+`Person<int> p(10,20);`
 
-g++ -C index.s -o index.o;
-vim index.o;
-发现全部变为乱码
+## 函数模板实例
 
-g++ index.s -o index
+对char类型和int类型数组double进行排序
 
-file index
-就变为可执行文件
+```cpp
+#include<iostream>
+using namespace std;
 
-
-函数模板变为可执行模板函数，
-
-my_add(float,lioat){
-    会生成一个模板函数，这个模板函数是float类型
+void print_array(int* array, int len) {
+    for (int i = 0; i < len; i++) {
+        cout << array[i] << ' ';
+    }
+}
+template <class T>
+void swap_two(T& a, T& b) {
+    T median = b;
+    b = a;
+    a = median;
+}
+//每次进循环时flag为true，当最后一步执行true=false时，返回值为false，跳出循环
+void bubble_sort(int* array, int len) {
+    for (bool flag = false; flag = !flag; len--) {
+        for (int i = 1; i <= len; i++) {
+            if (array[i] > array[i - 1]) {
+                swap_two(array[i], array[i - 1]);
+                flag = false;
+            }
+        }
+    }
 }
 
-my_add(int ,int)用的时候编译器就会生成一个具体的函数供调用
-变成汇编文件时，根据实际调用函数的次数就变为两个函数
-
-函数模板通过具体类型调用产生不同函数，进行两次编译
-
-
-
-
+int main() {
+    int array[] = { 2,1,4,3 };
+    int len = sizeof(array) / sizeof(int);
+    print_array(array, len);
+    bubble_sort(array, len);
+    print_array(array, len);
+    return 0;
+}
+```
 
 
 
