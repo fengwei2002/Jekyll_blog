@@ -3,7 +3,7 @@ layout: post
 title: STL01(模板函数.模板类)
 categories: [笔记]
 tags: [C++ STL笔记]
-date: 2020-02-10 14:27:56
+date: 2020-02-10
 ---
 ## 函数模板
 
