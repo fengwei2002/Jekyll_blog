@@ -1,0 +1,105 @@
+---
+layout: post
+title: STL MOOC01
+categories: [笔记]
+tags: [C++ STL笔记]
+date: 2020-02-10
+--- 
+string类:
+是一个模板类
+
+string对象的初始化:
+- string s1("hello");
+- string month ="march"
+- string s2(8,'x');//里面就有8个x
+```cpp
+string s;
+s = 'n'正确
+string s='n'错误
+```
+
+使用成员函数s.lenth();便可获取长度
+
+string 类支持流读取运算符
+cin>>stringobject;
+string 还支持getline函数
+```cpp
+使用getline函数
+```
+string的赋值与连接
+
+可以使用=赋值
+也用assign成员函数赋值,可以部分赋值
+
+```cpp
+assign
+```
+
+string 里面的at成员函数 和 []
+
+```cpp
+at会有越界范围检查,下标运算符[]不做
+```
+
++=操作
+成员函数
+append();
+可以添加一部分
+```cpp
+```
+== > >= < <=
+
+成员函数compare
+可以挑其中的一部分进行比较
+```cpp
+
+```
+
+子串
+成员函数substr(),(常用)
+
+```cpp
+string s1("Hello World"),s2;
+s2=s1.substr(4,5);//下标开始五个字符
+cout<<s2<<endl;
+```
+o wor
+
+交换string
+swap
+
+
+寻找string中的字符
+find();可以规定从哪里开始寻找
+返回下标或者
+```cpp
+```
+rfind();
+```cpp
+```
+find_first_of()
+```cpp
+```
+lastof
+
+
+erase()
+
+
+replace
+
+
+insert
+
+c_str适应传统
+
+
+data
+
+
+字符串流处理
+
+
+stl
+
+

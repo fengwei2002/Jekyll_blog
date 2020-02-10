@@ -1,8 +1,26 @@
 ---
 layout: post
-title: STL DAY02()
+title: STL02()
 categories: [笔记]
 tags: [C++ STL笔记]
 date: 2020-02-10 01:29:56
 ---
 
+Myarray
+
+有参构造
+拷贝构造
+重载=
+重载[]
+
+
+&&使用:应该传变量的接口用户传值进来,所以就重载一个双引用来解决
+
+void PushBacck(T&& data){
+    //判断容器中是否有位置
+    if(this->size>=this->capcity){
+        return;
+    }
+    this->addr[this->size]=data;
+     this->size++;
+}
