@@ -1,6 +1,6 @@
 ---
 layout: post
-title: STL DAY01
+title: STL DAY01(模板函数.模板类)
 categories: [笔记]
 tags: [C++ STL笔记]
 date: 2020-02-09 01:29:56
@@ -64,30 +64,8 @@ index .s->汇编器->目标文件.obj(win).o(linux)
 调用`my_add(int ,int)`的时候编译器就会生成一个具体的函数供调用  
 变成汇编文件时，根据实际调用函数$n$的次数就变为$n$个函数  
 
-## 单个模板类的基本语法
 
-```cpp
-template<class T>
-class Person{
-public:
-    person(T id,T age){
-        this->ID=id;
-        this->AGE=age;
-    }
-    void show(){
-        cout<<ID<<' '<<AGE；
-    }
-public:
-    T ID;
-    T AGE;
-}
-```
-
-函数模板在调用时，可以自动类型推导  
-类模板必须显示指定类型
-`Person<int> p(10,20);`
-
-## 函数模板实例
+### 函数模板实例
 
 对char，double类型和int类型数组进行排序
 
@@ -135,4 +113,138 @@ int main() {
 ```
 
 切记使用模板时不会发生强制类型转换；所以函数参数列表在使用时不一定需要全部为模板类型
+
+
+
+## 单个模板类的基本语法
+
+(类中的成员为模板类型，导致构造函数，析构函数也为模板类型)
+
+```cpp
+template<class T1,class T2>
+class Person{
+public:
+    person(T id,T2 age){
+        this->ID=id;
+        this->AGE=age;
+    }
+    void show(){
+        cout<<ID<<' '<<AGE；
+    }
+public:
+    T ID;
+    T2 AGE;
+}
+```
+
+函数模板在调用时，可以实现自动类型推导(不声明类型调用函数模板)  
+而类模板调用时必须手动指定类型，从而可以使类在定义对象时，这个对象可以得到编译器分配的内存  
+(其实都手动指定类型才符合c++的行为习惯，自动类型推导是帮助偷懒的方法)
+`Person<int> p(10,20);`
+
+### 类模板实例
+
+- 类模板派生普通类
+
+```cpp
+template <class T>; 
+class parent :public child_a<int>{
+
+}
+```
+
+- 类模板派生类模板
+
+指定后<>可以用T或者int
+
+普通类的.h和.cpp分离编写方式
+（一般写法）
+.cpp用来实现具体函数
+CTRL shift+u变大写
+
+.h里面第一句
+#pragma once
+//防止头文件被重复包含
+
+类模板在类内实现
+template <class T1,class T2>
+person<string,int> p("AAA",20);
+
+
+类模板的外部实现
+(类中声明函数头，类外，主函数体用::实现具体函数)
+template<class T>
+person<T>::person(T age,T id){
+
+}
+
+### 模板类中使用友元
+
+**<不要滥用友元！>**
+
+>会破坏类的封装特性，不常用
+
+普通函数友元
+
+```cpp
+```
+
+友元重载左移操作符
+
+```cpp
+
+//te plate<class T>
+friend ostream& operator<<<T>(ostream& os,person<T> &P)
+
+将
+template <class T> class person
+template<class T> void print_person(person<T>& p);
+
+public:
+    friend void print_person<T>(person<T>& p);
+
+```
+
+
+### 多文件编写一个模板类
+
+pragma：东西
+`#pragma once`一次性的东西
+
+
+cpp编译机制：
+
+一个项目里面有多个cpp文件时，c++采用的是独立编译
+
+a.o  b.o  c.o  ==可执行程
+
+
+main。cpp里面调用时
+person<int> p(10);
+构造函数在当前文件没有找到定义，编译器交给链接器去找
+
+person。cpp
+里面实现函数模板，
+并没有生成具体的函数，当找person<int>时，就找不到  
+
+就会出现无法链接的外部符号的error
+
+解决方案：
+
+当存在函数模板时，
+
+将
+#include"person.h"
+修改为
+#include"person.cpp"
+
+习惯就将类模板文件cpp后缀改为
+person.hpp
+
+### 类模板中的static关键字
+
+一种方法出现的目的是为了方便程序员操作
+所以定义时也符合正常逻辑
+所以这个static关键字就是每个相互独立的具体类中的一个成员
+而不是共享关系或者归模板类一人所有 
 
