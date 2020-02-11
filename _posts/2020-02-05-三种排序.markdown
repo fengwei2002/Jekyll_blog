@@ -5,6 +5,7 @@ categories: [算法]
 date: 2020-02-05
 ---
 
+数据结构里面有一种bool类型的冒泡排序，很巧妙
 ```c
 void BubbleSort(int score[], int n) {
 	//12345  12 23 34 45 i=0---23 34 45 i=1

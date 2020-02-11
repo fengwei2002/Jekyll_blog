@@ -1,7 +1,6 @@
 ---
 layout: post
 title: use markdown
-categories: [语法]
 tags: [杂项note]
 date: 2020-02-09
 ---
