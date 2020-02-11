@@ -1,7 +1,6 @@
 ---
 layout: post
 title: DAY 01(c->cpp)
-categories: [笔记]
 tags: [cpp+STL]
 date: 2020-01-14 01:29:56
 ---

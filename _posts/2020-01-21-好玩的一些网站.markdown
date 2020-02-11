@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  网页游戏
-categories: [interesting]
 tags: [杂项note]
 date: 2020-01-21
 ---

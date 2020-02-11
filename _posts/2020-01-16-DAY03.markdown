@@ -1,7 +1,6 @@
 ---
 layout: post
 title: DAY 03 (构造，析构，new)
-categories: [笔记]
 tags: [cpp+STL]
 date: 2020-01-16 
 ---

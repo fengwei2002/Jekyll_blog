@@ -2,7 +2,6 @@
 layout: post
 title: cmd
 tags: [Linux]
-categories: [方法]
 date: 2020-02-11
 ---
 

@@ -1,7 +1,6 @@
 ---
 layout: post
 title: STL MOOC01
-categories: [笔记]
 tags: [cpp+STL]
 date: 2020-02-10
 --- 

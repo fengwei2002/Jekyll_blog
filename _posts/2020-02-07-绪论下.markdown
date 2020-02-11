@@ -2,7 +2,6 @@
 layout: post
 title: 第一章：绪论下
 tags: [数据结构]
-categories: [网课]
 date: 2020-02-11
 ---
 运用工具分析DSA，去粗存精  

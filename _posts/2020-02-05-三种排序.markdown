@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 三种排序
-tags: [算法]
+categories: [算法]
 date: 2020-02-05
 ---
 

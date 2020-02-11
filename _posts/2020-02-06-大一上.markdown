@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 大一上
-tags: [人生经验]
+categories: [人生经验]
 date: 2020-02-06
 ---
 

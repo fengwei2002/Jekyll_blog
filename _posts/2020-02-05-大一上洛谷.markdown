@@ -2,7 +2,6 @@
 layout: post
 title: 大一上学期（总）
 categories: [待解决]
-tags: [to be solved]
 date: 2020-02-05
 ---
 ## 吹蜡烛

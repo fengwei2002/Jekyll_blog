@@ -1,7 +1,6 @@
 ---
 layout: post
 title: 第三章：数组和字符串
-categories: [读书笔记]
 tags: [算法竞赛]
 date: 2020-02-06
 ---

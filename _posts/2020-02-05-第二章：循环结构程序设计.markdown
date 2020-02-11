@@ -1,7 +1,6 @@
 ---
 layout: post
 title: 第二章：循环结构程序设计
-categories: [读书笔记]
 tags: [算法竞赛]
 date: 2020-02-05
 ---

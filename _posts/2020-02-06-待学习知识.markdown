@@ -2,7 +2,6 @@
 layout: post
 title: To Do
 tags: [target]
-categories: [待解决]
 date: 2020-02-06
 ---
 

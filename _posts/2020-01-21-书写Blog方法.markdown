@@ -1,7 +1,6 @@
 ---
 layout: post
-title:  书写blog方法
-categories: [方法]
+title:  blog方法
 tags: [杂项note]
 date: 2020-01-21
 ---
@@ -14,5 +13,11 @@ categories: \[ \]//侧面标签分类
 tags: \[ \]//首页的目录  
 date: 2020-01-21//日期  
 \-\-\-
+
+经过思考，我觉得
+
+不想在主页面展示的东西就放在categories里面,那种系统学习完一种东西的时候就放在外面，杂项note之类的就放在你的categories里面吧
+
+想在外面直接可以让别人看到，自己方便找的东西就放在tags和_config,yml里面
 
 [github支持markdown](https://www.jianshu.com/p/f86e22eaa2f1)

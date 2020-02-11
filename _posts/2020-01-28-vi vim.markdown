@@ -1,7 +1,6 @@
 ---
 layout: post
 title: 用好vi
-categories: [网课]
 tags: [Linux]
 date: 2020-01-28
 --- 

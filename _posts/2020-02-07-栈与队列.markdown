@@ -2,6 +2,5 @@
 layout: post
 title: 第四章：栈与队列
 tags: [数据结构]
-categories: [网课]
 date: 2020-02-07
 ---

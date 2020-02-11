@@ -1,7 +1,6 @@
 ---
 layout: post
 title: 管好文件
-categories: [笔记]
 tags: [Linux]
 date: 2020-01-27
 --- 
