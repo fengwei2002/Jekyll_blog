@@ -2,7 +2,7 @@
 layout: post
 title: 第二章：循环结构程序设计
 categories: [读书笔记]
-tags: [Algorithm Contest]
+tags: [算法竞赛]
 date: 2020-02-05
 ---
 ## 输出所有形为aabb的完全平方数

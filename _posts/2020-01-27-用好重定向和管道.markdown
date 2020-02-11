@@ -2,7 +2,7 @@
 layout: post
 title: 用好重定向和管道
 categories: [网课]
-tags: [Linux system]
+tags: [Linux]
 date: 2020-01-27
 --- 
 ## 重定向

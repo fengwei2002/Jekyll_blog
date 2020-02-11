@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 第五章：二叉树
-tags: [Data Structure (Deng Junhui)]
+tags: [数据结构]
 categories: [网课]
 date: 2020-02-07
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: 第一章 ：Linux操作系统编程基础知识
 categories: [网课]
-tags: [Linux system]
+tags: [Linux]
 date: 2020-01-24
 --- 
 >电子科技大学mooc

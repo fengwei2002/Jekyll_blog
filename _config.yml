@@ -110,13 +110,13 @@ future: false # 不发布时间在未来的文章
 
 index:
   showtag:
-  - Computer System
-  - Algorithm Contest
-  - Linux system
-  - 命令行
-  - Data Structure (Deng Junhui)
-  - cpp  STL
-  - 题解
+  - Resolved bug
+  - 深入理解计算机系统
+  - 算法竞赛
+  - Linux
+  - 数据结构
+  - cpp+STL
+  - to be solved
   - 杂项note
   - target
   script:

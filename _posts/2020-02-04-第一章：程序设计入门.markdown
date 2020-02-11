@@ -2,7 +2,7 @@
 layout: post
 title: 第一章：程序设计入门
 categories: [读书笔记]
-tags: [Algorithm Contest]
+tags: [算法竞赛]
 date: 2020-02-04
 ---
 **[本书所有习题答案](https://github.com/aoapc-book/aoapc-bac2nd)**
