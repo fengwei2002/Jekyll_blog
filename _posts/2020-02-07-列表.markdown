@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 第三章：列表
-tags: [数据结构（邓俊辉）]
+tags: [Data Structure (Deng Junhui)]
 categories: [网课]
 date: 2020-02-07
 ---

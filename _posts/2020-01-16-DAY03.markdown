@@ -2,7 +2,7 @@
 layout: post
 title: DAY 03 (构造，析构，new)
 categories: [笔记]
-tags: [C++ STL笔记]
+tags: [cpp  STL]
 date: 2020-01-16 
 ---
 >主要是熟悉作用域和语法
