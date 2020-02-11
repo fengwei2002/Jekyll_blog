@@ -13,11 +13,11 @@ title: psychonaut
   - **psychonaut1@foxmail.com**
   - *psychonaut1f@gmail.com*
 - 微信: **fwei142857**
-- QQ: **2480417969--2938256681**
+- QQ: **2480417969**-*2938256681**
 
-- 网易云:
-**psychonaut1**
-- 博客链接: 
+- 网易云:**psychonaut1**
+
+- 博客链接:
   - *<https://fengwei2002.github.io/>*
   - **<http://feng-w.cn/>**
 

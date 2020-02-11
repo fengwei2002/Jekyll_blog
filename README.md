@@ -7,6 +7,7 @@ sidebar_open: true
 
 ## Began
 
+***
 - [Fork](https://github.com/fengwei2002/fengwei2002.github.io)到你的仓库，并在设置里开启 gh-pages
 - 修改_config.yml为你自己的信息
 - 删除_post/下的博文和public/image/文件夹下的图片，开始写你自己的文章
@@ -19,7 +20,7 @@ sidebar_open: true
 
 ## 2020-02-08
 
-- [x] 新域名上线！，但PC端不能通过v2rayN访问blog。。
+- [x] 新域名上线！，但PC端不能通过v2rayN访问blog.通过PAC(假)解决
 
 ## 2020-02-08
 
@@ -40,9 +41,11 @@ sidebar_open: true
 - [ ] 前端web开发
 - [ ] html+css+js  -------TAT
 
-## 2020-1-14------->2020-2-5
+## 2020-1-20------->2020-2-5
 
 - [在 Github 上成功部署博客](https://github.com/poole/lanyon)
 - 添加全局透明
 - 添加非全屏壁纸  
-- 修改代码块选中效果  
+- 添加蓝色代码块选中效果  
+- 添加Live2d看板娘
+- 添加侧面预览博文目录

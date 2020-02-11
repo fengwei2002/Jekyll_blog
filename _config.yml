@@ -116,9 +116,8 @@ index:
   - Linux
   - 数据结构
   - cpp+STL
-  - to be solved
-  - 杂项note
   - target
+  - 杂项note
   script:
 #    - var:
 #        - key: src
