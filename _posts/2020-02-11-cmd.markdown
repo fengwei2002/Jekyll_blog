@@ -1,0 +1,11 @@
+---
+layout: post
+title: cmd
+tags: [命令行]
+categories: [方法]
+date: 2020-02-11
+---
+
+百度百科+知乎，挖坑代填
+
+[ls](https://zhuanlan.zhihu.com/p/67513308)
