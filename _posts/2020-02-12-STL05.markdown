@@ -1,0 +1,6 @@
+---
+layout: post
+title: STL05()
+tags: [cpp+STL]
+date: 2020-02-10
+---
