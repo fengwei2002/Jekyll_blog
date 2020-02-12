@@ -10,7 +10,7 @@ date: 2020-02-10
 
 例如我们使用不同参数类型的swap 函数时，逻辑相同，但需要相同逻辑写多次，这样就会出现代码不能复用，增加维护成本，等问题
 
-这时人们就引入了模板技术 ，也就是编写函数代码时可以忽略参数类型，一个函数接口实现多种不同的操作
+这时人们就引入了模板技术 ，也就是编写函数代码时可以忽略参数类型，一个函数接口实现多种不同的操作,用模板是为了实现泛型，可以减轻编程的工作量，增强函数的重用性。
 
 ```cpp
 template<class T>//template<typename T>
@@ -42,13 +42,20 @@ void test01(){
 例如普通函数列表中的`int char` 可以接受`char int` ，也可以`int char`  
 
 函数模板可以像普通函数一样被重载(不同参数个数)  
-当普通函数和模板函数实现了重载时，编译器优先考虑普通函数，若类型完全匹配或转化后可以完全匹配
-就调用普通函数，若类型与普通函数写的重载函数不能够匹配就调用模板函数
+当普通函数和模板函数实现了重载时，编译器优先考虑普通函数，若类型完全匹配或转化后可以完全匹配  
+就调用普通函数，若类型与普通函数写的重载函数不能够匹配就调用模板函数  
+如果函数模板可以产生一个更好的匹配，那么选择模板  
 
 但当有调用模板函数的需求时，就在函数名后加上`<>`
 (通过空模板实参列表的语法规定编译器只能通过模板匹配)`mm<>();`
 
 ### 模板函数实现过程
+
+函数模板机制结论:  
+编译器并不是把函数模板处理成能够处理任何类型的函数  
+函数模板通过具体类型产生不同的函数  
+编译器会对函数模板进行两次编译，在声明的地方对模板代码本身进行编译，在调用的
+地方对参数替换后的代码进行编译。  
 
 函数模板通过具体类型调用产生不同函数  
 
@@ -133,6 +140,25 @@ public:
 }
 ```
 
+### 类模板做函数参数
+
+```cpp
+void PrintMyClass(MyClass<int>& mclass){
+    mclass.Show();
+}
+void test02(){
+    MyClass<int> mclass1(10), mclass2(20), mclass3(30);
+    PrintMyClass(mclass1);
+    PrintMyClass(mclass2);
+    PrintMyClass(mclass3);
+}
+int main(){
+    test01();
+    test02();
+    return 0;
+}
+```
+
 函数模板在调用时，可以实现自动类型推导(不声明类型调用函数模板)  
 而类模板调用时必须手动指定类型，从而可以使类在定义对象时，这个对象可以得到编译器分配的内存  
 (其实都手动指定类型才符合c++的行为习惯，自动类型推导是帮助偷懒的方法)
@@ -143,6 +169,9 @@ public:
 - 普通类继承模板类
 
 ```cpp
+//子模板类派生时，需要具体化模板类，c++编译器要知道父类的数据类型具体是什么样的
+//因为 c++编译器要分配内存，必须知道父类所占内存大小
+
 template<class T>
 class parent{
     T data;
@@ -203,8 +232,10 @@ vs 中 `CTRL` `shift`+`u`变大写
     }
 ***
 ### 模板类中使用友元
+
 待修改
 ***
+
 **<不要滥用友元！>**
 
 >会破坏类的封装特性，不常用
@@ -267,6 +298,146 @@ person.cpp
 所以这个static关键字就是每个相互独立的具体类中的一个成员
 而不是共享关系或者归模板类一人所有 
 
+### 类模板中在项目开发中的应用
+
+设计一个数组模板类(MyVector),完成对int、char、Teacher类型元素的管理。
+请仔细思考：
+- 如果数组模板类中的元素是Teacher类型时，需要Teacher类做什么工作？
+- 如果数组模板类中的元素是Teacher类型时，Teacher类做含有指针属性？
+
+MyVector.cpp
+```cpp
+#ifndef MYVECTOR_H
+#define MYVECTOR_H
+#include<iostream>
+using namespace std;
+template<class T>
+class MyVector{
+//重载<<操作符
+friend ostream& operator<<(ostream& out, MyVector<T>& vec){
+for (int i = 0; i < vec.mSize;i++){
+cout << vec.pAddr[i] << endl;
+}
+return out;
+}
+public:
+//构造函数
+MyVector(int capacity){
+this->mCapacity = capacity;
+this->mSize = 0;
+this->pAddr = new T[capacity];
+}
+//拷贝构造函数
+MyVector(const MyVector& vector){
+this->mCapacity = vector.mCapacity;
+this->mSize = vector.mSize;
+//申请内存 拷贝数据
+this->pAddr = new T[mSize];
+for (int i = 0; i < this->mSize;i++){
+this->pAddr[i] = vector.pAddr[i];
+}
+}
+//添加元素
+void PushBack(T& value){
+if (this->mSize == this->mCapacity){
+return;
+}
+this->pAddr[this->mSize] = value;
+this->mSize++;
+}
+void PushBack(T&& value){
+if (this->mSize == this->mCapacity){
+return;
+}
+this->pAddr[this->mSize] = value;
+this->mSize++;
+}
+//操作符重载
+T& operator[](int index){
+return this->pAddr[index];
+}
+MyVector& operator=(const MyVector& vector){
+this->mCapacity = vector.mCapacity;
+this->mSize = vector.mSize;
+//申请内存 拷贝数据
+if (this->pAddr != NULL){
+delete[] this->pAddr;
+}
+this->pAddr = new T[mSize];
+for (int i = 0; i < this->mSize; i++){
+this->pAddr[i] = vector.pAddr[i];
+}
+return *this;
+}
+//析构函数
+~MyVector(){
+if (this->pAddr != NULL){
+delete[] this->pAddr;
+}
+}
+private:
+T* pAddr;
+int mCapacity;
+int mSize;
+};
+#endif
+
+```
+
+MyVectorTest.cpp
+
+```cpp
+#include<iostream>
+using namespace std;
+#include"MyVector.hpp"
+//数组模板存放基础数据类型
+void test01(){
+MyVector<int> vec(20);
+//插入元素
+for (int i = 0; i < 20; i++){
+vec.PushBack(i + 1);
+}
+//打印元素
+cout << vec << endl;
+}
+//数组模板存放复杂数据类型
+class Person{
+friend ostream& operator<<(ostream& out, Person& person){
+out << "Age:" << person.mAge << " ID:" << person.mId;
+return out;
+}
+public:
+//无参构造
+Person(){
+this->mAge = 0;
+this->mId = 0;
+}
+//有参构造
+Person(int age,int id){
+this->mAge = age;
+this->mId = id;
+}
+public:
+int mAge;
+int mId;
+};
+void test02(){
+Person p1(10,11), p2(20,21), p3(30,31);
+MyVector<Person> vec(20);
+//将元素插入到数组模板中
+vec.PushBack(p1);
+vec.PushBack(p2);
+vec.PushBack(p3);
+//打印数组中元素
+cout << vec << endl;
+}
+int main(){
+test01();
+test02();
+system("pause");
+return 0;
+}
+```
 
 ## 练习
 
