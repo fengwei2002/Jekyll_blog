@@ -135,9 +135,9 @@ throw的异常是由类型的，catch需严格匹配异常类型
 
 （标准库中的异常类值允许设置一个用来描述异常的字符串）
 exception
-![STL03](/public/image/STL03.png)
+![STL03](https://raw.githubusercontent.com/fengwei2002/fengwei2002.github.io/master/public/image/STL03.PNG)
 
-![STL03](/public/image/STL0302.png)
+![STL03](https://raw.githubusercontent.com/fengwei2002/fengwei2002.github.io/master/public/image/STL0302.PNG)
 
 名称和含义可以直接用
 
