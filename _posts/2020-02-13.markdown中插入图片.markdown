@@ -1,0 +1,32 @@
+---
+layout: post
+title: markdown中插入图片
+tags: 杂项note
+date: 2020-02-13
+---
+
+更改域名后因为不能直接在github文件夹下访问图片，所以使用public/image/的方法就失效了
+
+然后就得先上传图片到GitHub上面，从仓库中打开图片复制其链接，再到markdown中引用复制好的地址，这样可以用，但我觉得好麻烦
+
+>等域名到期后就可以用原来的public方法了，简单快速
+
+于是我谷歌到了一种vscode加PicGo的方法
+
+## 上传图片快捷键
+
+![xx](![avatar](https://user-images.githubusercontent.com/56250171/74421358-db98d800-4e87-11ea-8c70-e4a6efefc742.jpg)
+)
+在VScode编辑器中直接使用以下快捷键，将自动完成上传并将图片链接自动插入到Markdown页面中
+
+从剪贴板上传图像
+Windows / Unix：Ctrl + Alt + u
+从资源管理器上传图像
+Windows / Unix：Ctrl + Alt + e
+从输入框上传图像
+Windows / Unix：Ctrl + Alt + o
+
+
+方法：
+
+
