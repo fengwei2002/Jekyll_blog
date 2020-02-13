@@ -43,7 +43,8 @@ catch(...){//捕获所有类型异常
 
 cpp抛除法异常
 
-```cppint divide02(int x, int y)
+```cpp
+int divide02(int x, int y)
 {
     if (y == 0){
         throw y;
