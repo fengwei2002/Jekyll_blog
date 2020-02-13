@@ -91,7 +91,7 @@
 
 # 以下四个配置项为空时jekyll-github-metadata会帮你生成
 title: fengwei
-description: 'ᴾʳᵒᵇᵃᵇˡʸ ᵍʳᵒʷⁱⁿᵍ ᵘᵖ, ᵇᵘᵗ ᵃˡˢᵒ ˡᵒˢⁱⁿᵍ ᵗʰᵉⁱʳ ᶠᵒʳᵐᵉʳ ˢᵉˡᶠ.' # 不知道怎么写介绍
+description: '慢慢来' # 不知道怎么写介绍
 url: https://fengwei2002.github.io
 # baseurl: '' # 假如你的博客是建在某个目录下的，请在这里加上目录名，并且下面配置的所有链接里的`/public`前也要加，即`/your_baseurl/public`。这一项结尾不要有'/'。
 
@@ -104,7 +104,7 @@ kramdown: # 见https://kramdown.gettalong.org/options.html
 permalink: /posts/:categories/:title # 博文目录
 author: fengwei
 timezone: Asia/Shanghai # 解决githubpage显示时间不正确的问题，见https://www.iana.org/time-zones
-future: false # 不发布时间在未来的文章
+future: true # 不发布时间在未来的文章
 # limit_posts: 999 # 限制博文数量
 # encoding: utf-8
 
