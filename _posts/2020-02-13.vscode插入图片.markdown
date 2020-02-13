@@ -51,6 +51,7 @@ Windows / Unix：`Ctrl + Alt + o`
 跳回你的GitHub里面看一下，就会发现仓库下面已经有这个图片了  
 刚刚创建的那个新仓库也可以被使用  
 没必要非得在blog里面用
+
 [谷歌大法好，原文链接](https://blog.csdn.net/xxiaobaib/article/details/92801700)
 
 以后上传就使用本地文件夹，`ctrl+Alt+e`开启查看目录，上传这种都是自动的
