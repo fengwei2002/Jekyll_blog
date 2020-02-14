@@ -2,10 +2,9 @@
 layout: index
 title: KONNG_
 ---
-## Contact
-
 ***
-
+## Contact
+***
 - 地址: Shanxi University-Taiyuan-China
 - 手机: 
   - **+86 18803427582** 
