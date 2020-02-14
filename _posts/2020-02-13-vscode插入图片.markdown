@@ -1,6 +1,6 @@
 ---
 layout: post
-title: VScode搭建github稳定图床
+title: VScode使用PicGo搭建github稳定图床
 tags: [杂项note]
 date: 2020-02-13
 ---
