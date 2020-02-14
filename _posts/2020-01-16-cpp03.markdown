@@ -5,6 +5,7 @@ tags: [cpp+STL]
 date: 2020-01-16 
 ---
 >主要是熟悉作用域和语法
+
 >析构函数和构造函数都没有返回值
 
 类中的一种函数写法
@@ -14,9 +15,11 @@ test func (){
     cout<<“sdf”<<endl;
     test t1(10,20);
     t1.print();
-    return t1;
+    return t1;//在一种构造中调用另一种构造，一般不用
 }
 ```
+
+`int a(10)== int a=10;`
 
 ## 构造函数
 
@@ -105,9 +108,9 @@ int main() {
 
 也有一个默认的无参无内容析构
 
-so析构只有一种写法
+所以析构函数只有一种写法
 
-析构函数的调用顺序，跟构造相反，谁先构造的，谁后析构
+析构函数的调用顺序跟构造相反，谁先构造的，谁后析构
 
 ## 拷贝构造函数
 
@@ -188,22 +191,24 @@ void test 6(){
 ***
 
 ## 深拷贝和浅拷贝
+
 class里面private成员中有指针时，用
-test t(t2);
+`test t(t2);`
 完成值拷贝的过程叫浅拷贝
 
 但释放空间时，两个指针指向同一内存空间
 
-释放一遍后第二次就会发生非法内存访问
+释放一遍后第二次就会发生非法内存访问，浅拷贝就会使程序崩溃  
 
 此时就需要手动开辟一个新的拷贝构造函数，来弄出来一个新的
-空间
-两个对象就每个去析构自己的空间，就不会有非法内存访问
-
+空间  
+两个对象就每个去析构自己的空间，就不会有非法内存访问(这种方法就叫做深拷贝)
 
 ## 构造函数的初始化列表
+
 (常用)  
-当一个类中的成员有另一个类定义的对象，需使用如下初始化方法
+当一个类的成员变量是另一个类定义的对象，需使用如下初始化方法
+
 ```cpp
 #include<iostream>
 using namespace std;
@@ -243,7 +248,9 @@ int main() {
 	return 0;
 }
 ```
+
 `B(A& a1, A& a2, int b) :test1(a1), test2(a2) `
+
 初始化顺序是按照B（）里面的参数顺序从前往后进行的初始化
 与后面`：`的构造函数调用顺序无关,`：`后面叫做初始化列表
 
@@ -256,34 +263,33 @@ int main() {
 * p = new T；T 是任意类型名；P是T*的指针。分配出一片大小为sizeof(T)字节的空间，起始地址赋值给p
 * P = new T[N]; T为类型名，p类型为 T* 的指针，N数组元素个数，返回值为T\*
 * delete 指针， delete []指针//该指针必须指向new出来的数组
+
 c语言中
+
 ```c
-void test1(){
+void ctest(){
     int *p=(int *)malloc (sizeof(int));
     *p=10;
     if (p!=NULL){
         free(p);
         p=NULL;
     }
-    
     int *array_p=(int *)malloc(sizeof((int)*10));
-    
 }
 ```
+
 c++中
 可用：
+
 ```cpp
-       int a(10)==    int a=10;
-void test2(){
+void cpptest(){
     int *p=new int;
     *p=10;
     if (P！=NULL){
         delete p;
         p=NULL;
     }
-    
     char *c=new char;
-    
     int *array_p=new int[10];
     for (int i=0;i<10;i++){
         array_p[i]=i+1;
@@ -298,11 +304,13 @@ void test2(){
 * malloc出来的空间也可以用delete
 
 new的功能更全面  
-当空间是为一个类开的时，new可以用构造函数
+使用`new`初始化一个类的空间时可以用类的构造函数，无参构造不用写括号
+
 ```cpp
 test *tp=new test (10,20);//有参构造 
 test *tp=new test ;//无参构造
 ```
+
 free不能触发一个对象毁灭时的析构
 
 delete可以  
@@ -311,9 +319,11 @@ delete语法：
 
 ## 静态成员变量和静态成员函数
 
-static int a=10；只定义一次a；
+`static int a=10；`只定义一次a  
+`static void test (){},`这个函数只能在本文件中使用  
 
-static void test (){},只能在本文件中使用
+静态成员变量的初始化写法，一定得在类的外面  
+因为这个变量不属于任何一个对象，额外的储存空间
 
 ```cpp
 #include <iostream>
@@ -329,8 +339,6 @@ public:
 private:
 	int a;
 };
-//静态成员变量的初始化写法，一定得在类的外面
-//因为这个变量不属于任何一个对象，额外的储存空间
 int test::b = 100;
 int main() {
 	test a;
@@ -341,14 +349,15 @@ int main() {
 }//102;101      cout从后开始计算，所以是102 101     
 ```
 
-因为在对象存在前，静态成员变量就已经存在
+因为在对象存在前，静态成员变量就已经存在  
 所以访问时也可以直接通过类名访问
 
 ```cpp
 test::b=200；
 ```
 
-若private里面存在，则需要
+若static成员变量属性为private，则使用的get函数也要加static前缀
+
 ```cpp
 class test {
 public:
@@ -363,15 +372,11 @@ test a；
 a.get()=212; 
 test::get()=3251;//也可以
 ```
-只能在类外初始化
 
-用途：n个  BOX  共同高
-
-当一个学生为一个类时
-
-可统计学生个数
-
+用途：n个  BOX  共同高  
+当一个学生为一个类时，可统计学生个数  
 可统计学生总分数
+
 ```cpp
 #include <iostream>
 using namespace std;
@@ -399,7 +404,8 @@ int BOX::high = 10;
 
   有参构造函数和无参构造函数
 
-2.  
+2. 
+
 ```cpp
 class Test{ 
     public:
@@ -421,9 +427,11 @@ class Test{
      }
     说明t1和t2析构函数的执行顺序
 ```
+
 先构造后析构，后构造先析构，所以先执行t2析构
 
 3.   
+
 ```cpp
 void test1() {
 	Test t1(1, 2); 
@@ -431,6 +439,7 @@ void test1() {
       }
      分析test1（）函数中t1 和 t2 构造函数和析构函数调用情景。
 ```
+
 1.调用t1中的有参构造函数
 
 2调用t2 有参构造函数
@@ -438,6 +447,7 @@ void test1() {
 t2析构，t1析构
 
 4. 
+
 ```cpp
  void test2() {
 	Test t1(1, 2);
@@ -445,11 +455,13 @@ t2析构，t1析构
     }
     分析test2（）函数中t1 和 t2 构造函数和析构函数调用情景。
 ```
+
 调用t1对象中的有参构造函数
 调用t2中的赋值操作符函数
 析构t2 析构t1
 
 5.  
+
 ```cpp
 void func(Test t) {
 	cout << "func begin..." << endl;
@@ -463,7 +475,8 @@ void func(Test t) {
 	cout << "test3 end..." << endl;
    }
    分析test3（）函数和 func（）函数中的 构造函数和析构函数调用情景。
-   ```
+```
+
 test 3：
 
 调用t1 构造函数
@@ -477,6 +490,7 @@ fun(t1);
 cout  "test3 end..." 
 
 6.
+
 ```cpp
 Test gg() {  
 		cout << "gg() begin..." << endl;
@@ -490,7 +504,8 @@ Test gg() {
 		cout << "test4 end..." << endl;
 	}
    分析test4（）函数和 gg（）函数中的 构造函数和析构函数调用情景。
-   ```
+```
+
 test4：
 
 调用gg；
@@ -507,6 +522,7 @@ cout << "test4 end..." << endl;
 
 
 7. 
+
 ```cpp
 	Test gg() {  
 		cout << "gg() begin..." << endl;
@@ -521,6 +537,7 @@ cout << "test4 end..." << endl;
  	}
     分析test5（）函数和 gg（）函数中的 构造函数和析构函数调用情景。
 ```
+
 gg：
 
 调用temp构造函数；
@@ -536,6 +553,7 @@ cout << "test5 end..." << endl;
 析构t1；
 
 8. 	
+
 ```cpp
 Test gg() {  
 		cout << "gg() begin..." << endl;
@@ -551,6 +569,7 @@ Test gg() {
 	}
        析test6（）函数和 gg（）函数中的 构造函数和析构函数调用情景。
 ```
+
 * 调用t1无参构造函数；
 * 调用gg中temp有参构造函数
 * return temp
@@ -560,22 +579,28 @@ Test gg() {
 * cout << "test6 end..." << endl;
 * 析构t1；
 
-9. 简述类的默认拷贝构造函数深拷贝和浅拷贝的问题。
+9. 
+
+简述类的默认拷贝构造函数深拷贝和浅拷贝的问题。
 就是拷贝时如果成员中有指针
 
 析构时会释放同一空间两次（浅拷贝）
 
 再开辟一块空间，每个对象析构每个对象的空间（深拷贝）
 
-10. new 、 delete 和 malloc 和free的区别
+10. 
+
+new 、 delete 和 malloc 和free的区别
 
 new delete会调用析构，其他无异
 
-11. static修饰的类成员变量和成员函数的特点。
+11. 
 
-    如何初始化一个static修饰的成员变量。
-    如何使用一个static修饰的成员函数？
-初始化在类的外面： 	
+static修饰的类成员变量和成员函数的特点。  
+如何初始化一个static修饰的成员变量。  
+如何使用一个static修饰的成员函数？  
+初始化在类的外面  
+
 ```cpp
 int 类：：名字=21421；
 类名：：成员函数；
