@@ -1,17 +1,19 @@
 ---
 layout: index
-title: psychonaut
+title: KONNG_
 ---
 ## Contact
 
 ***
 
 - 地址: Shanxi University-Taiyuan-China
-- 手机: **+86 18803427582**
+- 手机: 
+  - **+86 18803427582** 
+  - *(From 9 a.m. to 8 p.m)*
 - 邮箱:
+  - ***psychonaut1f@gmail.com***
   - **2480417969@qq.com**
   - **psychonaut1@foxmail.com**
-  - *psychonaut1f@gmail.com*
 - 微信: **fwei142857**
 - QQ: **2480417969**-*2938256681*
 
@@ -28,3 +30,4 @@ title: psychonaut
 ## Project
 
 >To Be Done  
+[GitHub](https://github.com/fengwei2002)
