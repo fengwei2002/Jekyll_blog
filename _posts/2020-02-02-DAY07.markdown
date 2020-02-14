@@ -1,6 +1,6 @@
 ---
 layout: post
-title: DAY 07 （多态和抽象类）
+title: 07 （多态和抽象类）
 tags: [cpp+STL]
 date: 2020-02-02
 ---
