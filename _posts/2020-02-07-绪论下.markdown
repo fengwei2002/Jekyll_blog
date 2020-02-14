@@ -90,9 +90,6 @@ void bubblesort(int A[];int n){
 
 ### 数组倒置
 
-![截图2](/public\image\数据结构绪论下02.jpg)
-
-
 ```cpp
 void reverse(int *A,int low,int high){
     if(low==high){
