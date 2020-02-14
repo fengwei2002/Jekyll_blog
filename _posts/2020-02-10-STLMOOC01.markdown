@@ -74,9 +74,9 @@ for (int i=0;i<s.lenth();i++){
 
 字符串可以实现+=操作  
 
-### 成员函数`append();`
+### 连接字符串
 
-用来连接字符串
+成员函数`append();`
 
 ```cpp
 string s1("Good"),S2("morning");
@@ -107,6 +107,7 @@ string s1("Hello World"),s2;
 s2=s1.substr(4,5);//下标开始五个字符
 cout<<s2<<endl;
 ```
+
 o wor
 
 ### 交换string
@@ -168,6 +169,7 @@ s1.insert(5,s2);
 //将s2插入s1下标为5的位置
 s1.insert(2,s2,2,3);
 //将s2的下标从2-3插入到s1的2下标处
+```
 
 ### 转`char*`
 
