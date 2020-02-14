@@ -7,6 +7,12 @@ date: 2020-02-09
 
 ## vsxode：markdownlint纠正书写错误  
 
+emmm
+
+刚开始熟悉语法规则时可以使用
+
+到后期就不用了，依据个人喜好找到自己的风格，uninstall后就不用看他报错的波浪线了
+
 Fenced code blocks should be surrounded by blank lines  
 代码块头尾都应该用一个空白行包含起来，达到更加美观的效果
 
