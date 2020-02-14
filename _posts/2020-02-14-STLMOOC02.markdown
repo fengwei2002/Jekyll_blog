@@ -1,6 +1,55 @@
 ---
 layout: post
-title: STL MOOC02
+title: 标准函数库STL
 tags: [cpp+STL]
 date: 2020-02-14
 --- 
+
+## 标准函数库STL一
+
+使用模板的程序设计方法，就不用手写常用的数据结构和算法了
+
+容器，
+
+顺序容器
+vector
+
+deque双向队列
+
+list双向链表，
+
+事先元素知道位置，不支持随机存取
+
+顺序容器的常用函数
+
+关联容器
+
+容器适配器
+
+stack
+
+queue
+
+priority_queue
+
+共有的一些成员函数
+began，
+rbegan
+
+end
+rend
+
+
+
+迭代器，
+
+iterator
+
+
+算法
+
+函数模板
+
+
+
+

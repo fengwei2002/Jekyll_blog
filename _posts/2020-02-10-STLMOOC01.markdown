@@ -1,6 +1,6 @@
 ---
 layout: post
-title: STL MOOC01
+title: string类
 tags: [cpp+STL]
 date: 2020-02-10
 --- 
@@ -141,46 +141,52 @@ s1.find("wei");
 ```cpp
 string s1("fengwei bulihai");
 s1.erase(7);
-//删除下标5及之后的字符
+//删除下标7及之后的字符
 ```
 
-replace
+### 替换string中的字符
+
+成员函数`replace()`
+
+```cpp
+string s1("hello world");;
+s1.replace(2,3,"haha");
+cout<<s1;
+//将s1中下标为2开始的共三个字符换为haha共四个字符
+s1.replace(2,3,"haha",1,2);
+//将s1中下标为2开始的三个字符换为haha中下标为1开始的两个字符
+```
+
+### 在string中插入字符
+
+成员函数`insert()`
+
+```cpp
+string s1("hello world");
+string s2("show index");
+s1.insert(5,s2);
+//将s2插入s1下标为5的位置
+s1.insert(2,s2,2,3);
+//将s2的下标从2-3插入到s1的2下标处
+
+### 转`char*`
+
+使用`c_str`适应传统需求
+![Screenshot_20200214_164800.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureScreenshot_20200214_164800.jpg)
+
+成员函数`data()`
+![Screenshot_20200214_164746.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureScreenshot_20200214_164746.jpg)
+
+### 字符串拷贝函数
+
+成员函数`copy()`
+![Screenshot_20200214_164707.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureScreenshot_20200214_164707.jpg)
 
 
-insert
+### 字符串流处理
 
-c_str适应传统
+![Screenshot_20200214_164623.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureScreenshot_20200214_164623.jpg)
 
+![Screenshot_20200214_164648.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureScreenshot_20200214_164648.jpg)
 
-data
-
-
-字符串流处理
-
-
-stl
-
-## 标准函数库STL一
-
-使用模板的程序设计方法，就不用手写常用的数据结构和算法了
-
-容器，
-顺序容器
-vector
-
-deque双向队列
-
-list双向链表，
-
-事先元素知道位置，不支持随机存取
-
-关联容器
-
-
-迭代器，
-
-算法
-
-
-
-
+![Screenshot_20200214_164718.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureScreenshot_20200214_164718.jpg)
