@@ -213,7 +213,7 @@ page:
   sidebar:
     avatar: # 侧边栏显示的头像
       enable: true
-      img: https://raw.githubusercontent.com/fengwei2002/fengwei2002.github.io/master/public/image/touxiang.webp  # 头像的地址
+      img: /public\image\touxiang.jpg  # 头像的地址
       info: | # 头像背后的信息，<br/>代表换行
         <br/>
         <br/>
