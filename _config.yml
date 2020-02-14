@@ -213,7 +213,7 @@ page:
   sidebar:
     avatar: # 侧边栏显示的头像
       enable: true
-      img: https://raw.githubusercontent.com/fengwei2002/fengwei2002.github.io/master/public/image/touxiang.jpg  # 头像的地址
+      img: https://raw.githubusercontent.com/fengwei2002/fengwei2002.github.io/master/public/image/touxiang.webp  # 头像的地址
       info: | # 头像背后的信息，<br/>代表换行
         <br/>
         <br/>
@@ -353,13 +353,13 @@ page:
         - key: rel
           value: apple-touch-icon-precomposed
         - key: href
-          value: /public/image/touxiang.jpg
+          value: /public/image/touxiang.webp
     - tag: link # 小图标，同上
       var:
         - key: rel
           value: "shortcut icon"
         - key: href
-          value: /public/image/touxiang.jpg
+          value: /public/image/touxiang.webp
     #    - tag: link # 下面是博客的css，有些插件的css是单独在插件里引用的，假如需要自己的css可以仿照去加在后面，无脑cdn加速了
     #      var:
     #        - key: rel

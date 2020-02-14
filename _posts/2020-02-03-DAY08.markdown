@@ -31,7 +31,7 @@ virtual ~shape (){
 
 ## 企业员工信息管理系统
 ***
-[test](/public/image/test.jpg)
+
 
 ## 如何定义一个数组类型和一个数组指针
 ***
