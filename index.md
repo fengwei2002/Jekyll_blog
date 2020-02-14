@@ -1,6 +1,6 @@
 ---
 layout: index
-title: `define _CRT_SECURE_NO_WARNINGS`
+title: define _CRT_SECURE_NO_WARNINGS
 ---
 ***
 ## `Contact`
