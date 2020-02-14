@@ -1,6 +1,6 @@
 ---
 layout: index
-title: 洛神の赋
+title: `define _CRT_SECURE_NO_WARNINGS`
 ---
 ***
 ## `Contact`
