@@ -90,12 +90,23 @@ void bubblesort(int A[];int n){
 
 ### 数组倒置
 
-减而治之
-递归版() 
+![截图2](/public\image\数据结构绪论下02.jpg)
+
+
+```cpp
+void reverse(int *A,int low,int high){
+    if(low==high){
+            return A[low];
+    }
+    int mi = (low+high)>>1;
+    return sum(a,low,mi)+sum(a,mi+1,high);
+}
+```
+递归版
+迭代版
+迭代精简版
 
 ![截图1](/public\image\数据结构绪论下01.jpg)
-
-![截图2](/public\image\数据结构绪论下02.jpg)
 
 ```cpp
 
@@ -133,7 +144,6 @@ hi并不是有效部分，但可以加进去考虑
 
 先构建两个指针，分别为第一个和第二个（先比较一次这两），
 然后用第i个数据和她两作比较，如果大于x2则再与x1比较，这样只需要一次遍历便可找出来两个最大的值
-
 
 ![截图](/public\image\数据结构绪论下04.jpg)
 
