@@ -1,3 +1,4 @@
+
 body {
   background-image: url(//cdn.jsdelivr.net/gh/wu-kan/wu-kan.github.io@b7944209783f1be5ad1faed8694841bf1fb1ee7f/public/image/76122909_p0.webp);
   background-size: auto 100vh;
@@ -16,7 +17,7 @@ body {
       background-color: rgba(255, 255, 255, 0.7);
       box-shadow: 0 0 1rem 1rem rgba(255, 255, 255, 0.7);
       text-shadow: 1px 0 1px #fff, -1px 0 1px #fff, 0 1px 1px #fff, 0 -1px 1px #fff;
-      min-height: 100vh;
+      min-height: 10vh;
     }
 
 @media (min-width: 70em) {
@@ -29,11 +30,11 @@ body {
     max-width: 48rem;
   }
 }
-/* pre {
+pre {
   max-height: 50vh;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0);
-} */
+}
 h1,
 h2,
 h3,
@@ -45,8 +46,8 @@ html,
   font-family: Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;
 }
 .theme-base-07 ::selection {
-  color: #fff;
-  background: #c247a9;/* 选中效果 */
+  color: rgba(255, 255, 255, 0.911);
+  background: #c247a950;/* 选中效果 */
 }
 .wrap {
   background-color: rgba(255, 255, 255, 0.7);
