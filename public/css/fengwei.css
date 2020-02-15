@@ -36,7 +36,7 @@ html,
 .sidebar {
   font-family: Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;
 }
-.theme-base-09 ::selection {
+.theme-base-0d ::selection {
   color: #fff;
   background: #160212;
 }
