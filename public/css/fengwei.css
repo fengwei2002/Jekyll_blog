@@ -31,6 +31,11 @@ body {
   }
 }
 
+.page-title {
+      padding-top: 1.2rem;
+      padding-bottom: 0.5rem;
+    }
+
 pre {
   max-height: 50vh;
   overflow: auto;
@@ -48,7 +53,7 @@ html,
 }
 .theme-base-07 ::selection {
   color: rgba(255, 255, 255, 0.911);
-  background: #c247a9a4;/* 选中效果 */
+  background: #0b0a6385;/* 选中效果 */
 }
 .wrap {
   background-color: rgba(255, 255, 255, 0.7);
