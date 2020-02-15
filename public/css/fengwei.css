@@ -36,9 +36,9 @@ html,
 .sidebar {
   font-family: Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;
 }
-.theme-base-0d ::selection {
+.theme-base-09 ::selection {
   color: #fff;
-  background: #6a9fb5;
+  background: #160212;
 }
 .wrap {
   background-color: rgba(255, 255, 255, 0.7);
