@@ -52,7 +52,7 @@ html,
 .sidebar {
   font-family: Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;
 }
-.theme-base-08 ::selection {
+.theme-base-07 ::selection {
   color: rgb(255, 255, 255);
   background: #1d158d88;/* 选中效果 */
 }
