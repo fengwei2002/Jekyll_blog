@@ -44,7 +44,7 @@ html,
 .sidebar {
   font-family: Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;
 }
-.theme-base-08 ::selection {
+.theme-base-07 ::selection {
   color: #fff;
   background: #160212;
 }
