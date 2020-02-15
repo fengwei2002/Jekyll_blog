@@ -1,23 +1,29 @@
 ---
 layout: post
-title:  blog方法
+title:  blog详细用法
 tags: [杂项note]
 date: 2020-01-21
 ---
 
 
 \-\-\-
+
 layout: post//blog目录  
 title:  \[\]//内容是标题  
 categories: \[ \]//侧面标签分类  
 tags: \[ \]//首页的目录  
 date: 2020-01-21//日期  
+
 \-\-\-
 
-经过思考，我觉得
+用了挺久后发现博文目录有时候会变得复杂，同一个文章也没必要用两个标题项来标记
 
-不想在主页面展示的东西就放在categories里面,那种系统学习完一种东西的时候就放在外面，杂项note之类的就放在你的categories里面吧
+所以觉得下面这种方式最简洁和方便
 
-想在外面直接可以让别人看到，自己方便找的东西就放在tags和_config,yml里面
+- 不想在主页面展示的东西就放在categories里面,那种系统学习完一种东西的时候就放在外面，生活杂记之类的就放在你的副标签categories里面吧
 
-[github支持markdown](https://www.jianshu.com/p/f86e22eaa2f1)
+- 想在外面直接可以让别人看到，自己方便找的东西就放在主标签tags里面，
+
+- 配置文件_config,yml对于目录可添加可不添加，依据个人喜好
+
+[blog支持markdown](https://www.jianshu.com/p/f86e22eaa2f1)
