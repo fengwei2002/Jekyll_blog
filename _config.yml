@@ -207,7 +207,7 @@ post:
 
 page:
   body:
-    theme-base: theme-base-0f # 可选的值08~0f  淡蓝色是0d
+    theme-base: theme-base-0e # 可选的值08~0f  淡蓝色是0d
     layout-reverse: true # 开启后sidebar在右边，反之左边
     sidebar-overlay: true # 开启后正文不随sidebar移动而移动
   sidebar:
