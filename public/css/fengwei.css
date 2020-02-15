@@ -11,6 +11,14 @@ body {
     background-size: 100vw auto;
   }
 }
+
+.container {
+      background-color: rgba(255, 255, 255, 0.7);
+      box-shadow: 0 0 1rem 1rem rgba(255, 255, 255, 0.7);
+      text-shadow: 1px 0 1px #fff, -1px 0 1px #fff, 0 1px 1px #fff, 0 -1px 1px #fff;
+      min-height: 100vh;
+    }
+
 @media (min-width: 70em) {
   .container {
     max-width: 42rem;
@@ -21,6 +29,10 @@ body {
     max-width: 48rem;
   }
 }
+.page-title {
+      padding-top: 2.2rem;
+      padding-bottom: 1rem;
+    }
 pre {
   max-height: 50vh;
   overflow: auto;
@@ -66,7 +78,7 @@ html,
   border-width: 0px;
 }
 #rewardButton {
-  background-color: #ec6149;
+  background-color: #9e0c7e93;
   border-radius: 4px;
   color: #fff;
   font-size: 1rem;
