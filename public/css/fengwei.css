@@ -29,11 +29,11 @@ body {
     max-width: 48rem;
   }
 }
-pre {
+/* pre {
   max-height: 50vh;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0);
-}
+} */
 h1,
 h2,
 h3,
