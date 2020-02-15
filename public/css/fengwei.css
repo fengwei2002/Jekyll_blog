@@ -29,10 +29,6 @@ body {
     max-width: 48rem;
   }
 }
-.page-title {
-      padding-top: 2.2rem;
-      padding-bottom: 1rem;
-    }
 pre {
   max-height: 50vh;
   overflow: auto;
