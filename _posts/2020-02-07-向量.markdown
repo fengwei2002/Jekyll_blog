@@ -4,6 +4,7 @@ title: 第二章：向量
 tags: [数据结构]
 date: 2020-02-15
 ---
+>date:02-15-02-
 
 ## 接口与实现
 
@@ -119,6 +120,153 @@ void Vector<T>::expand{//向量空间不足时扩容
 ![34D26A3AC10EA77D875667FD5EE4CB26.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture34D26A3AC10EA77D875667FD5EE4CB26.jpg)
 
 
-## 无序向量
+## 无序向量常用算法
+
+template<typename T>class vector{}   
+这种方式就可以使数据结构更加方便的被利用   
+
+### 循秩访问  
+
+使用`V.get(r),V.put(r,e)`并不是很方便   
+所以要重载`[ ]`这样就可以便捷的使用访问数组的方式来访问向量中的元素  
+```cpp
+template<typename T>
+T & vector<T>::operator[](Rank r)const{
+    return _elme[r];
+}
+```
+此后对外的`V[r]`即对应于内部的`V._elme[r]`    
+返回值是引用可以做左值或者右值   
+
+### 插入算法 right shift 操作
+```cpp
+template <typename T>
+Rank Vector<T>::insert(Rank r,T const &e){//0(n-r)
+    expand();//maybefull,若有需要则扩容，向量可能已经满载
+    for(int i=_size;i>r;i--){//自后向前
+        _elme[i] = _elme[i-1];//后继元素顺次后移一个单元
+        _elme[r] = e;//置入新元素
+        _size++;//右移完成后，同时更新容量
+        return r;//返回秩
+    }
+}
+```
+
+### 删除算法
+
+区间删除
+```cpp
+template<typename T>//删除区间[lo,hi]0<=lo<=hi<=size
+int vector<T>::remove(Rank lo,Rank hi){//0(n-hi)
+    if(lo==hi) return 0;//出于效率考虑，单独处理退化情况
+    while (hi< _size) _elem[lo++]=_elem[hi++];//[hi,_size]顺次前移hi-lo位,平移一段空间
+    _size=lo; shrink();//更新规模，若有必要则缩容
+    return hi-lo;//返回被删除元素的数目
+}
+```
+
+单元素删除
+
+可以视作区间操作的特例[r]=[r,r+1],所有后缀向前移动  
+数据结构更加关注效率，所以不将区间视为单元素的特例而将单元素视为区间的特例
+```cpp
+template<typename T>//删除向量中秩为r的元素，0<=r<size；
+T <vector>::remove(Rank r){//0(n-r)
+    T e=_elem[r];//备份被删除的元素
+    remove(r,r+1);//调用删除区间的算法
+    return e;//返回被删除的元素
+}
+```
+
+### 查找操作
+
+无序向量需要判等，重载==和!=  
+有序向量比较  
+逆向扫描  
+```cpp
+template<typename T>
+Rank Vector<T>::find(T const &e,Rank lo,Rank hi)const{
+    //在命中多个元素时可返回秩最大者
+    while((lo<hi--)&&e!=_elem[hi]);//逆向查找
+    return hi;//hi<lo意味着失败；否则hi即命中元素的秩
+}
+```
+
+### 唯一化算法
+
+网络搜索环境中会用到这种去重工作  
+```cpp
+template <typename T>//删除重复元素，返回被删除元素数目
+int vector<T>::deduplicate(){//繁琐版+错误版
+    int oldsize = _size;//记录原规模
+    Rank i=1;//从_elem[1]开始
+    while (i<size){//自前向后逐一考察各个元素_elem[i]
+        (find (_elem[i],0,i)<0)?
+         i++//若无雷同则继续向后考查
+        : remove(i);//否则删除雷同者
+    }
+    return oldSize - _size;//向量规模变化量，即删除元素总数
+}
+```
+
+
+
+正确性严格证明
+
+不变性：当前元素v[i]的前缀v[0,i)，各元素彼此互异  
+单调性：
+
+find()和remove()累计耗费线性时间，故总体复杂度为$O(n^2)$  
+可进一步优化：  
+- 依照uniquify()高效版的思路，元素移动次数可降为O(n),但比较次数依然是$O(n^2)$，而且稳定性将被破坏
+- v.sort().uniquify():实现最优$O(log_n)$
+
+
+### 遍历算法
+
+统一分别实施visit操作  
+利用函数指针机制，只读或局部性修改
+```cpp
+template<typename T>
+void Vectorr<T>::traverse(void (*visit)(T&)){
+    for(int i=0;i<_size;i++){
+        visit(_elem[i]);
+    }
+}
+```
+
+利用函数对象机制，可全局性修改  
+```cpp
+template<typename T>
+template<typename VST>
+void Vector<T>::traverse(VST& vist){
+    for(int i =0;i<_size;i++){
+        visit(_elem[i]);
+    }
+}
+
+后一种方法的通用性更强
+
+遍历实例
+
+比如，为统一将向量中所有元素分别加一，
+
+- 实现一个可使单个T类型元素加一的类
+```cpp
+template<typename T>
+struct Increase{
+    virtual void operator()(T& e){
+        e++;
+    }
+}
+template<typename T>
+void Increase(Vector<T>& v){
+    V.traverse(Increase<T>());
+}
+```
+练习：减一，加倍，求和等遍历功能
+
+
+
 
 
