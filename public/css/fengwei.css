@@ -52,12 +52,13 @@ html,
 .sidebar {
   font-family: Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;
 }
-.theme-base-10 ::selection {
+.theme-base-08 ::selection {
   color: rgba(255, 255, 255, 0.911);
   background: #0b0a6385;/* 选中效果 */
 }
-
+/*08*/
 /*09，0a是金黄色*/
+/*10为橙色*/
 /*0b是淡蓝色*/
 /*0c是青绿色*/
 /*0d是淡蓝色*/
