@@ -207,7 +207,7 @@ post:
 
 page:
   body:
-    theme-base: theme-base-0a # 可选的值08~0f  淡蓝色是0d
+    theme-base: theme-base-0f # 可选的值08~0f  淡蓝色是0d
     layout-reverse: true # 开启后sidebar在右边，反之左边
     sidebar-overlay: true # 开启后正文不随sidebar移动而移动
   sidebar:
@@ -275,7 +275,7 @@ page:
       alert: <i class="fas fa-edit fa-fw"></i>
     run_time:
       enable: true
-      start_time: "01/14/2020 21:03:55" # 这是我第一篇博客的时间
+      start_time: "01/20/2020 21:03:55" # 这是我第一篇博客的时间
       alert: <i class="fas fa-cog fa-spin fa-fw"></i>
       day: 天
       hour: 时
