@@ -46,7 +46,7 @@ html,
 }
 .theme-base-07 ::selection {
   color: #fff;
-  background: #160212;
+  background: #c247a9;/* 选中效果 */
 }
 .wrap {
   background-color: rgba(255, 255, 255, 0.7);
