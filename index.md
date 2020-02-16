@@ -16,7 +16,7 @@ title: psychonaut1
 - 网易云:**psychonaut1**
 - 博客链接:
   - *<https://fengwei2002.github.io/>*
-  - **<http://feng-w.cn/>**
+  - **<https://feng-w.cn/>**
 ## Education
 >山西大学
 ## `Project`
