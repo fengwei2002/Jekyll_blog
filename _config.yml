@@ -247,7 +247,7 @@ page:
         href: /comments
       - title: '<i class="fas fa-tags fa-fw"></i> 标签'
         href: /tags
-      - title: '<i class="fas fa-archive fa-fw"></i> 归档'
+      - title: '<i class="fas fa-archive fa-fw"></i> 存档'
         href: /archive
     simple_jekyll_search:
       enable: true

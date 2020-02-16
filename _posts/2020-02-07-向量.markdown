@@ -4,7 +4,7 @@ title: 第二章：向量
 tags: [数据结构]
 date: 2020-02-15
 ---
->date:02-15-02-
+~~date:02-15 02-16~~
 
 ## 接口与实现
 
@@ -222,7 +222,7 @@ find()和remove()累计耗费线性时间，故总体复杂度为$O(n^2)$
 - v.sort().uniquify():实现最优$O(log_n)$
 
 
-### 遍历算法
+### 遍历算法 
 
 统一分别实施visit操作  
 利用函数指针机制，只读或局部性修改
@@ -266,7 +266,89 @@ void Increase(Vector<T>& v){
 ```
 练习：减一，加倍，求和等遍历功能
 
+## 有序向量
+
+要实现比较操作  
+任何一堆相邻元素都顺序  
+因此，相邻逆序对数，可用以度量向量的逆序程度
+```cpp
+for(int i=1;i<size;i++){
+    n+=(_elem[i-1] >_elem[i]);
+}
+ return n;//当且仅当n=0；
+```
+
+无序向量转换为有序向量后许多算法就可以进行大幅度的提升
 
 
+### 唯一化(低效版)
 
+低效算法唯一性，每一区间都保留单个元素即可
+```cpp
+template<typename T> int vector<T>::uniquify(){
+    int oldsize = _size;int i = 0;
+    while(i<_size-1)
+    (_elem[i]==_elem[i+1])?remove(i+1):i++;
+    //若相同则删除后者，否则转移至后一个元素
+    return oldsize -_size;
+}
+```
+其复杂度：  
+因为要调用remove操作，最坏情况每次都要调用remove操作$O(n^2)$  
+和无序向量复杂度一样，所以不推荐
+
+
+### 唯一化(高效版)
+
+同一元素可作为被删除元素的后继多次前移，尝试将区间一次删除  
+一直遍历找到与i不同的元素j，然后将j移动到紧邻i的右侧那个位置，无形中将重复元素忽略
+```cpp
+template <typename T> int vector<T>::uniquify(){
+    Rank i=0,j=0;//各对互异相邻元素的秩
+    while(++j<_size>)//逐一扫描，直至末元素
+    //跳过雷同者；发现不同元素时，向前移至紧邻前者右侧
+    if(_elem[i]!=_elem[j]) _elem[++i]=_elem[j];
+    _size = ++i;shrink();//截取尾部多余元素
+    return j-i;//向量规模变化量，被删除元素总数
+}//注意：通过remove(lo,hi)批量删除，依然不能达到高效率
+```
+复杂度为$O(n)$只有一次比对操作
+
+### 有序向量:二分查找算法
+
+统一接口
+```cpp
+template <typename T>//查找算法统一接口，0<=lo<hi<=_size
+Rank vector<T>::search(T const &e,Rank lo,Rank hi) const{
+    return (rand()%2)?//按照各50%的概率随机选用 0 1
+    binsearch(_elem,e,lo,hi)://二分查找算法
+    fibsearch(_elem,e,lo,hi);//finbonacci查找算法
+}
+```
+如何处理特殊情况也需要细致约定  
+- V.insert(1+V.search(e),e)，保持了有序性和数值区间的稳定性
+- search算法返回值是不大于目标的最后一个元素，秩
+- 若`负无穷<e<V[lo]` 则返回lo-1
+- 若`V[hi-1]<e<正无穷`则返回，hi-1
+
+原理：用轴点将区间分为三个部分  
+小于转向左侧区间，大于转向右侧区间，等于median则直接返回；  
+不断的缩减问题的规模  
+
+版本A实现
+```cpp
+template<typename T>//在有序向量区间[lo,hi)内查找元素
+static Rank binsearch(T* A,T const& e,Rank lo,Rank hi){
+    while(lo<hi){//每步迭代可能要做两次比较判断，有三个分支
+        Rank mi =(lo+hi)>>1;//以中点为轴点
+        if (e<A[mi]) hi=mi; //深入前半段继续查找，右移一位等于除以2
+        else if (A[mi]<e) lo = mi +1;//深入后半段
+        else return mi;//在mi处命中
+    })
+    return -1; //查找失败
+}
+
+实例:  
+S.search(8,0,7);
+查找长度
 
