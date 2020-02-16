@@ -353,24 +353,82 @@ static Rank binsearch(T* A,T const& e,Rank lo,Rank hi){
 }
 ```
 
-`S.search(8,0,7);`复杂度为$O(log_n)$  
+`S.search(8,0,7);`复杂度为$O(log_n)$    
 大大优于顺序查找  
 
-fibsearch
+### fibsearch(待修改补充)
 
-binsearch比较次数不等，递归深度相等，左侧成本更低
+binsearch比较次数不等，递归深度相等，左侧成本更低  
 算法实现
 ```cpp
 template<typename T>
 static Rank fibsearch(T* A,T const &e,Rank lo,Rank hi){
     Fib fib(hi-li);
-    while(lo<hi){
+    while(lo<hi){//合法区间
         while(hi-lo<fib.get()) fib.prev();
-
+//通过向前顺序查找，确定形如Fib(k)-1的轴点
         Rank mi = lo +fib.get()-1;
+        //按黄金比例分割，相比二分查找优化一点点
         if (e<A[mi]) hi=mi;
         else if(e>A[mi]) lo = mi +1;
         else  return mi;
     }
     return -1;
 }
+```
+### 二分查找(稳定版)
+
+无论向左还是向右，每次迭代只有一次关键码比较   
+所有分支只有两个分支`<`或者`>=`  
+只有当元素数目`hi-lo=1`时，才会判断是否命中  
+版本B
+```cpp
+template<typename T> static Rank binsearch(T* A,T const& e,Rank lo,Rank hi){
+    while (hi-lo>1){
+        Rank mi = (lo+hi)>>1;//经过比较后确定深入
+        (A[mi]>e)?hi=mi:lo=mi;
+    }
+    return (e==A[lo])?lo:-1;
+}
+```
+这种算法整体性能更加稳定 
+
+### 遵守语义约定的完整版本
+
+都未严格遵守search()接口语义约定，返回不大于e的最后一个元素  
+版本c
+```cpp
+template<typename T>static Rank binsearch(T* A,T const& e,Rank lo,Rank hi){
+    while(hi>lo){ 
+        Rank mi=(l0+hi)>>1;
+        (A[mi]>e)? hi=mi: lo=mi+1; 
+    }//前提是有序向量
+    return --lo;
+}
+```
+正确与否？:  严格遵守[0,lo)<=e<[hi,n]
+
+### 有序向量的插值查找
+
+原理与算法
+
+(插值估算)
+假设：已知有序向量中各个元素随机分布的规律  
+比如：均匀且独立的分布 ，发现元素大体按照线性增长  
+所以有
+$$\frac{秩}{秩} =\frac{元素的值}{元素的值}$$
+因此，通过猜测轴点mi，可以极大的提高收敛速度  
+按照总量估计位置，和翻英语字典一样，a在前面找，z在后面找  
+
+最坏情况为$O(n)$，有时候很快，最好情况$O(1)$
+平均而言:每经过一次比较，n缩减至  $\sqrt[2]{n}$
+
+
+## 起泡排序
+
+## 归并排序
+
+
+
+
+
