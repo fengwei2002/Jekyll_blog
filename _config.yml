@@ -244,7 +244,7 @@ page:
         href: /
       - title: '<i class="fab fa-readme fa-fw"></i> 关于'
         href: /about
-      - title: '<i class="fas fa-comments fa-fw"></i> 留言'
+      - title: '<i class="fas fa-comments fa-fw"></i> 评论'
         href: /comments
       - title: '<i class="fas fa-tags fa-fw"></i> 标签'
         href: /tags
