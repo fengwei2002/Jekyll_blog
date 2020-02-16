@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 02(面向对象编程，类)
+title: cpp02(面向对象编程，类)
 tags: [cpp+STL]
 date: 2020-01-15 
 ---

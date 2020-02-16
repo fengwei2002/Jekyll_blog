@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 06（继承）
+title: cpp06(继承)
 tags: [cpp+STL]
 date: 2020-01-31
 ---

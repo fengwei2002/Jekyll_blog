@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 01(c->cpp)
+title: cpp01(c->cpp)
 tags: [cpp+STL]
 date: 2020-01-14 01:29:56
 ---
