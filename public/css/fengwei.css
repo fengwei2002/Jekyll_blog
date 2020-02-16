@@ -9,7 +9,7 @@ body {
 
 @media (min-aspect-ratio: 2400/1850) {
   body {
-    background-image: url(https://raw.githubusercontent.com/fengwei2002/picture/master/test.webp);
+    background-image: url(https://raw.githubusercontent.com/fengwei2002/picture/master/001.jpg);
     background-size: 100vw auto;
   }
 }
