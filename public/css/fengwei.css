@@ -31,17 +31,18 @@ body {
     max-width: 48rem;
   }
 }
-
 .page-title {
       padding-top: 1.2rem;
       padding-bottom: 0.5rem;
     }
 
+/* 
 pre {
   max-height: 50vh;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0);
-}
+} */
+
 h1,
 h2,
 h3,
