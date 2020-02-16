@@ -145,6 +145,7 @@ page404:
         - key: homePageName
           value: 回到我的主页
 
+
 archive:
   posts_count:
     enable: true
@@ -166,29 +167,29 @@ archive:
   #       - key: zIndex
   #         value: "-1"
 
-comments:
-  valine: true # 需要在script中引入
-  script:
-    - var:
-        - key: src
-          value: //cdn.jsdelivr.net/npm/valine # valine
-        - key: defer # 在页面加载之后执行
-          value: defer
-        - key: onload
-          value: | # 配置项的介绍见https://valine.js.org/configuration.html
-            new Valine({
-              "el": ".v",
-              "appId": "9hABRddSuEkTgqLrt1VSK5B1-gzGzoHsz",
-              "appKey": "NJ7RwmgrxsF7KDzlqU7YewlL",
-              "notify": "true",
-              "verify": "true",
-              "avatar": "identicon",
-              "placeholder": "在这里评论吧！",
-              "visitor": true,
-              "highlight": true,
-              "avatarForce": false,
-              "recordIP": true
-            })
+  # comments:
+  #valine: true # 需要在script中引入
+  # script:
+  #   - var:
+  #       - key: src
+  #         value: //cdn.jsdelivr.net/npm/valine # valine
+  #       - key: defer # 在页面加载之后执行
+  #         value: defer
+  #       - key: onload
+  #         value: | # 配置项的介绍见https://valine.js.org/configuration.html
+  #           new Valine({
+  #             "el": ".v",
+  #             "appId": "9hABRddSuEkTgqLrt1VSK5B1-gzGzoHsz",
+  #             "appKey": "NJ7RwmgrxsF7KDzlqU7YewlL",
+  #             "notify": "true",
+  #             "verify": "true",
+  #             "avatar": "identicon",
+  #             "placeholder": "在这里评论吧！",
+  #             "visitor": true,
+  #             "highlight": true,
+  #             "avatarForce": false,
+  #             "recordIP": true
+  #           })
 post:
   meta:
     enable: true
