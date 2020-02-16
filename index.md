@@ -17,8 +17,7 @@ title: psychonaut1
 - 博客链接:
   - *<https://fengwei2002.github.io/>*
   - **<https://feng-w.cn/>**
-## Education
->山西大学
+
 ## `Project`
 >To Be Done  
 [MyGitHub](https://github.com/fengwei2002)
