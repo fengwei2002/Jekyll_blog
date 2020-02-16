@@ -317,6 +317,7 @@ template <typename T> int vector<T>::uniquify(){
 ### 有序向量:二分查找算法
 
 统一接口
+
 ```cpp
 template <typename T>//查找算法统一接口，0<=lo<hi<=_size
 Rank vector<T>::search(T const &e,Rank lo,Rank hi) const{
@@ -325,7 +326,9 @@ Rank vector<T>::search(T const &e,Rank lo,Rank hi) const{
     fibsearch(_elem,e,lo,hi);//finbonacci查找算法
 }
 ```
-如何处理特殊情况也需要细致约定  
+
+如何处理特殊情况也需要细致约定 
+
 - V.insert(1+V.search(e),e)，保持了有序性和数值区间的稳定性
 - search算法返回值是不大于目标的最后一个元素，秩
 - 若`负无穷<e<V[lo]` 则返回lo-1
@@ -336,6 +339,7 @@ Rank vector<T>::search(T const &e,Rank lo,Rank hi) const{
 不断的缩减问题的规模  
 
 版本A实现
+
 ```cpp
 template<typename T>//在有序向量区间[lo,hi)内查找元素
 static Rank binsearch(T* A,T const& e,Rank lo,Rank hi){
@@ -347,8 +351,26 @@ static Rank binsearch(T* A,T const& e,Rank lo,Rank hi){
     })
     return -1; //查找失败
 }
+```
 
-实例:  
-S.search(8,0,7);
-查找长度
+`S.search(8,0,7);`复杂度为$O(log_n)$  
+大大优于顺序查找  
 
+fibsearch
+
+binsearch比较次数不等，递归深度相等，左侧成本更低
+算法实现
+```cpp
+template<typename T>
+static Rank fibsearch(T* A,T const &e,Rank lo,Rank hi){
+    Fib fib(hi-li);
+    while(lo<hi){
+        while(hi-lo<fib.get()) fib.prev();
+
+        Rank mi = lo +fib.get()-1;
+        if (e<A[mi]) hi=mi;
+        else if(e>A[mi]) lo = mi +1;
+        else  return mi;
+    }
+    return -1;
+}
