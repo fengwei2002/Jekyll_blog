@@ -1,7 +1,7 @@
 ---
 layout: post
 title: markdown数学公式
-categories: [杂项note]
+tags: [杂项note]
 date: 2020-02-07
 ---
 ## 添加数学公式

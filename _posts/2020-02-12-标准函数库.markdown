@@ -59,7 +59,11 @@ date: 2020-02-17
 - pop_back: 删除容器末尾的元素
 - earse: 删除迭代器所指向的元素(迭代器可能失效),或删除一个区间，返回被删除元素后面的那个元素的迭代器
 
+```cpp
+vector<int> v;
+vector<int>::iterator pBegan = v.began();
 
+for_each(v.bedan());
 
 
 
