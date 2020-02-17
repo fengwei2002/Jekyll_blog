@@ -5,15 +5,11 @@ tags: 杂项note
 
 ---
 
-<iframe frameborder="0" border="1" 
-            marginwidth="0" marginheight="0"
-            width="100%" height="450" 
-            src="//music.163.com/outchain/player?type=2&amp;id=2175282&amp;auto=1&amp;height=80">
-    </iframe>
-————————————————
-版权声明：本文为CSDN博主「weixin_七小七」的原创文章，遵循 CC 4.0 BY-SA 版权协议，
-原文链接：https://blog.csdn.net/weixin_39175602/article/details/78576378
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=553795744&auto=0&height=66"></iframe>
+
 TBD.
 [评论系统](https://valine.js.org/)
 ![20200216153629.png](https://raw.githubusercontent.com/fengwei2002/picture/master/picture20200216153629.png)
 ![20200216153723.png](https://raw.githubusercontent.com/fengwei2002/picture/master/picture20200216153723.png)
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=553795744&auto=0&height=66"></iframe>
