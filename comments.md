@@ -1,10 +1,8 @@
 ---
 layout: comments
-title: 评论
+
 ---
-
-## ~~所爱隔山海 山海皆可平~~
-
+title: 评论
 >Comments are closed. 2020-02-16  23:12
 
 >If you have any questions or want to appreciate me, please contact my qq or WeChat
