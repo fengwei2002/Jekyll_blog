@@ -7,9 +7,9 @@ date: 2020-02-17
 
 >使用侧面目录栏查找更方便哦~
 ***
-STL基本语法
+**STL基本语法**
 
-基础类型容器
+创建基础类型容器
 ```cpp
 void print_vector(int v){
     cout<<v;
@@ -22,7 +22,7 @@ vector<int>::iterator pEnd = v.end();//迭代器
 for_each(pBegan,pEnd,print_vector);//算法
 ```
 
-对象容器
+创建对象容器
 ```cpp
 vector<person> v;
 person p1(10.20);
@@ -55,7 +55,7 @@ for(vector<person>::iterator it=v.began;it!=v.end();it++){
 
 
 
-## 顺序容器
+## **顺序容器**
 
 容器并非排序的，插入位置与元素的值无关
 
@@ -65,7 +65,7 @@ for(vector<person>::iterator it=v.began;it!=v.end();it++){
 
 
 ***
-### vector
+### **vector**
 
 头文件<vector>  
 >n. 矢量；带菌者；航线  vt. 用无线电导航  向量
@@ -183,7 +183,7 @@ clear();//删除容器中所有元素
 
 
 ***
-### deque 
+### **deque** 
 
 头文件<deque>  "double-ended-queue"
 >n. 双端队列；双队列
@@ -279,7 +279,7 @@ erase(pos);//删除 pos 位置的数据，返回下一个数据的位置。
 
 
 ***
-### list双向链表，
+### **list双向链表**
 
 头文件<list>
 
