@@ -1,19 +1,17 @@
 ---
 layout: post
-title:  blog详细用法
+title:  blog模板
 tags: [杂项note]
 date: 2020-01-21
 ---
 
 
 \-\-\-
-
-layout: post//blog目录  //这行不写也行  
-title:  \[\]//内容是标题  
-categories: \[ \]//侧面目录分类  
-tags: \[ \]//首页的目录  
-date: 2020-01-21//日期为可选项目，不写则从文件名自动读取  
-
+layout: post   
+title:     
+background_music: <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="//music.163.com/outchain/player?type=2&id=(------)&auto=1&height=66"></iframe>    
+tags:     
+categories:    
 \-\-\-
 
 用了挺久后发现博文目录有时候会变得复杂，同一个文章也没必要用两个标题项来标记
