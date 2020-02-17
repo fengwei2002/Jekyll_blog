@@ -7,6 +7,36 @@ date: 2020-02-17
 
 >使用侧面目录栏查找更方便哦~
 
+STL基本语法
+
+基础类型容器
+```cpp
+void print_vector(int v){
+    cout<<v;
+}
+vector<int> v;//容器
+//vector<int>::iterator迭代器类型
+vector<int>::iterator pBegan = v.began();
+vector<int>::iterator pEnd = v.end();//迭代器
+//遍历
+for_each(pBegan,pEnd,print_vector);//算法
+```
+
+对象容器
+```cpp
+vector<person> v;
+person p1(10.20);
+person p2(30,40);
+person p3(50,60);
+v.push_back(p1);
+v.push_back(p2);
+v.push_back(p3);
+//遍历
+for(vector<person>::iterator it=v.began;it!=v.end();it++){
+    cout<<(*it).age;//尖括号放什么取星取出来就是什么
+}
+```
+
 # 容器
 ***
 
@@ -58,13 +88,6 @@ date: 2020-02-17
 - push_back: 在容器末尾增加新的元素
 - pop_back: 删除容器末尾的元素
 - earse: 删除迭代器所指向的元素(迭代器可能失效),或删除一个区间，返回被删除元素后面的那个元素的迭代器
-
-```cpp
-vector<int> v;
-vector<int>::iterator pBegan = v.began();
-
-for_each(v.bedan());
-
 
 
 
