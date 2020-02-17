@@ -1,6 +1,6 @@
 ---
 layout: tags
-title: 标签
+title: 目录
 sidebar_open: true
 ---
 可使用按`Ctrl+F`进行搜索博文
