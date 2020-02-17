@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  网页游戏
-tags: [杂项note]
+categories: [杂项note]
 date: 2020-01-21
 ---
 [网页版贪吃蛇](http://slither.io)
