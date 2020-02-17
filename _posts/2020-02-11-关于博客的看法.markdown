@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 关于记录blog的看法
-tags: [杂项note]
+categories: [杂项note]
 date: 2020-02-11
 ---
 

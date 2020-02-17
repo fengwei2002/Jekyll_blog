@@ -1,6 +1,6 @@
 ---
 title: 基于Jekyll搭建个人博客
-tags: 杂项note
+categories: [杂项note]
 ---
 
 
