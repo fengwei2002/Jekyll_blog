@@ -17,11 +17,13 @@ sidebar_open: true
 ## Blog完善历程
 
 ***
-## 2020-02-16
 
-- [ ] blog评论模块崩掉，删除相关功能，
-- [ ] 添加live2d自定义插件
+## 2020-02-17
+
+- [x] blog移除评论相关功能，
+- [ ] live2d自定义插件
 - [ ] 添加赞赏功能
+- [x] [添加网易云模块](https://feng-w.cn/posts/%E5%9F%BA%E4%BA%8E-Jekyll-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%B9%8B%E6%97%85)
 
 ## 2020-02-14
 
