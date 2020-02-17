@@ -190,21 +190,34 @@ archive:
   #             "avatarForce": false,
   #             "recordIP": true
   #           })
+
 post:
-  meta:
+  date:
     enable: true
-    date: true
-    wordcount:
-      enable: true
-      unit: 字
-    readtime:
-      enable: true
-      unit: 分
-      divided_by: 300
-    # visitor: # 需要引入并开启valine的visitor选项使之开始计数; 可能会和busuanzi统计的有出入
-    #   enable: true
-    #   unit: 次
-    copyright: '<i class="fab fa-creative-commons"></i> <a rel="license" href="//creativecommons.org/licenses/by-sa/4.0/deed.zh">BY-SA 4.0</a>(如若转载，请注明出处)'
+    alert: <i class="fas fa-calendar-day"></i>
+  wordcount:
+    enable: true
+    alert: <i class="fas fa-file-word"></i>
+    unit: 字
+  readtime:
+    enable: true
+    alert: <i class="fas fa-book-open"></i>
+    unit: 分
+    divided_by: 300
+  # visitor: # 需要引入并开启valine的visitor选项使之开始计数; 可能会和busuanzi统计的有出入
+  #   enable: true
+  #   alert: <i class="far fa-eye"></i>
+  #   unit: 次
+  tags:
+    enable: true
+    alert: <i class="fas fa-tag"></i>
+  copyright: |
+    <br/>
+    <i class="fab fa-creative-commons"></i>
+    <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh">BY-SA 4.0</a>（除特别声明或转载文章外）
+    <br/>
+    <i class="fas fa-coffee"></i>
+    <a href="/merger/">如果这篇博客帮助到你，可以请我喝一杯咖啡~</a>
 
 page:
   body:
