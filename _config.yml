@@ -91,7 +91,7 @@
 
 # 以下四个配置项为空时jekyll-github-metadata会帮你生成
 title: fengWei
-description: '<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=553795744&auto=0&height=66"></iframe>' # 不知道怎么写介绍
+description: '<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=52 src="//music.163.com/outchain/player?type=2&id=553795744&auto=0&height=32"></iframe>' # 不知道怎么写介绍
 url: https://fengwei2002.github.io #feng-w.cn
 # baseurl: '' # 假如你的博客是建在某个目录下的，请在这里加上目录名，并且下面配置的所有链接里的`/public`前也要加，即`/your_baseurl/public`。这一项结尾不要有'/'。
 
