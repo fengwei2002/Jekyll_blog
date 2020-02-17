@@ -1,6 +1,6 @@
 ---
 layout: post
-title: STL01(模板函数.模板类)
+title: cpp08(模板函数.模板类)
 tags: [cpp+STL]
 date: 2020-02-10
 ---
