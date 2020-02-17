@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  blog模板
-categories: [杂项note]
+tags: [模板]
 date: 2020-01-21
 ---
 
