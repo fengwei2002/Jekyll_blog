@@ -2,7 +2,7 @@
 layout: post
 title: cpp07(多态和抽象类)
 tags: [cpp+STL]
-date: 2020-02-02
+date: 2020-02-12 01:32:56
 ---
 
 ## 多态的原理

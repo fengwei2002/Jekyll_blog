@@ -2,7 +2,7 @@
 layout: post
 title: cpp10(文件读写)
 tags: [cpp+STL]
-date: 2020-02-16
+date: 2020-02-12 01:35:57
 ---
 
 - C++输入输出包含以下三个方面的内容：
