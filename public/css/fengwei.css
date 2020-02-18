@@ -4,15 +4,19 @@ body {
   background-size: 100vw auto;
   background-position: center top;
   background-repeat: no-repeat;
-  background-attachment: scroll;
+  background-attachment: fixed;
   /* background-attachment: fixed; */
 }
+
 /* //cdn.jsdelivr.net/gh/wu-kan/wu-kan.github.io@b7944209783f1be5ad1faed8694841bf1fb1ee7f/public/image/76122909_p0.webp */
 
 @media (min-aspect-ratio: 2400/1850) {
   body {
     background-image: url(https://raw.githubusercontent.com/fengwei2002/picture/master/test.png);
     background-size: 100vw auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 }
 
