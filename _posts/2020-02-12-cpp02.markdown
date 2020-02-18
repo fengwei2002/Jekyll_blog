@@ -224,15 +224,15 @@ using namespace std;
 double get_area(int r) {
 	return 3.14 * r * r;
 }
-double get_lenth(int r) {
+double get_length(int r) {
 	return 2 * 3.14 * r;
 }
 int main() {
 	double r = 10;
 	double area = 0;
-	double lenth = 0;
+	double length = 0;
 	cout <<"面积是"<< (area = get_area(r) )<< endl;
-	cout<<"周长是" << (lenth = get_lenth(r)) << endl;
+	cout<<"周长是" << (length = get_length(r)) << endl;
 	return 0;
 }
 ```
@@ -253,7 +253,7 @@ public:
 	double get_area() {
 		return 3.14 * m_r * m_r;
 	}
-	double get_lenth() {
+	double get_length() {
 		return 2 * 3.14 * m_r;
 	}
 	double  getm_r() {
@@ -269,7 +269,7 @@ int main() {
 	c.set(10);
 	cout <<"半径是"<< c.getm_r() << endl;
 	cout <<"面积是"<< (c.get_area() )<< endl;
-	cout<<"周长是" << (c.get_lenth()) << endl;
+	cout<<"周长是" << (c.get_length()) << endl;
 	return 0;
 }
 ```

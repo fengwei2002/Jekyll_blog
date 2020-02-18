@@ -354,12 +354,23 @@ swap(lst);//将 lst 与本身的元素互换。
 front();//返回第一个元素。 
 back();//返回最后一个元素。
 ```
-> **list** **反转排列排序**
+> **list** **反转排列，排序**
 
 ```cpp
 reverse();//反转链表，比如 lst 包含 1,3,5 元素，运行此方法后，lst 就包含 5,3,1 元素。 
-sort(); //list 排序
+sort(); //list 排序，这个是list的成员函数，而不是外部算法，默认从小到大
+//如何对对象排序？
+list<int> my_list;
+bool compare(int v1,int v2){
+    return v1>v2;
+}
+my_list.sort(compare);
+//从大到小排对象
 ```
+
+算法sort只支持可以随机访问的容器，list不支持随机访问。+5+3是错的，只能++
+
+
 链表和数组有什么区别？
 
 1. 数组必须事先定义固定的长度（元素个数），不能适应数据动态地增减的情况。当数据
@@ -439,6 +450,44 @@ lower_bound(keyElem);//返回第一个 key>=keyElem 元素的迭代器。
 upper_bound(keyElem);//返回第一个 key>keyElem 元素的迭代器。 
 equal_range(keyElem);//返回容器中 key 与 keyElem 相等的上下限的两个迭代器。
 ```
+set从大到小排序
+
+```cpp
+//仿函数
+class my_compare{
+    public:
+    bool operator()(person& v1,person& v2){
+        return v1.age >v2.age;
+    }
+}
+set<int,my_compare> s1;//自动进行排序，默认从小到大,
+//多传入一个伪函数参数修改为从大到小排序
+s1.insert(p1);
+s1.insert(p2);
+s1.insert(p3);
+//这样find时候也是按照age进行find的，不理对象中的另一个成员id了
+```
+
+## 对组
+
+```cpp
+void test01(){
+    构造方法
+    pair<string,int> pair1;
+    cout<<pair1.first<<" "<<pair.second<<endl;
+
+    pair<string,int> pair2 = make_pair("aa",10);
+
+    pair<string,int> pair3 = pair2;
+}
+```
+
+
+
+
+
+
+
 ## **map/multimap**
 
 头文件<map>
@@ -486,11 +535,11 @@ erase(keyElem);//删除容器中 key 为 keyElem 的对组。
 ```cpp
 find(key);//查找键 key 是否存在,若存在，返回该键的元素的迭代器；/若不存在，返回 map.end(); 
 count(keyElem);//返回容器中 key 为 keyElem 的对组个数。对 map 来说，要么是 0，要么是 1。对 multimap 来说，值可能大于 1。 
+
 lower_bound(keyElem);//返回第一个 key<=keyElem 元素的迭代器。 
 upper_bound(keyElem);//返回第一个 key>keyElem 元素的迭代器。 
 equal_range(keyElem);//返回容器中 key 与 keyElem 相等的上下限的两个迭代器。
 ```
-
 
 
 
@@ -592,7 +641,11 @@ size();//返回队列的大小
 迭代器实际上是一个类，这个类封装一个指针  
 
 定义一个容器类迭代器的方法可以是
-
+(for循环遍历时常用)
+```cpp
+(set<person,my_compare>::iterator it=sp.began();it!=sp.end();it++)
+(*it)
+```
 `容器类名::iterator 变量名`
 
 >n. 迭代器；迭代程序
