@@ -1,6 +1,9 @@
 ---
 layout: comments
 ---
+
+Let's make a happy music for the guests ~
+
 <iframe frameborder="0" border="1" 
             marginwidth="0" marginheight="0"
             width="100%" height="450" 
