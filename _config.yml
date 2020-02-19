@@ -228,19 +228,15 @@ page:
     - title: psychonaut1@foxmail.com 
       href: mailto:psychonaut1@foxmail.com
       class: "fas fa-envelope"
-    </a>
     - title: github
       href: //github.com/fengwei2002?tab=repositories
       class: "fab fa-github"
-    </a>
     - title: zhihu
       href: //www.zhihu.com/people/e2df61ca5f33cb1e72e27be2cefd18ba
       class: "fab fa-zhihu"
-    </a>
     - title: codeforce # codeforces
       href: //codeforces.com/profile/KONNG
       class: "fas fa-chart-bar fw"
-    </a>
     - title: fwei142857 # weixin
       class: "fab fa-weixin"
     nav:
