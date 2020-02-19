@@ -54,3 +54,15 @@ id从网易云网址即可获得
 - auto：0/1
 - 0表示打开网页的时候不自动播放；
 - 1表示打开网页的时候自动播放。
+
+## 兼容emoji表情
+
+:ship:
+
+[https://aerolith.ink/2018/01/20/Emoji/](https://aerolith.ink/2018/01/20/Emoji/)
+
+
+
+
+
+
