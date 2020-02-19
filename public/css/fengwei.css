@@ -59,7 +59,8 @@ h6,
 html,
 
 .sidebar {
-  font-family: “Arial”,”Microsoft YaHei”,”黑体”,”宋体”,sans-serif;
+  /*font-family: “Arial”,”Microsoft YaHei”,”黑体”,”宋体”,sans-serif;*/
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   /* font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;*/
   /* font-family: Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;*/
 } 
