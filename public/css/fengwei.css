@@ -60,7 +60,7 @@ html,
 
 .sidebar {
   /*font-family: “Arial”,”Microsoft YaHei”,”黑体”,”宋体”,sans-serif;小米*/
-  font-family:“Arial”, Menlo, Monaco, "Source Code Pro", Microsoft JhengHei, monospace;
+  font-family:“Arial”,"Source Code Pro",YouYuan, monospace;
   /* font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;*/
   /* font-family: Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;*/
 } 
