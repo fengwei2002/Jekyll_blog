@@ -18,7 +18,7 @@ title: psychonaut1
   - *<https://fengwei2002.github.io/>*
   - **<https://feng-w.cn/>**
 
-## Education
+## `Education`
 >Shanxi University 2019 software Engineering department studying
 
 ## `Project`
