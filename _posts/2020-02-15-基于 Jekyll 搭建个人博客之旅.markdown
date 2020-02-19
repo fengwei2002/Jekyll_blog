@@ -9,18 +9,18 @@ tags: [杂项note]
 
 ## 字体功能：
 
-https://segmentfault.com/a/1190000006110417
+[https://segmentfault.com/a/1190000006110417](https://segmentfault.com/a/1190000006110417)
 
-https://linkthis.me/2018/01/20/the-font-setting-of-jekyll/
+[https://linkthis.me/2018/01/20/the-font-setting-of-jekyll/]https://linkthis.me/2018/01/20/the-font-setting-of-jekyll/
 
-https://blog.csdn.net/ljinddlj/article/details/52273652
+[https://blog.csdn.net/ljinddlj/article/details/52273652](https://blog.csdn.net/ljinddlj/article/details/52273652)
 
-https://github.com/KeJunMao/jekyll-theme-mdui
+[https://github.com/KeJunMao/jekyll-theme-mdui](https://github.com/KeJunMao/jekyll-theme-mdui)
 
-## 
+## 评论系统
 
 
-[评论系统](https://valine.js.org/)delete
+[https://valine.js.org/](https://valine.js.org/)
 
 赞赏模块待添加
 
