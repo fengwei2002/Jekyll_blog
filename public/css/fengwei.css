@@ -7,8 +7,6 @@ body {
       background-attachment: fixed;
 }
 
-/* //cdn.jsdelivr.net/gh/wu-kan/wu-kan.github.io@b7944209783f1be5ad1faed8694841bf1fb1ee7f/public/image/76122909_p0.webp */
-
 @media (min-aspect-ratio: 2400/1850) {
   body {
     background-image: url(https://raw.githubusercontent.com/fengwei2002/picture/master/test.png);
@@ -21,7 +19,7 @@ body {
     text-shadow: 1px 0 1px #fff, -1px 0 1px #fff, 0 1px 1px #fff, 0 -1px 1px #fff;
     min-height: 1vh;
   }
-    
+
 /* 
 .container {
       background-color: rgba(255, 255, 255, 0.7);
@@ -59,9 +57,11 @@ h4,
 h5,
 h6,
 html,
+
 .sidebar {
-  font-family: Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;
-}
+  font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  /* font-family: Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;*/
+} 
 .theme-base-07 ::selection {
   color: rgb(255, 255, 255);
   background: #1d158d5e;/* 选中效果 */

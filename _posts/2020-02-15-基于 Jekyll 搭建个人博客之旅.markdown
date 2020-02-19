@@ -3,6 +3,11 @@ title: 基于Jekyll搭建个人博客
 tags: [杂项note]
 ---
 
+开发过程得益于谷歌搜索
+
+各种功能前人都有完整教程，跟着做就行了
+
+https://linkthis.me/2018/01/20/the-font-setting-of-jekyll/
 
 [评论系统](https://valine.js.org/)delete
 

@@ -5,58 +5,10 @@ permalink: /about
 sidebar_open: true
 ---
 
-## Began
+## Thanks
 
-***
-- [Fork](https://github.com/fengwei2002/fengwei2002.github.io)到你的仓库，并在设置里开启 gh-pages
-- 修改_config.yml为你自己的信息
-- 删除_post/下的博文和public/image/文件夹下的图片，开始写你自己的文章
-- [How To Use Markdown](https://fengwei2002.github.io/posts/%E6%96%B9%E6%B3%95/markdown%E4%BD%BF%E7%94%A8)
-- 欢迎[Star](https://github.com/fengwei2002/fengwei2002.github.io)[Fork](https://github.com/fengwei2002/fengwei2002.github.io)[Issue](https://github.com/fengwei2002/fengwei2002.github.io)
+Hosted on [Github Pages](https://pages.github.com/),thanks.
 
-## Blog完善历程
+The blog engine is from [jekyll / jekyll](https://github.com/jekyll/jekyll), thanks.
 
-***
-
-## 2020-02-17
-
-- [x] blog移除评论相关功能，
-- [ ] live2d自定义插件
-- [ ] 添加赞赏功能
-- [x] [添加网易云模块](https://feng-w.cn/posts/%E5%9F%BA%E4%BA%8E-Jekyll-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%B9%8B%E6%97%85)
-
-## 2020-02-14
-
-- [x] 全站使用webp图片加载，加快访问速度(博文中没有修改，为了方便操作)
-
-## 2020-02-08
-
-- [x] 新域名上线！，但PC端不能通过v2rayN访问blog.通过PAC(假)解决
-
-## 2020-02-08
-
-- [x] $\KaTeX$ 行间公式[KATEX](https://katex.org/docs/libs.html)
-- [x] 所有插件完全使用 js 加载
-- [ ] 博客结构调整，把/public目录迁移到 jekyll 默认的/assets
-- [ ] 全站使用 webp 图片，加快访问速度
-
-## 2020-02-06
-
-- [x] 修复搜索博文bug
-- [x] 修改博文目录
-- [ ] 添加鼠标指针特效 （花里胡哨
-
-## 2020-02-06------>
-
-- [x] 修复侧面搜索博文那里出现NaN NaN NaN的bug
-- [ ] 前端web开发
-- [ ] html+css+js  -------TAT
-
-## 2020-1-20------->2020-2-5
-
-- [在 Github 上成功部署博客](https://github.com/poole/lanyon)
-- 添加全局透明
-- 添加非全屏壁纸  
-- 添加蓝色代码块选中效果  
-- 添加Live2d看板娘
-- 添加侧面预览博文目录
+The blog theme is based on [lanyon](https://github.com/poole/lanyon)), thanks.

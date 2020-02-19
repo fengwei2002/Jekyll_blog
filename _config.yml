@@ -143,13 +143,13 @@ page404:
         - key: homePageUrl
           value: "/"
         - key: homePageName
-          value: 回到我的主页
+          value: 返回主页
 
 
 archive:
   posts_count:
     enable: true
-    alert: 篇博文。长路漫漫！
+    alert: 篇博文
   script:
   #   - var:
   #       - key: src
@@ -179,8 +179,8 @@ archive:
   #         value: | # 配置项的介绍见https://valine.js.org/configuration.html
   #           new Valine({
   #             "el": ".v",
-  #             "appId": "9hABRddSuEkTgqLrt1VSK5B1-gzGzoHsz",
-  #             "appKey": "NJ7RwmgrxsF7KDzlqU7YewlL",
+  #             "appId": "---------",
+  #             "appKey": "-------------",
   #             "notify": "true",
   #             "verify": "true",
   #             "avatar": "identicon",
@@ -204,10 +204,6 @@ post:
     alert: <i class="fas fa-book-open"></i>
     unit: 分
     divided_by: 300
-  # visitor: # 需要引入并开启valine的visitor选项使之开始计数; 可能会和busuanzi统计的有出入
-  #   enable: true
-  #   alert: <i class="far fa-eye"></i>
-  #   unit: 次
   tags:
     enable: true
     alert: <i class="fas fa-tag"></i>
@@ -217,13 +213,13 @@ post:
     <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh">BY-SA 4.0</a>(转载请附上原文出处链接)
 page:
   body:
-    theme-base: theme-base-07 # 可选的值08~0f  淡蓝色是0d
+    theme-base: theme-base-07 # 可选的值08~0f css中有详细颜色
     layout-reverse: true # 开启后sidebar在右边，反之左边
     sidebar-overlay: false # 开启后正文不随sidebar移动而移动
   sidebar:
-    avatar: # 侧边栏显示的头像
+    avatar: # 侧边栏头像
       enable: true
-      img: /public\image\touxiang.jpg  # 头像的地址
+      img: /public\image\touxiang.jpg  # 头像地址
       info: | # 头像背后的信息，<br/>代表换行
         <br/>
         <br/>
@@ -358,13 +354,13 @@ page:
           value: RSS
         - key: type
           value: application/rss+xml
-    - tag: link # 网站大图标，我偷懒直接用gravatar了，也可以存在/public里面
+    - tag: link # 网站大图标
       var:
         - key: rel
           value: apple-touch-icon-precomposed
         - key: href
           value: /public/image/touxiang.webp
-    - tag: link # 小图标，同上
+    - tag: link # 小图标
       var:
         - key: rel
           value: "shortcut icon"
@@ -561,8 +557,3 @@ page:
           value: https://zz.bdstatic.com/linksubmit/push.js # https协议用这个
         - key: defer # 在页面加载之后执行减少影响
           value: defer
-  #  - var: # 百度自动推送
-  #      - key: src
-  #        value: http://push.zhanzhang.baidu.com/push.js # http协议用这个
-  #      - key: defer # 在页面加载之后执行减少影响
-  #        value: defer
