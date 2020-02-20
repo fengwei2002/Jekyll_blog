@@ -167,21 +167,22 @@ archive:
   #       - key: zIndex
   #         value: "-1"
 
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
 
-<div id="gitalk-container"></div>
-    <script type="text/javascript">
-    var gitalk = new Gitalk({
-		clientID: `e28e6702ee4e8fc3784b`,
-		clientSecret: `a5178c61e8e9c1a123eda8f35754e42400165682`,
-		repo: `blogcomment`,
-		owner: 'fengwei2002',
-		admin: ['fengwei2002'],
-		id: 'window.location.pathname',
-    });
-    gitalk.render('gitalk-container');
-</script>
+
+
+
+# Gitalk settings
+comment_gitalk_clientId: e28e6702ee4e8fc3784b
+comment_gitalk_clientSecret: a5178c61e8e9c1a123eda8f35754e42400165682
+comment_gitalk_repo: fengwei2002.github.io
+github_username: fengwei2002
+
+
+
+
+
+
+
 
 post:
   date:
