@@ -18,3 +18,27 @@ Hosted on [Github Pages](https://pages.github.com/),thanks.
 The blog engine is from [jekyll / jekyll](https://github.com/jekyll/jekyll), thanks.
 
 The blog theme is based on [lanyon](https://github.com/poole/lanyon)), thanks.
+
+
+
+ _______ _______ _       _______ 
+(  ____ (  ____ ( (    /(  ____ \
+| (    \| (    \|  \  ( | (    \/
+| (__   | (__   |   \ | | |      
+|  __)  |  __)  | (\ \) | | ____ 
+| (     | (     | | \   | | \_  )
+| )     | (____/| )  \  | (___) |
+|/      (_______|/    )_(_______)
+                                 
+
+
+
+         ________________
+|\     /(  ____ \__   __/
+| )   ( | (    \/  ) (   
+| | _ | | (__      | |   
+| |( )| |  __)     | |   
+| || || | (        | |   
+| () () | (____/___) (___
+(_______(_______\_______/
+                         
