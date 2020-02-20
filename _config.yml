@@ -113,7 +113,6 @@ index:
   - Resolved bug
   - 模板
   - 深入理解计算机系统
-  - Linux
   - 算法竞赛入门经典
   - 数据结构
   - cpp+STL
@@ -226,6 +225,7 @@ page:
       href: https://vjudge.net/user/351368
       class: "fas fa-laugh-wink"
     - title: 洛谷
+      href: https://www.luogu.com.cn/user/274024
       class: "fas fa-code"
     - title: fwei142857 # weixin
       class: "fab fa-weixin"
