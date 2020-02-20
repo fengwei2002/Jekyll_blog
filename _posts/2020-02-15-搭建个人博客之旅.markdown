@@ -21,6 +21,8 @@ tags: [杂项note]
 
 [https://aerolith.ink/2018/08/25/Gitalk/](https://aerolith.ink/2018/08/25/Gitalk/)
 
+[https://draveness.me/git-comments-initialize](https://draveness.me/git-comments-initialize)
+
 [https://valine.js.org/](https://valine.js.org/)
 
 ## 赞赏模块待添加
@@ -29,7 +31,7 @@ tags: [杂项note]
 ![20200216153629.png](https://raw.githubusercontent.com/fengwei2002/picture/master/picture20200216153629.png)
 ![20200216153723.png](https://raw.githubusercontent.com/fengwei2002/picture/master/picture20200216153723.png)
 
-2020-02-17 添加网易云模块
+## 添加网易云模块
 
 <iframe frameborder="0" border="1" 
             marginwidth="0" marginheight="0"
