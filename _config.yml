@@ -172,7 +172,7 @@ archive:
 # Gitalk settings
 comment_gitalk_clientId: 21436ebf2d5cbcaf5c53
 comment_gitalk_clientSecret: 7849e7ab3f1b9ed8b60afa97ec14143c070e85c8
-comment_gitalk_repo: fengwei2002.github.io
+comment_gitalk_repo: blogcomment
 github_username: fengwei2002
 
 
