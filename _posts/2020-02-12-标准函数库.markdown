@@ -500,6 +500,7 @@ map也是以红黑树为底层实现机制。
 
 ```CPP
 map<T1, T2> mapTT;//map 默认构造函数: 
+//要传入两种模板参数key value
 map(const map &mp);//拷贝构造函数
 ```
 >map 赋值,大小操作
@@ -513,7 +514,21 @@ size();//返回容器中元素的数目
 >map 插入数据元素操作
 
 ```cpp
-map.insert(...); //往容器插入元素，返回 pair<iterator,bool> 
+map<int,int> mymap;
+mymap.insert(pair<int,int>(10,10));
+mymap.insert(make_pair(20,20));
+mymap.insert(map<int,int>::value_type(30,30));
+
+mymap[40] = 40;
+//如果key不存在，创建一个 pair 插入到 map 容器中 如果 key 存在，则修改value 的值 
+//如果去访问一个不存在的 key 则将 key 插入，value 为默认值
+//打印
+for(map<int,int>::iterator it mymap.began();it!=mymap.end();it++){
+    //*it取出来的是一个pair
+    cout<< it->first << (*it).second << endl;
+}
+map.insert(...); 
+//往容器插入元素，返回 pair<iterator,bool> 
 map<int, string> mapStu; // 第一种 通过 pair 的方式插入对象 
 mapStu.insert(pair<int, string>(3, "小张")); // 第二种 通过 pair 的方式插入对象 
 mapStu.inset(make_pair(-1, "校长")); // 第三种 通过 value_type 的方式插入对象 
@@ -521,7 +536,25 @@ mapStu.insert(map<int, string>::value_type(1, "小李")); // 第四种 通过数
 mapStu[3] = "小刘"; 
 mapStu[5] = "小王";
 ```
->map 删除操作
+
+
+> **key为对象时：**
+
+```cpp
+struct my_compare{
+    bool operator()(my_key key1,my_key key2){
+        return key1.index>key2.index;
+    }
+}
+map<my_key,int,my_compare> mymap;//三个排序，指定排序规则
+mymap.insert(make_pair(my_key(1,2),10);
+mymap.insert(make_pair(my_key(1,2),10);
+for (map<my_key,int,my_compare>::iterator it,it != end; it++){
+    cout<<it->first.index<<it->second;
+}
+```
+
+>**map 删除操作**
 
 ```cpp
 clear();//删除所有元素 
@@ -529,7 +562,8 @@ erase(pos);//删除 pos 迭代器所指的元素，返回下一个元素的迭�
 erase(beg,end);//删除区间[beg,end)的所有元素 ，返回下一个元素的迭代器。 
 erase(keyElem);//删除容器中 key 为 keyElem 的对组。
 ```
->map 查找操作
+
+>**map 查找操作**
 
 ```cpp
 find(key);//查找键 key 是否存在,若存在，返回该键的元素的迭代器；/若不存在，返回 map.end(); 
@@ -537,7 +571,10 @@ count(keyElem);//返回容器中 key 为 keyElem 的对组个数。对 map 来�
 
 lower_bound(keyElem);//返回第一个 key<=keyElem 元素的迭代器。 
 upper_bound(keyElem);//返回第一个 key>keyElem 元素的迭代器。 
-equal_range(keyElem);//返回容器中 key 与 keyElem 相等的上下限的两个迭代器。
+equal_range(keyElem);//返回容器中 key 与 keyElem 相等的上下限的两个迭代器，返回 pair 类型
+
+pair<map<int,int>::iterator,map<int,int>::iterator> ret = mymap.equal_range(2);
+cout<<ret.first->second;
 ```
 
 

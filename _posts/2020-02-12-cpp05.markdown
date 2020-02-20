@@ -4,8 +4,9 @@ title: cpp05(操作符重载)
 tags: [cpp+STL]
 date: 2020-02-12 01:30:56
 ---
+
 ## 等号操作符重载
-***
+
 ```cpp
 类& operator=(const 类名 &another){
     if (this ==&another){
@@ -24,81 +25,57 @@ date: 2020-02-12 01:30:56
     strcpy(this->name,another.name);
     return *this;
 }
-
 ```
-若成员中存在指针，
-就需要重新构造等号操作符
+若成员变量中存在指针，构造等号操作符时就需要额外开辟一个空间，供新变量使用
 
-额外开辟一个空间
+## 自定义的数组类重载 `[ ]`
 
-和深拷贝用法类似
-
-自定义的数组类中：
-***
- 重载[]:
- ```cpp
- int &MyArray::operator[](int index){
+```cpp
+int & my_Array::operator[](int index){
      return this->space[index];
      //return 一个int值
  }
- ```
- 重载<<:
- ```cpp
+```
 
+## 数组类重载`<<`:
+
+```cpp
 ostream &operator<<(ostream &os,MyArray &array){
     for (int i = 0; i < array.getlen(); i++){
         os<<array[i]<<" ";
     }
 }
-
-getlen()中是可修改的指针
-如果传入函数的第二个为const,就会不安全，报错 
 ```
 
-不建议重载并且或者操作符
+`getlen()`中的函数参数是非 const 的指针如果传入函数的为 const,就会不安全，报错 
 
-因为存在短路现象
-
+实际操作中不建议重载并且或者操作符，因为存在短路现象
 
 ## 自定义智能指针
+
 ```cpp
 #include<memory>
 int main (){
     int *p = new int;
-    ayto_ptr<int> ptr(new int);
-//ptr就是地址
+    auto_ptr<int> ptr(new int);
+	//ptr就是地址
     *ptr =20;
 }
 ```
- 正常\*p需要delete，这样构造的\*ptr 不用
-    这样用完的指针不需要手动释放
-    实际上是一个类，
-```cpp
-class MYATUOPTR
-{
-public:
-    MYATUIPTR(void *ptr){
-        this->=ptr;
-    }
-    ~MYAUTOPTR(){
-        if (ptr!=NULL){
-            delete[] ptr;
-            this->
-        }
-    }
-private:
 
+正常\*p 需要delete，这样构造的 \*ptr 指针不需要手动释放  
+实现过程是通过 具有一个释放空间的析构函数 的类 实现的
 
-}
-## 作业
-*** 
-1.  完成讲义中的自定义的数组类，并且添加常用的操作符重载
+# 练习
 
-2.  完成自定义的string类
+## 自定义数组类
+
+## 自定义string类
 
 > 自定义string类
 
 my_string.h
+
 ```cpp
 #pragma once
 //默认就有字符串类，include <string>
@@ -219,8 +196,6 @@ my_string& my_string::operator+(const my_string& b) {
 	this->str = median2;
 	return *this;
 }
-
-
 string s1 = "1234";
 ```
 
@@ -230,25 +205,8 @@ main.cpp
 using namespace std;
 #include "my_string.h"
 int main (){
-
-
+	//待处理细节
     return 0;
 }
 
 ```
-3.  操作符重载<<操作符， 能够写成一个自定义类的成员函数？
-
-
-
-
-
-4.  对于|| 和 && 符号的操作符重载，会有什么问题？
-
-
-
-
-5. C++中 string类 是不是普通数据类型？
-
-
-6 = 操作符重载需要注意的地方
-
