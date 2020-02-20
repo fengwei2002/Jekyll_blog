@@ -166,6 +166,7 @@ archive:
   #         value: "41" # 粒子数量
   #       - key: zIndex
   #         value: "-1"
+<div id="git_thread"></div>
 
 <!-- Gitalk 评论 start  -->
 
@@ -219,6 +220,21 @@ post:
     <i class="fab fa-creative-commons"></i>
     <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh">BY-SA 4.0</a>(转载请附上原文出处链接)
 page:
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: 'e28e6702ee4e8fc3784b',
+    clientSecret: 'a5178c61e8e9c1a123eda8f35754e42400165682',
+    repo: 'fengwei2002.github.io',
+    owner: 'fengwei2002',
+    admin: 'fengwei2002',
+    id: location.pathname,     
+    distractionFreeMode: 'false'  
+  })
+  gitalk.render('git_thread')
+</script>
+
   body:
     theme-base: theme-base-07 # 可选的值08~0f css中有详细颜色
     layout-reverse: true # 开启后sidebar在右边，反之左边
