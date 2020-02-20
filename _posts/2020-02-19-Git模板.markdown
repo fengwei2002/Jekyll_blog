@@ -7,45 +7,89 @@ date: 2020-02-19
 
 $ git status
 
+(显示当前git文件夹中文件的状态)
+
 $ git log
+
+(查看操作日志)
 
 $ git push
 
+(将commit文件推送到远程仓库)
+
 $ cd ..
+
+(返回上一文件夹)
 
 $ mkdir git-tutorial
 
+(新建一个文件夹)
+
 $ cd git-tutorial
+
+(工作目录切换到该文件夹目录)
 
 $ git init
 
+(对当前文件夹进行git行为初始化操作)
+
 $ git add README.md
+
+(将该文件暂存以供提交)
 
 git add .
 
+(暂存所有文件)
+
 $ git log --pretty=short
 
-$ git status
+(显示log日志的第一行，操作人和地址信息，不返回操作时间)
 
 $ git log -p README.md
 
+(显示readme文件的操作记录)
+
 $ ls
 
+(列出当前目录下的所有文件)
+
 $ code README.md
+
+(使用vscode打开README，替换传统vim)
 
 $ git diff
 
+(查看暂存文件的区别---未commit文件)
+
 $ git commit -m "README"
+
+(将暂存文件commit并同时添加描述信息)
 
 $ git branch
 
+(显示当前工作分支)
+
 $ git checkout -b A
+
+(在新分支创建的同时切换分支)
+
+$ git checkout -B <new_branch>
+
+(该命令主要加了一个可选参数B，如果已经存在了同名的分支，使用 git checkout -b <new_branch>会提示错误，加入-B可选参数后会强制创建新分支，并且会覆盖原来存在的同名分支)
+
+$ =git branch newBranch +git checkout newBranch=git checkout -b|-B <new_branch> [<start point>]
 
 $ git checkout master
 
-$ code README.md
+(切换工作分支)
+
+$ git checkout --orphan <new_branch>
+
+(假如你的某个分支上，积累了无数次的提交，你也懒得去打理，打印出的log也让你无力吐槽，那么这个命令将是你的神器，它会基于当前所在分支新建一个赤裸裸的分支，没有任何的提交历史，但是当前分支的内容一一俱全。新建的分支，严格意义上说，还不是一个分支，因为HEAD指向的引用中没有commit值，只有在进行一次提交后，它才算得上真正的分支)
 
 $ git checkout -
+
+
 
 $ git checkout master
 
@@ -59,12 +103,9 @@ $ git reset --hard 0c25d2973702b88b20
 
 $ git commit -m "addB"
 
-$ git reflog
+$ git reflog^[注脚内容 第一条]
 
-4.3
-
-
-
-
+这是一条注释示例 。
+*[注释]：注释内容
 
 
