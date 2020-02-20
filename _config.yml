@@ -166,8 +166,6 @@ archive:
   #         value: "41" # 粒子数量
   #       - key: zIndex
   #         value: "-1"
-<div id="git_thread"></div>
-
 <!-- Gitalk 评论 start  -->
 
 <!-- Link Gitalk 的支持文件  -->
