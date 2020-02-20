@@ -492,8 +492,7 @@ void test01(){
 
 头文件<map>
 
-map中存放的元素有且仅有两个成员变量，一个名为first另一个名为second，map根据first的值对元素进行从小到大的排序，并可以快速的
-根据first来检索元素，multimap里面允许有相同first值的元素
+map中存放的元素有且仅有两个成员变量(key,vaalue) map 根据key的值对元素进行从小到大的排序，并可以快速的根据 key 来检索元素，multimap 里面允许有相同first值的元素
 map也是以红黑树为底层实现机制。
 
 

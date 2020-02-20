@@ -222,6 +222,12 @@ page:
     - title: codeforce # codeforces
       href: //codeforces.com/profile/KONNG
       class: "fas fa-chart-bar fw"
+    - title: Virtual judge
+      href: https://vjudge.net/user/351368
+      class: "fas fa-laugh-wink"
+    - title: 洛谷
+      href: https://www.luogu.org/
+      class="fab fa-angellist"
     - title: fwei142857 # weixin
       class: "fab fa-weixin"
     nav:
