@@ -226,8 +226,7 @@ page:
       href: https://vjudge.net/user/351368
       class: "fas fa-laugh-wink"
     - title: 洛谷
-      href: https://www.luogu.org/
-      class="fab fa-angellist"
+      class: "<i class="fas fa-code"></i>"
     - title: fwei142857 # weixin
       class: "fab fa-weixin"
     nav:
