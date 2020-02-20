@@ -219,14 +219,14 @@ page:
     - title: zhihu
       href: //www.zhihu.com/people/e2df61ca5f33cb1e72e27be2cefd18ba
       class: "fab fa-zhihu"
-    - title: codeforce # codeforces
+    - title: codeforce
       href: //codeforces.com/profile/KONNG
       class: "fas fa-chart-bar fw"
     - title: Virtual judge
       href: https://vjudge.net/user/351368
       class: "fas fa-laugh-wink"
     - title: 洛谷
-      class: "<i class="fas fa-code"></i>"
+      class: "fas fa-code"
     - title: fwei142857 # weixin
       class: "fab fa-weixin"
     nav:
