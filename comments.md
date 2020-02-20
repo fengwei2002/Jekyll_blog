@@ -19,3 +19,20 @@ Let's make a happy music for the guests ~
 >You can make friends with me too
 
 >My usual email address:psychonaut1f@gmail.com
+
+```cpp
+
+   o__ __o                                                                        o   
+  /v     v\                                                                     _<|>_ 
+ />       <\                                                                          
+ \o          o__  __o   \o__ __o     o__ __o/   o              o     o__  __o     o   
+  |>_       /v      |>   |     |>   /v     |   <|>            <|>   /v      |>   <|>  
+  |        />      //   / \   / \  />     / \  < >            < >  />      //    / \  
+ <o>       \o    o/     \o/   \o/  \      \o/   \o    o/\o    o/   \o    o/      \o/  
+  |         v\  /v __o   |     |    o      |     v\  /v  v\  /v     v\  /v __o    |   
+ / \         <\/> __/>  / \   / \   <\__  < >     <\/>    <\/>       <\/> __/>   / \  
+                                           |                                          
+                                   o__     o                                          
+                                   <\__ __/>                                          
+
+```
