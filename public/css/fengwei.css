@@ -63,14 +63,14 @@ html,
   /*最佳font-family:“Arial”,"Source Code Pro",YouYuan, monospace;*/
   font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,"PingFang SC","Source Code Pro","WenQuanYi Micro Hei","YouYuan",Lato,proxima-nova,sans-serif
 } 
-.theme-base-10 ::selection {
+.theme-base-08 ::selection {
   color: rgba(255, 255, 255, 0.021);
   background: #156b8d73;/* 选中效果 */
 }
 /*08*/
 /*09，0a是金黄色*/
 /*10为橙色*/
-/*0b是淡蓝色*/
+/*0b是绿色*/
 /*0c是青绿色*/
 /*0d是淡蓝色*/
 /*0e是淡紫色*/
@@ -78,7 +78,7 @@ html,
 
 
 .wrap {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.123);
 }
 #waifu-toggle {
   z-index: 9;
