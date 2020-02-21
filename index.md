@@ -2,7 +2,7 @@
 layout: index
 title: psychonaut1
 ---
-## **`Contact`**
+## *`Contact`*
 - Address: Shanxi University-Taiyuan-China
 - Phone: 
   - **+86 18803427582** 
@@ -18,10 +18,10 @@ title: psychonaut1
   - *<https://fengwei2002.github.io/>*
   - **<https://feng-w.cn/>**
 
-## **`Education`**
+## *`Education`*
 
 >Shanxi University 2019 software Engineering department studying
 
-## **`Project`**
+## *`Project`*
 >To Be Done 
 [GitHub](https://github.com/fengwei2002)
