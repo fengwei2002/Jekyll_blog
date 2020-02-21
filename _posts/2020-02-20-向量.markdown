@@ -2,7 +2,7 @@
 layout: post
 title: 第二章：向量
 tags: [数据结构]
-date: 2020-02-15
+date: 2020-02-21
 ---
 
 date: 02-15 02-16 02-21
@@ -447,7 +447,7 @@ template <typename T> void vector<T>::bubble_sort(Rank lo,Rakn hi){
 ```
 任何一对元素都是顺序的，那么就是有序段，所以每一趟扫描交换都记录下来是否存在逆序元素，如果第一次遍历时没有做过交换，那么今后的从头到尾的所有遍历就都不用 考察这一部分元素，实际运行时间就可能会大大减少
 
-> 改进
+### 改进
 
 ```cpp
 template <typename T> bool vector<T>::bubble(Rank lo,Rank hi){
@@ -463,7 +463,7 @@ template <typename T> bool vector<T>::bubble(Rank lo,Rank hi){
 ```
 ![73D855517EB452D30E580DC71C1D97A3.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture73D855517EB452D30E580DC71C1D97A3.jpg)
 
-> 再改进
+### 再改进
 
 若有序段向量在整个向量的后面，那么效率就和普通差不多，所以需要提前找出有序段向量，就会更加快
 
@@ -509,12 +509,64 @@ template <typename T> Rank vector<T>::bubble(Rank lo,Rank hi){
 一种更快的向量排序算法，分治策略
 
 冯诺伊曼第一次使用
-- 序列一分为二
+- 多次的序列一分为二
 - 子序列递归排序
-- 合并有序子序列
+- 抵达递归基后 **合并有序子序列**
 
+```cpp
+template <typename T>
+void vector<T>::merge_sort(Rank lo,Rank hi){
+    if(hi - lo < 2) return ; //首先处理递归基
+    int mi = (lo + hi)>>1;//以中点为界
+    merge_sort(lo,mi);
+    merge_sort(mi,hi);
+    merge(lo,mi,hi);//实质工作
+}
+```
+### 二路归并原理:
 
+![A694737ABA974F081B1E00390E7180A7.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureA694737ABA974F081B1E00390E7180A7.jpg)
 
+注意力只关注在两个序列的首元素上，每次将两个首元素中更小的那个元素取出排在输出队列中
 
+我们假设A为原始向量，B为第一个子向量，C为第二个子向量
+
+```cpp
+template <typename T>
+void Vector<T>::merge(Rank lo, Rank mi, Rank hi){//三个秩传入
+    T *A = _elem + lo;//A 指向空间起始位置
+    int length_b = mi - lo;//前子向量 B 总长度
+    T *B = new T[length_b]; //为 B 开辟空间
+    for (Rank i = 0; i < length_b; B[i] = A[i++]);//前子向量复制原始向量的前半部分
+    int length_c = hi - mi; //后子向量 C 总长度
+    T *C = _elem + mi; //C 指向后半段元素的起始位置,不需要为其增加新空间
+    for (Rank i = 0, j = 0, k = 0; (j < lb) || (k < lc);){//B[j]和C[k]中小者转至A[i++]
+    //i,j,k,初始化为 0，j 和 k 同时越界时退出循环
+        if ((j < length_b) && (length_c <= k || (B[j] <= C[k]))) A[i++] = B[j++];
+    //j < length_b 首元素的秩没有越过边界，确定B[j]仍然是一个有效值 ，
+    //c[k]已无或者c[k]大时，将B[j]放入A中 并且当||不满足时短路机制可以防止错误
+        if ((k < length_c) && (length_b <= j || (C[k] < B[j])))  A[i++] = C[k++];
+    // k < length_c确定c还是有效值，b[j]已无或者比c[k]大时，往A[i] 里面放c元素
+    }
+    delete[] B;
+}
+```
+
+### 精简实现
+
+//交换循环体内两句的次序，删除无用逻辑
+
+```cpp
+for (Rank i = 0, j = 0, k = 0; (j < lb) || (k < lc);){
+    if ((k < length_c) && (C[k] < B[j]))  A[i++] = C[k++];
+//if ((j < length_b) && (length_c <= k || (B[j] <= C[k]))) A[i++] = B[j++];
+    if (length_c <= k || (B[j] <= C[k])) A[i++] = B[j++];
+//if ((j < length_b) && (length_c <= k || (B[j] <= C[k]))) A[i++] = B[j++];
+}
+```
+
+最后 `j = lb` `k = lc` `j + k = n `
+
+注意： 待归并子序列不必等长
 
 
