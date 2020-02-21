@@ -25,7 +25,6 @@ git push origin master 推送到远程分支的master
 
 git push origin 本地分支名字:远程分支名字 推送到远程的新分支
 
-
 $ git status
 
 (显示当前git文件夹中文件的状态)
