@@ -4,7 +4,10 @@ title: 第二章：向量
 tags: [数据结构]
 date: 2020-02-15
 ---
-~~date:02-15 02-16~~
+
+date: 02-15 02-16 02-21
+
+>保持热情
 
 ## 接口与实现
 
@@ -422,11 +425,94 @@ $$\frac{秩}{秩} =\frac{元素的值}{元素的值}$$
 
 最坏情况为$O(n)$，有时候很快，最好情况$O(1)$
 平均而言:每经过一次比较，n缩减至  $\sqrt[2]{n}$
+通常优势不明显，易受小扰动的干扰，且须引入乘法，除法
 
+### 综合
 
-## 起泡排序
+实际可行的方法:  
+首先通过插值查找，将查找范围缩小到一定范围然后再进行二分查找
+
+## 冒泡排序
+
+将无序向量转换为有序向量
+
+bubble_sort
+
+每次遍历就会就位一个元素，有序部分逐渐扩展
+
+```cpp
+template <typename T> void vector<T>::bubble_sort(Rank lo,Rakn hi){
+    while (!bubble(lo,hi__);)//逐趟扫描交换，直至全序
+}
+```
+任何一对元素都是顺序的，那么就是有序段，所以每一趟扫描交换都记录下来是否存在逆序元素，如果第一次遍历时没有做过交换，那么今后的从头到尾的所有遍历就都不用 考察这一部分元素，实际运行时间就可能会大大减少
+
+> 改进
+
+```cpp
+template <typename T> bool vector<T>::bubble(Rank lo,Rank hi){
+    bool sorted = true;
+    while (++lo < hi){
+        if (_elem[lo-1]>_elem;lo){
+            sorted = false;//记录if语句曾经成立过
+            swap(_elem[lo-1],_elem[lo]);
+        }
+    }
+    return sorted;//返回当前区间是否已经有序的标志，作为 while 条件的循环条件
+}
+```
+![73D855517EB452D30E580DC71C1D97A3.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture73D855517EB452D30E580DC71C1D97A3.jpg)
+
+> 再改进
+
+若有序段向量在整个向量的后面，那么效率就和普通差不多，所以需要提前找出有序段向量，就会更加快
+
+那我们如果记录下来遍历后第一次冒泡交换的最后一位元素的位置，我们就可以确定下来后续中有多少元素是已经排序好的，缩小那个 hi 从右边界到
+第一次遍历交换最后的元素位置，就不用一步一步收缩范围
+
+```cpp
+template <typename T> Rank vector<T>::bubble(Rank lo,Rank hi){
+    Rank last = lo;//最右侧的逆序对初始化为[lo - 1, lo]
+    while (++lo < hi ){
+        if(_elem[lo-1]>_elem[lo]){
+            swap(_elem[lo-1],_elem[lo]);
+            last=lo;//交换后就更新最右侧逆序对位置
+        }
+    }
+    return last;//返回右侧的逆序对位置
+}//前一版本的逻辑性标志sorted，改为秩 last
+```
+![677F7EC91F0CE611E7CD6E0BCC2FA017.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture677F7EC91F0CE611E7CD6E0BCC2FA017.jpg)
+>用 PicGo 添加GitHub图床图片时，激活扩展那一步慢一点点(10 s，激活后`ctrl+alt+u`秒传(1s内
+
+并且这种加快算法可能会有多次缩短，使区间多次变小
+
+### 综合评价
+
+上面几种冒泡排序最好情况和最坏情况都和基础版本相同，全是对一般情况的优化  
+输入含重复元素时，算法的**稳定性**是更为细致的追求，重复元素在输入，输出时的相对次序，是否保持不变  
+输入：8,7(a),7(b),6，7(c)，9  
+输出：6，7(a),7(b),7(c)，8，9 // stable  
+输出：6，7(b),7(c),7(a)，8，9 // unstable  
+
+在一些算法中有可能对这些有强制追求  
+以上的冒泡排序都是稳定的:  
+因为乱序排列在冒泡排序中必须满足
+
+- 相同的二者相互接近直至相邻
+- 在接下来的一轮扫描交换中，二者因为逆序而交换位置
+
+如果将`>`改为`>=`就会乱序
 
 ## 归并排序
+
+一种更快的向量排序算法，分治策略
+
+冯诺伊曼第一次使用
+- 序列一分为二
+- 子序列递归排序
+- 合并有序子序列
+
 
 
 
