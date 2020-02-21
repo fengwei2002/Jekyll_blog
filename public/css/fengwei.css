@@ -63,8 +63,8 @@ html,
   /*最佳font-family:“Arial”,"Source Code Pro",YouYuan, monospace;*/
   font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,"PingFang SC","Source Code Pro","WenQuanYi Micro Hei","YouYuan",Lato,proxima-nova,sans-serif
 } 
-.theme-base-0e ::selection {
-  color: rgb(255, 255, 255);
+.theme-base-0f ::selection {
+  color: rgba(255, 255, 255, 0.021);
   background: #156b8d73;/* 选中效果 */
 }
 /*08*/
