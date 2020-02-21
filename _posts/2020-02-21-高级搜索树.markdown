@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 第十一章: 串（下）
+title: 第十章：高级搜索树
 tags: [数据结构]
 date: 2020-02-21
 ---
