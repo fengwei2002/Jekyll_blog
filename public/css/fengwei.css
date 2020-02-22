@@ -63,7 +63,7 @@ html,
 
 
 .wrap {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0.384);
 }
 #waifu-toggle {
   z-index: 9;
@@ -104,7 +104,7 @@ html,
 .sidebar-social a:hover,
 .sidebar-social a:focus {
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(24, 3, 3, 0.877);
 }
 #sidebar-search-input {
   background: none;
