@@ -14,9 +14,10 @@ body {
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.8);    
-    box-shadow: 0 0 1rem 1rem rgb(255, 255, 0);
-    text-shadow: 1px 1px 1px #fff;
+    background-color: rgba(38, 17, 226, 0.8);    
+    box-shadow: 0 0 1rem 1rem rgb(255, 255,255 ,0.8);
+    /*这里是博文边框颜色，建议开为白色体现渐变效果*/
+    text-shadow: 1px 1px 1px rgb(156, 230, 20);
     min-height: 1vh;
   }
 
