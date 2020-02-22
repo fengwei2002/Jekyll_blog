@@ -49,8 +49,8 @@ html,
   font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,"PingFang SC","Source Code Pro","WenQuanYi Micro Hei","YouYuan",Lato,proxima-nova,sans-serif
 } 
 .theme-base-0d ::selection {
-  color: rgba(255, 255, 255, 0.021);
-  background: #56f12f93;/* 选中效果 */
+  color: rgba(45, 21, 129, 0.349);
+  background: #2e8618a2;/* 选中效果 */
 }
 /*08*/
 /*09，0a是金黄色*/
