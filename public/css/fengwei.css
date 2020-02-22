@@ -48,7 +48,7 @@ html,
   /*最佳font-family:“Arial”,"Source Code Pro",YouYuan, monospace;*/
   font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,"PingFang SC","Source Code Pro","WenQuanYi Micro Hei","YouYuan",Lato,proxima-nova,sans-serif
 } 
-.theme-base-0d ::selection {
+.theme-base-02 ::selection {
   color: rgba(45, 21, 129, 0.349);
   background: #2e8618a2;/* 选中效果 */
 }
