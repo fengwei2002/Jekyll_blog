@@ -1,6 +1,7 @@
 ---
 layout: null
 ---
+
 {% if site.page.sidebar.simple_jekyll_search.enable %}
 [
   {% for post in site.posts %}

@@ -5,6 +5,7 @@ function loadStyle(url) {
   var head = document.getElementsByTagName('head')[0];
   head.appendChild(link);
 }
+
 (function () {
   var loadJs = (function () {
     var script = document.createElement('script');

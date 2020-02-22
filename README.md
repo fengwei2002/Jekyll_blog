@@ -19,7 +19,6 @@ The blog engine is from [jekyll / jekyll](https://github.com/jekyll/jekyll), tha
 
 The blog theme is based on [lanyon](https://github.com/poole/lanyon)), thanks.
 
-
 ```cpp
  _______ _______ _       _______ 
 (  ____ (  ____ ( (    /(  ____ \

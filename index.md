@@ -5,18 +5,16 @@ title: psychonaut1
 ## *`Contact`*
 - Address: Shanxi University-Taiyuan-China
 - Phone: 
-  - **+86 18803427582** 
-  - *(From 9 a.m. to 8 p.m)*
-- Mailbox:
-  - ***psychonaut1f@gmail.com***
-  - **2480417969@qq.com**
-  - **psychonaut1@foxmail.com**
-- Wechat: **fwei142857**
-- QQ: **2480417969**-*2938256681*
-- NetEase Cloud:**psychonaut1**
-- Blog link:
-  - *<https://fengwei2002.github.io/>*
-  - **<https://feng-w.cn/>**
+  - **+86 18803427582** *(From 9 a.m. to 8 p.m)*
+- Wechat :  **fwei142857**
+- QQ : **2480417969**-*2938256681*
+- Mailbox :
+  - **psychonaut1f@gmail.com**
+  - *psychonaut1@foxmail.com*  <!-- - **2480417969@qq.com** -->
+- Blog link :
+  - **<https://feng-w.cn/>**<!-- - *<https://fengwei2002.github.io/>* -->
+- NetEase Cloud : **psychonaut1**
+- [GitHub](https://github.com/fengwei2002)
 
 ## *`Education`*
 
@@ -24,4 +22,3 @@ title: psychonaut1
 
 ## *`Project`*
 >To Be Done 
-[GitHub](https://github.com/fengwei2002)

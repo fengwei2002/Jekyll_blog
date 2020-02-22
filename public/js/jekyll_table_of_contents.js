@@ -3,3 +3,4 @@ document.write('<script src="//cdn.jsdelivr.net/gh/ghiculescu/jekyll-table-of-co
 document.addEventListener("DOMContentLoaded", function () {
   $('#toc').toc();
 });
+

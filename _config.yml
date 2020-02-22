@@ -205,10 +205,9 @@ page:
       enable: true
       img: /public\image\touxiang.jpg  # 头像地址
       info: | # 头像背后的信息，<br/>代表换行
-        <br/>国内访问
-        <br/>慢，非常
-        <br/>慢，非常
-        <br/>非常慢。
+        <br/>
+        <br/>
+        <br/>K O N N G
     social:
     - title: psychonaut1@foxmail.com 
       href: mailto:psychonaut1@foxmail.com

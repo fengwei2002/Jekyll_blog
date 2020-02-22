@@ -1,6 +1,7 @@
 ---
   layout: null
 ---
+
   (function () {
     document.write('<div class="v"></div>');
     var loadJs = (function () {

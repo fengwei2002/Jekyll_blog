@@ -15,6 +15,7 @@ _site
 *.vi
 *~
 
+
 # OS or Editor folders
 .vscode
 .DS_Store
