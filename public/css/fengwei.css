@@ -14,8 +14,8 @@ body {
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.151);    
-    box-shadow: 0 0 1rem 1rem rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.8);    
+    box-shadow: 0 0 1rem 1rem rgb(255, 255, 0);
     text-shadow: 1px 1px 1px #fff;
     min-height: 1vh;
   }
