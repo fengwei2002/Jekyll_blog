@@ -17,7 +17,7 @@ body {
       background-color: rgba(255, 255, 255, 0.7);
       box-shadow: 0 0 1rem 1rem rgba(255, 255, 255, 0.7);
       text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.021);
-      min-height: 20vh;
+      min-height: 10vh;
     }
 
 @media (min-width: 70em) {
@@ -31,7 +31,7 @@ body {
   }
 }
 .page-title {
-      padding-top: 2.2rem;
+      padding-top: 1.2rem;
       padding-bottom: 1rem;
     }
 
