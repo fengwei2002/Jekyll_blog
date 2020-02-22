@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 标准函数库
+title: 标准函数库🚀
 tags: [cpp+STL]
 date: 2020-02-17
 --- 

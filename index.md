@@ -14,7 +14,7 @@ title: psychonaut1
 - Blog link :
   - **<https://feng-w.cn/>**<!-- - *<https://fengwei2002.github.io/>* -->
 - NetEase Cloud : **psychonaut1**
-- [GitHub](https://github.com/fengwei2002)
+- [GitHub](https://github.com/fengwei2002)👀✨
 
 ## *`Education`*
 
