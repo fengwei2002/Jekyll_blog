@@ -14,11 +14,11 @@ title: psychonaut1
 - Blog link :
   - **<https://feng-w.cn/>**<!-- - *<https://fengwei2002.github.io/>* -->
 - NetEase Cloud : **psychonaut1**
-- [GitHub](https://github.com/fengwei2002)👀✨
+- [GitHub](https://github.com/fengwei2002)  👀✨
 
 ## *`Education`*
 
 >Shanxi University 2019 software Engineering department studying
 
 ## *`Project`*
->To Be Done 
+>To Be Done 💤
