@@ -16,7 +16,7 @@ body {
 .container {
     background-color: rgba(255, 255, 255, 0.836);  
     /*博文背景颜色*/  
-    box-shadow: 0 0 1rem 1rem rgb(255, 255,255 ,0.8);
+    box-shadow: 0 0 1rem 1rem rgb(255, 255,255 ,0.836);
     /*这里是博文边框颜色，建议开为白色体现渐变效果*/
     text-shadow: 1px 1px 1px rgba(157, 230, 20, 0);
     /*荧光字效果，关闭*/
