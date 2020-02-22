@@ -4,7 +4,7 @@ title: 第三章：list
 tags: [数据结构]
 date: 2020-02-22
 ---
-🚀
+
 ## 接口与实现
 
 >Don't lose the link 
@@ -22,4 +22,205 @@ date: 2020-02-22
 相邻节点互称为前驱和后继，没有前去和后继称作首和末节点
 
 从秩到位置
+
+也有秩，但是寻秩访问就会变得特别慢，因为物理空间并不连续，转用节点之间的相互引用找到特定的元素
+
+
+### 列表节点:  
+作为列表的基本元素，列表节点首先需要独立的“封装”实现  
+为此，可设置并约定若干基本的操作接口  
+
+```cpp
+pred(); //当前节点的前驱位置
+succ(); //当前节点的后继位置
+data(); //当前节点存的数据对象
+insert_as_pred();//插入前驱节点，存入被引入对象e，返回新节点的位置
+insert_as_succ();
+```
+
+### 列表节点 ListNode模板类
+
+```cpp
+#define position(T) ListNode<T>* 
+template <typename T> //简洁起见，完全开放而不过度分装
+struct ListNode {//列表节点模板类(以双向链表的形式实现)
+    T data;//数值
+    position(T) pred;//前驱
+    position(T) succ;//后继
+    ListNode() {}//针对headeer 和 trailer 的构造
+    ListNode(T e ,position(T) p = NULL ,position(T) s = NULL): data(e) ,pred(p),succ(s){} 
+    //默认构造器
+    position(T) insert_as_pred(T const& e);  //前插入
+    position(T) insert_as_succ(T const& e); //后插入
+}
+```
+
+![C409AF3F97AF28C28609429D7BE6D6F8.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureC409AF3F97AF28C28609429D7BE6D6F8.jpg)
+
+### 列表：list模板类
+
+```cpp
+#include "ListNode.h"
+template <typename T >
+class List {
+private: 
+    int _size;
+    position(T) header;position(T) trailer;
+protected:/*内部函数*/
+public:
+    /*构造函数，析构函数，只读接口，可写接口，遍历接口*/
+};
+```
+![A4559D864A315EFEB0681362CCAFF9A3.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureA4559D864A315EFEB0681362CCAFF9A3.jpg)
+
+### 构造
+
+```cpp
+template<typename T> void List<T>::init(){
+    header = new ListNode<T>;//创建两个ListNode模板类空间
+    trailer = new ListNode<T>;
+    header->succ = trailer ；header->pred = NULL;//互联
+    trailer->pred = header; trailer->succ = NULL://互联
+    _size = 0;//记录当前规模
+}
+```
+
+## 无序列表
+
+### 重载下标操作符
+
+实现通过秩读取元素 $O(r)$
+
+```cpp
+template<typename T> //效率十分低下，可以偶尔为之
+T list<T>::operator[](Rank r) const {
+    Position(T) p = first();
+    while (0 < r--) p = p->succ;
+    return p->data;
+}
+```
+
+### 查找算法
+
+在节点 p（可能是trailer）的第 n 个（真）前驱中，找到等于 e 的最后者
+
+当存在多个相同元素时也满足返回最后一个元素
+
+```cpp
+template<typename T>//顺序查找，O(n)
+position(T) List<T>::find(T const& e;int n;position(T) p)const{
+    while (0 < n--)//从右向左逐个将p的前驱与e进行比对
+        if(e == (p ->pred )->data) return p;//
+    return NULL;//若越出左边界，意味着查找失败
+}
+```
+可以有两种接口`find(e,n,p)` `find(e,p,n)`，功能语义要和实际意义一样
+
+### 插入算法
+
+```cpp
+template <typename T> position(T) List<T>::insert_before(position(T) p, T const& e){
+    _size++;return p->insert_as_pred(e);//e当作p的前驱插入
+}
+```
+
+前插入算法（后插入算法与其对称）
+
+```cpp
+template <typename T>
+position(T) ListNode<T>::insert_as_pred(T const& e){
+    position(T) x = new ListNode(e,pred,this);//为传入的新变量创建一个position空间，同时使用默认构造器初始化 x
+    //pred为新变量前驱this为新变量后继
+    pred->succ = x;pred = x; return x;//建立连接，返回新节点位置
+    //完整的一个link需要两次绑定 Don't lose the link;
+}
+```
+
+像微创手术一样，不会影响其他变量的位置和整体结构，查找的速度就比向量更快
+
+
+### 基于复制的构造
+
+```cpp
+template <typename T>//基本接口
+void List<T>::copyNodes(position(T) p,int n){//O(n)
+    intit();//创建头尾哨兵并作初始化
+    while(n--){//将起自p的n项依次作为末节点插入
+        insert_as_last(p->data);
+        p = p->succ;
+    }
+}
+insert_as_last=insert_before_trailer
+```
+### 删除和析构
+
+删除节点
+
+```cpp
+template <typename T>
+T List<T>::remove(position(T) p){
+    T e = p->data;//备份
+    p->pred->succ=p->succ;
+    p->succ->pred=p->pred;//和电线一样的感觉
+    delete p;
+    _size--;return e;
+}微创手术型，常数时间内完成
+```
+
+析构函数
+```cpp
+template<typename T> List<T>::~List(){
+    clear();//清空列表
+    delete header;delete trailer;//释放头尾哨兵节点
+}
+template<typename T>int List::clear(){
+    int old_size=size;
+    while(_size>0)remove(header->succ);
+    //因为remove函数中已经对size进行了自减操作，所以此while循环中不用写size--操作
+    return old_size;
+}//o(n),线性正比于列表规模
+```
+
+### 唯一化
+
+剔除重复元素
+
+```cpp
+template <typename T> int List<T>::wuxu_weiyi(){
+    if(_size < 2)return 0;//平凡列表不可能重复
+    int old_size = _size;//记录原规模
+    position(T) p = first();Rank r =1;
+    //p从首节点开始，依次直到末节点
+    while(trailer != (p = p->succ)){
+        position(T) q = find (p->data,r,p);//p->data==e
+        //在p的r个前驱中查找与之雷同者
+        q? remove(q):r++;//若的确存在，则删除之，否则秩递增
+    }
+    return old_size - _size;//返回被删除元素总数
+}
+```
+
+## 有序列表
+
+
+### 唯一化
+
+按照大小关系有序排列，故可以更快的完成  
+通过remove接口多次操作雷同节点，保留同一区间的首节点
+
+![B5AC9147EF4F0277EE4E42A0694416D4.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureB5AC9147EF4F0277EE4E42A0694416D4.jpg)
+
+```cpp
+template<typename T> int List<T>::uniquify(){
+    if(_size < 2) return 0;
+    int old_size = _size;
+    ListNodePosi(T) p = first(); ListNodePosi(T) q;
+    while (trailer != (q = p->succ))
+    if (p->data != q->data) p = q;
+    else remove (q) ;
+    return ols_size - _size;
+}
+```
+
+
 

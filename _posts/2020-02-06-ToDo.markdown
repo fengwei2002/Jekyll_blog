@@ -1,28 +1,45 @@
 ---
 layout: post
 title: To Do
-background_music: <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=0&id=2855309968&auto=1&height=430"></iframe>
+background_music: <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=0&id=2855309968&auto=0&height=430"></iframe>
 tags: [target]
 date: 2020-02-06
 ---
 
 ## To Do
-- [ ] html-css-js-jq-javase-数据库-jsp-servlet-Struts2-hibernate  
-        -mybatis-spring4-springmvc-ssh-ssm
+
+因为永远不知道机会什么时候降临。
+
+努力的意义就是当机会来临时有足够的能力Cover，而不至于叹息，要是之前努力，现在就不会抓不住。
+
+想做的事情都很难，需要之前做很多储备。
+
+喜欢的人很优秀，需要更多的光环。
+
+申请的学校要求都很高，需要更多高质量paper。
+
+想去的公司要求都很高，需要更多的技能和知识。
+
+想爬很高的山看到不一样的风景，需要充足的体力。
+
+结果可能美丽或者不美丽，但这种一个人为了目标认真努力的过程其实更重要
+
+
+- [ ] html-css-js-jq-javase-数据库-jsp-servlet-Struts2-hibernate -mybatis -spring4-springmvc-ssh-ssm
 
 - [ ] 深入理解计算机系统
 
 - [ ] 算法两本书
 
-- [ ] 熟悉Unix/Linux Shell和常见的命令行
+- [ ] 学习Python掌握各种用法
 
-- [ ] 学习一门脚本语言，例如Python
+- [ ] 熟悉Unix/Linux Shell和常见的命令行
 
 - [ ] vscode用好
 
 - [ ] 学习Web基础（HTML/CSS/JS) + 服务器端技术 (LAMP)
 
-- [ ] 简单的学习Java，html5
+- [ ] 简单的学习Java
 
 ## 尽量完成
 
