@@ -15,8 +15,8 @@ body {
 
 .container {
     background-color: rgba(255, 255, 255, 0.7);    
-    box-shadow: 0 0 1rem 1rem rgba(255, 255, 255, 0.822);
-    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.466);
+    box-shadow: 0 0 1rem 1rem rgba(255, 255, 255, 0.897);
+    text-shadow: 1px 1px 1px rgb(255, 255, 255);
     min-height: 1vh;
   }
 
@@ -49,8 +49,8 @@ html,
   font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,"PingFang SC","Source Code Pro","WenQuanYi Micro Hei","YouYuan",Lato,proxima-nova,sans-serif
 } 
 .theme-base-02 ::selection {
-  color: rgba(255, 255, 255, 0.363);
-  background: #1832867a;/* 选中效果 */
+  color: rgb(0, 0, 0);
+  background: #24b15f8a;/* 选中效果 */
 }
 /*08*/
 /*09，0a是金黄色*/
