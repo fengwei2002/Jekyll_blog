@@ -5,11 +5,31 @@ tags: [杂项note]
 
 开发过程得益于谷歌搜索
 
-各种功能前人都有完整教程，跟着做就行了
+各种功能前人都有完整教程，跟着做就行了  
+这里列出我的所有参考资料，感谢
 
-## 字体功能：
+## 参考资料
 
-[https://segmentfault.com/a/1190000006110417](https://segmentfault.com/a/1190000006110417)
+[Jekyll + Github Pages 博客搭建入门](https://www.jianshu.com/p/9f198d5779e6)
+
+[Jekyll博客Next主题超深度配置](https://blog.csdn.net/ds19991999/article/details/81516568)
+
+[【应用软件】Jekyll 配置](https://www.jianshu.com/p/bb184f61c9ae)
+
+基本构建完成后就可以开始添加一些自己想要的功能，想要什么功能就用谷歌搜，应有尽有
+
+
+## 绑定域名
+
+https://fearlessroy.net/2018/01/29/binddomain/
+
+[https://cloud.tencent.com/developer/article/1421879](https://cloud.tencent.com/developer/article/1421879)
+
+使用腾讯云官方教程绑定
+
+## 字体样式：
+
+[小米字体和功能解析](https://segmentfault.com/a/1190000006110417)
 
 [https://linkthis.me/2018/01/20/the-font-setting-of-jekyll/]https://linkthis.me/2018/01/20/the-font-setting-of-jekyll/
 
@@ -17,7 +37,7 @@ tags: [杂项note]
 
 [https://github.com/KeJunMao/jekyll-theme-mdui](https://github.com/KeJunMao/jekyll-theme-mdui)
 
-## 评论系统
+## 评论系统gitalk
 
 [https://aerolith.ink/2018/08/25/Gitalk/](https://aerolith.ink/2018/08/25/Gitalk/)
 
@@ -25,20 +45,23 @@ tags: [杂项note]
 
 [https://valine.js.org/](https://valine.js.org/)
 
-## 赞赏模块待添加
+## 赞赏模块(没用)
+![UI(R`FXED_S%(Q~7USH2FRP.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureUI(R%60FXED_S%25(Q%7E7USH2FRP.jpg)
 
-目前Demo如下(V 1.0.0)
-![20200216153629.png](https://raw.githubusercontent.com/fengwei2002/picture/master/picture20200216153629.png)
-![20200216153723.png](https://raw.githubusercontent.com/fengwei2002/picture/master/picture20200216153723.png)
+![TX`9JXJURQ6@%5MNRUG2M$W.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureTX%609JXJURQ6%40%255MNRUG2M%24W.jpg)
+
+写博客又不是为了得到赞赏(￥)是为了得到赞赏(💝👀⏰)
+
 
 ## 添加网易云模块
+
+有两种引入模式
 
 <iframe frameborder="0" border="1" 
             marginwidth="0" marginheight="0"
             width="100%" height="450" 
             src="//music.163.com/outchain/player?type=2&amp;id=553795744&amp;auto=1&amp;height=80">
     </iframe>
-
 ```cpp
 大歌单类型插入
 <iframe frameborder="0" border="1" 
@@ -46,7 +69,7 @@ tags: [杂项note]
             width="100%" height="450" 
             src="//music.163.com/outchain/player?type=2&amp;id=553795744&amp;auto=1&amp;height=80">
     </iframe>
-标题插入
+标题类型插入
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="//music.163.com/outchain/player?type=2&id=(------)&auto=1&height=66"></iframe>  
 id从网易云网址即可获得
 ```
@@ -62,12 +85,11 @@ id从网易云网址即可获得
 
 像这种`:ship:`
 
-
 [https://aerolith.ink/2018/01/20/Emoji/](https://aerolith.ink/2018/01/20/Emoji/)
 
+使用快捷键`win+;`可以直接召唤表情库，所以没必要引入这种麻烦的操作方式
 
-## 绑定域名
+## 翻页功能？？没啥必要感觉
 
-https://fearlessroy.net/2018/01/29/binddomain/
+## 等有时间弄成一个侧面目录随文本一起滚动的模式
 
-[https://cloud.tencent.com/developer/article/1421879](https://cloud.tencent.com/developer/article/1421879)
