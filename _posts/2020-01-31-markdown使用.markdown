@@ -90,3 +90,16 @@ Lists should be surrounded by blank lines
 | :-----| ----: | :----: |
 | 单元格 | 单元格 | 单元格 |
 | 单元格 | 单元格 | 单元格 |
+
+Markdown 并无下划线的原生语法，因为会和链接的默认样式产生混淆。
+
+解决方法是使用行内 HTML. 比如：
+```markdown
+# Markdown Test
+
+*Italic Text*
+
+**Bold Text**
+
+<u>Underlined Text</u>
+```

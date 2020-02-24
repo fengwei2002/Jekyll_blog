@@ -10,7 +10,7 @@ date: 2020-02-12 01:36:57
 是一个模板类，不需要内存管理
 使用 vs 编辑 string 类时，会有参数类型自动提醒功能，输入函数名后就🆗
 
-### |string对象的初始化:
+### string对象的初始化:
 
 - string s1("hello");
 - string month ="march"
@@ -22,7 +22,7 @@ s = 'n'正确//可以将 字符赋值给string对象
 string s='n'错误
 ```
 
-### |成员函数`s.length();` `getline()`
+### 成员函数`s.length();` `getline()`
 
 string 类支持流读取运算符  
 string 还支持`getline()函数`
@@ -52,7 +52,7 @@ int main() {
 }
 ```
 
-### |string的赋值与连接
+### string的赋值与连接
 
 `string s1("cat"),s2;`
 可以使用=赋值两个不同字符串`s2=s1`  
@@ -75,7 +75,7 @@ for (int i=0;i<s.length();i++){
 
 字符串可以实现+=操作  
 
-### |连接字符串
+### 连接字符串
 
 成员函数`append();`
 
@@ -88,7 +88,7 @@ s2.append(s1,3,s1.size());//s1.size();s1的字符数
 //到字符串的最后一个字符
 ```
 
-### |== > >= < <= !=
+### == > >= < <= !=
 
 返回值都为bool类型，成立为true ，否则为false
 成员函数`compare()`
@@ -99,7 +99,7 @@ int f4=s1.compare(1,2,s3,0,3);//s1 1-2,s3 0-end;
 int f5=s1.compare(0,s1,size(),s3);
 ```
 
-### |成员函数substr(),(常用)
+### 成员函数substr(),(常用)
 
 输出子串
 
@@ -111,11 +111,11 @@ cout<<s2<<endl;
 
 o wor
 
-### |交换string
+### 交换string
 
 成员函数`swap()`;
 
-### |寻找string中的字符
+### 寻找string中的字符
 
 `find();`可以规定从哪里开始寻找
 返回下标或者string::npos;
@@ -138,7 +138,7 @@ s1.find("wei");
 `find_first_not_of()`
 >寻找不是字符串中的任何一个字符出现的第一个地址
 
-### |删除string中的字符 erase()
+### 删除string中的字符 erase()
 
 ```cpp
 string s1("fengwei bulihai");
@@ -157,7 +157,7 @@ erase方法原型
 补充  
 除了erase方法用于删除`string`中的元素, `void pop_back();`方法也可以用来删除元素, 但是只能删除`string`的最后一个元素
 
-### |替换string中的字符
+### 替换string中的字符
 
 成员函数`replace()`
 
@@ -170,7 +170,7 @@ s1.replace(2,3,"haha",1,2);
 //将s1中下标为2开始的三个字符换为haha中下标为1开始的两个字符
 ```
 
-### |在string中插入字符
+### 在string中插入字符
 
 成员函数`insert()`
 
@@ -192,7 +192,7 @@ void insert(iterator it, const_iterator first, const_iteratorlast);//在it处插
 void insert(iterator it, int n, char c);//在it处插入n个字符c 插入单个字符时使用这个
 ```
 
-### |转`char*`
+### 转`char*`
 
 使用`c_str`适应传统需求
 ![Screenshot_20200214_164800.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureScreenshot_20200214_164800.jpg)
@@ -200,13 +200,13 @@ void insert(iterator it, int n, char c);//在it处插入n个字符c 插入单个
 成员函数`data()`
 ![Screenshot_20200214_164746.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureScreenshot_20200214_164746.jpg)
 
-### |字符串拷贝函数
+### 字符串拷贝函数
 
 成员函数`copy()`
 ![Screenshot_20200214_164707.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureScreenshot_20200214_164707.jpg)
 
 
-### |字符串流处理
+### 字符串流处理
 
 ![Screenshot_20200214_164623.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureScreenshot_20200214_164623.jpg)
 
