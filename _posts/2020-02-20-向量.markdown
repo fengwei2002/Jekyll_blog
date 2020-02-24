@@ -18,7 +18,7 @@ vector，list
 
 用户--->汽车，使用说明书，就是数据结构的设计者和使用者的沟通合作方式<---制造者
 
-### >>从数组到向量
+### |从数组到向量
 
 c/c++中元素与编号一一对应，所以得到编号就能直接访问(lineer array)
 
@@ -29,7 +29,7 @@ c/c++中元素与编号一一对应，所以得到编号就能直接访问(linee
 参与复杂的算法
 有很多接口对于向量内的元素的操作(向量的ADT接口)
 
-### >>ADT操作实例
+### |ADT操作实例
 
 ```cpp
 空向量初始化(从左向右)
@@ -48,7 +48,7 @@ search()      //返回下标或者-1，或者前一个，
 
 逻辑上和物理上都符合常理要求
 
-### >>vector模板类的详细实现
+### |vector模板类的详细实现
 ```cpp
 定义秩
 默认初始容量
@@ -82,7 +82,7 @@ vector->interface->applications
 一般应用环境不能准确预测空间需求量  
 
 
-### >>动态空间管理
+### |动态空间管理
 
 蝉的哲学，在即将发生上溢时，适当扩大内部空间容量，动态申请一个更大的外壳  
 再将东西copy过来，释放原来的空间，将新空间供用户调用  
@@ -101,7 +101,7 @@ void Vector<T>::expand{//向量空间不足时扩容
 得益于向量的分装，尽管扩容之后数据地址已经改变，却不出现野指针  
 
 
-### >>那为何要加倍空间呢？
+### |那为何要加倍空间呢？
 
 递增式扩容  
 追加固定大小的容量  
@@ -117,7 +117,7 @@ void Vector<T>::expand{//向量空间不足时扩容
 ，使用空间的牺牲，换取了时间上的巨大收益  
 
 
-### >>平均分析和分摊分析
+### |平均分析和分摊分析
 
 概率分布，加权平均  
 ![34D26A3AC10EA77D875667FD5EE4CB26.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture34D26A3AC10EA77D875667FD5EE4CB26.jpg)
@@ -128,7 +128,7 @@ void Vector<T>::expand{//向量空间不足时扩容
 template<typename T>class vector{}   
 这种方式就可以使数据结构更加方便的被利用   
 
-### >>循秩访问  
+### |循秩访问  
 
 使用`V.get(r),V.put(r,e)`并不是很方便   
 所以要重载`[ ]`这样就可以便捷的使用访问数组的方式来访问向量中的元素  
@@ -141,7 +141,7 @@ T & vector<T>::operator[](Rank r)const{
 此后对外的`V[r]`即对应于内部的`V._elme[r]`    
 返回值是引用可以做左值或者右值   
 
-### >>插入算法 right shift 操作
+### |插入算法 right shift 操作
 ```cpp
 template <typename T>
 Rank Vector<T>::insert(Rank r,T const &e){//0(n-r)
@@ -155,7 +155,7 @@ Rank Vector<T>::insert(Rank r,T const &e){//0(n-r)
 }
 ```
 
-### >>删除算法
+### |删除算法
 
 区间删除
 ```cpp
@@ -181,7 +181,7 @@ T <vector>::remove(Rank r){//0(n-r)
 }
 ```
 
-### >>查找操作
+### |查找操作
 
 无序向量需要判等，重载==和!=  
 有序向量比较  
@@ -195,7 +195,7 @@ Rank Vector<T>::find(T const &e,Rank lo,Rank hi)const{
 }
 ```
 
-### >>唯一化算法
+### |唯一化算法
 
 网络搜索环境中会用到这种去重工作  
 ```cpp
@@ -225,7 +225,7 @@ find()和remove()累计耗费线性时间，故总体复杂度为$O(n^2)$
 - v.sort().uniquify():实现最优$O(log_n)$
 
 
-### >>遍历算法 
+### |遍历算法 
 
 统一分别实施visit操作  
 利用函数指针机制，只读或局部性修改
@@ -284,7 +284,7 @@ for(int i=1;i<size;i++){
 无序向量转换为有序向量后许多算法就可以进行大幅度的提升
 
 
-### >>唯一化(低效版)
+### |唯一化(低效版)
 
 低效算法唯一性，每一区间都保留单个元素即可
 ```cpp
@@ -301,7 +301,7 @@ template<typename T> int vector<T>::uniquify(){
 和无序向量复杂度一样，所以不推荐
 
 
-### >>唯一化(高效版)
+### |唯一化(高效版)
 
 同一元素可作为被删除元素的后继多次前移，尝试将区间一次删除  
 一直遍历找到与i不同的元素j，然后将j移动到紧邻i的右侧那个位置，无形中将重复元素忽略
@@ -317,7 +317,7 @@ template <typename T> int vector<T>::uniquify(){
 ```
 复杂度为$O(n)$只有一次比对操作
 
-### >>有序向量:二分查找算法
+### |有序向量:二分查找算法
 
 统一接口
 
@@ -359,7 +359,7 @@ static Rank binsearch(T* A,T const& e,Rank lo,Rank hi){
 `S.search(8,0,7);`复杂度为$O(log_n)$    
 大大优于顺序查找  
 
-### >>fibsearch(待修改补充)
+### |fibsearch(待修改补充)
 
 binsearch比较次数不等，递归深度相等，左侧成本更低  
 算法实现
@@ -379,7 +379,7 @@ static Rank fibsearch(T* A,T const &e,Rank lo,Rank hi){
     return -1;
 }
 ```
-### >>二分查找(稳定版)
+### |二分查找(稳定版)
 
 无论向左还是向右，每次迭代只有一次关键码比较   
 所有分支只有两个分支`<`或者`>=`  
@@ -396,7 +396,7 @@ template<typename T> static Rank binsearch(T* A,T const& e,Rank lo,Rank hi){
 ```
 这种算法整体性能更加稳定 
 
-### >>遵守语义约定的完整版本
+### |遵守语义约定的完整版本
 
 都未严格遵守search()接口语义约定，返回不大于e的最后一个元素  
 版本c
@@ -411,7 +411,7 @@ template<typename T>static Rank binsearch(T* A,T const& e,Rank lo,Rank hi){
 ```
 正确与否？:  严格遵守[0,lo)<=e<[hi,n]
 
-### >>有序向量的插值查找
+### |有序向量的插值查找
 
 原理与算法
 
@@ -427,7 +427,7 @@ $$\frac{秩}{秩} =\frac{元素的值}{元素的值}$$
 平均而言:每经过一次比较，n缩减至  $\sqrt[2]{n}$
 通常优势不明显，易受小扰动的干扰，且须引入乘法，除法
 
-### >>综合
+### |综合
 
 实际可行的方法:  
 首先通过插值查找，将查找范围缩小到一定范围然后再进行二分查找
@@ -447,7 +447,7 @@ template <typename T> void vector<T>::bubble_sort(Rank lo,Rakn hi){
 ```
 任何一对元素都是顺序的，那么就是有序段，所以每一趟扫描交换都记录下来是否存在逆序元素，如果第一次遍历时没有做过交换，那么今后的从头到尾的所有遍历就都不用 考察这一部分元素，实际运行时间就可能会大大减少
 
-### >>改进
+### |改进
 
 ```cpp
 template <typename T> bool vector<T>::bubble(Rank lo,Rank hi){
@@ -463,7 +463,7 @@ template <typename T> bool vector<T>::bubble(Rank lo,Rank hi){
 ```
 ![73D855517EB452D30E580DC71C1D97A3.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture73D855517EB452D30E580DC71C1D97A3.jpg)
 
-### >>再改进
+### |再改进
 
 若有序段向量在整个向量的后面，那么效率就和普通差不多，所以需要提前找出有序段向量，就会更加快
 
@@ -487,7 +487,7 @@ template <typename T> Rank vector<T>::bubble(Rank lo,Rank hi){
 
 并且这种加快算法可能会有多次缩短，使区间多次变小
 
-### >>综合评价
+### |综合评价
 
 上面几种冒泡排序最好情况和最坏情况都和基础版本相同，全是对一般情况的优化  
 输入含重复元素时，算法的**稳定性**是更为细致的追求，重复元素在输入，输出时的相对次序，是否保持不变  
@@ -523,7 +523,7 @@ void vector<T>::merge_sort(Rank lo,Rank hi){
     merge(lo,mi,hi);//实质工作
 }
 ```
-### >>二路归并原理:
+### |二路归并原理:
 
 ![A694737ABA974F081B1E00390E7180A7.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureA694737ABA974F081B1E00390E7180A7.jpg)
 
@@ -552,7 +552,7 @@ void Vector<T>::merge(Rank lo, Rank mi, Rank hi){//三个秩传入
 }
 ```
 
-### >>精简实现
+### |精简实现
 
 //交换循环体内两句的次序，删除无用逻辑
 

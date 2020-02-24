@@ -18,7 +18,7 @@ date: 2020-02-23
 - 连续的物理空间，数据空间整体创建或销毁，效率上有很大优势 但动态操作力不从心例如`insert`操作
 - 动态分配和回收的物理空间
 
-### >>从向量到列表
+### |从向量到列表
 
 通过指针或引用彼此连接，在逻辑上构成一个线性序列
 相邻节点互称为前驱和后继，没有前去和后继称作首和末节点
@@ -28,7 +28,7 @@ date: 2020-02-23
 也有秩，但是寻秩访问就会变得特别慢，因为物理空间并不连续，转用节点之间的相互引用找到特定的元素
 
 
-### >>列表节点:  
+### |列表节点:  
 作为列表的基本元素，列表节点首先需要独立的“封装”实现  
 为此，可设置并约定若干基本的操作接口  
 
@@ -40,7 +40,7 @@ insert_as_pred();//插入前驱节点，存入被引入对象e，返回新节点
 insert_as_succ();
 ```
 
-### >>列表节点 ListNode模板类
+### |列表节点 ListNode模板类
 
 ```cpp
 #define position(T) ListNode<T>* 
@@ -59,7 +59,7 @@ struct ListNode {//列表节点模板类(以双向链表的形式实现)
 
 ![C409AF3F97AF28C28609429D7BE6D6F8.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureC409AF3F97AF28C28609429D7BE6D6F8.jpg)
 
-### >>列表：list模板类
+### |列表：list模板类
 
 ```cpp
 #include "ListNode.h"
@@ -75,7 +75,7 @@ public:
 ```
 ![A4559D864A315EFEB0681362CCAFF9A3.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureA4559D864A315EFEB0681362CCAFF9A3.jpg)
 
-### >>构造
+### |构造
 
 ```cpp
 template<typename T> void List<T>::init(){
@@ -89,7 +89,7 @@ template<typename T> void List<T>::init(){
 
 ## 无序列表
 
-### >>重载下标操作符
+### |重载下标操作符
 
 实现通过秩读取元素 $O(r)$
 
@@ -102,7 +102,7 @@ T list<T>::operator[](Rank r) const {
 }
 ```
 
-### >>查找算法
+### |查找算法
 
 在节点 p（可能是trailer）的第 n 个（真）前驱中，找到等于 e 的最后者
 
@@ -118,7 +118,7 @@ position(T) List<T>::find(T const& e;int n;position(T) p)const{
 ```
 可以有两种接口`find(e,n,p)` `find(e,p,n)`，功能语义要和实际意义一样
 
-### >>插入算法
+### |插入算法
 
 ```cpp
 template <typename T> position(T) List<T>::insert_before(position(T) p, T const& e){
@@ -141,7 +141,7 @@ position(T) ListNode<T>::insert_as_pred(T const& e){
 像微创手术一样，不会影响其他变量的位置和整体结构，查找的速度就比向量更快
 
 
-### >>基于复制的构造
+### |基于复制的构造
 
 ```cpp
 template <typename T>//基本接口
@@ -154,7 +154,7 @@ void List<T>::copyNodes(position(T) p,int n){//O(n)
 }
 insert_as_last=insert_before_trailer
 ```
-### >>删除和析构
+### |删除和析构
 
 删除节点
 
@@ -183,7 +183,7 @@ template<typename T>int List::clear(){
 }//o(n),线性正比于列表规模
 ```
 
-### >>唯一化
+### |唯一化
 
 剔除重复元素
 
@@ -205,7 +205,7 @@ template <typename T> int List<T>::wuxu_weiyi(){
 ## 有序列表
 
 
-### >>唯一化
+### |唯一化
 
 按照大小关系有序排列，故可以更快的完成  
 通过remove接口多次操作雷同节点，保留同一区间的首节点
@@ -226,7 +226,7 @@ template<typename T> int List<T>::uniquify(){
 }//只需遍历一遍 list remove操作也不会对其他元素有影响(faster)，
 ```
 
-### >>查找
+### |查找
 
 ```cpp
 template <typename T>//在有序列表p的n个前驱中
@@ -249,7 +249,7 @@ position(T) List<T>::search(T const& e,int n, position(T) p)const {
 bubble_sort 其实也是不折不扣的 selection_sort  
 $O(n^2)$ -> $O(n)$
 
-### >>函数实现
+### |函数实现
 
 ```cpp
 //对列表中起始位置为p的连续n个元素做选择排序
@@ -278,7 +278,7 @@ template <typename T> void List<T>::selection_sort(position(T) p ,int n){
 
 当最后max值刚好为tail值就不用执行那一次多余的移动操作，但因为这种情况出现概率极低，所以会得不偿失
 
-### >>selection_max 函数实现
+### |selection_max 函数实现
 ```cpp
 template<typename T>
 position(T) List<T>::selection_max(position(T) p ,int n ){
@@ -295,7 +295,7 @@ position(T) List<T>::selection_max(position(T) p ,int n ){
 
 ![B3FF0673943B894B615904DE74352C54.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureB3FF0673943B894B615904DE74352C54.jpg)
 
-### >>性能
+### |性能
 
 `selection_max`算数级数
 `remove`和`insert_before`均为 $O(1)$
@@ -313,14 +313,14 @@ $2b$ 插入动作既是名字由来
 
 并且由于是列表，插入一个元素的行为就会更加快速
 
-### >>与选择排序
+### |与选择排序
 
 后面元素有多大和此前归入列表中的元素无任何关系，且对未排序的元素没有任何限制（数量，大小）
 
 ![A0A893B049CA9E8E69D215FAFA1DB1BF.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureA0A893B049CA9E8E69D215FAFA1DB1BF.jpg)
 
 
-### >>实现
+### |实现
 
 ```cpp
 //对列表中起始于位置p的连续n个元素做插入排序 
@@ -336,17 +336,17 @@ template<typename T> void List<T>::insertion_sort(position(T) p,int n){
 仅使用O(1)的辅助空间
 
 
-### >>性能
+### |性能
 
 完全有序时，需要O(n)的复杂度，线性时间内完成  
 当查找算法使用向量binsearch时，虽然查找比较速度会变为$O(log_n)$,但是当在物理空间上将新元素插入到查找出来的位置时，就会变得很慢很慢
 
 所以改用向量使用此算法就于事无补了 
 
-### >>平均性能
+### |平均性能
 （待二刷后添加） 结论：平均复杂度依然是$O(n^2)$
 
-### >>逆序对
+### |逆序对
 
 从小到大是顺序
 （待二刷后添加）

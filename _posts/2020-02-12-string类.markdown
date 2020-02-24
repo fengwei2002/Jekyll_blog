@@ -8,8 +8,9 @@ date: 2020-02-12 01:36:57
 ## string类:
 
 是一个模板类，不需要内存管理
+使用 vs 编辑 string 类时，会有参数类型自动提醒功能，输入函数名后就🆗
 
-### >>string对象的初始化:
+### |string对象的初始化:
 
 - string s1("hello");
 - string month ="march"
@@ -21,7 +22,7 @@ s = 'n'正确//可以将 字符赋值给string对象
 string s='n'错误
 ```
 
-### >>成员函数`s.length();` `getline()`
+### |成员函数`s.length();` `getline()`
 
 string 类支持流读取运算符  
 string 还支持`getline()函数`
@@ -51,7 +52,7 @@ int main() {
 }
 ```
 
-### >>string的赋值与连接
+### |string的赋值与连接
 
 `string s1("cat"),s2;`
 可以使用=赋值两个不同字符串`s2=s1`  
@@ -74,7 +75,7 @@ for (int i=0;i<s.length();i++){
 
 字符串可以实现+=操作  
 
-### >>连接字符串
+### |连接字符串
 
 成员函数`append();`
 
@@ -87,7 +88,7 @@ s2.append(s1,3,s1.size());//s1.size();s1的字符数
 //到字符串的最后一个字符
 ```
 
-### >>== > >= < <= !=
+### |== > >= < <= !=
 
 返回值都为bool类型，成立为true ，否则为false
 成员函数`compare()`
@@ -98,7 +99,7 @@ int f4=s1.compare(1,2,s3,0,3);//s1 1-2,s3 0-end;
 int f5=s1.compare(0,s1,size(),s3);
 ```
 
-### >>成员函数substr(),(常用)
+### |成员函数substr(),(常用)
 
 输出子串
 
@@ -110,11 +111,11 @@ cout<<s2<<endl;
 
 o wor
 
-### >>交换string
+### |交换string
 
 成员函数`swap()`;
 
-### >>寻找string中的字符
+### |寻找string中的字符
 
 `find();`可以规定从哪里开始寻找
 返回下标或者string::npos;
@@ -137,15 +138,26 @@ s1.find("wei");
 `find_first_not_of()`
 >寻找不是字符串中的任何一个字符出现的第一个地址
 
-### >>删除string中的字符 erase()
+### |删除string中的字符 erase()
 
 ```cpp
 string s1("fengwei bulihai");
-s1.erase(7);
-//删除下标7及之后的字符
+s1.erase(7,3);
 ```
+erase方法原型
+`basic_string & erase(size_type pos=0, size_type n=npos);`   
+从给定起始位置pos处开始删除, 要删除字符的长度为n, 返回值修改后的string对象引用
 
-### >>替换string中的字符
+`iterator erase(const_iterator position)`  
+删除迭代器位置处的单个字符, 并返回下个元素的迭代器
+
+`iterator erase(const_iterator first, const_iterator last)`   
+删除迭代器[first, last)区间的所有字符,返回一个指向被删除的最后一个元素的下一个字符的迭代器.
+
+补充  
+除了erase方法用于删除`string`中的元素, `void pop_back();`方法也可以用来删除元素, 但是只能删除`string`的最后一个元素
+
+### |替换string中的字符
 
 成员函数`replace()`
 
@@ -158,20 +170,29 @@ s1.replace(2,3,"haha",1,2);
 //将s1中下标为2开始的三个字符换为haha中下标为1开始的两个字符
 ```
 
-### >>在string中插入字符
+### |在string中插入字符
 
 成员函数`insert()`
 
 ```cpp
-string s1("hello world");
-string s2("show index");
-s1.insert(5,s2);
-//将s2插入s1下标为5的位置
-s1.insert(2,s2,2,3);
-//将s2的下标从2-3插入到s1的2下标处
+string &insert(int p0, const char *s);——在p0位置插入字符串s
+
+string &insert(int p0, const char *s, int n);——在p0位置插入字符串s的前n个字符
+
+string &insert(int p0,const string &s);——在p0位置插入字符串s
+
+string &insert(int p0,const string &s, int pos, int n);——在p0位置插入字符串s从pos开始的连续n个字符
+
+string &insert(int p0, int n, char c);//在p0处插入n个字符c
+
+iterator insert(iterator it, char c);//在it处插入字符c，返回插入后迭代器的位置
+
+void insert(iterator it, const_iterator first, const_iteratorlast);//在it处插入从first开始至last-1的所有字符
+
+void insert(iterator it, int n, char c);//在it处插入n个字符c 插入单个字符时使用这个
 ```
 
-### >>转`char*`
+### |转`char*`
 
 使用`c_str`适应传统需求
 ![Screenshot_20200214_164800.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureScreenshot_20200214_164800.jpg)
@@ -179,13 +200,13 @@ s1.insert(2,s2,2,3);
 成员函数`data()`
 ![Screenshot_20200214_164746.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureScreenshot_20200214_164746.jpg)
 
-### >>字符串拷贝函数
+### |字符串拷贝函数
 
 成员函数`copy()`
 ![Screenshot_20200214_164707.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureScreenshot_20200214_164707.jpg)
 
 
-### >>字符串流处理
+### |字符串流处理
 
 ![Screenshot_20200214_164623.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureScreenshot_20200214_164623.jpg)
 
