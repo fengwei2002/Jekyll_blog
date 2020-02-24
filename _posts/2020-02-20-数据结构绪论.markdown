@@ -6,7 +6,7 @@ date: 2020-02-06
 ---
 ## 计算
 
-### # 清华Oj使用
+### >>清华Oj使用
 
 [共有四次作业](https://dsa.cs.tsinghua.edu.cn/oj/foyer.shtml)
 
@@ -14,7 +14,7 @@ computer science should be called computing science,for the same
 reason why surgery（手术） is not called knife science  
 \- [E.Dijkstra](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra) 
 
-### # 绳索计算机及其算法
+### >>绳索计算机及其算法
 
 - 输入：直线l和上面任意一点A  
 - 输出：经过A的一条垂线  
@@ -25,7 +25,7 @@ reason why surgery（手术） is not called knife science
     将四和三点固定一个，同时拉直剩余的3+5  
     这时就出现了垂线  
 
-### # 尺规计算机及其算法
+### >>尺规计算机及其算法
 
 - 找一个线段的两个三等分点
 - 算法：
@@ -34,7 +34,7 @@ reason why surgery（手术） is not called knife science
 
 >子程序->平行线作法
 
-### # 算法  
+### >>算法  
 
 计算：借助工具，遵循一定规则，明确而机械的进行  
 正确性，确定性，可行性，有穷性
@@ -45,13 +45,13 @@ reason why surgery（手术） is not called knife science
     对于任意n，hailstone<正无穷？（未证明）
 so 程序不等于算法  
 
-### # 好的算法，好的计算过程
+### >>好的算法，好的计算过程
 
 正确，健壮，可读，**效率**
 
 ## 计算模型
 
-### # measure
+### >>measure
 
 DSA 度量(To measure is to know)  
 时间成本：
@@ -62,7 +62,7 @@ DSA 度量(To measure is to know)
 所以就构建了一些理想模型来measure算法  
 
 
-### # 对一般计算工具的简化和抽象
+### >>对一般计算工具的简化和抽象
 
 - 图灵机
   - tape默认为\#
@@ -128,7 +128,7 @@ FLoor:向下取整的除法
 递归，递归跟踪+递归方程  
 猜测加验证  
 
-### # 级数
+### >>级数
 
 - 算数级数  
 通项公式最高项  
@@ -170,7 +170,7 @@ $O(n^2)$：
 计算过程为
 三角形面积和正方形面积复杂度都为$O(n^2)$  
 
-### # 冒泡排序
+### >>冒泡排序
 
 ```cpp
 void bubblesort(int A[];int n){
@@ -204,7 +204,7 @@ void bubblesort(int A[];int n){
 递归跟踪：直观形象，适用于简单的递归模式
 递推方程：适用于复杂的递归模式
 
-### # 数组倒置
+### >>数组倒置
 
 ```cpp
 void reverse(int *A,int low,int high){
@@ -225,7 +225,7 @@ void reverse(int *A,int low,int high){
 
 ```
 
-### # 数组求和
+### >>数组求和
 
 二分递归
 
@@ -242,7 +242,7 @@ T(n)=O(1) x (2^0+2^1+2^2...+2^long_n)
 
 底层递归实例共n个，所以复杂度为O(n);
 
-### # Max2
+### >>Max2
 
 从数组区间[lo,hi)中找出最大两个整数的比较次数，要求尽可能的少
 hi并不是有效部分，但可以加进去考虑
@@ -266,7 +266,7 @@ hi并不是有效部分，但可以加进去考虑
 
 比较n-1次
 
-### # Max2:二分递归
+### >>Max2:二分递归
 
 左侧最大次大，
 右侧最大次大；

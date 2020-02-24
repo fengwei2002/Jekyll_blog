@@ -62,7 +62,7 @@ t1.testadd(t2).testadd(t2);
 main.cpp~Myarray.cpp
 ~Myarray.h;
 
-### # main.cpp
+### >>main.cpp
 
 ```cpp
 #include <iostream>
@@ -87,7 +87,7 @@ int main() {
 	return 0;
 } 
 ```
-### # MyArray.h
+### >>MyArray.h
 
 ```cpp
 #pragma once
@@ -107,7 +107,7 @@ private:
 	int* space;
 };
 ```
-### # MyArray.cpp
+### >>MyArray.cpp
 ```cpp
 #include "MyArray.h"
 #include<iostream>
@@ -174,7 +174,7 @@ friend 函数头+分号
 
 ## 操作符重载
 ***
-### # 格式
+### >>格式
 
 ```cpp
 +-
