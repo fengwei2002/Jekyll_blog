@@ -2,5 +2,72 @@
 layout: post
 title: 第五章 二叉树
 tags: [数据结构]
-date: 2020-02-20
+date: 2020-02-26
 ---
+## 树
+
+Tree = $List^2$
+
+应用 
+层次关系的表示，文件管理系统，
+
+### 树基本结构
+
+每一个节点都叫做 顶点 vertex 指定任一节点 r 属于 V作为根后 ，T即称作有根树(rooted tree) subtree
+
+parent child sibling(兄弟) degree
+
+任何一个树的边数和其顶点的规模同阶
+
+若将同一节点的孩子们编号，则称作有序树(ordered tree)
+
+### 路径(path)加环路
+
+依次相连的k+1的节点，构成一条路径，//通路  
+路径长度就是参与构成其的边数     //早期文献以节点数为长度  
+
+环路，loop 节点构成环
+
+节点之间均有路径，称作连通图(connected)，不含环路，称作无环图(acyclic)
+
+五环连通图，极小连通图，极大无环图
+
+故：任一节点v与艮之间存在唯一路径
+$$path(v,r)=path(v)$$
+节点拥有的指标便是这条通路的长度 通过指标可以将节点化为几类  
+
+### 深度加层次
+```cpp
+path from root to  v = path v  
+subtree rotted at v = subtree v
+```
+节点具有的那个指标也叫做树的深度(depth)  
+path(V)上的节点，均为v的祖先(ancestor) v 是他们的后代(descendent)//proper  
+前驱的唯一性仍然保持，后继的唯一性未必，所以树也叫做半线性结构  
+那么图就叫做非线性结构  
+
+- 根节点深度为0 ，公共祖先 ，
+- 没有后代的节点称作叶子
+- 所有叶子最大值的深度就叫做树的高度
+- 子树也具有高度，全树的高度
+- 特别的，空树的高度取做-1
+- $depth(v) + height(v) <= heigth(T)$
+
+![DDF4E96BC16EEC8F010C65B5E300B496.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureDDF4E96BC16EEC8F010C65B5E300B496.jpg)
+
+## 二叉树
+
+### 树的表示
+![A1A669469932A264ECD45FB0121803C7.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureA1A669469932A264ECD45FB0121803C7.jpg)
+
+
+
+
+
+  
+
+
+    
+
+
+

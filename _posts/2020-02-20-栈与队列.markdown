@@ -27,7 +27,8 @@ template<typename T> class Stack public Vector<T>{
 
 都在向量末尾操作，所以复杂度都是$O(1)$，这也是不在向量头操作的原因
 
-## 逆序输出
+
+###　逆序输出
 
 输出次序与处理过程颠倒，递归深度和输出长度不易预知
 
@@ -103,15 +104,110 @@ bool brackets_match(const char exp[] ,int low,int high){
 
 ### 延时缓冲
 
-表达式求值 
+表达式求值  
+算法具有单调性，
+求值算法=栈+扫描  
+![E9F86A63DB3107612B3735D2B98368BA.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureE9F86A63DB3107612B3735D2B98368BA.jpg)
+
+实现：
+```cpp
+float evaluate (char* S,char* & RPN){//中缀表达式求值
+    Stack<float> number; Stack<char> Operator;//运算数栈，运算符栈
+    Operator.push('\0');//尾哨兵'\0'也作为头哨兵首先入栈
+    while (!Operator.empty()) { //逐个字符处理，直至栈空
+        if (is_dight(*S))  //若当前字符为操作数，则
+            readNumber(S,number);//完整读入（可能多位的）操作数
+        else //若当前字符为运算符，则视其与栈顶运算符之间优先级的高低
+            switch(orderBetween(Operator.top(),*S)){ 分别处理 }
+    }//while 
+    return number.pop();//弹出并返回最后的计算结果
+}
+```
+
+不同优先级的处理方法：
+```cpp
+switch(order_Between(operator.top(), *S){
+    case '<'://栈顶优先级更低
+        operator.push(*S);S++;break;//推入运算符栈中，转到表达式的下一个
+    case '='://(和)  '\0'
+        operator.pop();S++;break;//弹出栈顶运算符，然后跳过当前字符转向下一字符
+    case '>':{//*和+
+        char op = operator.pop();
+        if( '!' == op ) number.push(calculate(op ,number.pop() ) );//一元运算符
+        else {
+            float pOpnd2 = number.pop(), pOpnd1 = number.pop();
+            //弹出两个运算数
+            number.push(calculate (pOpnd1 ,op , pOpnd2 ) );
+            //实施结果入栈
+        }
+    }
+}
+```
+>思考：为何不直接 将两个 pop 操作加入calculate 函数中？
+
+[实例解析](http://www.bilibili.com/video/av82410486?p=156&share_medium=android&share_source=copy_link&bbid=PQk6Cz4KOAtoDjYHewd7infoc&ts=1582623533303)
 
 
+### 逆波兰表达式 RPN
 
+[数理逻辑学家Jan Łukasiewicz](https://zh.wikipedia.org/wiki/%E6%89%AC%C2%B7%E5%8D%A2%E5%8D%A1%E8%A5%BF%E7%BB%B4%E8%8C%A8)
 
+在运算符和操作数组成的表达式中，不使用括号，即可表示带优先级的运算关系，操作时只需要一个操作栈
 
+手工转换法：（普通表达式到逆波兰表达式）
+- 用括号显示的表示优先级（中缀表达式
+- 将运算符移动到对应的右括号后
+- 抹去所有括号 （操作数和操作符组成的逆波兰表达式
+- 移动后所有操作数的次序 和中缀表达式的次序不变
 
+实现:infix到postfix（待二刷）　　
+Infix expression(中缀表达式) postfix 后缀
 
+```cpp
+float evaluate( char* S,char * & RPN){ //RPN转换
+    /*.....................*/
+    while (! optr.empty() ){ //逐个处理各个字符，直至全空
+        if (is_dight (*S) ){ //若当前字符为操作数 ，
+            read_number(S,opnd );append (RPN , opnd.top() );//通过read number将操作数读入栈中.然后加入RPN尾部
+        }
+        else {//若当前字符为运算符
+            switch (order_between(optr.top() , *S )){
+                /*………………………………………………………………*/
+                case '>': //栈顶可以立即执行时
+                char op = optr.pop();
+                append (RPN ,op ); //接入RPN
+            }
+        }//case '>'
+    }
+    /*………………………………………………………………*/
+}
+```
 
+## 队列接口与实现
+
+图算法中有广泛应用
+
+### 操作与接口
+
+机场排好的队伍First InFirst Out  
+
+只能在队尾插入（查询）enqueue(队尾插入一个元素) + rear()  
+只能在对头删除（查询）dequeue(取出队首的一个元素) + front(查询首元素)  
+size接口得到当前队列规模
+
+### 模板类
+
+因为是一种特殊的序列，所以基于向量或列表派生
+
+```cpp
+template<typename T> class Queue: public List<T>{
+    public: //size() 与empty直接沿用
+    void enqueue(T const &e){insert_as_last(e) ; }//入队
+    T dequeue() {return remove (first () );} //出队
+    T & front() {return first()->data;} //队首
+};//以列表首/末端为队列头/尾——颠倒过来呢？
+```
+使用之前开发的模板实现需求又安全又快速
 
 
 
