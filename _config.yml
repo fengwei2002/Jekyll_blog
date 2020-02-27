@@ -484,104 +484,50 @@ page:
         - key: onload
           value: '$(".language-mermaid").removeClass("language-mermaid").addClass("mermaid");mermaid.init();'
 
-
-  <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-coy.min.css"
-        />
-        <script
-          src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-core.min.js"
-          defer="defer"
-        ></script>
-        <script
-          src="https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js"
-          defer="defer"
-          onload='Prism.plugins.autoloader.languages_path = "https:\/\/cdn.jsdelivr.net/npm/prismjs/components/"'
-        ></script>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css"
-        />
-        <script
-          src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"
-          defer="defer"
-          onload='
-            for(let x=document.getElementsByTagName("pre"), i=0;i<x.length;i++)
-            {
-              x[i].classList.add("line-numbers");
-            }'
-        ></script>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/prismjs/plugins/toolbar/prism-toolbar.min.css"
-        />
-        <script
-          src="https://cdn.jsdelivr.net/npm/prismjs/plugins/toolbar/prism-toolbar.min.js"
-          defer="defer"
-          onload='
+    - var:
+        - key: src
+          value: //cdn.jsdelivr.net/npm/prismjs/components/prism-core.min.js
+        - key: defer
+          value: defer
+    - var:
+        - key: src
+          value: //cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js
+        - key: defer
+          value: defer
+        - key: onload
+          value: '$("pre").addClass("line-numbers")'
+    - var:
+        - key: src
+          value: //cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js # prism自动加载语法插件，可在https://github.com/PrismJS/prism/tree/master/components 查看支持的语言
+        - key: defer
+          value: defer
+        - key: onload # onload参数见https://katex.org/docs/autorender.html
+          value: 'Prism.plugins.autoloader.languages_path = "//cdn.jsdelivr.net/npm/prismjs/components/"'
+    - var:
+        - key: src
+          value: //cdn.jsdelivr.net/npm/prismjs/plugins/toolbar/prism-toolbar.min.js # prism工具栏插件
+        - key: defer
+          value: defer
+        - key: onload # 创建一个选中代码的按钮
+          value: |
             Prism.plugins.toolbar.registerButton("select-code", function (env) {
-              let button = document.createElement("button");
+              var button = document.createElement("button");
               button.innerHTML = "select this " + env.language;
               button.addEventListener("click", function () {
                 if (document.body.createTextRange) {
-                  let range = document.body.createTextRange();
+                  var range = document.body.createTextRange();
                   range.moveToElementText(env.element);
                   range.select();
                 } else if (window.getSelection) {
-                  let selection = window.getSelection();
-                  let range = document.createRange();
+                  var selection = window.getSelection();
+                  var range = document.createRange();
                   range.selectNodeContents(env.element);
                   selection.removeAllRanges();
-                    selection.addRange(range);
+                  selection.addRange(range);
                 }
               });
               return button;
-            })'
-        ></script>
-    # - var:
-    #     - key: src
-    #       value: //cdn.jsdelivr.net/npm/prismjs/components/prism-core.min.js
-    #     - key: defer
-    #       value: defer
-    # - var:
-    #     - key: src
-    #       value: //cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js
-    #     - key: defer
-    #       value: defer
-    #     - key: onload
-    #       value: '$("pre").addClass("line-numbers")'
-    # - var:
-    #     - key: src
-    #       value: //cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js # prism自动加载语法插件，可在https://github.com/PrismJS/prism/tree/master/components 查看支持的语言
-    #     - key: defer
-    #       value: defer
-    #     - key: onload # onload参数见https://katex.org/docs/autorender.html
-    #       value: 'Prism.plugins.autoloader.languages_path = "//cdn.jsdelivr.net/npm/prismjs/components/"'
-    # - var:
-    #     - key: src
-    #       value: //cdn.jsdelivr.net/npm/prismjs/plugins/toolbar/prism-toolbar.min.js # prism工具栏插件
-    #     - key: defer
-    #       value: defer
-    #     - key: onload # 创建一个选中代码的按钮
-    #       value: |
-    #         Prism.plugins.toolbar.registerButton("select-code", function (env) {
-    #           var button = document.createElement("button");
-    #           button.innerHTML = "select this " + env.language;
-    #           button.addEventListener("click", function () {
-    #             if (document.body.createTextRange) {
-    #               var range = document.body.createTextRange();
-    #               range.moveToElementText(env.element);
-    #               range.select();
-    #             } else if (window.getSelection) {
-    #               var selection = window.getSelection();
-    #               var range = document.createRange();
-    #               range.selectNodeContents(env.element);
-    #               selection.removeAllRanges();
-    #               selection.addRange(range);
-    #             }
-    #           });
-    #           return button;
-    #         })
+              })
     - var:
         - key: src
           value: //cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.min.js # live2d
