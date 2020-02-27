@@ -114,6 +114,7 @@ index:
   - 模板
   - 深入理解计算机系统
   - 算法竞赛入门经典
+  - C#
   - 数据结构
   - cpp+STL
   - 杂项note
@@ -165,15 +166,11 @@ archive:
   #         value: "41" # 粒子数量
   #       - key: zIndex
   #         value: "-1"
-
-
-
 # Gitalk settings
 comment_gitalk_clientId: 21436ebf2d5cbcaf5c53
 comment_gitalk_clientSecret: 7849e7ab3f1b9ed8b60afa97ec14143c070e85c8
 comment_gitalk_repo: blogcomment
 github_username: fengwei2002
-
 
 post:
   date:
