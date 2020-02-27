@@ -57,10 +57,13 @@ path(V)上的节点，均为v的祖先(ancestor) v 是他们的后代(descendent
 
 ## 二叉树
 
-### 树的表示
+### 树的接口
+
 ![A1A669469932A264ECD45FB0121803C7.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureA1A669469932A264ECD45FB0121803C7.jpg)
 
+### 父节点
 
+-1表示树顶，
 
 
 

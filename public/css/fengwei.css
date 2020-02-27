@@ -269,3 +269,30 @@ html,
   }
 }
 /*头像效果-end*/
+ /*滚动条效果-start*/
+          ::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+          }
+          ::-webkit-scrollbar-thumb {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+          }
+/*滚动条效果end*/
+
+/*动画效果start*/
+          .masthead,
+          .content,
+          .sidebar-toggle,
+          .pio-container {
+            animation: animationAppear 2s;
+          }
+          @keyframes animationAppear {
+            0% {
+              opacity: 0;
+            }
+            33% {
+              opacity: 0;
+            }
+            100% {}
+          }
+/*动画效果end*/
