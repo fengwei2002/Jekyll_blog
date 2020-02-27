@@ -57,20 +57,46 @@ path(V)上的节点，均为v的祖先(ancestor) v 是他们的后代(descendent
 
 ## 二叉树
 
-### 树的接口
+### 树的接口设计
 
 ![A1A669469932A264ECD45FB0121803C7.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureA1A669469932A264ECD45FB0121803C7.jpg)
 
-### 父节点
+将顶点的children组成一个新的序列，度数就是孩子的数目，可以加快查找孩子的速度
 
--1表示树顶，
+对于同一个节点：保留parent数据集和child数据集，这样的实现方法两全其美
+
+child数据集的长度相差较大
+
+每个节点均设置两个引用，纵first_child，横next_sibling 父母关注长子，然后其余互相照顾
+
+对于任意一个节点，只保留长子的一个引用，长子通过横向引用确认其他节点（长子兄弟法）
+
+### 二叉树概述
+
+节点数不超过2的树，称作二叉树
+
+同一节点的孩子和子树，均以左右区分，(左在前)，二叉树足以描述所有的树
+
+深度为k的树，最多$2^k$个节点,最多时叫做满树(full binary_tree)，长宽的速度非常快，长高的速度非常慢
+
+### 真二叉树
+
+每个节点的粗度都是偶数，0 or 2 虚拟模拟
+
+![75E71F923C483C9403256E58E91CFED6.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture75E71F923C483C9403256E58E91CFED6.jpg)
+
+### 用二叉树描述多叉树
 
 
 
-  
 
 
-    
+
+
+
+
+
+
 
 
 

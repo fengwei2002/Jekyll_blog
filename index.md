@@ -21,4 +21,6 @@ title: psychonaut1
 >Shanxi University 2019 software Engineering department studying
 
 ## *`Project`*
->To Be Done 💤
+- [搭建的个人博客](https://github.com/fengwei2002/fengwei2002.github.io)
+  -  基于Jekyll搭建的个人博客
+- C#
