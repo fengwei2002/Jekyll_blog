@@ -114,6 +114,13 @@ template<typename T> struct BinaryNode {
     template<typename VST> void travPost(VST &);  //子树后序遍历 ,提供四种基本遍历的接口
 }
 ```
+### BinaryNode接口实现
+
+```cpp
+template <typename T> BinaryNodePosition(T) BinaryNode<T>::insert_as_left_child(T const & e){
+    return 1child = new BinaryNode ( e ,this );//构建新节点 data 域为e 父节点为 this 返回值为 position 所以直接将结果赋值给 1child
+}
+```
 
 
 
