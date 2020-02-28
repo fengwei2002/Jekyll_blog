@@ -22,11 +22,4 @@ title: psychonaut1
 
 ## *`Project`*
 
-TBD
-<!-- 
-- [搭建的个人博客](https://github.com/fengwei2002/fengwei2002.github.io)
-  -  基于Jekyll搭建的个人博客
-- C#搭建的markdown编辑器
-- JavaScript弄得网页版别踩白块
-- 涂鸦跳跃
-- 功能齐全的贪吃蛇 -->
+TODO： 
