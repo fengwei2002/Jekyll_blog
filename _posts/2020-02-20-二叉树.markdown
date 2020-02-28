@@ -67,9 +67,9 @@ path(V)上的节点，均为v的祖先(ancestor) v 是他们的后代(descendent
 
 child数据集的长度相差较大
 
-每个节点均设置两个引用，纵first_child，横next_sibling 父母关注长子，然后其余互相照顾
+每个节点均设置两个引用，纵first_child，横next_sibling父母关注长子，然后其余互相照顾
 
-对于任意一个节点，只保留长子的一个引用，长子通过横向引用确认其他节点（长子兄弟法）
+对于任意一个节点，只保留长子的一个引用，长子通过横向引用确认其他节点（长子兄弟法）（最佳）
 
 ### 二叉树概述
 
@@ -86,6 +86,58 @@ child数据集的长度相差较大
 ![75E71F923C483C9403256E58E91CFED6.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture75E71F923C483C9403256E58E91CFED6.jpg)
 
 ### 用二叉树描述多叉树
+
+有根且有序的树都能通过二叉树表示和实现（长子兄弟法）
+
+![3A2536F3E5918997190B0AF48297710E.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture3A2536F3E5918997190B0AF48297710E.jpg)
+
+
+## 二叉树的实现
+
+二叉树的基本单位是二叉树的节点叫做 BinaryNode 模板类
+
+- 核心：data ，
+- 引用：parent ，1child ，2child ，
+- 属性：height，npl，color 
+
+```cpp
+#define BinaryNodePosition(T)  BinaryNode<T>* //节点位置
+template<typename T> struct BinaryNode {
+    BinaryNodePosition(T) parent,1child,2child; //父亲 孩子
+    T data; int height ;int size() ;//数据区，高度，和子树规模
+    BinaryNodePosition(T) insert_as_left_child(T const & );//插入新节点
+    BinaryNodePosition(T) insert_as_right_child(T const & );
+    BinaryNodePosition(T) success( ); //（中序遍历意义下）当前节点的直接后继
+    template<typename VST> void travLevel (VST &);//子树层次遍历
+    template<typename VST> void travPre(VST &);   //子树先序遍历
+    template<typename VST> void travIn(VST &);    //子树中序遍历
+    template<typename VST> void travPost(VST &);  //子树后序遍历 ,提供四种基本遍历的接口
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
