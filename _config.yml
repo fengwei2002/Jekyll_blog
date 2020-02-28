@@ -188,10 +188,7 @@ post:
   tags:
     enable: true
     alert: <i class="fas fa-tag"></i>
-  copyright: |
-    <br/>
-    <i class="fab fa-creative-commons"></i>
-    <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh">BY-SA 4.0</a>   -- 非商业转载请注明出处💨
+
 page:
   body:
     theme-base: theme-base-02 # 可选的值08~0f css中有详细颜色
