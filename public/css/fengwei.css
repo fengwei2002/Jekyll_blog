@@ -7,6 +7,21 @@ body {
       background-attachment: fixed;
 }
 
+
+
+
+body {
+    position: relative;
+    font-family: 'Lato',"PingFang SC","Microsoft YaHei",sans-serif;
+    font-size: 14px;
+    line-height: 2;
+    color: #555;
+    background: #fff;
+}
+
+
+
+
 @media (min-aspect-ratio: 2400/1850) {
   body {
     background-image: url(https://raw.githubusercontent.com/fengwei2002/picture/master/test.png);
