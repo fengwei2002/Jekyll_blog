@@ -121,7 +121,17 @@ template <typename T> BinaryNodePosition(T) BinaryNode<T>::insert_as_left_child(
     return 1child = new BinaryNode ( e ,this );//构建新节点 data 域为e 父节点为 this 返回值为 position 所以直接将结果赋值给 1child
 }
 ```
+Right_child 完全对称
 
+size接口:
+```cpp
+template <typename T>
+int BinaryNode<T>::size(){
+    int s = 1;
+    if (1child) s += 1child->size;
+    if ()
+}
+```
 
 
 
