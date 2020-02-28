@@ -480,7 +480,6 @@ page:
           value: defer
         - key: onload
           value: '$(".language-mermaid").removeClass("language-mermaid").addClass("mermaid");mermaid.init();'
-
     - var:
         - key: src
           value: //cdn.jsdelivr.net/npm/prismjs/components/prism-core.min.js
@@ -524,7 +523,7 @@ page:
                 }
               });
               return button;
-              })
+            })
     - var:
         - key: src
           value: //cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.min.js # live2d
@@ -540,3 +539,8 @@ page:
           value: https://zz.bdstatic.com/linksubmit/push.js # https协议用这个
         - key: defer # 在页面加载之后执行减少影响
           value: defer
+  #  - var: # 百度自动推送
+  #      - key: src
+  #        value: http://push.zhanzhang.baidu.com/push.js # http协议用这个
+  #      - key: defer # 在页面加载之后执行减少影响
+  #        value: defer
