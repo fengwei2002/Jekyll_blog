@@ -44,7 +44,7 @@ h6,
 html,
 
 .sidebar {
-  font-family: Menlo, Monaco, "Courier New", Microsoft JhengHei, monospace;
+  font-family: Menlo, Monaco, "Source Code Pro", Microsoft JhengHei, monospace;
 } 
 .theme-base-02 ::selection {
   color: rgb(0, 0, 0);
