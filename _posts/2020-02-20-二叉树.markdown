@@ -2,10 +2,10 @@
 layout: post
 title: 第五章 二叉树
 tags: [数据结构]
-date: 2020-02-26
+date: 2020-02-28
 ---
-## 树
-***
+## **树**
+
 Tree = $List^2$
 
 应用 
@@ -55,8 +55,9 @@ path(V)上的节点，均为v的祖先(ancestor) v 是他们的后代(descendent
 
 ![DDF4E96BC16EEC8F010C65B5E300B496.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureDDF4E96BC16EEC8F010C65B5E300B496.jpg)
 
-## 二叉树
-***
+## **二叉树**
+
+
 ### **树的接口设计**
 
 ![A1A669469932A264ECD45FB0121803C7.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureA1A669469932A264ECD45FB0121803C7.jpg)
@@ -93,7 +94,6 @@ child数据集的长度相差较大
 
 
 ## **二叉树的实现**
-***
 二叉树的基本单位是二叉树的节点叫做 BinaryNode 模板类
 
 - 核心：data ，
@@ -123,16 +123,144 @@ template <typename T> BinaryNodePosition(T) BinaryNode<T>::insert_as_left_child(
 ```
 Right_child 完全对称
 
-size接口:
+size接口:线性时间
 ```cpp
 template <typename T>
-int BinaryNode<T>::size(){
-    int s = 1;
+int BinaryNode<T>::size(){//递归实现
+    int s = 1; //本身
     if (1child) s += 1child->size();
     if (rchild) s += rchild->size();
     return s; //两项合计加上当前节点本身，递归则得出当前的 size()
 }
 ```
+
+### **BinaryTree 模板类**
+
+```cpp
+template <typename T> class BinaryTree{
+    protected:
+      int _size; //规模
+      BinaryNodePosition(T) _root; //根节点
+      virtual int updateHeight(BinaryNodePosition(T) x);  //更新节点x的高度
+      void updateHeightAbove(BinaryNodePosition(T) x);    //更新x及其祖先的高度
+    public:
+      int size() const {return _size;}//规模
+      bool empty() const {return !-root}//判空
+      BinaryNodePosition(T) root() const {return _root} //树根
+      //子树接口 ，删除和分离接口 ，遍历接口 
+}
+```
+### **高度更新**
+
+定义：对于节点 x ，在以它为根的叶节点最长距离，无子节点 h=0 ，root 的高度为 -1  
+左右 child 的高度最大再加一
+
+```cpp
+#define stature(p) ( (p) ? (P)->height : -1 )//将特殊情况统一起来更加方便 且不影响到算法的正确性
+template<typename T>
+int BinaryTree<T>::updateHeight( BinaryNodePosition(T) x){
+    return x->height = 1 + max (stature( x->1child ),stature (x->2child) );
+}//采用常规二叉树规则，O(1) 
+
+template<typename T> void BinaryTree<T>::updateHeightAbove( BinaryNodePosition(T) x){//更新x及其历代祖先的高度
+    while(x) {updateHeight(x); x = x->parent; } //可优化，一旦高度未变即可终止
+}//O(n =depth)              从 x 开始更新整颗树的高度
+```
+
+### **节点插入**
+
+```cpp
+template<typename T> BinaryNodePosition(T) BinaryTree<T>::insert_as_right_child (BinaryNodePosition(T) x ,T const & e){//insertaslc对称
+_size++; x->insertAsRC(e); //新节点创建时就完成自下而上的连接，调用同名接口完成自上而下的连接
+updateHeightAbove(X); //更新 x 及其祖先的高度
+return x->2child; //返回右节点（执行插入的位置）
+}
+```
+
+## **二叉树的相关算法**
+
+将 半线性结构 -> 之前研究完整的线性结构
+
+遍历：按照某种次序，每一个节点都恰好被访问一次，只要根节点和左右子节点可以确定一种顺序，那么便可以执行下去
+先序中序后序就是根据 根节点的先后来区分的    
+
+![89B2747A227ED7347DECFEDC58C24E05.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture89B2747A227ED7347DECFEDC58C24E05.jpg)
+
+层次遍历和广度遍历以后会有讨论
+
+### **先序遍历**
+
+```traverse: 遍历```
+
+递归实现
+
+```cpp
+template<typename T ,typename VST> 
+void traverse(BinaryNodePosition(T) x,VST & visit){
+    if (!x) return ; //递归基
+    visit (x->data);
+    traverse(x->1child,vist); traverse(x->2child,visit);
+}  //复杂度为O(n)
+```
+$递归->迭代$
+
+迭代1实现,引入一个栈
+
+```cpp
+template<typename T,typename VST>
+void travPre_I(BinaryNodePosition(T) x,VST & visit){
+    Stack <BinaryNodePosition(T)> S; //辅助栈
+    if (x) S.push(x); //根节点入栈
+    while (!S.empty() ){ //在非空前反复访问
+        x = S.pop(); visit (x->data); //弹出栈顶 并同时访问当前节点，当x节点左右都有时没有推入 弹两次  
+        if (HasRChild( *x) ) S.push (  x->2child); //存在有孩子就推入栈中，右孩子先入后出
+        if (HasLChild( *x) ) S.push (  x->1child); //存在左孩子也推入栈中，左孩子后入先出
+    }
+}               妙啊
+```
+
+![AC70CB6322098BC7C6204D083FB726E4.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureAC70CB6322098BC7C6204D083FB726E4.jpg)
+
+但这种不易于推广至中序遍历
+
+迭代2 思路
+
+![15604BB676F81A604F0C13C81599E1ED.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture15604BB676F81A604F0C13C81599E1ED.jpg)
+
+根->左->左->右(没有左侧链时)->左->左
+
+先遍历最左侧的一列树，然后遍历每一个左节点对应的右节点
+
+实现：
+```cpp
+template<typename T,typename VST>
+static void visitAlongLeftBranch(
+    BinaryNodePosition(T) x,
+    VST & visit,
+    Stack <BinaryNodePosition(T)> &S) //后进先出的次序
+{
+    while (x) {
+        visit (x->data);
+        S.push(x->2child); //右孩子入栈，将来逆序出栈，第一个为根节点的右孩子
+        x = x->1child;     //沿着左链下滑
+    }
+}
+```
+
+[主算法](http://www.bilibili.com/video/av82410486?p=195&share_medium=android&share_source=copy_link&bbid=PQk6Cz4KOAtoDjYHewd7infoc&ts=1582945732432
+)
+```cpp
+template<typename T,typename VST>
+void travPre_II(BinaryNodePosition(T) x ,VST & visit){
+    Stack <BinaryNodePosition(T)> S;
+    while (true ) {
+        visitAlongLeftBranch (x , visit , S );//传入大家公用的栈
+        if (S.empty() ) break; //栈空退出
+        x = S.pop(); //弹出下一子树的根
+    }
+}
+```
+
 
 
 
