@@ -264,13 +264,49 @@ void travPre_II(BinaryNodePosition(T) x ,VST & visit){
 ### **中序遍历**
 
 递归角度：
+
 ```cpp
-template <typename>
+template <typename T,typename VST>
+void traverse (BinaryNodePosition(T) x ,VST & visit){
+    if (!x ) return ;  //处理递归基
+    traverse (x->1child , child); 
+    visit ( x->data );
+    traverse (x->2child,visit);
+} O(n)
+```
+![B1F82B041FE46B22A84B46E144D6B5E9.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureB1F82B041FE46B22A84B46E144D6B5E9.jpg)
 
+每一次都是从左孩子的最左者(没有左孩子的那一个)开始执行  从根出发沿左分支下行，直至最深的节点  他就是全局最先被访问者  
+[思路解析-1](http://www.bilibili.com/video/av82410486?p=198&share_medium=android&share_source=copy_link&bbid=PQk6Cz4KOAtoDjYHewd7infoc&ts=1582976891652
+)整个左侧链有多长就有多少个阶段[思路解析-2](vhttp://www.bilibili.com/video/av82410486?p=199&share_medium=android&share_source=copy_link&bbid=PQk6Cz4KOAtoDjYHewd7infoc&ts=1582977180723
+)
 
+迭代角度：
 
+```cpp
+template<typename T>
+static void goAlongLeftBranch(BinaryNodePosition(T) x, Stack<BinaryNodePosition(T)> & S) {
+    while (x) {S.push(x); x = x->1child;}  //反复入栈，沿分支深入
+}
+template<typename T, typename V> void traverse_in_I (BinaryNodePosition(T) x ,V& visit ){
+    Stack <BinaryNodePosition(T) > S;  //创建辅助栈
+    while (true) {//反复的
+        goAlongLeftBranch (x ,S );//从当前节点出发(左分支) ，逐批入栈  谦让控制权
+        if (S.empty() ) break;    //直至所有节点处理完毕
+        x = S.pop();              //x的左子树或为空，或已经遍历（等效于空），故可以
+        visit(x->data);  //立即访问x
+        x = x->2child;   //再转向其右子树，(可能为空) ，下一轮以右子树为根 ，继续入栈操作
+    }
+}
+```
+[实例解析,加深理解](http://www.bilibili.com/video/av82410486?p=201&share_medium=android&share_source=copy_link&bbid=PQk6Cz4KOAtoDjYHewd7infoc&ts=1582977977907
+)
 
+总体复杂度为 $O(n)$ (不是$O(n^2)$)
 
+分摊分析的方法
+
+### **层次遍历**
 
 
 

@@ -6,10 +6,11 @@ date: 2020-02-19
 ---
 
 
-当某次提交出现bug时
+### 当某次提交出现bug后悔时
 - `git log`  查看历史ID
 - `git reset --hard` + ID
 - `git push -f origin master` 
+
 git add: 相当于加号（暂存更改）
 
 git commit:相当于对号（提交） 把内容存到本地的.git文件里。执行了commit的所有东西都能找回来
