@@ -303,12 +303,12 @@ page:
           value: stylesheet
         - key: href
           value: //cdn.jsdelivr.net/npm/prismjs/themes/prism-coy.min.css # //在https://github.com/PrismJS/prism/tree/master/themes 内查看可用主题，或者也可以搜一些第三方主题，比如https://github.com/PrismJS/prism-themes
-    # - tag: link
-    #   var:
-    #     - key: rel
-    #       value: stylesheet
-    #     - key: href
-    #       value: //cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css
+    - tag: link
+      var:
+        - key: rel
+          value: stylesheet
+        - key: href
+          value: //cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css
     - tag: link
       var:
         - key: rel
