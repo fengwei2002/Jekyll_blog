@@ -243,7 +243,7 @@ static void visitAlongLeftBranch(
         visit (x->data);
         S.push(x->2child); //右孩子入栈，将来逆序出栈，第一个为根节点的右孩子
         x = x->1child;     //沿着左链下滑
-    }
+    } ///只有 右孩子和NULL可能入栈
 }
 ```
 
@@ -261,9 +261,11 @@ void travPre_II(BinaryNodePosition(T) x ,VST & visit){
 }
 ```
 
+### **中序遍历**
 
-
-
+递归角度：
+```cpp
+template <typename>
 
 
 
