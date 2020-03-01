@@ -1,5 +1,5 @@
 ---
-title: 基于Jekyll搭建个人博客
+title: 搭建个人博客历程
 tags: [杂项note]
 background_music: <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="//music.163.com/outchain/player?type=2&id=1424523772&auto=1&height=66"></iframe> 
 date: 2020-03-01
@@ -114,6 +114,10 @@ https://fearlessroy.net/2018/01/29/binddomain/
 
 >使用GitHub账户即可直接进行评论储存在 comment 里的 issue 中
 
+>但是不能DIY样式并且时不时的会崩掉
+
+>以后会更换可能
+
 [https://aerolith.ink/2018/08/25/Gitalk/](https://aerolith.ink/2018/08/25/Gitalk/)
 
 [https://draveness.me/git-comments-initialize](https://draveness.me/git-comments-initialize)
@@ -223,4 +227,4 @@ id从网易云网址即可获得
 - [ ] 鼠标指针预览动画
 >!!!!! JavaScript可以实现 (这个功能好看)
 - [ ] 鼠标指针点击动画
->碎砖块的烟花效果
+> 每次点击出现碎砖块的烟花效果
