@@ -20,7 +20,7 @@ sidebar_open: true
 - NetEase Cloud : **psychonaut1**
 - [my_gitHub](https://github.com/fengwei2002)  👀✨
 
-## *`Education`*
+## **Education**
 
 >Shanxi University 2019 software Engineering department studying
 
