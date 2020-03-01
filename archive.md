@@ -1,5 +1,5 @@
 ---
 layout: archive
-title: 存档
+title: 归档
 ---
 

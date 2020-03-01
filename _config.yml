@@ -140,7 +140,7 @@ page:
         href: /about
       - title: '<i class="fas fa-tags fa-fw"></i> 目录'
         href: /tags
-      - title: '<i class="fas fa-archive fa-fw"></i> 存档'
+      - title: '<i class="fas fa-archive fa-fw"></i> 归档'
         href: /archive
       - title: '<i class="fas fa-comments fa-fw"></i> 评论'
         href: /comments
