@@ -5,6 +5,26 @@ permalink: /about
 sidebar_open: true
 ---
 
+
+## *Contact*
+- Address: Shanxi University-Taiyuan-China
+- Phone: 
+  - **+86 18803427582** *(From 9 a.m. to 8 p.m)*
+- Wechat :  **fwei142857**
+- QQ : **2480417969**-*2938256681*
+- Mailbox :
+  - **psychonaut1f@gmail.com**
+  - *psychonaut1@foxmail.com*  <!-- - **2480417969@qq.com** -->
+- Blog link :
+  - **<https://feng-w.cn/>**<!-- - *<https://fengwei2002.github.io/>* -->
+- NetEase Cloud : **psychonaut1**
+- [my_gitHub](https://github.com/fengwei2002)  👀✨
+
+## *`Education`*
+
+>Shanxi University 2019 software Engineering department studying
+
+
 ## About
 
 [已经发行的稳定版本](https://github.com/fengwei2002/fengwei2002.github.io/releases)
@@ -42,21 +62,3 @@ The blog theme is based on [lanyon](https://github.com/poole/lanyon)), thanks.
 (_______(_______\_______/
                          
 ```
-
-## *`Contact`*
-- Address: Shanxi University-Taiyuan-China
-- Phone: 
-  - **+86 18803427582** *(From 9 a.m. to 8 p.m)*
-- Wechat :  **fwei142857**
-- QQ : **2480417969**-*2938256681*
-- Mailbox :
-  - **psychonaut1f@gmail.com**
-  - *psychonaut1@foxmail.com*  <!-- - **2480417969@qq.com** -->
-- Blog link :
-  - **<https://feng-w.cn/>**<!-- - *<https://fengwei2002.github.io/>* -->
-- NetEase Cloud : **psychonaut1**
-- [my_gitHub](https://github.com/fengwei2002)  👀✨
-
-## *`Education`*
-
->Shanxi University 2019 software Engineering department studying
