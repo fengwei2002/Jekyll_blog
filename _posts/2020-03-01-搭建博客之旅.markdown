@@ -46,7 +46,7 @@ https://fearlessroy.net/2018/01/29/binddomain/
 
 
 
-- [x] **$KATEX$渲染**
+- [x] **$katex$ 行间公式渲染**
 
 ```html
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css" />
@@ -114,9 +114,9 @@ https://fearlessroy.net/2018/01/29/binddomain/
 
 >使用GitHub账户即可直接进行评论储存在 comment 里的 issue 中
 
->但是不能DIY样式并且时不时的会崩掉
+>但是不能DIY样式并且时不时的会崩掉(因为汉字转换后的 url 有时太长所以会崩掉 )
 
->以后会更换可能
+>以后会更换 valine 可能
 
 [https://aerolith.ink/2018/08/25/Gitalk/](https://aerolith.ink/2018/08/25/Gitalk/)
 
@@ -184,6 +184,7 @@ id从网易云网址即可获得
 - 2020-03-01
 >之前没有记录时间..
 ```https://img.shields.io/badge/{徽标标题}-{徽标内容}-{徽标颜色}.svg```
+
 如果我们在写markdown的时候想为我们的徽章或者进度条添加点击跳转的超链接,可以使用超链接和图片的语法嵌套来写,具体可以参照markdown标准语法.
 [![](徽章/进度条URL)](点击超链接)
 
@@ -229,6 +230,6 @@ id从网易云网址即可获得
 - [ ] 弄一个那种不用登录的评论系统
 >上次见到别人博客中有，是真的方便啊(我应该加个邮箱地址以便我的回复评论者可以收到)
 - [ ] 鼠标指针预览动画
->!!!!! JavaScript可以实现 (这个功能好看)
+>JavaScript 可以实现 (这个功能好看)
 - [ ] 鼠标指针点击动画
-> 每次点击出现碎砖块的烟花效果
+> 每次鼠标右键点击出现击碎砖块的烟花效果

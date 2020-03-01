@@ -2,7 +2,7 @@
 layout: post
 title: 第五章 二叉树
 tags: [数据结构]
-date: 2020-02-28
+date: 2020-02-29
 ---
 ## **树**
 
@@ -50,10 +50,8 @@ path(V)上的节点，均为v的祖先(ancestor) v 是他们的后代(descendent
 - 没有后代的节点称作叶子
 - 所有叶子最大值的深度就叫做树的高度
 - 子树也具有高度，全树的高度
-- 特别的，空树的高度取做-1
-- $depth(v) + height(v) <= heigth(T)$
-
-![DDF4E96BC16EEC8F010C65B5E300B496.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureDDF4E96BC16EEC8F010C65B5E300B496.jpg)
+- 特别的，空树的高度取做 -1
+- $depth(v) + height(v) <= heigth(T)$ depth为节点到根，height为节点到叶
 
 ## **二叉树**
 
@@ -68,7 +66,7 @@ path(V)上的节点，均为v的祖先(ancestor) v 是他们的后代(descendent
 
 child数据集的长度相差较大
 
-每个节点均设置两个引用，纵first_child，横next_sibling父母关注长子，然后其余互相照顾
+每个节点均设置两个引用，纵 first_child，横 next_sibling父母关注长子，然后其余互相照顾
 
 对于任意一个节点，只保留长子的一个引用，长子通过横向引用确认其他节点（长子兄弟法）（最佳）
 
@@ -278,7 +276,9 @@ void traverse (BinaryNodePosition(T) x ,VST & visit){
 
 每一次都是从左孩子的最左者(没有左孩子的那一个)开始执行  从根出发沿左分支下行，直至最深的节点  他就是全局最先被访问者  
 [思路解析-1](http://www.bilibili.com/video/av82410486?p=198&share_medium=android&share_source=copy_link&bbid=PQk6Cz4KOAtoDjYHewd7infoc&ts=1582976891652
-)整个左侧链有多长就有多少个阶段[思路解析-2](vhttp://www.bilibili.com/video/av82410486?p=199&share_medium=android&share_source=copy_link&bbid=PQk6Cz4KOAtoDjYHewd7infoc&ts=1582977180723
+)整个左侧链有多长就有多少个阶段
+
+[思路解析-2](vhttp://www.bilibili.com/video/av82410486?p=199&share_medium=android&share_source=copy_link&bbid=PQk6Cz4KOAtoDjYHewd7infoc&ts=1582977180723
 )
 
 迭代角度：
@@ -307,6 +307,58 @@ template<typename T, typename V> void traverse_in_I (BinaryNodePosition(T) x ,V&
 分摊分析的方法
 
 ### **层次遍历**
+
+最后一种典型的二叉树遍历方式
+
+严格按照次序，从高到低进行访问(根开始，一层一层进行) ,从上到下，从左到右，所以使用队列刚好可以实现
+
+```cpp
+template<typename T> template <typename VST>
+void BinaryNode<T>::travLevel(VST & visit){ //二叉树层次遍历
+    Queue<BinaryNodePosition(T) > Q;//创建辅助队列
+    Q.enqueue( this ); //根节点入队
+    while ( !Q.empty() ) { //在队列再次变空前，
+        BinaryNodePosition(T) x = Q.dequeue(); //取出队首节点并访问
+        visit( x->data );
+        if ( Has_Left_Child(*x) ) Q.enqueue( x->1child );//有左左入队
+        if ( Has_Right_Child(*x) ) Q.enqueue( x->2child );//有右右入队 队列先进先出
+    }//队列变空循环退出
+}
+```
+
+## **二叉树的重构**
+
+中序 + 先序 || 后序 即可完整还原二叉树的拓扑结构
+(二刷时再过一遍理由)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
