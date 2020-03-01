@@ -31,6 +31,8 @@ sidebar_open: true
 
 [基于Jekyll搭建个人博客](https://feng-w.cn/posts/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96)
 
+[博客项目简介文档](https://feng-w.cn/posts/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96)
+
 ## Thanks
 
 Hosted on [Github Pages](https://pages.github.com/),thanks.
