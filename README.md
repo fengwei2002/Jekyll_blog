@@ -5,6 +5,8 @@ permalink: /about
 sidebar_open: true
 ---
 
+[✨简介文档](https://feng-w.cn/posts/Project_Description)(更新中)
+
 
 ## *Contact*
 - Address: Shanxi University-Taiyuan-China
@@ -27,11 +29,9 @@ sidebar_open: true
 
 ## About
 
-[已经发行的稳定版本](https://github.com/fengwei2002/fengwei2002.github.io/releases)
+[✨已经发行的稳定版本](https://github.com/fengwei2002/fengwei2002.github.io/releases)
 
-[搭建个人博客之旅](https://feng-w.cn/posts/Blog_Perfect)
-
-[博客项目使用简介文档](https://feng-w.cn/posts/Blog_Perfect)
+[✨搭建个人博客之旅](https://feng-w.cn/posts/Blog_Perfect)
 
 ## Thanks
 
