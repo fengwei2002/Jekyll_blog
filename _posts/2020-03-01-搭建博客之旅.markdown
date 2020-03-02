@@ -5,7 +5,7 @@ background_music: <iframe frameborder="no" border="0" marginwidth="0" marginheig
 date: 2020-03-01
 ---
 
-Hexo 上传过程太麻烦 Jekyll可以随便上传，所以选用Jekyll搭建
+好久之前就看到别人搭建的这种博客(~~羡慕，想拥有，得不掉就毁到~~) ，然后刚刚好大一寒假因为疫情变得超级长，所以就看着网上的教程开始了折腾
 
 开发过程得益于谷歌搜索
 (详细教程有时间更)

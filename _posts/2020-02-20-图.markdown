@@ -113,11 +113,14 @@ int outDegree(int i){ return V[i].outDegree;}
 Vstatus  & status(int i) {return V[i].status;}
 ……………………用类似接口直接返回各种状态的引用
 ```
-对于
+对于任意节点 i ，如何枚举其所有的邻接顶点`neighbor`
 
-
-
-
+```cpp
+int nextNbr(int i,int j) { //若已经枚举至邻居j，则转向下一邻居
+  while ( (j>-1) && !exists (i,--j) ); //逆向顺序查找，O(n)
+  return j;
+}//改用邻接表可提高至 O ( 1+outDegree(i) )
+```
 
 
 
