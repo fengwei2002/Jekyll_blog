@@ -48,7 +48,7 @@ html,
 } 
 .theme-base-02 ::selection {
   color: rgb(0, 0, 0);
-  background: #d421cb8a;/* 选中效果 */
+  background: #d421cb5b;/* 选中效果 */
 }
 /*08*/
 /*09，0a是金黄色*/
