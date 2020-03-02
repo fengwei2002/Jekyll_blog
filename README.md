@@ -5,7 +5,7 @@ permalink: /about
 sidebar_open: true
 ---
 
-[✨简介文档](https://feng-w.cn/posts/Project_Description)(更新中)
+[✨简介文档(中文)](https://feng-w.cn/posts/Project_Description)(更新中)
 
 
 ## *Contact*
