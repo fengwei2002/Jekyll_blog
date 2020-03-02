@@ -113,25 +113,57 @@ int outDegree(int i){ return V[i].outDegree;}
 Vstatus  & status(int i) {return V[i].status;}
 ……………………用类似接口直接返回各种状态的引用
 ```
-对于任意节点 i ，如何枚举其所有的邻接顶点`neighbor`
+- 那么对于任意节点 i;如何枚举其所有的邻接顶点`neighbor` ?
 
 ```cpp
-int nextNbr(int i,int j) { //若已经枚举至邻居j，则转向下一邻居
-  while ( (j>-1) && !exists (i,--j) ); //逆向顺序查找，O(n)
-  return j;
+int nextNbr(int i,int j) { //若已经枚举至邻居j，则转向下一有效邻居
+  while ( (j>-1) && !exists (i,--j) ); //逆向顺序查找，O(n) //判断边是否存在  抵达-1时越界终止循环
+  return j; //将新发现的邻居返回
 }//改用邻接表可提高至 O ( 1+outDegree(i) )
+int firstNbr(int i){return nextNbr(i,n); }//首个邻居 ，虽然编号为 n 的节点不存在 
 ```
 
 
+### **边操作**
+
+- 判断两个顶点是否存在边
+
+```cpp
+bool exists(int i;int j){  ///判断边(i)(j)是否存在
+  return (i>=0) && (n>i) && (j>=0) && (n>j) && E[i][j] != NULL; //短路求值
+}
+Te & edge (int i,int j) { return E[i][j]->data; } //O(1) 边（i ，j）的数据
+Estatus & status (int i,int j){return E[i][j]->status;}//O(1) 边（i ，j）的状态
+int & weight (int i,int j) {return E[i][j]->weight;}//O(1)  边（i ，j）的权重
+```
+
+- 边插入
+  - 将要插入的信息作为模块插入到邻接矩阵对应的单元位置
+```cpp
+void insert(Te const& edge, int w, int i, int j){ //插入(i,j,w)
+  if (exists(i, j)) return ;  //忽略已经存在的边
+  E[i][j] = new Edge<Te>(edge, w); //创建新边 ，完成物理引入
+  e++; //更新边计数
+  V[i].outDegree++; //更新关联顶点 i 的出度
+  V[j].inDegree++;  //更新关联顶点 j 的入度
+}
+```
+- 边删除
+  - 将insert操作颠倒过来,引用指向空
+```cpp
+Te remove(int i, int j){
+  Te eBak = edge(i, j); //做一个备份 
+  delete E[i][j]; E[i][j] = NULL;//物理意义上的删除
+  e--;
+  V[i].outDegree--; //更新关联顶点 i 的出度
+  V[j].inDegree--;  //更新关联顶点 j 的入度
+  return eBak; //返回被删除边的信息
+}
+```
 
 
-
-
-
-
-
-
-
+那么如何进行顶点的插入和删除呢？  
+因为边的插入和删除邻接矩阵没有空间上的变化，而顶点的变动会引起邻接矩阵大小的变化
 
 
 
