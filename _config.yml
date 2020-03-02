@@ -302,7 +302,7 @@ page:
         - key: rel
           value: stylesheet
         - key: href
-          value: //cdn.jsdelivr.net/npm/prismjs/themes/prism-dark.min.css # //在https://github.com/PrismJS/prism/tree/master/themes 内查看可用主题，或者也可以搜一些第三方主题，比如https://github.com/PrismJS/prism-themes
+          value: //cdn.jsdelivr.net/npm/prismjs/themes/prism-twilight.min.css # //在https://github.com/PrismJS/prism/tree/master/themes 内查看可用主题，或者也可以搜一些第三方主题，比如https://github.com/PrismJS/prism-themes
     - tag: link
       var:
         - key: rel
