@@ -170,7 +170,7 @@ page:
       alert: <i class="fas fa-edit fa-fw"></i>
     run_time:
       enable: true
-      start_time: "01/20/2020 21:03:55" # 这是我第一篇博客的时间
+      start_time: "02/04/2020 21:03:55" # 这是我第一篇博客的时间
       alert: <i class="fas fa-cog fa-spin fa-fw"></i>
       day: 天
       hour: 时
