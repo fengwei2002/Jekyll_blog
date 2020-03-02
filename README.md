@@ -29,9 +29,9 @@ sidebar_open: true
 
 [已经发行的稳定版本](https://github.com/fengwei2002/fengwei2002.github.io/releases)
 
-[搭建个人博客之旅](https://feng-w.cn/posts/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%B9%8B%E6%97%85)
+[搭建个人博客之旅](https://feng-w.cn/posts/Blog_Perfect)
 
-[博客项目使用简介文档](https://feng-w.cn/posts/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%B9%8B%E6%97%85)
+[博客项目使用简介文档](https://feng-w.cn/posts/Blog_Perfect)
 
 ## Thanks
 
