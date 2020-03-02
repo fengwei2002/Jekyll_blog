@@ -2,7 +2,7 @@
 layout: post
 title: 第六章：图
 tags: [数据结构]
-date: 2020-03-01
+date: 2020-03-02
 ---
 
 对数据限定减少，解决的问题规模变大
@@ -45,6 +45,87 @@ template <typename Tv,typename Te> class Graph { //顶点类型，边类型
 ```
 
 ### **邻接矩阵**
+
+邻接矩阵（主要讨论）   
+用正方形 n x n 的每个点表示顶点之间相互邻接关系(是否存在一条边，有为1，没有为0， 有权则改为对应float )的矩阵  则无向图沿对角线对称
+
+
+关联矩阵   
+n个节点(n行) e条边(e列) 矩阵中的任何一个单元表示是否存在关联关系，每一列只有两个1其余都是0
+
+无向图每一条边都被保存了两次，有些多，  
+单向边在矩阵中保留一份
+
+### **Vertex 模板类**
+```cpp
+typedef enum {UNDISCOVERED , DISCOVERED , VISITED } VStatus;
+template<typename Tv> struct Vertex { //vertex 顶点
+  Tv data; int inDegree, outDegree; // ，记录信息 和出入度数
+  /*遍历算法 start*/
+  VStatus status; //顶点的状态 三种
+  int dTime,fTime;//时间标签 记录顶点被发现和被访问完毕的时刻
+  int parent ;    //遍历树中的父节点
+  int priority;//priority 优先 在遍历树中的优先级
+  /*遍历算法 End*/
+  Vertex (Tv const & d)://构建新节点
+    data (d) ,inDegree(0) ,outDegree(0), status(UNDISCOVERED),
+    dTime(-1),fTime(-1),          parent(-1),
+    priority(INT_MAX)   { } //初始化各项
+}
+```
+### **edge 模板类**
+```cpp
+typedef enum {UNDETERMINED , TREE , CROSS , FORWARD , BACKWARD }    EStatus;
+template <typename Te> struct Edge { //省去严格分装
+    Te data;    //数据
+    int weight; //权重
+    EStatus status;//类型
+    Edge (Te const &d ,int w)://构造新边
+      data(d) , weight(w) , status(UNDETERMINED) { }
+};
+```
+### **Graph_Matrix**
+ `Matrix`:矩阵  
+基于邻接矩阵实现图结构的一种可行方式  
+Graph_Matrix
+
+```cpp
+template<typename Tv, typename Te> class Graph_Matrix: public Graph<Tv , Te> {
+  private:
+    Vector< Vertex<Tv> > V; //顶点集  Vector 读取元素可以在常数时间内完成  
+    Vector< Vector< Edge<Te>* >  > E;//边集 因为每个顶点可能与n个顶点相关联，所以要用二维向量构成一个矩形空间（邻接矩阵）
+  public:
+    /*操作接口，顶点相关，边相关*/
+    Graph_Matrix() { n = e = 0 ; } //构造函数
+    ~Graph_Matrix() { //析构函数
+      for (int j = 0; j < n; j++) 
+      for (int k = 0; k < n; k++)
+        delete E[j][k];  //清除所有动态申请的边的记录
+    }
+};
+```
+### **顶点操作**
+
+```cpp
+Tv & Vertex(int i) { return V[i].data; }
+int inDegree(int i){ return V[i].inDegree;}
+int outDegree(int i){ return V[i].outDegree;}
+Vstatus  & status(int i) {return V[i].status;}
+……………………用类似接口直接返回各种状态的引用
+```
+对于
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
