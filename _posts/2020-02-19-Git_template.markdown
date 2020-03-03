@@ -5,15 +5,20 @@ tags: [模板]
 date: 2020-02-19
 ---
 
-
 ### 当某次提交出现bug后悔时
-- `git log`  查看历史ID
-- `git reset --hard` + ID
-- `git push -f origin master` 
+
+* `git log` 查看历史ID
+* `git reset --hard` + ID
+* `git push -f origin master` 
+
+### git push 和 git fetch 的区别
+
+因为vscode插件弹出来一个提醒，是否每隔一段时间运行 git fetch  
+所以有时间需要温习一次git操作原理
 
 git add: 相当于加号（暂存更改）
 
-git commit:相当于对号（提交） 把内容存到本地的.git文件里。执行了commit的所有东西都能找回来
+git commit: 相当于对号（提交） 把内容存到本地的.git文件里。执行了commit的所有东西都能找回来
 
 git push：推送到远程
 
@@ -21,7 +26,7 @@ git从远程到本地： git clone https://github.com/fengwei1428/hello.git
 
 查看历史：git log; 在gitlens插件里面也可以看
 
-恢复到某一次提交： 复制gitlog里面的commit id；（不需要全部复制） git reset --soft 12232;(soft 时把更改暂存；hard是直接删除所有更改；一般是使用soft)
+恢复到某一次提交： 复制gitlog里面的commit id；（不需要全部复制） git reset --soft 12232; (soft 时把更改暂存；hard是直接删除所有更改；一般是使用soft)
 
 export https_proxy=127.0.0.1:1080
 
@@ -29,7 +34,7 @@ git branch： 新建分支
 
 git push origin master 推送到远程分支的master
 
-git push origin 本地分支名字:远程分支名字 推送到远程的新分支
+git push origin 本地分支名字: 远程分支名字 推送到远程的新分支
 
 $ git status
 
@@ -115,8 +120,6 @@ $ git checkout --orphan <new_branch>
 
 $ git checkout -
 
-
-
 $ git checkout master
 
 $ git merge --no-ff A
@@ -130,3 +133,4 @@ $ git reset --hard 0c25d2973702b88b20
 $ git commit -m "addB"
 
 $ git reflog
+

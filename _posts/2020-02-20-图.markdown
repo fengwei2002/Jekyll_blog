@@ -228,7 +228,90 @@ Tv remove(int i) {  //删除顶点及其关联边，返回该顶点信息
 
 *  $O(n^2)$ 空间，与边数无关；边数往往会远小于$n^2$
 
-## 
+## 广度优先搜索
+
+通过遍历操作，任何一个非线性结构都能转换为线性结构，前者问题变可以用后者方法解决
+
+图中的遍历过程通常目的是针对某一目标，所以叫做搜索
+
+![C2C06A8479FC35379AC4684A29C17EC5.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/image_for_blogC2C06A8479FC35379AC4684A29C17EC5.jpg)
+
+保留原先顶点通往新节点的边，而那些顶点间连有不同的边不予采纳  
+
+像北京环路一样，同一环上的节点连成的边不予考虑，只有不同环上的互相连着的路在广度优先搜索中会被遍历
+
+由于刚才规定的规则，图就变成了这样：
+
+![6BCB46A5695E0110C5CA0F2EF26709CC.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/image_for_blog6BCB46A5695E0110C5CA0F2EF26709CC.jpg)
+
+一幅巨大的无环图，这么看其实是一颗树（刚好包含图中的所有节点）
+
+所以这样的一个遍历过程也就构成了在树中学过的层次遍历，所以图的广度优先搜索就是层次遍历的推广
+
+### **Graph:: BFS**
+
+BFS只是图构建的一个基本框架
+
+``` cpp
+template<typename Tv,typename Te>   //顶点类型，边类型
+void Graph<Tv，Te>::BFS(int V,int & clock){
+  Queue<int> Q; status(v) = DISCOVERED;  Q.enqueue(v); //初始化，依然借助队列完成 当前节点v入队
+  while (!Q.empty() ){   //反复的
+    int v = Q.dequeue(); //取出队首顶点，并
+    dTime(v) = ++clock;  //打上一个时间标签，给出时间进度
+    for (int u = firstNbr(v); -1 < u; u = nextNbr(v, u) ) //考察 v 的所有邻居 u ，从第一个邻居开始直至枚举完毕
+          /* ……依据u的状态分别处理……*/
+    status(v) = VISITED;  //至此，当前节点访问完毕
+  }         
+} 
+```
+
+经过这样的搜索过程，每一个顶点都会由最初的 UNDISCOVERED 变为 DISCOVERED 最终变为 VISITED
+
+### **对于新枚举出来的 u 进行的处理**
+
+``` cpp
+while (!Q.empty() ) {  //反复的
+  int v = Q.dequeue(); dTime(v) = ++clock;  //取出队首 v 计下时间
+  for (int u = firstNbr(v); -1<u; u = nextNbr(v,u) )  //考察每一邻居 u
+    if (UNDISCOVERED == status(u) ) {  //UNDISCOVERED状态的 u
+      status(u) = DISCOVERED; Q.enqueue(u); //发现该顶点
+      status(v, u) = TREE; parent(u) = v; //将 UNDETERMINED 变为 TREE 引入树边，构成 BFS TREE的一个枝条
+    }   
+    else { //若已经被发现（正在队列中）或者已经访问完毕（已出队列）则
+      status(v, u) = CROSS; //将 （v ，u）归类于跨边  忽略父亲边
+    }
+    status(v) = VISITED; //至此，当前节点访问完毕
+}
+```
+
+访问一个节点就是把邻居全扔到队列中，然后将自己 DISCOVERED 变为 visited，邻居由 UNDISCOVERED 变为 DISCOVERED 每次是队首节点出队，由此循环
+
+[实例解析搜索过程](http://www.bilibili.com/video/av82410486?p=225&share_medium=android&share_source=copy_link&bbid=PQk6Cz4KOAtoDjYHewd7infoc&ts=1583240625901)
+
+所有的 TREE edge  构成的树就是搜索路径
+
+### **Graph::bfs()**
+
+S 所属的连通域都会被访问 但并不是每幅图都只包含一个连通域（？） 会有一次BFS达不到的连通域
+
+``` cpp
+template <typename Tv, typename Te> //顶点类型 边类型
+void Graph<Tv, Te>::bfs( int s ) {  //s 为起始顶点
+  reset() ; int clock = 0;int v = s;//初始化
+  do //逐一排查所有顶点 ，一旦遇到尚未发现的顶点 
+    if (UNDISCOVERED == status(v) ) 
+        BFS ( v, clock );  //就从该顶点出发启动一次 BFS 
+  while ( s != ( v = ( ++v % n) ) );
+      //按照序号访问，故可以达到不重不漏
+}
+```
+
+这样就实现了对多个连通域的统一遍历，每一个连通域通过某个点都进行了一次遍历
+
+### **复杂度分析**
+
+### **最短路径**
 
 ## **算法**
 

@@ -26,8 +26,6 @@ vscode加PicGo插件 (找了好长时间，这个方法最好用
 
 ![QQ图片20200303143822.png](https://raw.githubusercontent.com/fengwei2002/picture/master/fengwei2002/pictureQQ%E5%9B%BE%E7%89%8720200303143822.png)
 
-![20200303151106.png](https://raw.githubusercontent.com/fengwei2002/picture/master/fengwei2002/picture20200303151106.png)
-
 然后试一下热键，发现就成功了  　　
 跳回你的GitHub里面看一下，就会发现仓库下面已经有这个图片了  
 没必要非得在主仓库里面用，减少主仓库体积   
