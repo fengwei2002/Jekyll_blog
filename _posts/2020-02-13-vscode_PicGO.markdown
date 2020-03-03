@@ -1,65 +1,57 @@
 ---
 layout: post
-title: VScode使用PicGo搭建github稳定图床
+title: VScode使用PicGo插件搭建github稳定图床
 tags: [Resolved bug]
 date: 2020-02-13
 ---
 
-更改域名后因为不能直接在github文件夹下访问图片，所以使用public/image/的方法就失效了
+[原文链接，感谢](https://blog.csdn.net/xxiaobaib/article/details/92801700)
 
-然后就得先上传图片到GitHub上面，从仓库中打开图片复制其链接，再到markdown中引用复制好的地址，这样可以用，但我觉得好麻烦
+> 之前用了四五种上传图片 , 都不方便
 
-so专门弄了一个picture仓库，直接把图片拖入新建框，然后复制图床链接，点击保存，文本框内的链接就是引用图片的链接，比上面那一种先上传到GitHub再手动读取链接的办法差不多，这种方式更加简洁，并且可以减少blog文件夹的内存，还能把图片和blog分开，便于保管，blog仓库里面全保存文本内容就🆗
+vscode加PicGo插件 (找了好长时间，这个方法最好用
 
-but我太懒了,还是觉得好麻烦  
+## 配置方法：  
 
-test上面那种  
+懒人必用✨
 
-![xx](![avatar](https://user-images.githubusercontent.com/56250171/74421358-db98d800-4e87-11ea-8c70-e4a6efefc742.jpg)
-)
-发现有时会崩掉，pass
+![Screenshot from 2019-06-18 23-00-28(1).png](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureScreenshot%20from%202019-06-18%2023-00-28(1).png)
 
-新方法：  
-![捕获.PNG](https://raw.githubusercontent.com/fengwei2002/picture/master/picture%E6%8D%95%E8%8E%B7.PNG)
->等域名到期后应该就可以用原来的public方法了，简单快速，除了加载速度可能慢一些X
->但是我找到了一种奇淫技巧，别的方法就都不用了其实，太舒服了  
+* 找到扩展的配置文件 
+* 将提交方式改为GitHub　　  
+* 添加token  　
+* 然后添加分支名字　master　
+* 这里放一下我的配置截图　　　
+* 我用的是一个单独仓库文件夹存放：　
 
-vscode加PicGo(找了好长时间，这个方法最好用(最懒)  
+![QQ图片20200303143822.png](https://raw.githubusercontent.com/fengwei2002/picture/master/fengwei2002/pictureQQ%E5%9B%BE%E7%89%8720200303143822.png)
+
+![20200303151106.png](https://raw.githubusercontent.com/fengwei2002/picture/master/fengwei2002/picture20200303151106.png)
+
+然后试一下热键，发现就成功了  　　
+跳回你的GitHub里面看一下，就会发现仓库下面已经有这个图片了  
+没必要非得在主仓库里面用，减少主仓库体积   
+
+以后上传就使用本地文件夹 `img_for_blogs` ，使用 `ctrl+Alt+e` 查看目录选中文件进行上传  
+
+也可以使用剪切板中的图片，也是快捷键一步完成，多舒服，图片大小比较大时，上传就会5-6秒左右，慢一点点（当第一次开始上传时也会有点慢）
 
 ## 上传图片快捷键
 
 在VScode编辑器中直接使用以下快捷键，将自动完成上传并将图片链接自动插入到Markdown页面中
 
 从剪贴板上传图像（非常常用）
-Windows / Unix：`Ctrl + Alt + u`
+Windows / Unix： **`Ctrl + Alt + u`**
 
 从文件目录管理器上传图像(常用)  
 Windows / Unix：**`Ctrl + Alt + e`**
 
-从vscode输入框上传图像  
-Windows / Unix：`Ctrl + Alt + o`
+从vscode输入框上传图像（几乎不用）   
+Windows / Unix： `Ctrl + Alt + o` 
 
-## 方法：  
+## 一些问题
 
-懒人必用哈哈哈  
-![Screenshot from 2019-06-18 23-00-28(1).png](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureScreenshot%20from%202019-06-18%2023-00-28(1).png)
+* 文件名里不能有 ‘+’ 号，有 ‘+’ 就上传不成功 //因为剪切板中的文件名是乱码
+* 当上传重复文件时会报错
+* 有时剪切板会上传失败(image uploading 卡住) ，这时需要采用本地文件夹进行上传 **`Ctrl + Alt + e`**
 
-就一个master，所以填的master  
-找到扩展的配置文件，然后  
-将提交方式改为GitHub，  
-添加token  
-然后添加分支名字  
-然后试一下热键，发现就成功了；  
-跳回你的GitHub里面看一下，就会发现仓库下面已经有这个图片了  
-刚刚创建的那个新仓库也可以被使用  
-没必要非得在blog里面用
-
-[谷歌大法好，原文链接](https://blog.csdn.net/xxiaobaib/article/details/92801700)
-
-以后上传就使用本地文件夹`img_for_blogs`，使用`ctrl+Alt+e`开启查看目录，上传这种都是自动的
-
-有时也可以使用剪切板中的图片，也是快捷键一步完成，还是图片原本大小，多舒服，图片大小比较大，上传就会5-6秒左右，慢一点点，
-
-自动生成图片链接块可太舒服了！！
-
-发现问题了吗？文件名里不能有 ‘+’ 号，有 ‘+’ 就上传不成功。
