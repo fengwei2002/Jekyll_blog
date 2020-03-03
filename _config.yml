@@ -117,11 +117,8 @@ page:
       href: mailto:psychonaut1@foxmail.com
       class: "fas fa-envelope"
     - title: github
-      href: //github.com/fengwei2002?tab=repositories
+      href: //https://github.com/fengwei2002
       class: "fab fa-github"
-    - title: zhihu
-      href: //www.zhihu.com/people/e2df61ca5f33cb1e72e27be2cefd18ba
-      class: "fab fa-zhihu"
     - title: codeforce
       href: //codeforces.com/profile/KONNG
       class: "fas fa-chart-bar fw"
@@ -133,6 +130,10 @@ page:
       class: "fas fa-code"
     - title: fwei142857 # weixin
       class: "fab fa-weixin"
+    - title: zhihu
+      href: //www.zhihu.com/people/e2df61ca5f33cb1e72e27be2cefd18ba
+      class: "fab fa-zhihu"
+
     nav:
       - title: '<i class="fas fa-home fa-fw"></i> 首页'
         href: /
