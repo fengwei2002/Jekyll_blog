@@ -114,10 +114,10 @@ page:
         <br/>Cat lover
     social:
     - title: psychonaut1@foxmail.com 
-      href: mailto:psychonaut1@foxmail.com
+      href: mailto:psychonaut1f@gmail.com
       class: "fas fa-envelope"
     - title: github
-      href: //github.com/fengwei2002
+      href: https://github.com/fengwei2002
       class: "fab fa-github"
     - title: codeforce
       href: //codeforces.com/profile/KONNG

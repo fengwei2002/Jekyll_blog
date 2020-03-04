@@ -5,27 +5,30 @@ permalink: /about
 sidebar_open: true
 ---
 
+***
+
+[![Gmail的超链接徽标](https://img.shields.io/badge/My__-Gmail-blue.svg)](mailto:psychonaut1f@gmail.com)
+
 [✨简介文档(中文)](https://feng-w.cn/posts/Project_Description)(更新中)
 
-
 ## *Contact*
-- Address: Shanxi University-Taiyuan-China
-- Phone: 
-  - **+86 18803427582** *(From 9 a.m. to 8 p.m)*
-- Wechat :  **fwei142857**
-- QQ : **2480417969**-*2938256681*
-- Mailbox :
-  - **psychonaut1f@gmail.com**
-  - *psychonaut1@foxmail.com*  <!-- - **2480417969@qq.com** -->
-- Blog link :
-  - **<https://feng-w.cn/>**<!-- - *<https://fengwei2002.github.io/>* -->
-- NetEase Cloud : **psychonaut1**
-- [my_gitHub](https://github.com/fengwei2002)  👀✨
+
+* Address: Shanxi University-Taiyuan-China
+* Phone: 
+  + **+86 18803427582** *(From 9 a.m.to 8 p.m)*
+* WeChat :  **fwei142857**
+* QQ : **2480417969**-*2938256681*
+* MailBox :
+  + **psychonaut1f@gmail.com**
+  + *psychonaut1@foxmail.com*  <!-- - **2480417969@qq.com** -->
+* Blog Link :
+  + **<https://feng-w.cn/>**<!-- - *<https://fengwei2002.github.io/>* -->
+* NetEase Cloud : **psychonaut1**
+* [My_GitHub](https://github.com/fengwei2002)  👀✨
 
 ## **Education**
 
->Shanxi University 2019 software Engineering department studying
-
+> Shanxi University 2019 software Engineering department studying
 
 ## About
 
@@ -35,13 +38,14 @@ sidebar_open: true
 
 ## Thanks
 
-Hosted on [Github Pages](https://pages.github.com/),thanks.
-
 The blog engine is from [jekyll / jekyll](https://github.com/jekyll/jekyll), thanks.
 
-The blog theme is based on [lanyon](https://github.com/poole/lanyon)), thanks.
+Hosted on [Github Pages](https://pages.github.com/), thanks.
 
-```cpp
+The blog theme is based on [lanyon](https://github.com/poole/lanyon)), thanks.
+***
+
+``` cpp
  _______ _______ _       _______ 
 (  ____ (  ____ ( (    /(  ____ \
 | (    \| (    \|  \  ( | (    \/
@@ -53,7 +57,7 @@ The blog theme is based on [lanyon](https://github.com/poole/lanyon)), thanks.
                                  
 ```
 
-```cpp
+``` cpp
          ________________
 |\     /(  ____ \__   __/
 | )   ( | (    \/  ) (   
@@ -64,3 +68,6 @@ The blog theme is based on [lanyon](https://github.com/poole/lanyon)), thanks.
 (_______(_______\_______/
                          
 ```
+
+***
+
