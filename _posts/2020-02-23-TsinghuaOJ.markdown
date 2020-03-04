@@ -5,6 +5,8 @@ tags: [待解决]
 date: 2020-02-23
 ---
 
+***
+
 # [范围查询(Range)]
 
 数轴上有n个点，对于任一闭区间 [a, b]，试计算落在其内的点数。
@@ -21,7 +23,7 @@ date: 2020-02-23
 
 对每次查询，输出落在闭区间[a, b]内点的个数。
 
-```cpp
+``` cpp
 #include <iostream>
 using namespace std;
 int main()
@@ -52,6 +54,7 @@ int main()
     return 0;
 }
 ```
+
 ![20200224142210.png](https://raw.githubusercontent.com/fengwei2002/picture/master/picture20200224142210.png)
 
 # 祖玛
@@ -82,7 +85,8 @@ int main()
 0 ≤ n ≤ 10^4
 
 0 ≤ 初始珠子数量 ≤ 10^4
-```cpp
+
+``` cpp
 #include<iostream>
 using namespace std;
 #include<string>
@@ -114,5 +118,4 @@ int main() {
 ```
 
 这道题崩了，不写了，菜鸡流泪🙃
-
 

@@ -347,7 +347,50 @@ void Graph<Tv, Te>::bfs( int s ) {  //s 为起始顶点
 
 功能更强大，实现更复杂，因此也成为许多问题的基本算法的框架
 
-简述：访问顶点 S 若 S 有未被访问的邻居，则任取其一 u ；递归执行 DFS(u) 否则；返回
+简述：访问顶点 S 若 S 有未被访问的邻居，则邻居中未访问节点**任取其一** u ；递归执行 DFS(u) 否则；返回
 
-## **算法**
+![CA72103EB56DD8C22DBB2749A8B916A9.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/image_for_blogCA72103EB56DD8C22DBB2749A8B916A9.jpg)
+
+## **DFS的一种实现方式**
+
+> Graph:: DFS( ) 
+
+``` cpp
+template <typename Tv,typename Te> 
+void Graph<Tv,Te>::DFS (int v,int & clock) {
+  dTime(v) = ++clock; status(v) = DISCOVERED;
+  for (int u = firstNbr(v); -1<u; u = nextNbr(v, u) )
+  /*...视 u的状态分别处理*/
+  /*...与BFS不同，含有递归*/
+  status(v) = VISITED; fTime(v) = ++clock; //至此，当前顶点 v 访问完毕 fTime为节点访问完毕的时间
+}
+```
+
+以下给出对于不同状态邻居节点的处理方法
+
+``` cpp
+  for (int u = firstNbr(v); -1<u; u = nextNbr(v, u) ) //枚举所有邻居 u
+    switch ( status(u) ) {
+      case UNDISCOVERED; //尚未发现便可以使用这个地方作为支撑进行扩展
+        status (v, u) = TREE; parent(u) = v; DFS(u, clock); break;
+      case DISCOVERED: //若发现的节点虽然已经被发现但是未被访问完毕，控制权应该属于被后代指向的祖先 back_track
+        status(v, u) = BACKWARD; break;
+      default: //u已经被访问完毕，
+        status(v, u) = dTime(v) < dTime(u) ? FORWARD : CROSS; break; //看 v 和 u 谁先被发现
+    } //switch
+```
+
+[DFS_实例解析_无向图](http://www.bilibili.com/video/av82410486?p=232&share_medium=android&share_source=copy_link&bbid=PQk6Cz4KOAtoDjYHewd7infoc&ts=1583317235183)
+
+[DFS_实例解析_有向图](http://www.bilibili.com/video/av82410486?p=233&share_medium=android&share_source=copy_link&bbid=PQk6Cz4KOAtoDjYHewd7infoc&ts=1583324332118)
+
+效仿BFS的补充算法; 再添加一层循环; 达到无一遗漏的处理; 实现多可达域的图遍历算法
+
+心浮气躁；想的越多做的越少
+
+### **嵌套引理（括号引理）**
+
+活动期：顶点的 `dTime-fTime` 
+
+祖先的活跃期必然包含后代的活跃期，两个顶点没有直系血缘关系时，它们的活跃期也是互不相交的
 

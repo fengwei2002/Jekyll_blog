@@ -4,11 +4,15 @@ title: cpp02(面向对象编程，类)
 tags: [cpp+STL]
 date: 2020-02-12 01:29:57
 ---
+
+***
+***
+
 ## 内联函数
 
->[宏函数](https://blog.csdn.net/bytxl/article/details/46007849)
+> [宏函数](https://blog.csdn.net/bytxl/article/details/46007849)
 
-```cpp
+``` cpp
 #define MAX( a, b) ( (a) > (b) (a) : (b) )
 　　把它用函数来实现：
 　　int max( int a, int b){
@@ -22,7 +26,8 @@ date: 2020-02-12 01:29:57
 ```cpp　
 #define MALLOC（n, type） \
 （ (type *) malloc（（n）* sizeof（type）））
-```
+
+``` 
 
 > inline 函数，不用压栈出栈
 > 当函数比较 简单 且需要多次使用时
@@ -32,9 +37,9 @@ date: 2020-02-12 01:29:57
 
 ### 限制:
 
-- 里面不能有循环，
-- 不能有过多判断语句
-- 不能过于庞大
+* 里面不能有循环，
+* 不能有过多判断语句
+* 不能过于庞大
 
 以牺牲代码空间为代价 ，提高程序的运行时间效率
 
@@ -60,7 +65,7 @@ int main() {
 
 从右到左默认参数才能使用
 
-```cpp
+``` cpp
 int func1(int b,int c = 0,int a = 10) {
 	cout << "方式1" << endl;
 	return 0;
@@ -77,7 +82,7 @@ int main() {
 
 ## 占位参数
 
-```cpp
+``` cpp
 int x ，int
 用途就是区分不同函数，调用时也得多一个参数
 int x ，int=0，
@@ -112,7 +117,7 @@ int main() {
 
 ### 函数重载和函数指针
 
-```cpp
+``` cpp
 typedef int (MY_FUNC)(int ,int );
 int main (){
     MY_FUNC *fp=NULL;
@@ -124,7 +129,7 @@ int (*fp4)(int ,int,int );
 fp4=func;
 ```
 
->会这两就够了
+> 会这两就够了
 
 ## 类和对象
 
@@ -132,16 +137,16 @@ fp4=func;
 
 程序=数据结构+算法
 
-- 程序由全局变量以及众多相互调用的函数组成
-- 算法以函数的形式实现，用于对数据结构进行操作
-- 不足：不清楚某个数据结构到底有哪些函数可对其操作，函数的操作对象是什么，函数的相互调用，变量关系会越来越复杂，抽取重复代码会变得十分困难
+* 程序由全局变量以及众多相互调用的函数组成
+* 算法以函数的形式实现，用于对数据结构进行操作
+* 不足：不清楚某个数据结构到底有哪些函数可对其操作，函数的操作对象是什么，函数的相互调用，变量关系会越来越复杂，抽取重复代码会变得十分困难
 
 ### 面向对象程序设计
 
-- 更清晰的调用重复函数，
-- 方便扩充
-- 清晰体现变量和函数的关系
-- 面向对象程序设计 = 类+ 类 + 类....
+* 更清晰的调用重复函数，
+* 方便扩充
+* 清晰体现变量和函数的关系
+* 面向对象程序设计 = 类+ 类 + 类... .
 
 ### 类
 
@@ -159,9 +164,10 @@ fp4=func;
 
 ```cpp  
 #include <iostream>
-using namespace std;
+using namespace std; 
 class man {
   public:
+
 	//public下面定义的变量和函数，能够在类的内部外部访问
 	char name[10] = { "HaHa" };
 	int age=18;
@@ -169,18 +175,24 @@ class man {
 		cout << name << endl;
 		cout << age << endl;
 	}
+
   private:
+
 	  //在private下面定义的成员变量和方法只能在类的内部访问
 	  //可封装的特性
-};
+
+}; 
 ///可以将一个函数弄到特有的class（类）里面，程序中的其他成员不能访问
 int main() {
+
 	man FW;//弄一个变量
 	strcpy(FW.name,"fengwei");
 	FW.pprint;//函数也为其中成员，用.访问
 	return 0;
+
 }
-```
+
+``` 
 
 ### 类的封装
 
@@ -203,22 +215,23 @@ void set_year (int new_year){
 }
 ```
 
->可以在public下面添加从而在主函数里改变private的数据
+> 可以在public下面添加从而在主函数里改变private的数据
 
 ## 面向对象编程案例练习
 
 ## 面向过程
 
-eat(dog,shi);//过程驱动的一个行为
+eat(dog, shi); //过程驱动的一个行为
 
 ## 面向对象
 
-eat.dog(shi);//目的对象驱动的一个行为
+eat.dog(shi); //目的对象驱动的一个行为
 
 ## 案例1：求圆的周长和面积
 
 ### 面向过程:
-```cpp
+
+``` cpp
 #include <iostream>
 using namespace std;
 double get_area(int r) {
@@ -239,10 +252,10 @@ int main() {
 
 ### 面向对象：
 
->基本单位是类；
->class定义完成后要加分号；和结构体一样
+> 基本单位是类；
+> class定义完成后要加分号；和结构体一样
 
-```cpp
+``` cpp
 #include <iostream>
 using namespace std;
 class circle {
@@ -294,7 +307,7 @@ private里面不能定义一个变量为另一个可更改的变量的计算结�
 
 .h里面
 
-```cpp
+``` cpp
 #pragma once
 要声明一个类中所有的成员；
 函数名，变量名；
@@ -312,19 +325,20 @@ void setR(double r);
 
 完成后共有三个文件
 
-- circle.h
+* circle.h
 
-- circle.cpp
+* circle.cpp
 
-- main.cpp
+* main.cpp
 
 前两个就是一个类，一个类对应两个文件写
 
-把`circle.h` `#include`到`main`里面就可以像一个cpp文件中一样正常使用这个类
+把 `circle.h`  `#include` 到 `main` 里面就可以像一个cpp文件中一样正常使用这个类
 (有模板类函数的实现在circle.cpp时，#include后缀改为hpp)
->注意：在circle里面定义函数具体内容时要在函数名前加circle::
 
-```cpp
+> 注意：在circle里面定义函数具体内容时要在函数名前加circle::
+
+``` cpp
 circle.cpp
 #include "circle.h"
 #include <iostream>
@@ -340,7 +354,7 @@ double circle::Get_area() {
 }
 ```
 
-```cpp
+``` cpp
 circle.h
 #pragma once
 class circle
@@ -354,7 +368,7 @@ private:
 };
 ```
 
-```cpp
+``` cpp
 main.cpp
 使用时注意使用类中成员函数后面的（）不要忘记了
 #include "circle.h"
@@ -373,9 +387,9 @@ int main() {
 
 ### 面向对象写法：
 
->下面写的三个get_m_h也可以用一个三个参数的函数来一次性get
+> 下面写的三个get_m_h也可以用一个三个参数的函数来一次性get
 
-```cpp
+``` cpp
 #include <iostream>
 using namespace std;
 class cube {
@@ -427,7 +441,7 @@ int main() {
 
 ## 案例3：计算点类是否在圆类内（圆内，圆上和圆外）
 
-```cpp
+``` cpp
  #include <iostream>
 #include "math.h"
 using namespace std;
@@ -484,6 +498,7 @@ int main() {
 目的只是熟悉面向对象的语法规则；
 
 作业
+
 1.  简述函数的默认参数的声明规则。
 
 从后往前才能使用，int a=100；
@@ -493,7 +508,8 @@ int main() {
 是，因为参数的数量不同
 
 3. 以下函数重载写法是否正确？ 为什么？
-```cpp
+
+``` cpp
  int func(int a, int b) 和 int func(int a, int b, int c = 0
 ```
 
@@ -507,10 +523,11 @@ int main() {
 类的封装
 
 5. 定义一个Point类， 属性包括点的坐标，提供计算两点之间距离的方法
+
    定义一个圆类，包括其属性和半径
    创建两个圆形对象，提示用户输入圆心坐标和半径，判断两个圆是否相交，并输出结果
 
-```cpp
+``` cpp
 #include <iostream>
 #include "math.h"
 using namespace std;
@@ -573,8 +590,10 @@ int main() {
 ```
 
 6. 设计并测试一个名为Rect的矩形类，其属性为矩形的左下角与右下角两个坐标，根据坐标能计算出矩形的面积
+
 引用绝对值函数更佳
-```cpp
+
+``` cpp
 #include <iostream>
 using namespace std;
 class Rect {
@@ -602,10 +621,9 @@ int main() {
 }
 ```
 
-
 7. 定义一个Tree类，有成员age（树龄）， 成员函数grow（int years）对ages加上years，age（）显示trees对象的ages值。
 
-```cpp
+``` cpp
 #include <iostream>
 using namespace std;
 class Tree {
@@ -626,3 +644,4 @@ int main() {
 	return 0;
 }
 ```
+

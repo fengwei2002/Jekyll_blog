@@ -5,18 +5,20 @@ tags: [数据结构]
 date: 2020-02-24
 ---
 
+***
+
 线性序列的特例，扮演着基本而重要的角色
 
 ## 栈的接口与实现
 
 Stack 一般沿垂直方向画出 堆在一起的椅子就是栈模型，Hanno塔也是这种类型，
-只能放在顶部(push)或者取出顶部元素(pop),查询顶部元素(top) 
+只能放在顶部(push)或者取出顶部元素(pop), 查询顶部元素(top) 
 
 lost in first out 因为有这种接口，所以一些算法便可以使用这种结构大显身手
 
 因为是一种特例，故可以基于向量或者列表派生出来
 
-```cpp
+``` cpp
 template<typename T> class Stack public Vector<T>{
     public://size empty 以及其他开放接口均可直接沿用
     void push(T const& e){insert(size(),e);}
@@ -27,7 +29,6 @@ template<typename T> class Stack public Vector<T>{
 
 都在向量末尾操作，所以复杂度都是$O(1)$，这也是不在向量头操作的原因
 
-
 ###　逆序输出
 
 输出次序与处理过程颠倒，递归深度和输出长度不易预知
@@ -35,8 +36,8 @@ template<typename T> class Stack public Vector<T>{
 ### 典例：进制转换
 
 短除法：
-$10->2$ ,将原数除2数的整数部分(商)和余数分开，递归处理，余数部分记录下来既是二进制的表示  
-$10->5$ ,分别处理商和余数，然后抄录余数，就完成了转换过程  
+$10->2$ , 将原数除2数的整数部分(商)和余数分开，递归处理，余数部分记录下来既是二进制的表示  
+$10->5$ , 分别处理商和余数，然后抄录余数，就完成了转换过程  
 计算过程自上而下，输出过程自下而上，计算深度也是未知深度
 
 convert:  
@@ -44,7 +45,7 @@ n. 皈依者；改变宗教信仰者
 vt. 使转变；转换…；使…改变信仰  
 vi. 转变，变换；皈依；改变信仰  
 
-```cpp
+``` cpp
 void convert (Stack<char>& S,__int64 n,int base){
     static char digit[] = 
     {'0','1','2','3','4','A','B'}
@@ -62,7 +63,7 @@ while( !S.empty()) printf( "%c",S.pop() );pop刚刚好是逆序输出
 2. 消除一对紧邻的括号，不影响全局的判断,那么，如何找到一对，如何简单的持续进行
 3. 使用栈的结构，左括号入栈，遇到右括号就弹出栈顶的左括号，最后列表刚好为空即为匹配，中途用完左括号或者最后多出右括号则都是不匹配的
 
-```cpp
+``` cpp
 bool brackets_match(const char exp[] ,int low,int high){
     Stack<char> S;
     for (int i = low;i < hi;i++){
@@ -77,7 +78,8 @@ bool brackets_match(const char exp[] ,int low,int high){
 使用整数计算器也可，并且更加快，计数器反映的即是栈的空间（仅限单类括号
 
 以上思路及算法，可便捷的推广至多种括号并存的情况 ，而不能使用多个计数器实现这种功能  
-反例`[(])`而栈就可以  
+反例 `[(])` 而栈就可以  
+
 ![352F858B92B1DC394CB70505FB5CCC66.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture352F858B92B1DC394CB70505FB5CCC66.jpg)
 
 甚至，只需约定“括号”的通用格式，而不必事先固定括号的类型和数目
@@ -94,23 +96,25 @@ bool brackets_match(const char exp[] ,int low,int high){
 
 任意三个元素能否按照某种次序出现在栈混洗中，与其他元素无关（观察123序列得出
 
-对于任何$1<=i<j<k<=n$ , $[...,k ,... i,...,j >$必非栈混洗  
+对于任何$1<=i<j<k<=n$ , $[... , k , ... i, ... , j >$必非栈混洗  
 
 123 - 312 判断栈混洗的充分必要条件 $O(n^2)$算法
 
 利用栈ABS模拟栈混洗过程，便得到$O(n)$复杂度的算法  
-- 每次S.pop()之前，检测S是否已经空，或需要弹出的元素在S中，却非顶元素
 
+* 每次S.pop()之前，检测S是否已经空，或需要弹出的元素在S中，却非顶元素
 
 ### 延时缓冲
 
 表达式求值  
 算法具有单调性，
 求值算法=栈+扫描  
+
 ![E9F86A63DB3107612B3735D2B98368BA.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureE9F86A63DB3107612B3735D2B98368BA.jpg)
 
 实现：
-```cpp
+
+``` cpp
 float evaluate (char* S,char* & RPN){//中缀表达式求值
     Stack<float> number; Stack<char> Operator;//运算数栈，运算符栈
     Operator.push('\0');//尾哨兵'\0'也作为头哨兵首先入栈
@@ -125,7 +129,8 @@ float evaluate (char* S,char* & RPN){//中缀表达式求值
 ```
 
 不同优先级的处理方法：
-```cpp
+
+``` cpp
 switch(order_Between(operator.top(), *S){
     case '<'://栈顶优先级更低
         operator.push(*S);S++;break;//推入运算符栈中，转到表达式的下一个
@@ -143,10 +148,10 @@ switch(order_Between(operator.top(), *S){
     }
 }
 ```
->思考：为何不直接 将两个 pop 操作加入calculate 函数中？
+
+> 思考：为何不直接 将两个 pop 操作加入calculate 函数中？
 
 [实例解析](http://www.bilibili.com/video/av82410486?p=156&share_medium=android&share_source=copy_link&bbid=PQk6Cz4KOAtoDjYHewd7infoc&ts=1582623533303)
-
 
 ### 逆波兰表达式 RPN
 
@@ -155,15 +160,16 @@ switch(order_Between(operator.top(), *S){
 在运算符和操作数组成的表达式中，不使用括号，即可表示带优先级的运算关系，操作时只需要一个操作栈
 
 手工转换法：（普通表达式到逆波兰表达式）
-- 用括号显示的表示优先级（中缀表达式
-- 将运算符移动到对应的右括号后
-- 抹去所有括号 （操作数和操作符组成的逆波兰表达式
-- 移动后所有操作数的次序 和中缀表达式的次序不变
+
+* 用括号显示的表示优先级（中缀表达式
+* 将运算符移动到对应的右括号后
+* 抹去所有括号 （操作数和操作符组成的逆波兰表达式
+* 移动后所有操作数的次序 和中缀表达式的次序不变
 
 实现:infix到postfix（待二刷）　　
 Infix expression(中缀表达式) postfix 后缀
 
-```cpp
+``` cpp
 float evaluate( char* S,char * & RPN){ //RPN转换
     /*.....................*/
     while (! optr.empty() ){ //逐个处理各个字符，直至全空
@@ -199,7 +205,7 @@ size接口得到当前队列规模
 
 因为是一种特殊的序列，所以基于向量或列表派生
 
-```cpp
+``` cpp
 template<typename T> class Queue: public List<T>{
     public: //size() 与empty直接沿用
     void enqueue(T const &e){insert_as_last(e) ; }//入队
@@ -207,8 +213,6 @@ template<typename T> class Queue: public List<T>{
     T & front() {return first()->data;} //队首
 };//以列表首/末端为队列头/尾——颠倒过来呢？
 ```
+
 使用之前开发的模板实现需求又安全又快速
-
-
-
 

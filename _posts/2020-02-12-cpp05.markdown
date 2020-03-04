@@ -5,9 +5,12 @@ tags: [cpp+STL]
 date: 2020-02-12 01:30:56
 ---
 
+***
+***
+
 ## 等号操作符重载
 
-```cpp
+``` cpp
 类& operator=(const 类名 &another){
     if (this ==&another){
         return *this;
@@ -26,20 +29,21 @@ date: 2020-02-12 01:30:56
     return *this;
 }
 ```
+
 若成员变量中存在指针，构造等号操作符时就需要额外开辟一个空间，供新变量使用
 
-## 自定义的数组类重载 `[ ]`
+## 自定义的数组类重载 `[ ]` 
 
-```cpp
+``` cpp
 int & my_Array::operator[](int index){
      return this->space[index];
      //return 一个int值
  }
 ```
 
-## 数组类重载`<<`:
+## 数组类重载 `<<` :
 
-```cpp
+``` cpp
 ostream &operator<<(ostream &os,MyArray &array){
     for (int i = 0; i < array.getlen(); i++){
         os<<array[i]<<" ";
@@ -47,13 +51,13 @@ ostream &operator<<(ostream &os,MyArray &array){
 }
 ```
 
-`getlen()`中的函数参数是非 const 的指针如果传入函数的为 const,就会不安全，报错 
+`getlen()` 中的函数参数是非 const 的指针如果传入函数的为 const, 就会不安全，报错 
 
 实际操作中不建议重载并且或者操作符，因为存在短路现象
 
 ## 自定义智能指针
 
-```cpp
+``` cpp
 #include<memory>
 int main (){
     int *p = new int;
@@ -76,7 +80,7 @@ int main (){
 
 my_string.h
 
-```cpp
+``` cpp
 #pragma once
 //默认就有字符串类，include <string>
 class my_string
@@ -113,9 +117,9 @@ int main() {
 }
 ```
 
-
 my_string.cpp
-```cpp
+
+``` cpp
 
 #include<cstring>//使用memcpy函数
 #include "string.h"
@@ -200,7 +204,8 @@ string s1 = "1234";
 ```
 
 main.cpp
-```cpp
+
+``` cpp
 #include <iostream>
 using namespace std;
 #include "my_string.h"
@@ -210,3 +215,4 @@ int main (){
 }
 
 ```
+

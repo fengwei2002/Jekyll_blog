@@ -4,8 +4,12 @@ title: 用好重定向和管道
 tags: [Linux]
 date: 2020-01-27
 --- 
-## 重定向
+
 ***
+***
+
+## 重定向
+
 输入输出重定向
 
 do one thing and do it well（Linux）
@@ -53,3 +57,4 @@ ls -l/tmp/file04 2>./stderr.txt
 **cut** -c1，2（切割前两列）
 
 cut -f
+

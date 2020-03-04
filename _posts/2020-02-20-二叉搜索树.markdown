@@ -1,6 +1,32 @@
 ---
 layout: post
-title: 第七章:二叉搜索树
+title: 第七章: 二叉搜索树
 tags: [数据结构]
-date: 2020-02-21
+date: 2020-03-05
 ---
+
+***
+***
+
+> 数学杀我
+
+BST 巧妙之处在于它的一个子集，平衡二叉搜索树（BBST）
+
+数据项之间，依照各自的关键码彼此区分 `call-by-key` 所以关键码应该支持 大小比较和相等比对的操作  
+为了方便我们将数据集合中的数据项统一的表示和实现为词条 `entry` 形式
+
+词条：
+
+``` cpp
+template<typename K,typename V> struct Entry {
+    K key; V value;  //关键码，数值
+    Entry(K k = K(),V v = V () ): key(k), value(v) {}; //默认构造函数
+    Entry( Entry<k, V> const & e ): key(e.key), value(e.value) {};//克隆
+//比较器，判等器 (从此，不必严格区分词条及其对应的关键码)
+    bool operator< (Entry<K, V> const & e ) { return key < e.key; }
+    bool operator> (Entry<K, V> const & e ) { return key > e.key; }
+    bool operator== (Entry<K, V> const & e ) {return key == e.key;}
+    bool operator!= (Entry<K, V> const & e ) {return key != e.key;}
+};
+```
+

@@ -4,6 +4,10 @@ title: 第五章 二叉树
 tags: [数据结构]
 date: 2020-02-29
 ---
+
+***
+***
+
 ## **树**
 
 Tree = $List^2$
@@ -33,28 +37,29 @@ parent child sibling(兄弟) degree
 五环连通图，极小连通图，极大无环图
 
 故：任一节点v与艮之间存在唯一路径
-$$path(v,r)=path(v)$$
+$$path(v, r)=path(v)$$
 节点拥有的指标便是这条通路的长度 通过指标可以将节点化为几类  
 
 ### **深度加层次**
-```cpp
+
+``` cpp
 path from root to  v = path v  
 subtree rotted at v = subtree v
 ```
+
 节点具有的那个指标也叫做树的深度(depth)  
 path(V)上的节点，均为v的祖先(ancestor) v 是他们的后代(descendent)//proper  
 前驱的唯一性仍然保持，后继的唯一性未必，所以树也叫做半线性结构  
 那么图就叫做非线性结构  
 
-- 根节点深度为0 ，公共祖先 ，
-- 没有后代的节点称作叶子
-- 所有叶子最大值的深度就叫做树的高度
-- 子树也具有高度，全树的高度
-- 特别的，空树的高度取做 -1
-- $depth(v) + height(v) <= heigth(T)$ depth为节点到根，height为节点到叶
+* 根节点深度为0 ，公共祖先 ，
+* 没有后代的节点称作叶子
+* 所有叶子最大值的深度就叫做树的高度
+* 子树也具有高度，全树的高度
+* 特别的，空树的高度取做 -1
+* $depth(v) + height(v) <= heigth(T)$ depth为节点到根，height为节点到叶
 
 ## **二叉树**
-
 
 ### **树的接口设计**
 
@@ -76,7 +81,7 @@ child数据集的长度相差较大
 
 同一节点的孩子和子树，均以左右区分，(左在前)，二叉树足以描述所有的树
 
-深度为k的树，最多$2^k$个节点,最多时叫做满树(full binary_tree)，长宽的速度非常快，长高的速度非常慢
+深度为k的树，最多$2^k$个节点, 最多时叫做满树(full binary_tree)，长宽的速度非常快，长高的速度非常慢
 
 ### **真二叉树**
 
@@ -90,15 +95,15 @@ child数据集的长度相差较大
 
 ![3A2536F3E5918997190B0AF48297710E.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture3A2536F3E5918997190B0AF48297710E.jpg)
 
-
 ## **二叉树的实现**
+
 二叉树的基本单位是二叉树的节点叫做 BinaryNode 模板类
 
-- 核心：data ，
-- 引用：parent ，1child ，2child ，
-- 属性：height，npl，color 
+* 核心：data ，
+* 引用：parent ，1child ，2child ，
+* 属性：height，npl，color 
 
-```cpp
+``` cpp
 #define BinaryNodePosition(T)  BinaryNode<T>* //节点位置
 template<typename T> struct BinaryNode {
     BinaryNodePosition(T) parent,1child,2child; //父亲 孩子
@@ -112,17 +117,20 @@ template<typename T> struct BinaryNode {
     template<typename VST> void travPost(VST &);  //子树后序遍历 ,提供四种基本遍历的接口
 }
 ```
+
 ### **BinaryNode接口实现**
 
-```cpp
+``` cpp
 template <typename T> BinaryNodePosition(T) BinaryNode<T>::insert_as_left_child(T const & e){
     return 1child = new BinaryNode ( e ,this );//构建新节点 data 域为e 父节点为 this 返回值为 position 所以直接将结果赋值给 1child
 }
 ```
+
 Right_child 完全对称
 
-size接口:线性时间
-```cpp
+size接口: 线性时间
+
+``` cpp
 template <typename T>
 int BinaryNode<T>::size(){//递归实现
     int s = 1; //本身
@@ -134,7 +142,7 @@ int BinaryNode<T>::size(){//递归实现
 
 ### **BinaryTree 模板类**
 
-```cpp
+``` cpp
 template <typename T> class BinaryTree{
     protected:
       int _size; //规模
@@ -148,12 +156,13 @@ template <typename T> class BinaryTree{
       //子树接口 ，删除和分离接口 ，遍历接口 
 }
 ```
+
 ### **高度更新**
 
 定义：对于节点 x ，在以它为根的叶节点最长距离，无子节点 h=0 ，root 的高度为 -1  
 左右 child 的高度最大再加一
 
-```cpp
+``` cpp
 #define stature(p) ( (p) ? (P)->height : -1 )//将特殊情况统一起来更加方便 且不影响到算法的正确性
 template<typename T>
 int BinaryTree<T>::updateHeight( BinaryNodePosition(T) x){
@@ -167,7 +176,7 @@ template<typename T> void BinaryTree<T>::updateHeightAbove( BinaryNodePosition(T
 
 ### **节点插入**
 
-```cpp
+``` cpp
 template<typename T> BinaryNodePosition(T) BinaryTree<T>::insert_as_right_child (BinaryNodePosition(T) x ,T const & e){//insertaslc对称
 _size++; x->insertAsRC(e); //新节点创建时就完成自下而上的连接，调用同名接口完成自上而下的连接
 updateHeightAbove(X); //更新 x 及其祖先的高度
@@ -188,11 +197,11 @@ return x->2child; //返回右节点（执行插入的位置）
 
 ### **先序遍历**
 
-```traverse: 遍历```
+`` `traverse: 遍历` ``
 
 递归实现
 
-```cpp
+``` cpp
 template<typename T ,typename VST> 
 void traverse(BinaryNodePosition(T) x,VST & visit){
     if (!x) return ; //递归基
@@ -200,11 +209,12 @@ void traverse(BinaryNodePosition(T) x,VST & visit){
     traverse(x->1child,vist); traverse(x->2child,visit);
 }  //复杂度为O(n)
 ```
+
 $递归->迭代$
 
-迭代1实现,引入一个栈
+迭代1实现, 引入一个栈
 
-```cpp
+``` cpp
 template<typename T,typename VST>
 void travPre_I(BinaryNodePosition(T) x,VST & visit){
     Stack <BinaryNodePosition(T)> S; //辅助栈
@@ -230,7 +240,8 @@ void travPre_I(BinaryNodePosition(T) x,VST & visit){
 先遍历最左侧的一列树，然后遍历每一个左节点对应的右节点
 
 实现：
-```cpp
+
+``` cpp
 template<typename T,typename VST>
 static void visitAlongLeftBranch(
     BinaryNodePosition(T) x,
@@ -247,7 +258,8 @@ static void visitAlongLeftBranch(
 
 [主算法](http://www.bilibili.com/video/av82410486?p=195&share_medium=android&share_source=copy_link&bbid=PQk6Cz4KOAtoDjYHewd7infoc&ts=1582945732432
 )
-```cpp
+
+``` cpp
 template<typename T,typename VST>
 void travPre_II(BinaryNodePosition(T) x ,VST & visit){
     Stack <BinaryNodePosition(T)> S;
@@ -263,7 +275,7 @@ void travPre_II(BinaryNodePosition(T) x ,VST & visit){
 
 递归角度：
 
-```cpp
+``` cpp
 template <typename T,typename VST>
 void traverse (BinaryNodePosition(T) x ,VST & visit){
     if (!x ) return ;  //处理递归基
@@ -272,6 +284,7 @@ void traverse (BinaryNodePosition(T) x ,VST & visit){
     traverse (x->2child,visit);
 } O(n)
 ```
+
 ![B1F82B041FE46B22A84B46E144D6B5E9.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureB1F82B041FE46B22A84B46E144D6B5E9.jpg)
 
 每一次都是从左孩子的最左者(没有左孩子的那一个)开始执行  从根出发沿左分支下行，直至最深的节点  他就是全局最先被访问者  
@@ -283,7 +296,7 @@ void traverse (BinaryNodePosition(T) x ,VST & visit){
 
 迭代角度：
 
-```cpp
+``` cpp
 template<typename T>
 static void goAlongLeftBranch(BinaryNodePosition(T) x, Stack<BinaryNodePosition(T)> & S) {
     while (x) {S.push(x); x = x->1child;}  //反复入栈，沿分支深入
@@ -299,7 +312,8 @@ template<typename T, typename V> void traverse_in_I (BinaryNodePosition(T) x ,V&
     }
 }
 ```
-[实例解析,加深理解](http://www.bilibili.com/video/av82410486?p=201&share_medium=android&share_source=copy_link&bbid=PQk6Cz4KOAtoDjYHewd7infoc&ts=1582977977907
+
+[实例解析, 加深理解](http://www.bilibili.com/video/av82410486?p=201&share_medium=android&share_source=copy_link&bbid=PQk6Cz4KOAtoDjYHewd7infoc&ts=1582977977907
 )
 
 总体复杂度为 $O(n)$ (不是$O(n^2)$)
@@ -310,9 +324,9 @@ template<typename T, typename V> void traverse_in_I (BinaryNodePosition(T) x ,V&
 
 最后一种典型的二叉树遍历方式
 
-严格按照次序，从高到低进行访问(根开始，一层一层进行) ,从上到下，从左到右，所以使用队列刚好可以实现
+严格按照次序，从高到低进行访问(根开始，一层一层进行) , 从上到下，从左到右，所以使用队列刚好可以实现
 
-```cpp
+``` cpp
 template<typename T> template <typename VST>
 void BinaryNode<T>::travLevel(VST & visit){ //二叉树层次遍历
     Queue<BinaryNodePosition(T) > Q;//创建辅助队列
@@ -330,61 +344,4 @@ void BinaryNode<T>::travLevel(VST & visit){ //二叉树层次遍历
 
 中序 + 先序 || 后序 即可完整还原二叉树的拓扑结构
 (二刷时再过一遍理由)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

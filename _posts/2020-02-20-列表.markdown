@@ -5,18 +5,24 @@ tags: [数据结构]
 date: 2020-02-23
 ---
 
+***
+***
+
 ## 接口与实现
 
->图灵机模型
+> 图灵机模型
 
->Don't lose the link 
+> Don't lose the link 
 
 操作方式可分为
-- 静态操作：读取
-- 动态操作：写入
+
+* 静态操作：读取
+* 动态操作：写入
+
 数据元素的储存与组织方式也分为两种
-- 连续的物理空间，数据空间整体创建或销毁，效率上有很大优势 但动态操作力不从心例如`insert`操作
-- 动态分配和回收的物理空间
+
+* 连续的物理空间，数据空间整体创建或销毁，效率上有很大优势 但动态操作力不从心例如 `insert` 操作
+* 动态分配和回收的物理空间
 
 ### 从向量到列表
 
@@ -27,12 +33,12 @@ date: 2020-02-23
 
 也有秩，但是寻秩访问就会变得特别慢，因为物理空间并不连续，转用节点之间的相互引用找到特定的元素
 
-
 ### 列表节点:  
+
 作为列表的基本元素，列表节点首先需要独立的“封装”实现  
 为此，可设置并约定若干基本的操作接口  
 
-```cpp
+``` cpp
 pred(); //当前节点的前驱位置
 succ(); //当前节点的后继位置
 data(); //当前节点存的数据对象
@@ -42,7 +48,7 @@ insert_as_succ();
 
 ### 列表节点 ListNode模板类
 
-```cpp
+``` cpp
 #define position(T) ListNode<T>* 
 template <typename T> //简洁起见，完全开放而不过度分装
 struct ListNode {//列表节点模板类(以双向链表的形式实现)
@@ -61,7 +67,7 @@ struct ListNode {//列表节点模板类(以双向链表的形式实现)
 
 ### 列表：list模板类
 
-```cpp
+``` cpp
 #include "ListNode.h"
 template <typename T >
 class List {
@@ -73,11 +79,12 @@ public:
     /*构造函数，析构函数，只读接口，可写接口，遍历接口*/
 };
 ```
+
 ![A4559D864A315EFEB0681362CCAFF9A3.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureA4559D864A315EFEB0681362CCAFF9A3.jpg)
 
 ### 构造
 
-```cpp
+``` cpp
 template<typename T> void List<T>::init(){
     header = new ListNode<T>;//创建两个ListNode模板类空间
     trailer = new ListNode<T>;
@@ -93,7 +100,7 @@ template<typename T> void List<T>::init(){
 
 实现通过秩读取元素 $O(r)$
 
-```cpp
+``` cpp
 template<typename T> //效率十分低下，可以偶尔为之
 T list<T>::operator[](Rank r) const {
     Position(T) p = first();
@@ -108,7 +115,7 @@ T list<T>::operator[](Rank r) const {
 
 当存在多个相同元素时也满足返回最后一个元素
 
-```cpp
+``` cpp
 template<typename T>//顺序查找，O(n)
 position(T) List<T>::find(T const& e;int n;position(T) p)const{
     while (0 < n--)//从右向左逐个将p的前驱与e进行比对
@@ -116,11 +123,12 @@ position(T) List<T>::find(T const& e;int n;position(T) p)const{
     return NULL;//若越出左边界，意味着查找失败
 }
 ```
-可以有两种接口`find(e,n,p)` `find(e,p,n)`，功能语义要和实际意义一样
+
+可以有两种接口 `find(e,n,p)`  `find(e,p,n)` ，功能语义要和实际意义一样
 
 ### 插入算法
 
-```cpp
+``` cpp
 template <typename T> position(T) List<T>::insert_before(position(T) p, T const& e){
     _size++;return p->insert_as_pred(e);//e当作p的前驱插入
 }
@@ -128,7 +136,7 @@ template <typename T> position(T) List<T>::insert_before(position(T) p, T const&
 
 前插入算法（后插入算法与其对称）
 
-```cpp
+``` cpp
 template <typename T>
 position(T) ListNode<T>::insert_as_pred(T const& e){
     position(T) x = new ListNode(e,pred,this);//为传入的新变量创建一个position空间，同时使用默认构造器初始化 x
@@ -140,10 +148,9 @@ position(T) ListNode<T>::insert_as_pred(T const& e){
 
 像微创手术一样，不会影响其他变量的位置和整体结构，查找的速度就比向量更快
 
-
 ### 基于复制的构造
 
-```cpp
+``` cpp
 template <typename T>//基本接口
 void List<T>::copyNodes(position(T) p,int n){//O(n)
     intit();//创建头尾哨兵并作初始化
@@ -154,11 +161,12 @@ void List<T>::copyNodes(position(T) p,int n){//O(n)
 }
 insert_as_last=insert_before_trailer
 ```
+
 ### 删除和析构
 
 删除节点
 
-```cpp
+``` cpp
 template <typename T>
 T List<T>::remove(position(T) p){
     T e = p->data;//备份
@@ -170,7 +178,8 @@ T List<T>::remove(position(T) p){
 ```
 
 析构函数
-```cpp
+
+``` cpp
 template<typename T> List<T>::~List(){
     clear();//清空列表
     delete header;delete trailer;//释放头尾哨兵节点
@@ -187,7 +196,7 @@ template<typename T>int List::clear(){
 
 剔除重复元素
 
-```cpp
+``` cpp
 template <typename T> int List<T>::wuxu_weiyi(){
     if(_size < 2)return 0;//平凡列表不可能重复
     int old_size = _size;//记录原规模
@@ -204,16 +213,16 @@ template <typename T> int List<T>::wuxu_weiyi(){
 
 ## 有序列表
 
-
 ### 唯一化
 
 按照大小关系有序排列，故可以更快的完成  
 通过remove接口多次操作雷同节点，保留同一区间的首节点
 
 $O(n)$
+
 ![B5AC9147EF4F0277EE4E42A0694416D4.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureB5AC9147EF4F0277EE4E42A0694416D4.jpg)
 
-```cpp
+``` cpp
 template<typename T> int List<T>::uniquify(){
     if(_size < 2) return 0;//确保包含两个元素
     int old_size = _size;
@@ -228,7 +237,7 @@ template<typename T> int List<T>::uniquify(){
 
 ### 查找
 
-```cpp
+``` cpp
 template <typename T>//在有序列表p的n个前驱中
 position(T) List<T>::search(T const& e,int n, position(T) p)const {
     while (0 < n--)//从右向左 逐个将p的前驱与e进行比对
@@ -237,8 +246,8 @@ position(T) List<T>::search(T const& e,int n, position(T) p)const {
     return p;//直至命中、数组越界后返回最终查找位置
 }
 ```
-复杂度正比于区间宽度
 
+复杂度正比于区间宽度
 
 ## 选择排序
 
@@ -251,7 +260,7 @@ $O(n^2)$ -> $O(n)$
 
 ### 函数实现
 
-```cpp
+``` cpp
 //对列表中起始位置为p的连续n个元素做选择排序
 template <typename T> void List<T>::selection_sort(position(T) p ,int n){
     position(T) head = p->pred;//head不变，为位置p的前一个位置
@@ -266,7 +275,8 @@ template <typename T> void List<T>::selection_sort(position(T) p ,int n){
     }
 }
 ```
->当文件名出现特殊字符或者重复文件时picgo插件就会报错🙃，我以为怎么了🍕
+
+> 当文件名出现特殊字符或者重复文件时picgo插件就会报错🙃，我以为怎么了🍕
 
 ![testqqqqqqqqq.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picturetestqqqqqqqqq.jpg)
 
@@ -274,12 +284,13 @@ template <typename T> void List<T>::selection_sort(position(T) p ,int n){
 
 因为insert操作和remove操作会用到new和delete操作，动态分布内存的时间大概是基本操作的100倍。所以实际中应该尽量少使用  
 
-所以最难理解的那句`insert_before(tail,remove(selection_max(head->succ,n)));`其实应该换为更加简洁的操作
+所以最难理解的那句 `insert_before(tail,remove(selection_max(head->succ,n)));` 其实应该换为更加简洁的操作
 
 当最后max值刚好为tail值就不用执行那一次多余的移动操作，但因为这种情况出现概率极低，所以会得不偿失
 
 ### selection_max 函数实现
-```cpp
+
+``` cpp
 template<typename T>
 position(T) List<T>::selection_max(position(T) p ,int n ){
     position(T) max = p;//暂定一下为 p
@@ -291,17 +302,17 @@ position(T) List<T>::selection_max(position(T) p ,int n ){
     return max;//PS: 我以后写变量名就要用全称，这样简写除了代码短一点点以外没有任何好处,读起来太难受了
 }
 ```
->//painter's algorithm
+
+> //painter's algorithm
 
 ![B3FF0673943B894B615904DE74352C54.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureB3FF0673943B894B615904DE74352C54.jpg)
 
 ### 性能
 
-`selection_max`算数级数
-`remove`和`insert_before`均为 $O(1)$
+`selection_max` 算数级数
+`remove` 和 `insert_before` 均为 $O(1)$
 
 总体复杂度仍为 $O(n^2)$ 尽管如此，元素的移动操作远远少于起泡排序，也就是$O(n^2)$主要来自比较操作，成本相对更低
-
 
 ## 插入排序
 
@@ -319,10 +330,9 @@ $2b$ 插入动作既是名字由来
 
 ![A0A893B049CA9E8E69D215FAFA1DB1BF.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureA0A893B049CA9E8E69D215FAFA1DB1BF.jpg)
 
-
 ### 实现
 
-```cpp
+``` cpp
 //对列表中起始于位置p的连续n个元素做插入排序 
 template<typename T> void List<T>::insertion_sort(position(T) p,int n){
     for (int r = 0;r < n;r++){
@@ -335,15 +345,15 @@ template<typename T> void List<T>::insertion_sort(position(T) p,int n){
 
 仅使用O(1)的辅助空间
 
-
 ### 性能
 
 完全有序时，需要O(n)的复杂度，线性时间内完成  
-当查找算法使用向量binsearch时，虽然查找比较速度会变为$O(log_n)$,但是当在物理空间上将新元素插入到查找出来的位置时，就会变得很慢很慢
+当查找算法使用向量binsearch时，虽然查找比较速度会变为$O(log_n)$, 但是当在物理空间上将新元素插入到查找出来的位置时，就会变得很慢很慢
 
 所以改用向量使用此算法就于事无补了 
 
 ### 平均性能
+
 （待二刷后添加） 结论：平均复杂度依然是$O(n^2)$
 
 ### 逆序对

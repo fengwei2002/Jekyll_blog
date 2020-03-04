@@ -4,45 +4,53 @@ title: 第一章：数据结构绪论
 tags: [数据结构]
 date: 2020-02-06 
 ---
+
+***
+***
+
 ## 计算
 
 ### 清华Oj使用
 
 [共有四次作业](https://dsa.cs.tsinghua.edu.cn/oj/foyer.shtml)
 
-computer science should be called computing science,for the same  
+computer science should be called computing science, for the same  
 reason why surgery（手术） is not called knife science  
-\- [E.Dijkstra](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra) 
+\- [E. Dijkstra](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra) 
 
 ### 绳索计算机及其算法
 
-- 输入：直线l和上面任意一点A  
-- 输出：经过A的一条垂线  
+* 输入：直线l和上面任意一点A  
+* 输出：经过A的一条垂线  
 
-- 算法：
-  - 古埃及人  
+* 算法：
+  + 古埃及人  
+
     红十字边框，共12段绳索，利用345直角三角形  
     将四和三点固定一个，同时拉直剩余的3+5  
     这时就出现了垂线  
 
 ### 尺规计算机及其算法
 
-- 找一个线段的两个三等分点
-- 算法：
-  - 利用直角三角形等分性质。  
+* 找一个线段的两个三等分点
+* 算法：
+  + 利用直角三角形等分性质。  
+
     直角边画出三等分点，做垂线在斜边的交点就是三等分点  
 
->子程序->平行线作法
+> 子程序->平行线作法
 
 ### 算法  
 
 计算：借助工具，遵循一定规则，明确而机械的进行  
 正确性，确定性，可行性，有穷性
 
-- 有穷性  
-  - 序列hailstone(n)
+* 有穷性  
+  + 序列hailstone(n)
+
     奇数3n+1偶数n/2，1->1
     对于任意n，hailstone<正无穷？（未证明）
+
 so 程序不等于算法  
 
 ### 好的算法，好的计算过程
@@ -61,30 +69,33 @@ DSA 度量(To measure is to know)
 实验统计是最直接的算法，但不足够反映真实效率（算法和人一样各有所长）  
 所以就构建了一些理想模型来measure算法  
 
-
 ### 对一般计算工具的简化和抽象
 
-- 图灵机
-  - tape默认为\#
-  - alphabet字符的种类有限
-  - read head 总是对准某一单元格，并可读取和修改其中的字符，可像左右移动
-  - q,c; d,l\r,p(前两项为状态，后面为操作)  
+* 图灵机
+  + tape默认为\#
+  + alphabet字符的种类有限
+  + read head 总是对准某一单元格，并可读取和修改其中的字符，可像左右移动
+  + q, c; d, l\r, p(前两项为状态，后面为操作)  
+
   若当前状态为q，字符为c，则将字符改为d，向左右移动到邻格，状态为p，若状态为h，则停机  
   q，p处  <，>  
 实例：
-二进制数字翻转 (<,1,0,L,<)//左移，1-\>0  
+二进制数字翻转 (<, 1, 0, L, <)//左移，1-\>0  
 用完读写头后，将其归位；  
 其次今后使用算法时要规范接口，使用时先判断接口是否符合要求  
 
-- RAM(random access machine)  
+* RAM(random access machine)  
+
   寄存器
-  - R[i]<-c  
+
+  + R[i]<-c  
+
     R[i]<-R[j]  
     R[R[i]]<-R[j]
     R[i]<-R[j]+-R[k]  
     goto if goto stop（用来写循环)
 
-FLoor:向下取整的除法
+FLoor: 向下取整的除法
 算法：统计R{0}减去R{1}在下溢前，所作减法的次数x
 
 抽象后的简化，就可以用基本简单的操作来描述我们的算法，使我们独立于其他平台，能够客观的做出对算法效率的比较和评判  
@@ -97,25 +108,35 @@ FLoor:向下取整的除法
 常系数可以省略，低次项可以省略（上界）
 欧姆（）（下届）  sieta（）
 
-- O(1)，常数复杂度  
+* O(1)，常数复杂度  
+
     不含循环，调用，递归
-- O(logn)  
+
+* O(logn)  
+
     常底数无所谓,所以不标明  
     常数次幂  复杂度无限接近于常数  
-- O($n^C$),多项式复杂度
+
+* O($n^C$), 多项式复杂度
+
     $a^kn^k==O(n^k)$
-- O(n)-O($n^2$)为编程习题主要复杂度
-- 指数复杂度  
+
+* O(n)-O($n^2$)为编程习题主要复杂度
+* 指数复杂度  
+
   难解O($2^n$)，  
-  $n^c$=$O(2^n)$,  
+  $n^c$=$O(2^n)$, 
   $n^1000$=O(2^n)$
 
 很多问题多项式复杂度很难，指数复杂度算法显而易见  
 
-- 例：  
+* 例：  
+
   s包含n个正整数，$\sum_{k=1}^{n}S^n$=2m
   s是否有子集T，$\sum_{}{}T=m$  
-  - 枚举所有子集计算和，$2^n$   
+
+  + 枚举所有子集计算和，$2^n$   
+
     NPC问题，不存在可以在多项式时间内解决的方法  
 
 指数模型增长最快  
@@ -130,27 +151,31 @@ FLoor:向下取整的除法
 
 ### 级数
 
-- 算数级数  
+* 算数级数  
+
 通项公式最高项  
-- 幂方级数：比幂次高出一阶  
 
-$$T_4(n)=1^4+2^4+...+n^4=O(n^5)$$  
+* 幂方级数：比幂次高出一阶  
 
-- 几何级数
+$$T_4(n)=1^4+2^4+... +n^4=O(n^5)$$  
+
+* 几何级数
+
     $a^0+a^1+a^2+...+a^n=\frac{a^n+^1-1}{a-1}=O(a^n)$  
 
     1+2+4--->$O(2^n)$
 
-- 收敛级数
+* 收敛级数
+
     几何分布->$O(1)$
     调和级数->$O(log_n)$  
     $1+\frac{1}{2}+\frac{1}{3}+...+\frac{1}{n}$
     对数级数$O(nlog_n)$  
     $log1+log2+log3+...logn=logn!$
 
->具体数学
+> 具体数学
 
-```cpp
+``` cpp
 for(int i=0;i<n;i++){
     for(int j=0;j<n;j++){
         ..
@@ -158,7 +183,7 @@ for(int i=0;i<n;i++){
 }
 ```
 
-```cpp
+``` cpp
 for(int i=0;i<n;i++){
     for(int j=0;j<i;j++/j+=2020){
         ..
@@ -172,7 +197,7 @@ $O(n^2)$：
 
 ### 冒泡排序
 
-```cpp
+``` cpp
 void bubblesort(int A[];int n){
     for (bool sorted=false;sorted =!sorted;n--){
         for(int i=1;i<n;i++){//每一次把大的扔到最后面，全局有效标志翻转
@@ -206,7 +231,7 @@ void bubblesort(int A[];int n){
 
 ### 数组倒置
 
-```cpp
+``` cpp
 void reverse(int *A,int low,int high){
     if(low==high){
             return A[low];
@@ -215,13 +240,14 @@ void reverse(int *A,int low,int high){
     return sum(a,low,mi)+sum(a,mi+1,high);
 }
 ```
+
 递归版
 迭代版
 迭代精简版
 
 ![截图1](/public\image\数据结构绪论下01.jpg)
 
-```cpp
+``` cpp
 
 ```
 
@@ -229,26 +255,26 @@ void reverse(int *A,int low,int high){
 
 二分递归
 
-```cpp
+``` cpp
 
 ```
 
 通过递归跟踪到递归基
 
-T(n)=O(1) x (2^0+2^1+2^2...+2^long_n)
+T(n)=O(1) x (2^0+2^1+2^2... +2^long_n)
 =o(n)
 
 //几何级数，总合和和末项同阶
 
-底层递归实例共n个，所以复杂度为O(n);
+底层递归实例共n个，所以复杂度为O(n); 
 
 ### Max2
 
-从数组区间[lo,hi)中找出最大两个整数的比较次数，要求尽可能的少
+从数组区间[lo, hi)中找出最大两个整数的比较次数，要求尽可能的少
 hi并不是有效部分，但可以加进去考虑
-![](/public\image\数据结构绪论下03.jpg);
+![](/public\image\数据结构绪论下03.jpg); 
 
-```cpp
+``` cpp
 ```
 
 比较总数为(2n-3)
@@ -266,7 +292,7 @@ hi并不是有效部分，但可以加进去考虑
 
 比较n-1次
 
-### Max2:二分递归
+### Max2: 二分递归
 
 左侧最大次大，
 右侧最大次大；
@@ -275,16 +301,10 @@ hi并不是有效部分，但可以加进去考虑
 
 ![截图](/public\image\数据结构绪论下05.jpg)
 
-```cpp
+``` cpp
 
 ```
 
 最好，最坏，
-5n/3-2;
-
-
-
-
-
-
+5n/3-2; 
 
