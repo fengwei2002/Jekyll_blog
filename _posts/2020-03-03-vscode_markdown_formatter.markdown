@@ -90,8 +90,6 @@ vscode让我把错误setting删除后它自己进行写入操作 然后出现弹
 
 我猜测配置项可能要都写在 { } 内，所以我试了一下：
 
-![)PJR4NCG9QC10}5VY_T~S`Q.png](https://raw.githubusercontent.com/fengwei2002/picture/master/fengwei2002/picture)PJR4NCG9QC10%7D5VY_T%7ES%60Q.png)
-
 没有报错，NOW重启一次vscode
 
 发现应用成功(　获得神器 QAQ　)
