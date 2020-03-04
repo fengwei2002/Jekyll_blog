@@ -5,10 +5,12 @@ background_music: <iframe frameborder="no" border="0" marginwidth="0" marginheig
 date: 2020-03-01
 ---
 
+***
+
 好久之前就看到别人搭建的这种博客(~~羡慕，想拥有~~) ，然后刚刚好大一寒假因为疫情变得超级长，所以就看着网上的教程开始了折腾
 
 开发过程得益于谷歌搜索  
-(等有无聊的时间就更新详细教程)
+[(等有无聊的时间就更新搭建框架的详细教程)](https://feng-w.cn/posts/Project_Description)
 
 各种功能前人都有完整教程，跟着做就行了  
 这里列出我的所有参考资料，感谢
@@ -19,7 +21,11 @@ date: 2020-03-01
 [Jekyll 博客 Next主题超深度配置](https://blog.csdn.net/ds19991999/article/details/81516568)   
 [应用软件: Jekyll配置](https://www.jianshu.com/p/bb184f61c9ae)   
 
-基本构建完成后就可以开始添加一些自己想要的功能，想要什么功能就用谷歌搜，应有尽有
+基本构建完成后就可以开始添加一些自己想要的功能，想添加什么功能就用谷歌搜，应有尽有
+
+***
+***
+***
 
 ## **DIY**
 
@@ -168,10 +174,13 @@ https://fearlessroy.net/2018/01/29/binddomain/
 
 > 之前没有记录时间... 
 
-` `  ` https://img.shields.io/badge/{徽标标题}-{徽标内容}-{徽标颜色}.svg `  ` ` 
+` https://img.shields.io/badge/{徽标标题}-{徽标内容}-{徽标颜色}.svg ` 
 
-如果我们在写markdown的时候想为我们的徽章或者进度条添加点击跳转的超链接, 可以使用超链接和图片的语法嵌套来写, 具体可以参照markdown标准语法.
-[![](徽章/进度条URL)](点击超链接)
+如果我们在写markdown的时候想为我们的徽章或者进度条添加点击跳转的超链接, 可以使用超链接和图片的语法嵌套来写
+
+``` 
+    [![](徽章/进度条URL)](点击超链接)
+```
 
 * [x] **JavaScript click.js爱心点击效果**
 * 2020-03-02
@@ -179,11 +188,13 @@ https://fearlessroy.net/2018/01/29/binddomain/
 > 花里胡哨+3
 
 在我的 js/click.js 里面存在源码
-然后在</body>结束前引用一次就ok了
+然后在</body>结束前进行一次引用就ok了
 
-* [x] JavaScript prism.js 添加黑色代码块渲染代码块，关闭默认渲染效果
+* [x] **JavaScript prism.js 添加黑色代码块渲染代码块，关闭默认渲染效果**
 
-> 2020-03-04
+> 2020-03-04 background_music： 我要变好看~；要变好看~
+
+ 在[https://github.com/PrismJS/prism/tree/master/themes](https://github.com/PrismJS/prism/tree/master/themes) 内查看可用主题，或者也可以搜一些第三方主题
 
 ``` JavaScript
 function loadStyle(url) {
@@ -227,7 +238,7 @@ function loadStyle(url) {
   })();
   loadJs('//cdn.jsdelivr.net/npm/prismjs/components/prism-core.min.js')
     .then(function() {
-      loadStyle('//cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.min.css'); //在https://github.com/PrismJS/prism/tree/master/themes 内查看可用主题，或者也可以搜一些第三方主题
+      loadStyle('//cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.min.css');
       loadStyle('//cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css');
       document.addEventListener("DOMContentLoaded", function() {
         for (var i = 0, x = document.getElementsByTagName("pre"); i < x.length; i++)
@@ -266,6 +277,8 @@ function loadStyle(url) {
 })();
 ```
 
+***
+***
 ***
 
 ### 💎**未完成的功能模块**💎
@@ -323,6 +336,7 @@ function loadStyle(url) {
 > 每次鼠标右键点击出现击碎砖块的烟花效果
 
 * [ ] 图片悬浮放大特效
+* [ ] 添加一个博文置顶按钮；Biu
 
 ## 结尾
 
