@@ -94,7 +94,7 @@ post:
     enable: true
     alert: <i class="fas fa-book-open"></i>
     unit: 分钟
-    divided_by: 300
+    divided_by: 250
   tags:
     enable: true
     alert: <i class="fas fa-tag"></i>
@@ -117,7 +117,7 @@ page:
       href: mailto:psychonaut1@foxmail.com
       class: "fas fa-envelope"
     - title: github
-      href: //https://github.com/fengwei2002
+      href: //github.com/fengwei2002
       class: "fab fa-github"
     - title: codeforce
       href: //codeforces.com/profile/KONNG
@@ -447,8 +447,3 @@ page:
           value: https://zz.bdstatic.com/linksubmit/push.js # https协议用这个
         - key: defer # 在页面加载之后执行减少影响
           value: defer
-  #  - var: # 百度自动推送
-  #      - key: src
-  #        value: http://push.zhanzhang.baidu.com/push.js # http协议用这个
-  #      - key: defer # 在页面加载之后执行减少影响
-  #        value: defer
