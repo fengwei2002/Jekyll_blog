@@ -5,7 +5,7 @@ background_music: <iframe frameborder="no" border="0" marginwidth="0" marginheig
 date: 2020-03-01
 ---
 
-好久之前就看到别人搭建的这种博客(~~羡慕，想拥有，得不掉就毁到~~) ，然后刚刚好大一寒假因为疫情变得超级长，所以就看着网上的教程开始了折腾
+好久之前就看到别人搭建的这种博客(~~羡慕，想拥有~~) ，然后刚刚好大一寒假因为疫情变得超级长，所以就看着网上的教程开始了折腾
 
 开发过程得益于谷歌搜索  
 (等有无聊的时间就更新详细教程)
@@ -15,9 +15,9 @@ date: 2020-03-01
 
 > 参考资料
 
-[Jekyll + Github Pages 博客搭建入门](https://www.jianshu.com/p/9f198d5779e6)   
-[Jekyll博客Next主题超深度配置](https://blog.csdn.net/ds19991999/article/details/81516568)   
-[应用软件: Jekyll 配置](https://www.jianshu.com/p/bb184f61c9ae)   
+[Jekyll + Github Pages博客搭建入门](https://www.jianshu.com/p/9f198d5779e6)   
+[Jekyll 博客 Next主题超深度配置](https://blog.csdn.net/ds19991999/article/details/81516568)   
+[应用软件: Jekyll配置](https://www.jianshu.com/p/bb184f61c9ae)   
 
 基本构建完成后就可以开始添加一些自己想要的功能，想要什么功能就用谷歌搜，应有尽有
 
@@ -73,7 +73,7 @@ https://fearlessroy.net/2018/01/29/binddomain/
 
 ``` css
 .sidebar {
-    font-family: Menlo, Monaco, "Source Code Pro", Microsoft JhengHei, monospace;
+  font-family: Menlo, Monaco, "Source Code Pro", Microsoft JhengHei, monospace;
 }
 ```
 
@@ -83,22 +83,24 @@ https://fearlessroy.net/2018/01/29/binddomain/
 
 ``` css
 .container {
-    background-color: rgba(255, 255, 255, 0.7);
-    box-shadow: 0 0 1rem 1rem rgba(255, 255, 255, 0.7);
-    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.021);
-    min-height: 3vh;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 1rem 1rem rgba(255, 255, 255, 0.7);
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.021);
+  min-height: 3vh;
 }
 ```
 
 * [x] **评论系统gitalk**
 
-> 使用GitHub账户即可直接进行评论储存在 comment 里的 issue 中
+> 原理：使用GitHub账户即可直接进行评论储存在 comment 里的 issue 中
 
-> 但是不能DIY样式并且时不时的会崩掉(因为汉字转换后的 url 有时太长所以会崩掉 )
+> 但是不能DIY样式并且时不时的会因为汉字转换后的 url 有时太长所以崩掉
 
-> 以后会更换 valine 可能 -03-01 -2020
+> 缩短文件名为50字符以下后 gitalk 就能愉快的使用了用了 ~~以后用纯英文文件名 2020 -03-02
 
-> 缩短文件名字为50字符以下后gitalk就能用了 ~~以后用纯英文定义我的文件名 -03-02 -2020
+> 启用Facebook沉浸式评论，开启自动初始化issue脚本 2020-03-04
+
+配置详细步骤请参考以下博文：
 
 [https://aerolith.ink/2018/08/25/Gitalk/](https://aerolith.ink/2018/08/25/Gitalk/)
 
@@ -127,12 +129,12 @@ https://fearlessroy.net/2018/01/29/binddomain/
 
 ``` css
 ::-webkit-scrollbar {
-    width: 3px;
-    height: 7px;
+  width: 3px;
+  height: 7px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 }
 ```
 
@@ -145,33 +147,33 @@ https://fearlessroy.net/2018/01/29/binddomain/
 .content,
 .sidebar-toggle,
 .pio-container {
-    animation: animationAppear 2s;
+  animation: animationAppear 2s;
 }
 
 @keyframes animationAppear {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    33% {
-        opacity: 0;
-    }
+  33% {
+    opacity: 0;
+  }
 
-    100% {}
+  100% {}
 }
 ```
 
 * [x] **github** **仓库徽标**
 * 2020-03-01
 
-> 之前没有记录时间..
+> 之前没有记录时间... 
 
-`` `https://img.shields.io/badge/{徽标标题}-{徽标内容}-{徽标颜色}.svg` ``
+` `  ` https://img.shields.io/badge/{徽标标题}-{徽标内容}-{徽标颜色}.svg `  ` ` 
 
 如果我们在写markdown的时候想为我们的徽章或者进度条添加点击跳转的超链接, 可以使用超链接和图片的语法嵌套来写, 具体可以参照markdown标准语法.
 [![](徽章/进度条URL)](点击超链接)
 
-* [x] **采用js为我的博客添加了点击效果**
+* [x] **JavaScript click.js爱心点击效果**
 * 2020-03-02
 
 > 花里胡哨+3
@@ -179,20 +181,105 @@ https://fearlessroy.net/2018/01/29/binddomain/
 在我的 js/click.js 里面存在源码
 然后在</body>结束前引用一次就ok了
 
+* [x] JavaScript prism.js 添加黑色代码块渲染代码块，关闭默认渲染效果
+
+> 2020-03-04
+
+``` JavaScript
+function loadStyle(url) {
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = url;
+  var head = document.getElementsByTagName('head')[0];
+  head.appendChild(link);
+}
+
+(function() {
+  var loadJs = (function() {
+    var script = document.createElement('script');
+    if (script.readyState) {
+      return function(url) {
+        return new Promise(function(res, rej) {
+          script = document.createElement('script');
+          script.src = url;
+          document.body.appendChild(script);
+          script.onreadystatechange = function() {
+            if (script.readyState == "loaded" ||
+              script.readyState == "complete") {
+              script.onreadystatechange = null; //解除引用
+              res();
+            }
+          };
+        })
+      }
+    } else {
+      return function(url) {
+        return new Promise(function(res, rej) {
+          script = document.createElement('script');
+          script.src = url;
+          document.body.appendChild(script);
+          script.onload = function() {
+            res();
+          };
+        })
+      }
+    }
+  })();
+  loadJs('//cdn.jsdelivr.net/npm/prismjs/components/prism-core.min.js')
+    .then(function() {
+      loadStyle('//cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.min.css'); //在https://github.com/PrismJS/prism/tree/master/themes 内查看可用主题，或者也可以搜一些第三方主题
+      loadStyle('//cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css');
+      document.addEventListener("DOMContentLoaded", function() {
+        for (var i = 0, x = document.getElementsByTagName("pre"); i < x.length; i++)
+          x[i].classList.add('line-numbers');
+      });
+      loadJs('//cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js');
+
+      loadJs('//cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js').then(function() {
+        Prism.plugins.autoloader.languages_path = '//cdn.jsdelivr.net/npm/prismjs/components/'; //可以在https://github.com/PrismJS/prism/tree/master/components 查看支持的语言
+      })
+
+      loadJs('//cdn.jsdelivr.net/npm/prismjs/plugins/toolbar/prism-toolbar.min.js')
+        .then(function() {
+          loadStyle('//cdn.jsdelivr.net/npm/prismjs/plugins/toolbar/prism-toolbar.min.css');
+          Prism.plugins.toolbar.registerButton('select-code', function(env) {
+            var button = document.createElement('button');
+            button.innerHTML = 'select this ' + env.language;
+            button.addEventListener('click', function() {
+              // Source: http://stackoverflow.com/a/11128179/2757940
+              if (document.body.createTextRange) { // ms
+                var range = document.body.createTextRange();
+                range.moveToElementText(env.element);
+                range.select();
+              } else if (window.getSelection) { // moz, opera, webkit
+                var selection = window.getSelection();
+                var range = document.createRange();
+                range.selectNodeContents(env.element);
+                selection.removeAllRanges();
+                selection.addRange(range);
+              }
+            });
+            return button;
+          });
+        })
+    })
+})();
+```
+
 ***
 
 ### 💎**未完成的功能模块**💎
 
-> 需求与日俱增
+> 需求与日俱增；虽然是一个慢慢经营的个人空间；但也欢迎你和我一起来完成剩余功能的构建
 
 * [ ] 翻页功能, 按照时间线查询前后文章翻页
 
-> 上一篇，下一篇那种 ，博文多了后还可以按照标题在文章末尾推荐猜你喜欢
+> 上一篇，下一篇那种 ，博文多了后还可以按照标题**在文章末尾推荐猜你喜欢**
 
 * [ ] 想弄一个顶部显示实时播报的进度条
 
 > 这样：
-> 
+>  
 
 ![46AE5778012E9A0825C0CA51EEB3A56A.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture46AE5778012E9A0825C0CA51EEB3A56A.jpg)
 
@@ -203,21 +290,20 @@ https://fearlessroy.net/2018/01/29/binddomain/
 * [ ] 归档所有文章那里按照每个月的博文进行时间线划分  
 
 > 这样：
-> 
+>  
 
 ![7150A4ACCCDC70EF14CF55CA15E58F1D.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture7150A4ACCCDC70EF14CF55CA15E58F1D.jpg)
 
 * [ ] tags 的每个分类后面添加这种图标
 
 > 这样：
-> 
+>  
 
 ![491DF35BE214CCF6D453FD1984D08549.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture491DF35BE214CCF6D453FD1984D08549.jpg)
 
 * [ ] 首页展示图片当点开博文时，文字下面不应该存在图片
 
 > 这样
-> 
 
 ![36D86354C88A093D009CC82EC44D50E7.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture36D86354C88A093D009CC82EC44D50E7.jpg)
 
