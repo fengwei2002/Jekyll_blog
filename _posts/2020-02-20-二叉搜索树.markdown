@@ -6,9 +6,10 @@ date: 2020-03-05
 ---
 
 ***
-***
 
-> 数学杀我
+![images.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/fengwei2002/pictureimages.jpg)
+
+> 标志着我们数据结构进入新的里程碑
 
 BST 巧妙之处在于它的一个子集，平衡二叉搜索树（BBST）
 

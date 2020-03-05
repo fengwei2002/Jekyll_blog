@@ -20,3 +20,5 @@ F poj1101
 
 有时间写下题解
 
+![](https://feng-w.cn/img/test (2).png)
+
