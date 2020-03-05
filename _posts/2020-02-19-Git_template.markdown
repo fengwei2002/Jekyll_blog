@@ -14,6 +14,17 @@ date: 2020-02-19
 * `git reset --hard` + ID
 * `git push -f origin master` 
 
+### 使用git pull或者git push每次都需要输入用户名和密码很不人性化，耽误时间，现在教大家一条命令实现保存用户名和密码不用再输入
+
+``` git
+在一个仓库中 git bash here  然后执行以下两行
+git config --global credential.helper store
+git pull /git push (这里需要输入用户名和密码，以后就不用啦)
+执行完gitpush再测试一次，就完美解决了
+```
+
+git config --global credential.helper store
+
 ### git push 和 git fetch 的区别
 
 因为vscode插件弹出来一个提醒，是否每隔一段时间运行 git fetch  
