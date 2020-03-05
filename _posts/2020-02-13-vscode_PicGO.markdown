@@ -55,3 +55,10 @@ Windows / Unix： `Ctrl + Alt + o`
 * 当上传重复文件时会报错
 * 有时剪切板会上传失败(image uploading 卡住) ，这时需要采用本地文件夹进行上传 **`Ctrl + Alt + e`**
 
+BUG ：03-05，我不知道删什么了，这个插件换了又1
+没开代理时：Error: connect ECONNREFUSED 127.0.0.1:10809  
+打开代理时：401 - {"message":"Bad credentials", "documentation_url":"https://developer.github.com/v3"}
+重置设置后出现：Error: Client network socket disconnected before secure TLS connection was established
+
+我方了
+

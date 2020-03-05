@@ -1,0 +1,17 @@
+---
+layout: post
+title: VScode的插件picgo产生的上传失败bug
+tags: [Resolved bug]
+date: 2020-03-05
+---
+
+我方了... 
+
+需要：  
+node.js  
+计算机网络  
+JavaScript  
+json  
+应该就能解决
+。。。。。。。。。。。。。。。。。。。。。。。。
+
