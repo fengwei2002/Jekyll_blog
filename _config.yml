@@ -14,7 +14,7 @@ kramdown: # 见https://kramdown.gettalong.org/options.html
 permalink: /posts/:categories/:title # 博文目录
 author: fengwei
 timezone: Asia/Shanghai # 解决githubpage显示时间不正确的问题，见https://www.iana.org/time-zones
-# future: true 
+future: true 
 # limit_posts: 9999 # 限制博文数量
 # encoding: utf-8
 
