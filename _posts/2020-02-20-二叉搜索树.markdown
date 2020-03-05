@@ -13,8 +13,8 @@ date: 2020-03-05
 
 BST 巧妙之处在于它的一个子集，平衡二叉搜索树（BBST）
 
-数据项之间，依照各自的关键码彼此区分 `call-by-key` 所以关键码应该支持 大小比较和相等比对的操作  
-为了方便我们将数据集合中的数据项统一的表示和实现为词条 `entry` 形式
+数据项之间，依照各自的关键码彼此区分 `call-by-key` 关键码应该支持 大小比较和相等比对的操作  
+为了方便我们将整个 数据集合中的数据项 统一的表示和实现为词条 `entry` 形式
 
 词条：
 
@@ -22,14 +22,20 @@ BST 巧妙之处在于它的一个子集，平衡二叉搜索树（BBST）
 template<typename K,typename V> struct Entry {
     K key; V value;  //关键码，数值
     Entry(K k = K(),V v = V () ): key(k), value(v) {}; //默认构造函数
-    Entry( Entry<k, V> const & e ): key(e.key), value(e.value) {};//克隆
+    Entry( Entry<k, V> const & e ): key(e.key), value(e.value) {};//克隆构造函数
 //比较器，判等器 (从此，不必严格区分词条及其对应的关键码)
     bool operator< (Entry<K, V> const & e ) { return key < e.key; }
     bool operator> (Entry<K, V> const & e ) { return key > e.key; }
     bool operator== (Entry<K, V> const & e ) {return key == e.key;}
     bool operator!= (Entry<K, V> const & e ) {return key != e.key;}
-};
+}; //词条的比对转换为关键码的比对操作
 ```
 
-BBST testBBS
+BST　
+binary search tree   
+为了简便，将节点，词条，关键码 三个名词等同起来，而不加严格的区分
+
+与二叉树的不同：处处满足顺序性；任一节点均不小于/不大于其左/右后代
+
+> 为简化起见。禁止重复词条，但应用时没必要简化
 
