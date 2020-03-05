@@ -11,12 +11,13 @@ date: 2020-03-05
 
 > 标志着我们数据结构进入新的里程碑
 
-BST 巧妙之处在于它的一个子集，平衡二叉搜索树（BBST）
+## BST 
+巧妙之处在于它的一个子集，平衡二叉搜索树（BBST）
 
 数据项之间，依照各自的关键码彼此区分 `call-by-key` 关键码应该支持 大小比较和相等比对的操作  
 为了方便我们将整个 数据集合中的数据项 统一的表示和实现为词条 `entry` 形式
 
-词条：
+### 词条：
 
 ``` cpp
 template<typename K,typename V> struct Entry {
@@ -31,11 +32,70 @@ template<typename K,typename V> struct Entry {
 }; //词条的比对转换为关键码的比对操作
 ```
 
-BST　
+### BST　
 binary search tree   
 为了简便，将节点，词条，关键码 三个名词等同起来，而不加严格的区分
 
 与二叉树的不同：处处满足顺序性；任一节点均不小于/不大于其左/右后代
 
 > 为简化起见。禁止重复词条，但应用时没必要简化
+
+顺序性虽然只是对局部特性的刻画；但由此却可以导出某种全局特征；
+
+- 单调性：BST的中序遍历序列；必然单调非降（树根节点左侧都比树根小，右侧都比树根大；这一性质，也是BST的充要条件；所有单调节点投影构成的序列就是中序遍历序列，只要序列单调变化，则一定是BST
+
+### BST模板类实现：
+```cpp
+template<typename T> class BST : public BinaryTree<T> {
+    public: //以virtual修饰函数，以便派生类重写，二叉树接口仍然可以直接引用
+      virtual BinaryNodePosition(T) & search(const T &);//查找
+      virtual BinaryNodePosition(T) & insert(const T &);//插入
+      virtual bool remove (const T & );//删除
+    protected:
+      BinaryNodePosition(T) _hot; //命中节点的父亲
+      BinaryNodePosition(T) connect34( ) { //3+4重构
+          BinaryNodePosition(T), BinaryNodePosition(T), BinaryNodePosition(T),
+          BinaryNodePosition(T), BinaryNodePosition(T), BinaryNodePosition(T), BinaryNodePosition(T),
+      BinaryNodePosition(T) rotateAt (BinaryNodePosition(T) ); //旋转操作
+      }
+}
+```
+
+## 算法及其实现
+
+查找算法的实现：第一次从根开始的比较便可以省去一半的数据项；一直与子树的根节点比较；以此规则循环；  
+
+![49ba5ecf853e92c133ad0d502a228f7.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/49ba5ecf853e92c133ad0d502a228f7.jpg)
+
+失败时机在一直收缩到最后一个元素时（空树）；
+
+```cpp
+template<typename T> BinaryNodePosition(T) & BST<T>::search(const T & e)
+{return searchIn( _root, e, _hot = NULL ); } //从根节点启动查找
+static BinaryNodePosition(T) & searchIn( //典型的尾递归，可改为迭代版
+    BinaryNodePosition(T) & v, //当前（子）树根
+    const T & e, //当前关键码
+    BinaryNodePosition(T) & hot) //记忆热点
+{
+    if ( !v || ( e == v->data) ) return v; //足以确定失败，成功或者
+    hot = v; //先记下当前（非空）节点，然后再...
+    return searchIn(((e < v->data ) ?v->1child :v->2child ) e, hot );
+}//运行时间正比于返回节点v的深度，不超过树高 O(h)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
