@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 第七章: 二叉搜索树
+title: 第七章：二叉搜索树
 tags: [数据结构]
 date: 2020-03-05
 ---
