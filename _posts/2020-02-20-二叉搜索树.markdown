@@ -12,6 +12,7 @@ date: 2020-03-05
 > 标志着我们数据结构进入新的里程碑
 
 ## BST 
+
 巧妙之处在于它的一个子集，平衡二叉搜索树（BBST）
 
 数据项之间，依照各自的关键码彼此区分 `call-by-key` 关键码应该支持 大小比较和相等比对的操作  
@@ -33,6 +34,7 @@ template<typename K,typename V> struct Entry {
 ```
 
 ### BST　
+
 binary search tree   
 为了简便，将节点，词条，关键码 三个名词等同起来，而不加严格的区分
 
@@ -42,10 +44,11 @@ binary search tree
 
 顺序性虽然只是对局部特性的刻画；但由此却可以导出某种全局特征；
 
-- 单调性：BST的中序遍历序列；必然单调非降（树根节点左侧都比树根小，右侧都比树根大；这一性质，也是BST的充要条件；所有单调节点投影构成的序列就是中序遍历序列，只要序列单调变化，则一定是BST
+* 单调性：BST的中序遍历序列；必然单调非降（树根节点左侧都比树根小，右侧都比树根大；这一性质，也是BST的充要条件；所有单调节点投影构成的序列就是中序遍历序列，只要序列单调变化，则一定是BST
 
 ### BST模板类实现：
-```cpp
+
+``` cpp
 template<typename T> class BST : public BinaryTree<T> {
     public: //以virtual修饰函数，以便派生类重写，二叉树接口仍然可以直接引用
       virtual BinaryNodePosition(T) & search(const T &);//查找
@@ -71,7 +74,7 @@ template<typename T> class BST : public BinaryTree<T> {
 
 ### search接口
 
-```cpp
+``` cpp
 template<typename T> BinaryNodePosition(T) & BST<T>::search(const T & e)
 {return searchIn( _root, e, _hot = NULL ); } //从根节点启动查找 对外的 search接口调用searchIn接口
 static BinaryNodePosition(T) & searchIn( //典型的尾递归，可改为迭代版
@@ -87,10 +90,10 @@ static BinaryNodePosition(T) & searchIn( //典型的尾递归，可改为迭代�
 ### 接口语义：
 
 返回的引用值：
-- 成功时指向一个关键码为 e 且真实存在的节点
-- 失败时；指向最后一次试图转向的空节点 NULL （增加哨兵）
-- 无论成功与否：返回值总是等效的指向命中节点；而_hot总是指向命中节点的父亲
 
+* 成功时指向一个关键码为 e 且真实存在的节点
+* 失败时；指向最后一次试图转向的空节点 NULL （增加哨兵）
+* 无论成功与否：返回值总是等效的指向命中节点；而_hot总是指向命中节点的父亲
 
 ## 插入算法：
 
@@ -98,7 +101,7 @@ static BinaryNodePosition(T) & searchIn( //典型的尾递归，可改为迭代�
 
 ### 插入算法的实现
 
-```cpp
+``` cpp
 template<typename T>BinaryNodePosition(T) BST<T>::insert( const T & e) {
     BinaryNodePosition(T) & x = search(e) ; //查找目标
     if (!x) { //因为禁止雷同元素的存在；所以只在查找失败时进行插入操作
@@ -115,7 +118,7 @@ template<typename T>BinaryNodePosition(T) BST<T>::insert( const T & e) {
 
 ### 删除算法的实现
 
-```cpp
+``` cpp
 template<typename T> bool BST<T>::remove( const T & e) {
     BinaryNodePosition(T) & x = search( e ); //定位目标节点
     if ( !x ) return false ;
@@ -127,8 +130,10 @@ template<typename T> bool BST<T>::remove( const T & e) {
 ```
 
 ### 删除单分支：  
+
 该节点的某棵子树为空  
-```cpp
+
+``` cpp
 template<typename T> static BInaryNodePosition(T) 
 removeAt (BinaryNodePosition(T) & x, BinaryNodePosition(T) & hot ) { //删除 x
     BinaryNodePosition(T) w =  x; //实际被摘除的节点，初值同x
@@ -142,6 +147,7 @@ removeAt (BinaryNodePosition(T) & x, BinaryNodePosition(T) & hot ) { //删除 x
     return succ; //返回接替者
 } //此类情况只需要O(1)的时间
 ```
+
 ### 删除双分支
 
 化繁为简
@@ -150,9 +156,9 @@ removeAt (BinaryNodePosition(T) & x, BinaryNodePosition(T) & hot ) { //删除 x
 
 交换要删除节点和他在BST投影中的下一个节点（某个分支的末端）（交换后不是BST）然后删除待删除节点；（恢复了BST的基本构造） _hot指向被删除节点的父亲 最后更新全图信息
 
-![]()
+![test.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/fengwei2002/picturetest.jpg)
 
-```cpp
+``` cpp
 /*...*/
 else {
     w = w->succ(); swap( x->data, w->data );
@@ -161,49 +167,4 @@ else {
 }
 /*...*/
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
