@@ -100,13 +100,13 @@ child数据集的长度相差较大
 二叉树的基本单位是二叉树的节点叫做 BinaryNode 模板类
 
 * 核心：data ，
-* 引用：parent ，1child ，2child ，
+* 引用：parent ，lChild ，rChild ，
 * 属性：height，npl，color 
 
 ``` cpp
 #define BinaryNodePosition(T)  BinaryNode<T>* //节点位置
 template<typename T> struct BinaryNode {
-    BinaryNodePosition(T) parent,1child,2child; //父亲 孩子
+    BinaryNodePosition(T) parent,lChild,rChild; //父亲 孩子
     T data; int height ;int size() ;//数据区，高度，和子树规模
     BinaryNodePosition(T) insert_as_left_child(T const & );//插入新节点
     BinaryNodePosition(T) insert_as_right_child(T const & );
@@ -122,7 +122,7 @@ template<typename T> struct BinaryNode {
 
 ``` cpp
 template <typename T> BinaryNodePosition(T) BinaryNode<T>::insert_as_left_child(T const & e){
-    return 1child = new BinaryNode ( e ,this );//构建新节点 data 域为e 父节点为 this 返回值为 position 所以直接将结果赋值给 1child
+    return lChild = new BinaryNode ( e ,this );//构建新节点 data 域为e 父节点为 this 返回值为 position 所以直接将结果赋值给 lChild
 }
 ```
 
@@ -134,8 +134,8 @@ size接口: 线性时间
 template <typename T>
 int BinaryNode<T>::size(){//递归实现
     int s = 1; //本身
-    if (1child) s += 1child->size();
-    if (rchild) s += rchild->size();
+    if (lChild) s += lChild->size();
+    if (rChild) s += rChild->size();
     return s; //两项合计加上当前节点本身，递归则得出当前的 size()
 }
 ```
@@ -166,7 +166,7 @@ template <typename T> class BinaryTree{
 #define stature(p) ( (p) ? (P)->height : -1 )//将特殊情况统一起来更加方便 且不影响到算法的正确性
 template<typename T>
 int BinaryTree<T>::updateHeight( BinaryNodePosition(T) x){
-    return x->height = 1 + max (stature( x->1child ),stature (x->2child) );
+    return x->height = 1 + max (stature( x->lChild ),stature (x->rChild) );
 }//采用常规二叉树规则，O(1) 
 
 template<typename T> void BinaryTree<T>::updateHeightAbove( BinaryNodePosition(T) x){//更新x及其历代祖先的高度
@@ -180,7 +180,7 @@ template<typename T> void BinaryTree<T>::updateHeightAbove( BinaryNodePosition(T
 template<typename T> BinaryNodePosition(T) BinaryTree<T>::insert_as_right_child (BinaryNodePosition(T) x ,T const & e){//insertaslc对称
 _size++; x->insertAsRC(e); //新节点创建时就完成自下而上的连接，调用同名接口完成自上而下的连接
 updateHeightAbove(X); //更新 x 及其祖先的高度
-return x->2child; //返回右节点（执行插入的位置）
+return x->rChild; //返回右节点（执行插入的位置）
 }
 ```
 
@@ -206,7 +206,7 @@ template<typename T ,typename VST>
 void traverse(BinaryNodePosition(T) x,VST & visit){
     if (!x) return ; //递归基
     visit (x->data);
-    traverse(x->1child,vist); traverse(x->2child,visit);
+    traverse(x->lChild,vist); traverse(x->rChild,visit);
 }  //复杂度为O(n)
 ```
 
@@ -221,8 +221,8 @@ void travPre_I(BinaryNodePosition(T) x,VST & visit){
     if (x) S.push(x); //根节点入栈
     while (!S.empty() ){ //在非空前反复访问
         x = S.pop(); visit (x->data); //弹出栈顶 并同时访问当前节点，当x节点左右都有时没有推入 弹两次  
-        if (HasRChild( *x) ) S.push (  x->2child); //存在有孩子就推入栈中，右孩子先入后出
-        if (HasLChild( *x) ) S.push (  x->1child); //存在左孩子也推入栈中，左孩子后入先出
+        if (HasrChild( *x) ) S.push (  x->rChild); //存在有孩子就推入栈中，右孩子先入后出
+        if (HasLChild( *x) ) S.push (  x->lChild); //存在左孩子也推入栈中，左孩子后入先出
     }
 }               妙啊
 ```
@@ -250,8 +250,8 @@ static void visitAlongLeftBranch(
 {
     while (x) {
         visit (x->data);
-        S.push(x->2child); //右孩子入栈，将来逆序出栈，第一个为根节点的右孩子
-        x = x->1child;     //沿着左链下滑
+        S.push(x->rChild); //右孩子入栈，将来逆序出栈，第一个为根节点的右孩子
+        x = x->lChild;     //沿着左链下滑
     } ///只有 右孩子和NULL可能入栈
 }
 ```
@@ -279,9 +279,9 @@ void travPre_II(BinaryNodePosition(T) x ,VST & visit){
 template <typename T,typename VST>
 void traverse (BinaryNodePosition(T) x ,VST & visit){
     if (!x ) return ;  //处理递归基
-    traverse (x->1child , child); 
+    traverse (x->lChild , child); 
     visit ( x->data );
-    traverse (x->2child,visit);
+    traverse (x->rChild,visit);
 } O(n)
 ```
 
@@ -299,7 +299,7 @@ void traverse (BinaryNodePosition(T) x ,VST & visit){
 ``` cpp
 template<typename T>
 static void goAlongLeftBranch(BinaryNodePosition(T) x, Stack<BinaryNodePosition(T)> & S) {
-    while (x) {S.push(x); x = x->1child;}  //反复入栈，沿分支深入
+    while (x) {S.push(x); x = x->lChild;}  //反复入栈，沿分支深入
 }
 template<typename T, typename V> void traverse_in_I (BinaryNodePosition(T) x ,V& visit ){
     Stack <BinaryNodePosition(T) > S;  //创建辅助栈
@@ -308,7 +308,7 @@ template<typename T, typename V> void traverse_in_I (BinaryNodePosition(T) x ,V&
         if (S.empty() ) break;    //直至所有节点处理完毕
         x = S.pop();              //x的左子树或为空，或已经遍历（等效于空），故可以
         visit(x->data);  //立即访问x
-        x = x->2child;   //再转向其右子树，(可能为空) ，下一轮以右子树为根 ，继续入栈操作
+        x = x->rChild;   //再转向其右子树，(可能为空) ，下一轮以右子树为根 ，继续入栈操作
     }
 }
 ```
@@ -334,8 +334,8 @@ void BinaryNode<T>::travLevel(VST & visit){ //二叉树层次遍历
     while ( !Q.empty() ) { //在队列再次变空前，
         BinaryNodePosition(T) x = Q.dequeue(); //取出队首节点并访问
         visit( x->data );
-        if ( Has_Left_Child(*x) ) Q.enqueue( x->1child );//有左左入队
-        if ( Has_Right_Child(*x) ) Q.enqueue( x->2child );//有右右入队 队列先进先出
+        if ( Has_Left_Child(*x) ) Q.enqueue( x->lChild );//有左左入队
+        if ( Has_Right_Child(*x) ) Q.enqueue( x->rChild );//有右右入队 队列先进先出
     }//队列变空循环退出
 }
 ```

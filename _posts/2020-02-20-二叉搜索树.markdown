@@ -61,27 +61,135 @@ template<typename T> class BST : public BinaryTree<T> {
 }
 ```
 
-## 算法及其实现
+## 查找算法的实现
 
-查找算法的实现：第一次从根开始的比较便可以省去一半的数据项；一直与子树的根节点比较；以此规则循环；  
+ 第一次从根开始的比较便可以省去一半的数据项；一直与子树的根节点比较；以此规则循环；  
 
 ![49ba5ecf853e92c133ad0d502a228f7.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/49ba5ecf853e92c133ad0d502a228f7.jpg)
 
 失败时机在一直收缩到最后一个元素时（空树）；
 
+### search接口
+
 ```cpp
 template<typename T> BinaryNodePosition(T) & BST<T>::search(const T & e)
-{return searchIn( _root, e, _hot = NULL ); } //从根节点启动查找
+{return searchIn( _root, e, _hot = NULL ); } //从根节点启动查找 对外的 search接口调用searchIn接口
 static BinaryNodePosition(T) & searchIn( //典型的尾递归，可改为迭代版
     BinaryNodePosition(T) & v, //当前（子）树根
     const T & e, //当前关键码
-    BinaryNodePosition(T) & hot) //记忆热点
-{
-    if ( !v || ( e == v->data) ) return v; //足以确定失败，成功或者
-    hot = v; //先记下当前（非空）节点，然后再...
-    return searchIn(((e < v->data ) ?v->1child :v->2child ) e, hot );
-}//运行时间正比于返回节点v的深度，不超过树高 O(h)
+    BinaryNodePosition(T) & hot) {//记忆热点
+    if ( !v || ( e == v->data) ) return v; //足以确定失败，成功
+    hot = v; //继续递归查找 用 hot 先记下当前（非空）节点，然后再...
+    return searchIn(((e < v->data ) ?v->lChild :v->rChild ) e, hot );
+}//运行时间正比于返回节点v的深度，不超过树高 O(h) 每运行一次递归下降一层
 ```
+
+### 接口语义：
+
+返回的引用值：
+- 成功时指向一个关键码为 e 且真实存在的节点
+- 失败时；指向最后一次试图转向的空节点 NULL （增加哨兵）
+- 无论成功与否：返回值总是等效的指向命中节点；而_hot总是指向命中节点的父亲
+
+
+## 插入算法：
+
+借助search接口确定插入位置及方向  返回值_hot 的孩子就是我们该插入的地方 （返回的引用为NULL；刚好被使用）
+
+### 插入算法的实现
+
+```cpp
+template<typename T>BinaryNodePosition(T) BST<T>::insert( const T & e) {
+    BinaryNodePosition(T) & x = search(e) ; //查找目标
+    if (!x) { //因为禁止雷同元素的存在；所以只在查找失败时进行插入操作
+        x = new BinaryNode<T>( e, _hot ); //在x 处创建以 e 为关键码的新节点；此节点以_hot 为父亲
+        _size++; updateHeightAbove( x );  //更新全树规模；更新x及其历代祖先的高度
+    }
+    return x; //无论 e 是否存在于原树中；至此总有 x->data == e
+}//验证：对于首个节点插入之类的边界情况；均可正确处置
+```
+
+## 删除算法
+
+相比插入算法更加复杂
+
+### 删除算法的实现
+
+```cpp
+template<typename T> bool BST<T>::remove( const T & e) {
+    BinaryNodePosition(T) & x = search( e ); //定位目标节点
+    if ( !x ) return false ;
+    removeAt( x, _hot ); //
+    _size--; //更新规模
+    updateHeightAbove( _hot ); //更新 _hot 以及其历代祖先的高度
+    return true;
+} //删除成功与否，由返回值指示
+```
+
+### 删除单分支：  
+该节点的某棵子树为空  
+```cpp
+template<typename T> static BInaryNodePosition(T) 
+removeAt (BinaryNodePosition(T) & x, BinaryNodePosition(T) & hot ) { //删除 x
+    BinaryNodePosition(T) w =  x; //实际被摘除的节点，初值同x
+    BinaryNodePosition(T) succ = NULL;//实际被删除节点的接替者
+    if (! hasLChild( *x ) ) succ = x = x->rChild; //左子树为空
+    else if (! hasrChild(*x) ) succ = x = x->lChild; //右子树为空 同时空也正确
+    else ( /*...左右子树并存的情况，略微复杂些 */ ) 
+    hot = w->parent; //记录实际被删除节点的父亲
+    if ( succ ) succ->parent = hot; //将被删除者的接替者与hot相连
+    release( w->data ); release( w );//释放被摘除的节点
+    return succ; //返回接替者
+} //此类情况只需要O(1)的时间
+```
+### 删除双分支
+
+化繁为简
+
+转换为情况一
+
+交换要删除节点和他在BST投影中的下一个节点（某个分支的末端）（交换后不是BST）然后删除待删除节点；（恢复了BST的基本构造） _hot指向被删除节点的父亲 最后更新全图信息
+
+![]()
+
+```cpp
+/*...*/
+else {
+    w = w->succ(); swap( x->data, w->data );
+    BinaryNodePosition(T) u = w->parent;
+    ( u == x ? u->rChild : u->1chlid ) = succ = w->rChild;
+}
+/*...*/
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
