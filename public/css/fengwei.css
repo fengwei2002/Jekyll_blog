@@ -270,7 +270,7 @@ html,
 
 /*滚动条效果-start*/
   ::-webkit-scrollbar {
-      width: 4px;
+      width: 8px;
       height: 4px;
     }
   ::-webkit-scrollbar-thumb {
