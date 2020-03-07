@@ -86,22 +86,32 @@ vscode让我把错误setting删除后它自己进行写入操作 然后出现弹
 }
 ```
 
-现在使用 shift + alt + F 就可以快速格式化 markdown 文本了
+我猜测配置项要按照先后顺序排列且都在同一个大括号内完成相关配置；所以我试了一下：
 
-我猜测配置项可能要都写在 { } 内，所以我试了一下：
+* 仿照系统自动生成的做法；将官方示例配置复制到自动添加的对应位置；然后将重复部分
+
+``` json
+    "[markdown]": {
+        "editor.defaultFormatter": "mervin.markdown-formatter"
+    }
+```
+
+删除即可
 
 没有报错，NOW重启一次vscode
 
+现在使用 `shift + alt + F` 就可以快速格式化 markdown 文本了 而使用markdown编写时也发现出现了智能提示；优化了书写体验
+
 发现应用成功(　获得神器 QAQ　)
 
-> 但我重装vscode导致picgo插件失效，所以又安装了一遍 picgo................................................ 
+> 但我重装vscode导致picgo插件失效，所以又安装了一遍 picgo... 
 
 现在就可以愉快的使用了~
 
 * 插入图片: 键入 img
 * 插入表格: 键入 tab
 * 插入代码: 键入 js , html , css , python , go , java , or code
-* 插入列表: 键入 ul 或者 ol
+* 插入列表: 键入 ul （unordered list）
 
 ``` markdown
 

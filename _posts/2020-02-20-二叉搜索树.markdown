@@ -100,7 +100,7 @@ static BinaryNodePosition(T) & searchIn( //典型的尾递归，可改为迭代�
 
 借助search接口确定插入位置及方向  返回值_hot 的孩子就是我们该插入的地方 （返回的引用为NULL；刚好被使用）
 
-- 插入算法的实现
+* 插入算法的实现
 
 ``` cpp
 template<typename T>BinaryNodePosition(T) BST<T>::insert( const T & e) {
@@ -117,7 +117,7 @@ template<typename T>BinaryNodePosition(T) BST<T>::insert( const T & e) {
 
 相比插入算法更加复杂
 
-- 删除算法的实现
+* 删除算法的实现
 
 ``` cpp
 template<typename T> bool BST<T>::remove( const T & e) {
@@ -195,7 +195,6 @@ else {
 
 上面两个树就叫做相互等价的BST；上下结构存在调整余地；但左右次序却不能颠倒
 
-
 ### **等价变换**+旋转调整 实现目标 rebalance
 
 ## **AVL** 树
@@ -207,7 +206,8 @@ else {
 ### **平衡因子：**
 
 对于任意一个节点 v 左子树与右子树的高度差
-```cpp
+
+``` cpp
 balFac(v) = height( lc(v) ) - height( rc(v) )
 ```
 
@@ -215,7 +215,32 @@ balFac(v) = height( lc(v) ) - height( rc(v) )
 
 AVL = 适度平衡
 
+### AVL接口
 
+``` cpp
+#define Balanced(x) \ //理想平衡
+    ( stature( (x).lChild ) == stature ( (x).rchild ))
+#define BalFac(x) \   //平衡因子
+    ( stature( (x).lChild ) - stature( (x).rChild ))
+#define AvlBalanced(x) \ //AVL平衡条件
+    ( ( -2 < BalFac(x) ) && ( BalFac(x) < 2 ))
+```
 
+也可以由BST模板类派生AVL的模板类
 
+``` cpp
+template <typename T> class AVL : public BST<T> { //由BST派生
+    public: //BST::search()等接口，可直接沿用
+    BinaryNodePosition(T) insert (const T & ); //插入重写
+    bool remove(const T & );//删除重写 
+}
+```
+
+当用普通搜索实现插入一个节点的动作时；AVL树的许多节点（若干个祖先节点）的平衡状态就会被打乱；而删除操作则至多会引起一个AVL节点的失衡；  
+
+而删除操作并没有因此变得比插入操作简单
+
+实际中插入操作造成的错误其实可以用弥补一个错误的办法全部弥补；删除操作造成的影响则修复起来较为复杂
+
+### 插入：单旋
 
