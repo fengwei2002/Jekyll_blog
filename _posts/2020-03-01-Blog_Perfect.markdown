@@ -21,6 +21,8 @@ date: 2020-03-01
 [Jekyll 博客 Next主题超深度配置](https://blog.csdn.net/ds19991999/article/details/81516568)   
 [应用软件: Jekyll配置](https://www.jianshu.com/p/bb184f61c9ae)   
 
+[优化Jekyll网页访问速度](https://zjiajun.github.io/articles/2015-01/optimization-of-jekyll-blog-access-slow-problem)
+
 基本构建完成后就可以开始添加一些自己想要的功能，想添加什么功能就用谷歌搜，应有尽有
 
 ***
