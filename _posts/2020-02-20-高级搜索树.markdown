@@ -61,3 +61,5 @@ Tarjan
 * 反复考察祖孙三代： `g = parent(p)` , ` p = parent(v)` , ` v` 
 * 根据它们的相对位置；经过至多<u>两次旋转</u>使得v上升两层，成为子树根
 
+![deba6d84a5d42233c25d766bc2a86ef.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/deba6d84a5d42233c25d766bc2a86ef.jpg)
+

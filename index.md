@@ -1,6 +1,6 @@
 ---
 layout: index
-title: <u>psychonaut</u>
+title: *weirdo*
 ---
 
 ## *Project*
