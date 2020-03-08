@@ -2,9 +2,62 @@
 layout: post
 title: 第八章：高级搜索树
 tags: [数据结构]
-date: 2020-02-20
+date: 2020-03-09
 ---
 
 ***
-***
+
+## 伸展树
+
+AVL树需要每时每刻都特别小心；所以需要一种范围更宽的平衡规则
+
+### 局部性
+
+Locality: 刚被访问过的数据；极有可能很快的再次被访问；这一现象在信息处理过程中屡见不鲜
+
+BST: 所以下一个即将访问的节点，极有可能就在刚刚被访问过的节点的附近
+
+> 以列表为例：
+
+若访问规则具有极高的局部性；每次访问完成后就将访问过的元素放在 list 的开始部分（保证下一次访问相同元素变得最快），最后效果就是最常用的访问节点都在列表的前一部分
+
+![a5bb8c9927709f8e82620535895527c.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/a5bb8c9927709f8e82620535895527c.jpg)
+
+所以推广至BST中；就是将最常访问的节点尽量放在根节点附近（想办法降低节点对应深度）
+
+## 逐层伸展
+
+节点 v 一旦被访问，随即转移至树根
+
+> 使用之前的zig zag 操作；可以使目标节点与其父节点交换而不打乱BST的规则
+
+![d818f51a590b6fac264a71918e30349.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/d818f51a590b6fac264a71918e30349.jpg)
+
+所以反复使用以上两个技巧组合便可以使 要访问的节点逐层上升，直至根节点；达到常数时间访问到目标节点的目的
+
+概括而言：  
+自下而上；逐层单旋； `zig( v->parent )`  `zag (v-。parent)` 直到节点 v 被推送到树根
+
+> 一步一步往上爬
+
+### 最坏情况
+
+![7b81fcf7b3bb9bea8c47205179cbdc1.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/7b81fcf7b3bb9bea8c47205179cbdc1.jpg)
+
+从 001 开始全部访问一遍后；该结构并没有发生变化；但是依照上面的执行步骤却走了很多步且没有任何效果 
+
+![396be0e02d7344432ccadb00b511871.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/396be0e02d7344432ccadb00b511871.jpg)
+
+这样的话；复杂度就退化的和基本数据结构List vector 一样了；但并不是技巧不对，而是使用技巧的方法出现了问题；
+
+那么如何改进呢？
+
+## 双层伸展
+
+Tarjan 
+
+构思的精髓： 向上追溯两层，而并非一层
+
+* 反复考察祖孙三代： `g = parent(p)` , ` p = parent(v)` , ` v` 
+* 根据它们的相对位置；经过至多<u>两次旋转</u>使得v上升两层，成为子树根
 

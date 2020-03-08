@@ -2,7 +2,7 @@
 layout: post
 title: 第七章：二叉搜索树
 tags: [数据结构]
-date: 2020-03-05
+date: 2020-03-08
 ---
 
 ***
@@ -248,4 +248,117 @@ template <typename T> class AVL : public BST<T> { //由BST派生
 
 同时可有多个失衡点；最低者不低于x祖父; 
 g经过单旋调整后复衡；子树高度复原；更高的祖先也必然平衡；全树平衡
+
+zagzag zigzig zig为顺时针旋转；zag为逆时针旋转
+
+### 插入: 双旋
+
+g 为所有失衡节点中最低的那个父节点
+
+### 插入算法的实现
+
+``` cpp
+template<typename T> BinaryNodePosition(T) AVL<T>::insert( const T & e ){
+    BInaryNodePosition(T) & x = search( e ); if ( x ) return x; //若目标尚不存在
+    x = new BinaryNode<T>( e, _hot );_size++;BinaryNodePosition(T) xx =x; //则创建x
+    //以下，从 x 的父亲出发逐层向上，依次检查各代祖先g
+    for ( BinaryNodePosition(T) g = x->parent; g; g = g->parent ) {
+        if ( !AvlBalanced( *g ) ) {  //一旦发现失衡，则通过调整回复平衡
+            FormParentTo( *g ) = rotateAt ( tallerChild( tallerChild( g ) ) ); //调整 g p v 
+            break; //g复衡后，局部子树高度必然复原；其祖先亦然如此；故调整结束
+        }
+        else //否则（在依然平衡的祖先处）；只需简单的 
+            updateHeight( g ); //更新其高度（平衡性虽然不变，但是高度却可能改变）
+    return xx;  //返回新节点；至多只需要一次调整
+    }
+```
+
+## AVL删除
+
+### 删除：单旋
+
+![230f4e0034aa0ef78a64bcc3e819f2d.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/230f4e0034aa0ef78a64bcc3e819f2d.jpg)
+
+### 一种可能的实现
+
+``` cpp
+>2.8.3 
+```
+
+## 3+4重构
+
+将魔方的组件重新拼好一个魔方；而不是用规则去还原
+
+* 设g(x)为最低的失衡节点，考察祖孙三代：g~p~v  
+
+按照中序遍历次序；将其重命名为：a<b<c
+
+* 它们总共拥有互不相交的四颗（可能为空的子树）  
+
+按中序遍历次序；将其重命名为： $T_0 < T_1 < T_2 < T_3$
+三个节点 a，b，c 必然镶嵌于四颗子树之间（按照中序遍历就是上面的顺序）；BST的单调性
+
+恢复平衡后单调性依旧要保持
+
+所以就按照以下的[拓扑结构](https://baike.baidu.com/item/%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84)排列即可转换为AVL
+
+![a6bdf6d0ef8438ab3f4268e49260843.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/a6bdf6d0ef8438ab3f4268e49260843.jpg)
+
+所以该算法叫做 3+4 重构
+
+对于魔方而言就是将各种不同的结构转换为全部同色的结构
+
+### 3+4重构算法的实现
+
+``` cpp
+template <typename T> BinaryNodePosition(T) BST<T>::connect34(
+    BinaryNodePosition(T) a,BinaryNodePosition(T) b,BinaryNodePosition(T) c,
+    BinaryNodePosition(T) T0,BinaryNodePosition(T) T1,BinaryNodePosition(T) T2,BinaryNodePosition(T) T3)
+{
+    a->lChild = T0;if (T0) T0->parent = a;
+    a->lChild = T1;if (T1) T0->parent = a; updateHeight(a);
+    c->lChild = T2;if (T2) T2->parent = c;
+    c->lChild = T3;if (T3) T3->parent = c; updateHeight(c);
+    b->lChild = a; a->parent = b;
+    b->lChild = c; c->parent = b; updateHeight(b);
+    return b;//返回该子树的根节点
+}
+```
+
+算法的输入为三个节点和四颗子树；然后规整的完成重构功能；鲁棒性变得很高
+
+那么怎么确定参数顺序从而正确的传给函数呢？
+
+## 统一调整：实现
+
+``` cpp
+template<typename T> BinaryNodePosition(T) BST<T>::rotateAt( BinaryNodePosition(T) v ) {  //传入孙辈节点 v 
+    BinaryNodePosition(T) p = v->parent, g = p->parent; //父亲，祖父
+    if (IsLChild( *p ) )  //区分各种情况
+      if ( IsLChild( *v ) ) { //zigzig状态，v p 都是左孩子
+         p->parent = g->parent;
+         return connect34(v,p,g,v->lChild,v->rChild,p->rChild,g->rChild );
+      }
+      else { //v 是有孩子，p 是左孩子 zig-zag 
+         v->parent = g->parent;
+         return connect34( p,v,g,p->lChild,v->lChild,v->rChild,g->rChild );
+      }
+    else { /*..zag-zig & zag-zag ..*/}
+}
+```
+
+## AVL综合评价
+
+优点
+
+* 无论查找；插入和删除，最坏情况下复杂度均为$O(log_n)$ $O(n)$的存储空间
+* 兼顾所有的静态和动态操作且空间较小
+
+缺点
+
+* 借助了高度或平衡因子；为此需要改造数据结构，或者额外分装
+* 实际复杂度与理论复杂度尚有差距；旋转操作成本不菲
+* 单次动态调整后；全树结构的变化量可能高达$Ω(log_n)$ 插入操作变化量还在常数范围内；而删除操作变化量更多
+
+  
 
