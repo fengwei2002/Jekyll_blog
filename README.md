@@ -13,7 +13,7 @@ sidebar_open: true
 
 [✨项目文档(英文)](https://feng-w.cn/posts/Project_Description)
 
-## <u>*Contact*</u>
+## <u>Contact</u>
 
 * Address: Shanxi University-Taiyuan-China
 * Phone: 
@@ -28,17 +28,17 @@ sidebar_open: true
 * NetEase Cloud : **psychonaut1**
 * [My_GitHub](https://github.com/fengwei2002)  👀
 
-## <u>*Education*</u>
+## <u>Education</u>
 
 > Shanxi University 2019 software Engineering department studying
 
-## <u>*About*</u>
+## <u>About</u>
 
 [✨已经发行的稳定版本](https://github.com/fengwei2002/fengwei2002.github.io/releases)
 
 [✨搭建个人博客之旅](https://feng-w.cn/posts/Blog_Perfect)
 
-## <u>*Thanks*</u>
+## <u>Thanks</u>
 
 The blog engine is from [jekyll / jekyll](https://github.com/jekyll/jekyll), thanks.🎈
 

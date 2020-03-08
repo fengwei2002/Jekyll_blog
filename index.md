@@ -1,6 +1,6 @@
 ---
 layout: index
-title: *weirdo*
+title: psychonaut
 ---
 
 ## *Project*
