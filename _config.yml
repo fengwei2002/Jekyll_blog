@@ -122,22 +122,21 @@ page:
     - title: github
       href: https://github.com/fengwei2002
       class: "fab fa-github"
+    - title: weixin
+      href: https://raw.githubusercontent.com/fengwei2002/fengwei2002.github.io/master/public/image/weixin.jpg
+      class: "fab fa-weixin"
     - title: 网易云
       href: https://music.163.com/#/user/home?id=440040659
       class: "fas fa-cloud"
-    - title: fwei142857 # weixin
-      href: https://raw.githubusercontent.com/fengwei2002/fengwei2002.github.io/master/public/image/weixin.jpg
-      class: "fab fa-weixin"
     - title: QQ
       href: https://raw.githubusercontent.com/fengwei2002/fengwei2002.github.io/master/public/image/tim.jpg
       class: "fab fa-qq"
     - title: zhihu
       href: //www.zhihu.com/people/e2df61ca5f33cb1e72e27be2cefd18ba
       class: "fab fa-zhihu"
-    - title: bilibili
-      href: https://space.bilibili.com/434632190?share_medium=android&share_source=copy_link&bbid=PQk6Cz4KOAtoDjYHewd7infoc&ts=1583733735020
-      class: "fab fa-youtube"
-    
+    # - title: bilibili
+    #   href: https://space.bilibili.com/434632190?share_medium=android&share_source=copy_link&bbid=PQk6Cz4KOAtoDjYHewd7infoc&ts=1583733735020
+    #   class: "fab fa-youtube"
     # - title: codeforce
     #   href: //codeforces.com/profile/KONNG
     #   class: "fas fa-chart-bar fw"
