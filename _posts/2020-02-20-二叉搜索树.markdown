@@ -13,9 +13,11 @@ date: 2020-03-08
 
 ## **BST**
 
-巧妙之处在于它的一个子集，平衡二叉搜索树（BBST）
+借助向量和列表内容的优点完成的一个数据结构
+巧妙之处在于它的一个子集， **平衡二叉搜索树（BBST）**
 
-数据项之间，依照各自的关键码彼此区分 `call-by-key` 关键码应该支持 大小比较和相等比对的操作  
+循关键码访问：  
+数据项之间，依照各自的关键码彼此区分 `call-by-key` 关键码应该支持 **大小比较**和**相等比对**的操作  
 为了方便我们将整个 数据集合中的数据项 统一的表示和实现为词条 `entry` 形式
 
 ### **词条：**
@@ -35,16 +37,16 @@ template<typename K,typename V> struct Entry {
 
 ### **BST**
 
-binary search tree   
-为了简便，将节点，词条，关键码 三个名词等同起来，而不加严格的区分
+`binary search tree` 
+节点：为了简便，将节点，词条，关键码 三个名词等同起来相互指代，而不加严格的区分
 
-与二叉树的不同：处处满足顺序性；任一节点均不小于/不大于其左/右后代
+与二叉树的不同：**处处满足顺序性**：任一节点均不小于/不大于其左/右后代
 
-> 为简化起见。禁止重复词条，但应用时没必要简化
+> 为简化起见。禁止重复词条，但实际应用时极不自然；算法设计过程也没必要避免此情况
 
 顺序性虽然只是对局部特性的刻画；但由此却可以导出某种全局特征；
 
-* 单调性：BST的中序遍历序列；必然单调非降（树根节点左侧都比树根小，右侧都比树根大；这一性质，也是BST的充要条件；所有单调节点投影构成的序列就是中序遍历序列，只要序列单调变化，则一定是BST
+**单调性：** BST的中序遍历序列；必然单调非降（树根节点左侧都比树根小，右侧都比树根大；这一性质，也是BST的**充要条件**；所有单调节点垂直投影构成的序列就是中序遍历序列，因此只要序列单调变化，则一定是BST
 
 ### **BST模板类实现：**
 
@@ -55,8 +57,8 @@ template<typename T> class BST : public BinaryTree<T> {
       virtual BinaryNodePosition(T) & insert(const T &);//插入
       virtual bool remove (const T & );//删除
     protected:
-      BinaryNodePosition(T) _hot; //命中节点的父亲
-      BinaryNodePosition(T) connect34( ) { //3+4重构
+      BinaryNodePosition(T) _hot; //命中节点的父亲节点
+      BinaryNodePosition(T) connect34( ) { //3+4重构算法
           BinaryNodePosition(T), BinaryNodePosition(T), BinaryNodePosition(T),
           BinaryNodePosition(T), BinaryNodePosition(T), BinaryNodePosition(T), BinaryNodePosition(T),
       BinaryNodePosition(T) rotateAt (BinaryNodePosition(T) ); //旋转操作
@@ -66,35 +68,45 @@ template<typename T> class BST : public BinaryTree<T> {
 
 ## **算法**
 
-### **查找算法**
- 第一次从根开始的比较便可以省去一半的数据项；一直与子树的根节点比较；以此规则循环；  
+`call by key` 
 
-![49ba5ecf853e92c133ad0d502a228f7.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/49ba5ecf853e92c133ad0d502a228f7.jpg)
+### **查找算法**
+
+第一次从根开始的比较便可以省去一半的数据项；一直与子树的根节点比较；以此规则循环；  
+
+![查找算法实例图.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/49ba5ecf853e92c133ad0d502a228f7.jpg)
 
 失败时机在一直收缩到最后一个元素时（空树）；
 
-### **search接口**
+> 有序向量中的二分查找
+
+### **查找: 实现**
+
+**search接口**：
 
 ``` cpp
 template<typename T> BinaryNodePosition(T) & BST<T>::search(const T & e)
 {return searchIn( _root, e, _hot = NULL ); } //从根节点启动查找 对外的 search接口调用searchIn接口
+```
+
+**searchIn接口**：
+
+``` cpp
 static BinaryNodePosition(T) & searchIn( //典型的尾递归，可改为迭代版
     BinaryNodePosition(T) & v, //当前（子）树根
     const T & e, //当前关键码
     BinaryNodePosition(T) & hot) {//记忆热点
     if ( !v || ( e == v->data) ) return v; //足以确定失败，成功
     hot = v; //继续递归查找 用 hot 先记下当前（非空）节点，然后再...
-    return searchIn(((e < v->data ) ?v->lChild :v->rChild ) e, hot );
+    return searchIn(( (e < v->data) ? v->lChild : v->rChild ) e, hot );
 }//运行时间正比于返回节点v的深度，不超过树高 O(h) 每运行一次递归下降一层
 ```
 
-### **接口语义：**
+**返回的引用值 _hot：**
 
-返回的引用值：
-
-* 成功时指向一个关键码为 e 且真实存在的节点
-* 失败时；指向最后一次试图转向的空节点 NULL （增加哨兵）
-* 无论成功与否：返回值总是等效的指向命中节点；而_hot总是指向命中节点的父亲
+* 查找成功时指向一个关键码为 e 且真实存在的节点
+* 查找失败时；指向最后一次试图转向的空节点 NULL （增加哨兵）
+* 所以无论成功与否：返回值总是等效的指向命中节点；而 _hot 总是指向命中节点的父亲
 
 ### **插入算法：**
 

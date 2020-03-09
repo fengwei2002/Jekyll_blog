@@ -42,18 +42,18 @@ index:
 #          value: "-1"
 
 page404:
-  script:
-    - var:
-        - key: src
-          value: //qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js # 腾讯公益
-        - key: defer
-          value: defer
-        - key: charset
-          value: utf-8
-        - key: homePageUrl
-          value: "/"
-        - key: homePageName
-          value: 返回主页
+  # script:
+  #   - var:
+  #       - key: src
+  #         value: //qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js # 腾讯公益
+  #       - key: defer
+  #         value: defer
+  #       - key: charset
+  #         value: utf-8
+  #       - key: homePageUrl
+  #         value: "/"
+  #       - key: homePageName
+  #         value: 返回主页
 
 
 archive:
@@ -113,27 +113,30 @@ page:
         <br/>
         <br/>Cat lover
     social:
-    - title: psychonaut1@foxmail.com 
+    - title: Gmail 
       href: mailto:psychonaut1f@gmail.com
-      class: "fas fa-envelope"
+      class: "fas fa-envelope" 
     - title: github
       href: https://github.com/fengwei2002
       class: "fab fa-github"
-    - title: codeforce
-      href: //codeforces.com/profile/KONNG
-      class: "fas fa-chart-bar fw"
-    # - title: Virtual judge
-    #   href: https://vjudge.net/user/351368
-    #   class: "fas fa-laugh-wink"
-    - title: 力扣
+    - title: leetcode
       href: https://leetcode-cn.com/u/weirdo-21/
       class: "fas fa-code"
     - title: fwei142857 # weixin
+      href: https://raw.githubusercontent.com/fengwei2002/fengwei2002.github.io/master/public/image/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200309142008.jpg
       class: "fab fa-weixin"
     - title: zhihu
       href: //www.zhihu.com/people/e2df61ca5f33cb1e72e27be2cefd18ba
       class: "fab fa-zhihu"
-
+    - title: bilibili
+      href: https://space.bilibili.com/434632190?share_medium=android&share_source=copy_link&bbid=PQk6Cz4KOAtoDjYHewd7infoc&ts=1583733735020
+      class: "fab fa-youtube"</i>
+    - title: QQ
+      href: http://wp.qq.com/email/stop/email_stop.html?qq=2480417969
+      class: "fab fa-qq"
+    # - title: codeforce
+    #   href: //codeforces.com/profile/KONNG
+    #   class: "fas fa-chart-bar fw"
     nav:
       - title: '<i class="fas fa-home fa-fw"></i> 首页'
         href: /
@@ -256,18 +259,6 @@ page:
           value: "shortcut icon"
         - key: href
           value: /public/image/touxiang.webp
-    #    - tag: link # 下面是博客的css，有些插件的css是单独在插件里引用的，假如需要自己的css可以仿照去加在后面，无脑cdn加速了
-    #      var:
-    #        - key: rel
-    #          value: stylesheet
-    #        - key: href
-    #          value: https://fonts.loli.net/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400 # 字库
-    #    - tag: link # 换用prismjs渲染代码块，不再需要这个
-    #      var:
-    #        - key: rel
-    #          value: stylesheet
-    #        - key: href
-    #          value: //cdn.jsdelivr.net/gh/poole/lanyon@ac85a3115c094b3e6cb92cc41771e98b443f6c5d/public/css/syntax.min.css # 指定版本号，因为默认版本更新不及时
     - tag: link
       var:
         - key: rel
