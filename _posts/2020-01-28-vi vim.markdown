@@ -5,9 +5,7 @@ tags: [Linux]
 date: 2020-01-28
 --- 
 
-***
-***
-[www.vim.org/docs.php](www.vim.org/docs.php)
+***[www.vim.org/docs.php](www.vim.org/docs.php)
 
 > 一般模式
 

@@ -5,9 +5,7 @@ tags: [杂项note]
 date: 2020-01-21
 ---
 
-***
-***
-[网页版贪吃蛇](http://slither.io)
+***[网页版贪吃蛇](http://slither.io)
 
 [网页版连连看](https://lines.frvr.com/)
 

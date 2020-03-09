@@ -5,9 +5,7 @@ tags: [杂项note]
 date: 2020-02-09
 ---
 
-***
-***
-先看[基础教程](https://mazhuang.org/2018/09/06/markdown-intro/)
+***先看[基础教程](https://mazhuang.org/2018/09/06/markdown-intro/)
 
 ## vscode：markdown_lint纠正书写错误  
 

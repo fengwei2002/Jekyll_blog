@@ -5,9 +5,7 @@ tags: [算法竞赛入门经典]
 date: 2020-02-04
 ---
 
-***
-***
-**[本书所有习题答案](https://github.com/aoapc-book/aoapc-bac2nd)**
+*****[本书所有习题答案](https://github.com/aoapc-book/aoapc-bac2nd)**
 
 ### 交换变量PRO:  P 008
 

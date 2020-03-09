@@ -6,7 +6,6 @@ date: 2020-02-19
 ---
 
 ***
-***
 
 ### 当某次提交出现bug后悔时
 
@@ -31,14 +30,15 @@ git config --global user.name [username]
 
 git config --global user.email [email]
 
-- ssh-keygen -t rsa -C "2480417969@qq.com"
-- 然后成功后会在User文件夹对应的用户下创建.ssh文件夹，其中有一个id_rsa.pub文件，复制其中的key:
-- 之后返回github，进入 Account Settings（账户配置），左边选择SSH and GPG Keys选项
-- 验证是否绑定本地成功，在git-bash中验证，输入指令： 
+* ssh-keygen -t rsa -C "2480417969@qq.com"
+* 然后成功后会在User文件夹对应的用户下创建.ssh文件夹，其中有一个id_rsa.pub文件，复制其中的key:
+* 之后返回github，进入 Account Settings（账户配置），左边选择SSH and GPG Keys选项
+* 验证是否绑定本地成功，在git-bash中验证，输入指令： 
+
  
 ssh -T git@github.com  
 如果第一次执行该指令，则会提示是否continue继续，如果我们输入yes就会看到成功信息  
-HI.....
+HI... ..
 
 ### git push 和 git fetch 的区别
 

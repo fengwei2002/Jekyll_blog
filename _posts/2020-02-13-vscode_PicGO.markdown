@@ -2,10 +2,10 @@
 layout: post
 title: VScode使用PicGo插件搭建github稳定图床
 tags: [Resolved bug]
+categories: [VScode]
 date: 2020-02-13
 ---
 
-***
 ***
 
 > 之前用了四五种上传图片 , 都不方便
