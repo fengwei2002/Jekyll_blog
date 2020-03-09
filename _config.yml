@@ -28,18 +28,6 @@ index:
   - cpp+STL
   - 杂项note
   - Math
-  script:
-#    - var:
-#        - key: src
-#          value: //cdn.jsdelivr.net/npm/ribbon.js/dist/ribbon.min.js # 彩带背景
-#        - key: defer
-#          value: defer
-#        - key: size
-#          value: "90" #  the size of ribbon
-#        - key: alpha
-#          value: "0.6" # the opacity of line (0 ~ 1)
-#        - key: zIndex
-#          value: "-1"
 
 page404:
   # script:
@@ -60,22 +48,7 @@ archive:
   posts_count:
     enable: true
     alert: 篇博文
-  script:
-  #   - var:
-  #       - key: src
-  #         value: //cdn.jsdelivr.net/npm/canvas-nest.js/dist/canvas-nest.js
-  #       - key: defer
-  #         value: defer
-  #       - key: color
-  #         value: "255,0,255" # 线段颜色，RGB三色
-  #       - key: pointColor
-  #         value: "255,0,255" # 端点颜色，RGB三色
-  #       - key: opacity
-  #         value: "1" # 透明度
-  #       - key: count
-  #         value: "41" # 粒子数量
-  #       - key: zIndex
-  #         value: "-1"
+
 # Gitalk settings
 comment_gitalk_clientId: 21436ebf2d5cbcaf5c53
 comment_gitalk_clientSecret: 7849e7ab3f1b9ed8b60afa97ec14143c070e85c8
