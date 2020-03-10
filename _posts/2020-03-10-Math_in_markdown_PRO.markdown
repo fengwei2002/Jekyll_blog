@@ -2,7 +2,6 @@
 layout: post
 title: Markdown书写数学公式
 tags: [模板]
-categories: [模板]
 date: 2020-03-10
 ---
 
