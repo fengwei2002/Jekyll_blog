@@ -2,6 +2,7 @@
 layout: post
 title:  Git模板
 tags: [模板]
+categories: [模板]
 date: 2020-02-19
 ---
 
