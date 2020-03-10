@@ -47,7 +47,8 @@ page404:
 archive:
   posts_count:
     enable: true
-    alert: 篇博文
+    alert: 篇博文 时间弹指一挥间 
+
 
 # Gitalk settings
 comment_gitalk_clientId: 21436ebf2d5cbcaf5c53
