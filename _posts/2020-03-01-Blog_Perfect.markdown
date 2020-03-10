@@ -27,11 +27,11 @@ date: 2020-03-01
 
 ***
 
-## **DIY**
-
 > 2020-01-20-----
 
-### 🥇**已完成的功能模块**🥇
+# 🥇**已完成的功能模块**🥇
+
+## 域名
 
 * [x] **绑定域名**  
 
@@ -43,12 +43,18 @@ https://fearlessroy.net/2018/01/29/binddomain/
 
 使用腾讯云购买域名
 
+## Live2D
+
 * [x] **加入 Live2D 看板娘**
 
 > 这里给出我的参考链接，之后会自定义一个属于自己的模板
 > [网页添加 Live2D 看板娘。](https://www.fghrsh.net/post/123.html)
 > [](https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02/)
 > 第二个链接的博客弄的非常好看
+
+* [ ] DIY 看板娘
+
+## 文本渲染效果
 
 * [x] **$katex$ 行间公式渲染**
 
@@ -74,6 +80,25 @@ https://fearlessroy.net/2018/01/29/binddomain/
     }'></script>
 ```
 
+* [x] **网易云模块**
+
+``` html
+ 网易云官方接口： 大歌单类型插入
+ <iframe frameborder="0" border="1" marginwidth="0" marginheight="0" width="100%" height="450" src="//music.163.com/outchain/player?type=2&amp;id=553795744&amp;auto=1&amp;height=80">
+ </iframe>
+ 标题类型插入
+ <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="//music.163.com/outchain/player?type=2&id=(------)&auto=1&height=66"></iframe>
+ id从网易云网址即可获得
+```
+
+> auto：0/1 1表示打开网页的时候自动播放。0表示打开网页的时候不自动播放；
+
+* [x] **黑色代码块渲染代码块，关闭默认渲染效果**
+
+> 2020-03-04 background_music：要变好看~；要变好看~
+
+ 在[https://github.com/PrismJS/prism/tree/master/themes](https://github.com/PrismJS/prism/tree/master/themes) 内查看可用主题，或者也可以搜一些第三方主题
+
 * [x] **字体样式：**
 * 采用 Source Code Pro 加等宽字体构建
 
@@ -83,7 +108,7 @@ https://fearlessroy.net/2018/01/29/binddomain/
 }
 ```
 
-* [x] **雾化效果**
+* [x] **雾化**
 
 > 防止背景影响阅读体验
 
@@ -96,15 +121,21 @@ https://fearlessroy.net/2018/01/29/binddomain/
 }
 ```
 
+## 评论
+
+上次见到别人自己写了一个评论 t q l
+
 * [x] **评论系统gitalk**
+
+2020-03-04
 
 > 原理：使用GitHub账户即可直接进行评论储存在 comment 里的 issue 中
 
-> 但是不能DIY样式并且时不时的会因为汉字转换后的 url 有时太长所以崩掉
+> 但是不能 DIY 样式并且会因为汉字转换后的 url 有时太长所以崩掉
 
-> 缩短文件名为50字符以下后 gitalk 就能愉快的使用了用了 ~~以后用纯英文文件名 2020 -03-02
+> 缩短文件名为50字符以下后 gitalk 就能愉快的使用了用了
 
-> 启用Facebook沉浸式评论，开启自动初始化issue脚本 2020-03-04
+> 启用Facebook沉浸式评论
 
 配置详细步骤请参考以下博文：
 
@@ -112,22 +143,7 @@ https://fearlessroy.net/2018/01/29/binddomain/
 
 [https://draveness.me/git-comments-initialize](https://draveness.me/git-comments-initialize)
 
-* [x] **兼容emoji表情**
-
-> 使用快捷键 `win+;` 可以直接召唤表情库
-
-* [x] **添加网易云模块**
-
-``` html
- 网易云官方接口： 大歌单类型插入
- <iframe frameborder="0" border="1" marginwidth="0" marginheight="0" width="100%" height="450" src="//music.163.com/outchain/player?type=2&amp;id=553795744&amp;auto=1&amp;height=80">
- </iframe>
- 标题类型插入
- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="//music.163.com/outchain/player?type=2&id=(------)&auto=1&height=66"></iframe>
- id从网易云网址即可获得
-```
-
-> auto：0/1 1表示打开网页的时候自动播放。0表示打开网页的时候不自动播放；
+## 美化
 
 * [x] **彩色滚动条**
 
@@ -169,129 +185,37 @@ https://fearlessroy.net/2018/01/29/binddomain/
 }
 ```
 
-* [x] **github** **仓库徽标**
-* 2020-03-01
+* [x] 爱心点击渐变效果
 
-> 之前没有记录时间... 
-
-` https://img.shields.io/badge/{徽标标题}-{徽标内容}-{徽标颜色}.svg ` 
-
-如果我们在写markdown的时候想为我们的徽章或者进度条添加点击跳转的超链接, 可以使用超链接和图片的语法嵌套来写
-
-``` 
-    [![](徽章/进度条URL)](点击超链接)
-```
-
-* [x] **JavaScript click.js爱心点击效果**
-* 2020-03-02
+2020-03-02
 
 > 花里胡哨+3
 
-在我的 js/click.js 里面存在源码
-然后在</body>结束前进行一次引用就ok了
+在 `</body>` 结束前进行一次 $js$ 引用就ok了
 
-* [x] **JavaScript prism.js 添加黑色代码块渲染代码块，关闭默认渲染效果**
+* [x] 鼠标指针点击烟花动画
 
-> 2020-03-04 background_music： 我要变好看~；要变好看~
+> 花里胡哨+4
 
- 在[https://github.com/PrismJS/prism/tree/master/themes](https://github.com/PrismJS/prism/tree/master/themes) 内查看可用主题，或者也可以搜一些第三方主题
+2020-03-10 完成
 
-``` JavaScript
-function loadStyle(url) {
-  var link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.href = url;
-  var head = document.getElementsByTagName('head')[0];
-  head.appendChild(link);
-}
+> 每次鼠标右键点击出现击碎砖块的烟花效果
 
-(function() {
-  var loadJs = (function() {
-    var script = document.createElement('script');
-    if (script.readyState) {
-      return function(url) {
-        return new Promise(function(res, rej) {
-          script = document.createElement('script');
-          script.src = url;
-          document.body.appendChild(script);
-          script.onreadystatechange = function() {
-            if (script.readyState == "loaded" ||
-              script.readyState == "complete") {
-              script.onreadystatechange = null; //解除引用
-              res();
-            }
-          };
-        })
-      }
-    } else {
-      return function(url) {
-        return new Promise(function(res, rej) {
-          script = document.createElement('script');
-          script.src = url;
-          document.body.appendChild(script);
-          script.onload = function() {
-            res();
-          };
-        })
-      }
-    }
-  })();
-  loadJs('//cdn.jsdelivr.net/npm/prismjs/components/prism-core.min.js')
-    .then(function() {
-      loadStyle('//cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.min.css');
-      loadStyle('//cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css');
-      document.addEventListener("DOMContentLoaded", function() {
-        for (var i = 0, x = document.getElementsByTagName("pre"); i < x.length; i++)
-          x[i].classList.add('line-numbers');
-      });
-      loadJs('//cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js');
+***
 
-      loadJs('//cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js').then(function() {
-        Prism.plugins.autoloader.languages_path = '//cdn.jsdelivr.net/npm/prismjs/components/'; //可以在https://github.com/PrismJS/prism/tree/master/components 查看支持的语言
-      })
-
-      loadJs('//cdn.jsdelivr.net/npm/prismjs/plugins/toolbar/prism-toolbar.min.js')
-        .then(function() {
-          loadStyle('//cdn.jsdelivr.net/npm/prismjs/plugins/toolbar/prism-toolbar.min.css');
-          Prism.plugins.toolbar.registerButton('select-code', function(env) {
-            var button = document.createElement('button');
-            button.innerHTML = 'select this ' + env.language;
-            button.addEventListener('click', function() {
-              // Source: http://stackoverflow.com/a/11128179/2757940
-              if (document.body.createTextRange) { // ms
-                var range = document.body.createTextRange();
-                range.moveToElementText(env.element);
-                range.select();
-              } else if (window.getSelection) { // moz, opera, webkit
-                var selection = window.getSelection();
-                var range = document.createRange();
-                range.selectNodeContents(env.element);
-                selection.removeAllRanges();
-                selection.addRange(range);
-              }
-            });
-            return button;
-          });
-        })
-    })
-})();
-```
-
-* [x] 鼠标烟花效果
-
-2020-03-10
-
-******
-
-### 💎**未完成的功能模块**💎
+# 💎 未完成的功能模块
 
 > 需求与日俱增；虽然是一个慢慢经营的个人空间；但也欢迎你和我一起来完成剩余功能的构建
 
-我想弄成gitbook那种目录不隐藏；然后随着文章滚动同时进行的架构
+* [ ] gitbook目录样式
 
-以后肯定会重构一遍；目前手机端目录效果应该保留
+我想弄成 gitbook 那种目录不隐藏；然后随着文章滚动同时进行的架构
 
-而电脑剩下那么多地方；一面放看板娘；另一面就应该放动态目录了；而不是什么都没有
+以后肯定会重构一遍；目前样式手机端目录效果应该保留
+
+而电脑左右都剩下一大块；而看板娘只需要空白布局的四分之一；所以左面的中间部分应该放一个动态目录；而不是什么都没有
+
+就是进入博文后应该变成干干净净且方便的样式 `eg:gitbook` 
 
 * [ ] 翻页功能, 按照时间线查询前后文章翻页
 
@@ -308,35 +232,28 @@ function loadStyle(url) {
 
 > 写博客又不是为了得到 ￥ ，但应该尝试模块化这个功能，失陷后关闭即可
 
-* [ ] 首页展示图片；而当点开博文时，文字下面不应该存在图片
+* [ ] 首页展示背景图片；而当点开博文时，图片透明度极低或 0
 
-> 这样
+> 比下面这个透明度再高一些
 
 ![36D86354C88A093D009CC82EC44D50E7.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture36D86354C88A093D009CC82EC44D50E7.jpg)
 
-> 这种效果比较稳重，且便于查看，目前模式有点花里胡哨
-
 * [ ] 完成一个自定义的live2D模块
-* [ ] 弄一个那种不用登录的评论系统
 
-> 上次见到别人博客中有，是真的方便啊(我应该加个邮箱地址以便我的回复评论者可以收到)
+* [ ] 点赞系统的搭建
 
-* [ ] 点赞系统的搭建（双击后出现弹窗）
+> [看看人家](https://priesttomb.github.io/)
 
 * [ ] 鼠标指针预览动画
 
-> JavaScript 可以实现 (这个功能好看)
-> 就是比如挪到一篇博文上；出现一个博文内容的小方框；当挪到一张图片上时；出现图片预览方框
+> 听说JavaScript 可以实现 (这个功能很好看)
+> 就是比如挪到一篇博文上；出现一个博文内容的小方框；当挪到一张图片上时；出现图片预览方框；当挪到一个选项时；出现选项的详情
 
-* [ ] 鼠标指针点击动画
-
-> 每次鼠标右键点击出现击碎砖块的烟花效果；现在是爱心效果；自定义一个更好看的
-
-* [ ] 添加一个博文置顶按钮；PS：Biu
+* [ ] 添加一个博文置顶按钮
+* [ ] 添加一个分享按钮；与置顶按钮放在上下，一人一个小方格
+* [ ] 加速博客国内访问速度（这个最$\dots$)
 
 ## 结尾
 
-本来把博客部署在Github就是为了省事，没想到却越来越折腾了。
-
-人生真是充满了矛盾。
+时间弹指一挥间  且行且珍惜
 

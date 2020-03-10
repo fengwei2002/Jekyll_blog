@@ -14,8 +14,6 @@ layout: comments
 
 ## **[contact](https://feng-w.cn/about)**
 
-> You can make friends with me too 
-
 > My usual email address: psychonaut1f@gmail.com
 
 ******

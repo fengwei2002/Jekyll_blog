@@ -8,13 +8,15 @@ date: 2020-02-19
 
 ***
 
+## 常见 $Git$ 问题
+
 ### 当某次提交出现bug后悔时
 
 * `git log` 查看历史ID
 * `git reset --hard` + ID
 * `git push -f origin master` 
 
-### 使用git pull或者git push每次都需要输入用户名和密码很不人性化
+### 解决多次输入用户名和密码
 
 ``` git
 在一个仓库中 git bash here  然后执行以下两行
@@ -25,7 +27,7 @@ git pull /git push (这里需要输入用户名和密码，以后就不用啦)
 
 git config --global credential.helper store
 
-### 绑定账户
+### 绑定新账户
 
 git config --global user.name [username]
 
@@ -41,10 +43,22 @@ ssh -T git@github.com
 如果第一次执行该指令，则会提示是否continue继续，如果我们输入yes就会看到成功信息  
 HI... ..
 
+### **github** **仓库徽标**
+
+` https://img.shields.io/badge/{徽标标题}-{徽标内容}-{徽标颜色}.svg ` 
+
+如果我们在写markdown的时候想为我们的徽章或者进度条添加点击跳转的超链接, 可以使用超链接和图片的语法嵌套来写
+
+``` 
+    [![](徽章/进度条URL)](点击超链接)
+```
+
 ### git push 和 git fetch 的区别
 
 因为vscode插件弹出来一个提醒，是否每隔一段时间运行 git fetch  
 所以有时间需要温习一次git操作原理
+
+***
 
 git add: 相当于加号（暂存更改）
 
