@@ -80,7 +80,7 @@ page:
   sidebar:
     avatar: # 侧边栏头像
       enable: true
-      img: /public\image\touxiang.jpg  # 头像地址
+      img: /public/image/touxiang.webp 
       info: | # 头像背后的信息，<br/>代表换行
         <br/>
         <br/>
