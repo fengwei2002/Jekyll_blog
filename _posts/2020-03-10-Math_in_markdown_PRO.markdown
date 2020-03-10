@@ -1,7 +1,7 @@
  ---
 layout: post
 title: Markdown书写数学公式
-tags: [杂项note]
+tags: [模板]
 categories: [模板]
 date: 2020-03-10
 ---
@@ -106,9 +106,9 @@ $$\sqrt{1+\sqrt[^p\!]{1+a^2}}$$
 
 > 第二和第三个的区别在于为了美观微调位置 
 
-## markdown数学公式高级语法
+## 常用符号
 
-以下就是数学笔记常用语法了
+以下就是markdown数学公式高级语法了
 
 ### **$\sum_{k=1}^{n}\frac{k}{1}$ 和 $\int_{a}^{b}$**
 
@@ -267,6 +267,8 @@ $$\left(\sum_{k=\frac{1}{2}}^{N^2}\frac{1}{k}\right)$$
 自然数集合，符号：\mathbb{Z}，如：\mathbb{Z}
 空集，符号：\emptyset，如：$\emptyset$
 
+## 数据美化
+
 ### **数学符号**
 
 矢量符号，符号\vec{a}，如：$\vec{a}$
@@ -376,7 +378,7 @@ $$
 \end{array}
 $$
 
-## 参考资料
+> 参考资料
 
 [Markdown数学公式语法](https://www.jianshu.com/p/e74eb43960a1)
 
