@@ -77,7 +77,7 @@ post:
 page:
   body:
     theme-base: theme-base-02 # 可选的值08~0f css中有详细颜色
-    layout-reverse: true # 开启后sidebar在右边，反之左边
+    layout-reverse: false # 开启后sidebar在右边，反之左边
     sidebar-overlay: false # 开启后正文不随sidebar移动而移动
   sidebar:
     avatar: # 侧边栏头像
@@ -128,7 +128,7 @@ page:
         href: /comments
     simple_jekyll_search:
       enable: true
-      placeholder: 搜索博文
+      placeholder: 从这里搜索博文
       full_text_search: false # 可能导致缓慢的搜索和加载
     jekyll_table_of_contents: true #需要脚本中引入
     busuanzi:
