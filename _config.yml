@@ -45,6 +45,7 @@ page404:
 
 
 archive:
+  alert: 共
   posts_count:
     enable: true
     alert: 篇博文 时间弹指一挥间 
@@ -135,20 +136,6 @@ page:
       page_pv: # 页面访问量
         alert: <i class="fas fa-eye fa-fw"></i>
         unit: 次
-      site_pv: # 站点访问量
-        alert: <i class="fas fa-paw fa-fw"></i>
-        unit: 枚
-      site_uv: # 访客量
-        alert: <i class="fas fa-user-friends fa-fw"></i>
-        unit: 人
-    wordcount:
-      enable: true
-      alert: <i class="fas fa-user-edit fa-fw"></i>
-      kilo: 千
-      unit: 字
-    last_edit:
-      enable: true
-      alert: <i class="fas fa-edit fa-fw"></i>
     run_time:
       enable: true
       start_time: "02/04/2020 21:03:55" # 这是我第一篇博客的时间
@@ -157,6 +144,14 @@ page:
       hour: 时
       minute: 分
       second: 秒
+    wordcount:
+      enable: true
+      alert: <i class="fas fa-user-edit fa-fw"></i>
+      kilo: 千
+      unit: 字
+    last_edit:
+      enable: true
+      alert: <i class="fas fa-edit fa-fw"></i>
     copyright:
       enable: true
   head: # 删改前确定知道自己在做什么
