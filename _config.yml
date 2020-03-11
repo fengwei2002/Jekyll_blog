@@ -77,8 +77,8 @@ post:
 page:
   body:
     theme-base: theme-base-02 # 可选的值08~0f css中有详细颜色
-    layout-reverse: false # 开启后sidebar在右边，反之左边
-    sidebar-overlay: false # 开启后正文不随sidebar移动而移动
+    layout-reverse: true # 开启后sidebar在右边，反之左边
+    sidebar-overlay: true # 开启后正文不随sidebar移动而移动
   sidebar:
     avatar: # 侧边栏头像
       enable: true
