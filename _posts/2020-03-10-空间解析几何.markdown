@@ -220,8 +220,8 @@ $\frac{x^2}{2p}+\frac{y^2}{2q}=z$ $p, q$同号
 空间曲线可以看作空间中两个曲面的交线
 
 $\begin{cases}
-  F(x, y, z) =0\\
-  G(x, y, z)=0 \\
+  F(x, y, z) =0 \\
+  G(x, y, z)=0  \\
 \end{cases}$
 
 ![6776ac1a7fe026daa9eb48ced8d5b47.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/6776ac1a7fe026daa9eb48ced8d5b47.jpg)
@@ -229,9 +229,9 @@ $\begin{cases}
 ### **空间曲线的参数方程**
 
 $\begin{cases}
-  x=x(t)\\
-  y=y(t)\\
-  z=z(t)\\
+  x=x(t) \\
+  y=y(t) \\
+  z=z(t )\\
 \end{cases}$ 称为空间曲线的参数方程
 
 ## 用 MATLAB 绘制空间图形
