@@ -231,7 +231,7 @@ $\begin{cases}
 $\begin{cases}
   x=x(t) \\
   y=y(t) \\
-  z=z(t)\\
+  z=z(t)
 \end{cases}$ 
 
 称为空间曲线的参数方程
