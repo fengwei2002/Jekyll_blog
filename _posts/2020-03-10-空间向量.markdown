@@ -15,63 +15,66 @@ date: 2020-03-12
 
 ## 三阶行列式的计算
 
-* 沙路法
-* 降阶法
+* [沙路法](https://blog.csdn.net/qq_26816591/article/details/46842883)
 
 ## 向量积
 
 结果为一个向量
 
-$\vec{a}\times\vec{b} = |\vec{c}|=\vec{a}\times\vec{b}\times sin\theta$ $\theta$为向量a和向量b的夹角
+$\vec{a}\times\vec{b} = \vert\vec{c}\vert=\vec{a}\times\vec{b}\times sin\theta$ $\theta$为向量a和向量b的夹角
 
 $\vec{c}$ 的方向既垂直于$\vec{b}$ 又垂直于$\vec{a}$ 指向符合右手系
 
-* 性质
+* **性质**
   1. $\vec{a}\times\vec{a} = \vec{0}$ 
   2. $\vec{a},\vec{b}$ 为非零向量，则$\vec{a}\times\vec{b}$\Longleftrightarrow\vec{a}//\vec{b}$
   3. $\vec{a}\times\vec{b}=-\vec{a}\times\vec{b}$
   4. 分配律
   5. 结合律
 
-### 向量积的坐标表示
+### **向量积的坐标表示**
 
 * 普通表示
 * 向量积用三阶行列式表示
 
-$\vec{a}\times\vec{b}=$ $\begin{bmatrix}\vec{i} & \vec{j}&\vec{k}\\\\\vec{a_x} &\vec{a_y}&\vec{a_z}\\\\\vec{b_x} & \vec{b_y} &  \vec{b_z} \end{bmatrix} $
-$
+$$
+\vec{a}\times\vec{b}=\begin{bmatrix}\vec{i} & \vec{j}&\vec{k}\\\\\vec{a_x} &\vec{a_y}&\vec{a_z}\\\\\vec{b_x} & \vec{b_y} &  \vec{b_z} \end{bmatrix} 
+$$
+
+$$
+\qquad \qquad
 =(a_y\cdot b_z-a_z\cdot b_y)\vec{i}+(a_z\cdot b_x-a_x\cdot b_z)\vec{j}+(a_x\cdot b_y-a_y\cdot b_x)\vec{k}
-$
+$$
 
 **$\vec{b}$** 不能为零向量
 
-* 补充：
+* **补充：**
 
-$\qquad$$|\vec{a}\times\vec{b}|$ 表示以$\vec{a}, \vec{b}$为邻边的平行四边形的面积
+$\qquad$$\vert\vec{a}\times\vec{b}\vert$ 表示以$\vec{a}, \vec{b}$为邻边的平行四边形的面积
 
-### 向量的混合积
+### **向量的混合积**
 
 数量积与混合积的结果是一个数量
 
 $$
 \vec{a}\times\vec{b}\times\vec{C}=
-\left\|
+\left\{
  \begin{matrix}
   a_x &a_y&a_z \\
   b_x&b_y&b_z  \\
   C_x&C_y&C_z  \\
  \end{matrix}
-\right\|
+\right\}
 $$
 
-说明：
+说明：   
 $\qquad$ 几何意义是以三个向量为棱的平行六面体的体积
 
 ## 空间的平面及其方程
 
-### 空间的平面方程
+### **空间的平面方程**
 
-* 平面的点法式方程
+* **平面的点法式方程**
 
 一般用$\vec{n}$表示法向量
 
@@ -83,17 +86,19 @@ $\vec{M_0M}\cdot\vec{n}=A(x-x_0), B(y-y_0), C(z-z_0)$
 
 上式就叫做平面的点法式方程
 
-* 平面的一般方程
+* **平面的一般方程**
 
   
 由点法式整理得
+
 $$Ax+By+Cz+D=0 \qquad
 D=-(Ax_0+By_0+Cz_0)$$
+
 其中 A, B, C 不同时为0
 
-可以快速得出法向量坐标（任何一个三元一次方程）
+所以由平面的一般方程可以快速得出法向量坐标（任何一个三元一次方程）
 
-* 平面的截距式方程
+* **平面的截距式方程**
 
 当平面与三个坐标轴的交点分别为$(a, 0, 0)(0, b, 0)(0, 0, c)$时
 
@@ -104,7 +109,7 @@ $$\frac{x}{a}+\frac{y}{b}+\frac{z}{c}=1$$
 ### 两平面的夹角
 
 当夹角为$\theta$时
-$$cos\theta=\frac{\vec{n_1\cdot\vec{n_2}}}{|\vec{n_1|\cdot|\vec{n_2}|}}$$
+$$cos\theta=\frac{\vec{n_1\cdot\vec{n_2}}}{\vert\vec{n_1\vert\cdot\vert\vec{n_2}\vert}}$$
 
 ### 点到平面的距离
 
@@ -113,14 +118,53 @@ $$cos\theta=\frac{\vec{n_1\cdot\vec{n_2}}}{|\vec{n_1|\cdot|\vec{n_2}|}}$$
 由数量积计算公式和点乘运算法则得
 
 $$
-d=\frac{|\vec{n}\cdot\vec{P_0P_1}|}{|\vec{n}|}=\frac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}
+d=\frac{\vert\vec{n}\cdot\vec{P_0P_1}\vert}{\vert\vec{n}\vert}=\frac{\vert Ax_0+By_0+Cz_0+D\vert}{\sqrt{A^2+B^2+C^2}}
 $$
 
 ## 空间的直线及其方程
 
 ### 空间的直线方程
 
-* 直线的参数方程和对称式方程
+* **直线的参数方程和对称式方程**
+  + **方向向量**
 
-* 方向向量
+与直线平行的向量$\vec{s}=(l, m, n)$ 其中$l, m, n$称作方向数
+
+则$(x-x_0, y-y_0, z-z_0=t(l, m, n)$
+
+$$
+化简得直线的参数方程为
+\begin{cases}
+x = x_0+lt \\
+y=y_0+mt\\
+z=z_0+nt \qquad(t为参数)\\
+\end{cases}
+$$
+
+则直线$L$的对称式方程或点(已知的点)向(方向向量)式方程为
+
+$$
+\frac{x-x_0}{l}=\frac{y-y_0}{m}=\frac{z-z_0}{n}
+$$
+
+* **直线的一般方程**
+
+两个平面方程联立起来就是两平面的交线方程; 称为直线的一般方程
+
+* **直线的夹角**
+
+两直线的即方向向量的夹角  
+直线与平面的夹角为投影与直线的夹角$\varphi$
+
+$$
+\sin\varphi=
+\frac{\vert Am+Bn+Cp \vert}{\sqrt{A^2+B^2+C^2 \times\sqrt{m^2+n^2+p^2}}}
+$$
+
+* **直线的位置关系**
+
+  + $L_1\bot L_2\longleftrightarrow m_1m_2+n_1n_2+p_1p_2=0$
+  + $L_1//L_2\longleftrightarrow \frac{m_1}{m_2}=\frac{n_1}{n_2}=\frac{p_1}{p_2}$ 
+  + $L \bot\Pi\Longleftrightarrow \frac{A}{m}=\frac{B}{n}=\frac{C}{p}$
+  + $L//\Pi \Longleftrightarrow Am+Bn+Cp=0$
 

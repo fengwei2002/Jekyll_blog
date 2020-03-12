@@ -1,11 +1,11 @@
 
-body {
+/* body {
       background-image: url(https://s2.ax1x.com/2020/02/17/3PrOLd.png);
       background-size: 100vw auto;
       background-position: center top;
       background-repeat: no-repeat;
       background-attachment: fixed;
-}
+} */
 
 @media (min-aspect-ratio: 2400/1850) {
   body {
