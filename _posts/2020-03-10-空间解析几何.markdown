@@ -1,9 +1,11 @@
 ---
 layout: post
-title: 空间向量
+title: 空间解析几何
 tags: [Math]
 date: 2020-03-12
----
+--- 
+
+***
 
 判断是否为单位向量时，要用定义进行判断；而非直观感受
 
@@ -16,7 +18,7 @@ date: 2020-03-12
 ## 三阶行列式的计算
 
 * [沙路法](https://blog.csdn.net/qq_26816591/article/details/46842883)
-* 降阶法
+* 降阶法 （转化为二阶行列式）
 
 ## 向量积
 
@@ -107,12 +109,12 @@ D=-(Ax_0+By_0+Cz_0)$$
 $$\frac{x}{a}+\frac{y}{b}+\frac{z}{c}=1$$
 其中$a, b, c$称作截距
 
-### 两平面的夹角
+### **两平面的夹角**
 
 当夹角为$\theta$时
 $$cos\theta=\frac{\vec{n_1\cdot\vec{n_2}}}{\vert\vec{n_1\vert\cdot\vert\vec{n_2}\vert}}$$
 
-### 点到平面的距离
+### **点到平面的距离**
 
 > 投影的绝对值
 
@@ -124,7 +126,7 @@ $$
 
 ## 空间的直线及其方程
 
-### 空间的直线方程
+### **空间的直线方程**
 
 * **直线的参数方程和对称式方程**
   + **方向向量**
@@ -169,7 +171,7 @@ $$
   + $L \bot\Pi\Longleftrightarrow \frac{A}{m}=\frac{B}{n}=\frac{C}{p}$
   + $L//\Pi \Longleftrightarrow Am+Bn+Cp=0$
 
-## 空间的曲面和曲线
+## 空间的曲面和曲线及其方程
 
 $F(x, y, z)=0$叫做曲面$S$的方程 
 
@@ -178,9 +180,59 @@ $F(x, y, z)=0$叫做曲面$S$的方程
 由距离公式$\sqrt{(x-x_0)^2+(y-y_0)^2+(z-z_0)^2}=R$得  
 球面方程为$(x-x_0)^2+(y-y_0)^2+(z-z_0)^2=R^2$
 
-### 旋转曲面
+### **旋转曲面**
 
 > 花瓶
 
 一条平面曲线绕其所在平面上一条定直线旋转所形成的曲面；该直线叫做旋转轴
+
+$f(\pm\sqrt{x^2+y^2}, z)=0$ 此为旋转曲面上满足的方程；
+
+> 绕哪个轴转动，另外一个量用其余两坐标的平方和的平方根表示 
+
+![15040f508b3f70b339498ce35c15fba.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/15040f508b3f70b339498ce35c15fba.jpg)
+
+### **二次曲面**
+
+* 椭球面
+
+由方程$\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}=1$ $a, b, c$均为正常数
+
+* 抛物面
+
+$\frac{x^2}{2p}+\frac{y^2}{2q}=z$ $p, q$同号
+
+  + 双曲抛物面（鞍型曲面）
+
+* 双曲面
+
+![a60ceb2ce4eda5f68c05cdb6c28ba24.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/a60ceb2ce4eda5f68c05cdb6c28ba24.jpg)
+
+* 双叶双曲面
+* 二次锥面
+
+  
+
+![9fdad2898caff5b4cebe590b00421e8.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/9fdad2898caff5b4cebe590b00421e8.jpg)
+
+### **空间曲线的一般方程**
+
+空间曲线可以看作空间中两个曲面的交线
+
+$\begin{cases}
+  F(x, y, z) =0\\
+  G(x, y, z)=0 \\
+\end{cases}$
+
+![6776ac1a7fe026daa9eb48ced8d5b47.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/6776ac1a7fe026daa9eb48ced8d5b47.jpg)
+
+### **空间曲线的参数方程**
+
+$\begin{cases}
+  x=x(t)\\
+  y=y(t)\\
+  z=z(t)\\
+\end{cases}$ 称为空间曲线的参数方程
+
+## 用 MATLAB 绘制空间图形
 
