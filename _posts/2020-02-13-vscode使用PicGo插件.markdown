@@ -57,7 +57,9 @@ Windows / Unix： `Ctrl + Alt + o`
 ![aaaa.png](https://raw.githubusercontent.com/fengwei2002/picture/master/fengwei2002/pictureaaaaaaaaaaaaaaaaaaaaaa.png)
 
 03-05 16:43 解决（用了一整天）
+
 按照如下结构配置  
+***
 
 * 创建空仓库
 * 获取token ：TOKEN 只勾选 rope下面的内容即可

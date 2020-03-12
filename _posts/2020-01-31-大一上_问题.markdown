@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 大一上学期（总）
+title: 大一上问题（总）
 categories: [待解决]
 date: 2020-02-05
 ---
