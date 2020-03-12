@@ -232,39 +232,45 @@ $$\left(\sum_{k=\frac{1}{2}}^{N^2}\frac{1}{k}\right)$$
 
 恒定等于运算，符号：\equiv，如：$x+y \equiv z$
 
-``` markdown
-大于等于运算，符号：\geq，如：$x+y \geq z$
-小于等于运算，符号：\leq，如：$x+y \leq z$
-不等于运算，符号：\neq，如：$x+y \neq z$
-不大于等于运算，符号：\ngeq，如：$x+y \ngeq z$
-不大于等于运算，符号：\not\geq，如：$x+y \not\geq z$
-不小于等于运算，符号：\nleq，如：$x+y \nleq z$
-不小于等于运算，符号：\not\leq，如：$x+y \not\leq z$
-约等于运算，符号：\approx，如：$x+y \approx z$
-恒定等于运算，符号：\equiv，如：$x+y \equiv z$
-```
-
 ### **集合运算符**
 
 属于运算，符号：\in，如：$x \in y$
+
 不属于运算，符号：\notin，如：$x \notin y$
+
 不属于运算，符号：\not\in，如：$x \not\in y$
+
 子集运算，符号：\subset，如：$x \subset y$
+
 子集运算，符号：\supset，如：$x \supset y$
+
 真子集运算，符号：\subseteq，如：$x \subseteq y$
+
 非真子集运算，符号：\subsetneq，如：$x \subsetneq y$
+
 真子集运算，符号：\supseteq，如：$x \supseteq y$
+
 非真子集运算，符号：\supsetneq，如：$x \supsetneq y$
+
 非子集运算，符号：\not\subset，如：$x \not\subset y$
+
 非子集运算，符号：\not\supset，如：$x \not\supset y$
+
 并集运算，符号：\cup，如：$x \cup y$
+
 交集运算，符号：\cap，如：$x \cap y$
+
 差集运算，符号：\setminus，如：$x \setminus y$
+
 同或运算，符号：\bigodot，如：$x \bigodot y$
+
 同与运算，符号：\bigotimes，如：$x \bigotimes y$
-实数集合，符号：\mathbb{R}，如：\mathbb{R}
-自然数集合，符号：\mathbb{Z}，如：\mathbb{Z}
-空集，符号：\emptyset，如：$\emptyset$
+
+实数集合，符号：\mathbb{R}，如：$\mathbb{R}$
+
+自然数集合，符号：\mathbb{Z}，如：$\mathbb{Z}$
+
+空集，符号：\emptyset，如： $\emptyset$
 
 ## 数据美化
 
@@ -277,23 +283,41 @@ $$\left(\sum_{k=\frac{1}{2}}^{N^2}\frac{1}{k}\right)$$
 右箭头，符号：\Rightarrow，如：$\Rightarrow$
 
 虚数，符号：\imath，如：$\imath$
+
 虚数，符号：\jmath，如：$\jmath$
+
 数学符号，符号\hat{a}，如：$\hat{a}$
+
 数学符号，符号\check{a}，如：$\check{a}$
+
 数学符号，符号\breve{a}，如：$\breve{a}$
+
 数学符号，符号\tilde{a}，如：$\tilde{a}$
+
 数学符号，符号\bar{a}，如：$\bar{a}$
+
 数学符号，符号\acute{a}，如：$\acute{a}$
+
 数学符号，符号\grave{a}，如：$\grave{a}$
+
 数学符号，符号\mathring{a}，如：$\mathring{a}$
+
 一阶导数符号，符号\dot{a}，如：$\dot{a}$
+
 二阶导数符号，符号\ddot{a}，如：$\ddot{a}$
+
 上箭头，符号：\uparrow，如：$\uparrow$
+
 上箭头，符号：\Uparrow，如：$\Uparrow$
+
 下箭头，符号：\downarrow，如：$\downarrow$
+
 下箭头，符号：\Downarrow，如：$\Downarrow$
+
 左箭头，符号：\leftarrow，如：$\leftarrow$
+
 左箭头，符号：\Leftarrow，如：$\Leftarrow$
+
 右箭头，符号：\rightarrow，如：$\rightarrow$
 
 底端对齐的省略号，符号：\ldots，如：$1, 2, \ldots, n$
@@ -307,25 +331,32 @@ $$\left(\sum_{k=\frac{1}{2}}^{N^2}\frac{1}{k}\right)$$
 ### **矩阵**
 
 ``` markdown
-$\begin{matrix}1 & 2\\\\3 &4\end{matrix}$
-
-$\begin{pmatrix}1 & 2\\\\3 &4\end{pmatrix}$
-
-$\begin{bmatrix}1 & 2\\\\3 &4\end{bmatrix}$
-
-$\begin{Bmatrix}1 & 2\\\\3 &4\end{Bmatrix}$
-
+$A=
+\left\{
+ \begin{matrix}
+   a & b & c & d & e\\
+   f & g & h & i & j \\
+   k & l & m & n & o \\
+   p & q & r & s & t
+  \end{matrix} 
+\right\}
+$
 ```
 
-$$\begin{matrix}1 & 2\\\\3 &4\end{matrix}$$
+$$A=
+\left\{
+ \begin{matrix}
+   a & b & c & d & e\\
+   f & g & h & i & j \\
+   k & l & m & n & o \\
+   p & q & r & s & t
+  \end{matrix} 
+\right\}
+$$
 
-$$\begin{pmatrix}1 & 2\\\\3 &4\end{pmatrix}$$
+`\left\ \right\` 用来表示矩阵括号， `\begin \end` 用来表示矩阵开始处和结束处； `&` 区分行间元素， `\\` 用来矩阵换行； 需要记忆 matrix：矩阵 这个单词
 
-$$\begin{bmatrix}1 & 2\\\\3 &4\end{bmatrix}$$
-
-$$\begin{Bmatrix}1 & 2\\\\3 &4\end{Bmatrix}$$
-
-类似于 left right，这里是 begin 和 end。而且里面有具体的矩阵语法，& 区分行间元素，\\\\ 代表换行。可以理解为 HTML 的标签之类的。通常使用 `\begin{matrix}1 & 2\\\\3 & 4\end{matrix}` $\begin{matrix}1 & 2\\\\3 & 4\end{matrix}$ 需要记忆 matrix：矩阵 这个单词
+`\begin{matrix}1 & 2\\\\3 & 4\end{matrix}` $\begin{matrix}1 & 2\\\\3 & 4\end{matrix}$
 
 ### **空格美化效果**
 

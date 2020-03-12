@@ -13,3 +13,114 @@ date: 2020-03-10
 
 两个向量的数量积书写时用点乘表示 `·` 
 
+## 三阶行列式的计算
+
+* 沙路法
+* 降阶法
+
+## 向量积
+
+结果为一个向量
+
+$\vec{a}\times\vec{b} = |\vec{c}|=\vec{a}\times\vec{b}\times sin\theta$ $\theta$为向量a和向量b的夹角
+
+$\vec{c}$ 的方向既垂直于$\vec{b}$ 又垂直于$\vec{a}$ 指向符合右手系
+
+* 性质
+  1. $\vec{a}\times\vec{a} = \vec{0}$ 
+  2. $\vec{a},\vec{b}$ 为非零向量，则$\vec{a}\times\vec{b}$\Longleftrightarrow\vec{a}//\vec{b}$
+  3. $\vec{a}\times\vec{b}=-\vec{a}\times\vec{b}$
+  4. 分配律
+  5. 结合律
+
+### 向量积的坐标表示
+
+* 普通表示
+* 向量积用三阶行列式表示
+
+$\vec{a}\times\vec{b}=$ $\begin{bmatrix}\vec{i} & \vec{j}&\vec{k}\\\\\vec{a_x} &\vec{a_y}&\vec{a_z}\\\\\vec{b_x} & \vec{b_y} &  \vec{b_z} \end{bmatrix} $
+$
+=(a_y\cdot b_z-a_z\cdot b_y)\vec{i}+(a_z\cdot b_x-a_x\cdot b_z)\vec{j}+(a_x\cdot b_y-a_y\cdot b_x)\vec{k}
+$
+
+**$\vec{b}$** 不能为零向量
+
+* 补充：
+
+$\qquad$$|\vec{a}\times\vec{b}|$ 表示以$\vec{a}, \vec{b}$为邻边的平行四边形的面积
+
+### 向量的混合积
+
+数量积与混合积的结果是一个数量
+
+$$
+\vec{a}\times\vec{b}\times\vec{C}=
+\left\|
+ \begin{matrix}
+  a_x &a_y&a_z \\
+  b_x&b_y&b_z  \\
+  C_x&C_y&C_z  \\
+ \end{matrix}
+\right\|
+$$
+
+说明：
+$\qquad$ 几何意义是以三个向量为棱的平行六面体的体积
+
+## 空间的平面及其方程
+
+### 空间的平面方程
+
+* 平面的点法式方程
+
+一般用$\vec{n}$表示法向量
+
+$\vec{n}=(A, B, C)$
+
+$\vec{M_0M}=(x-x_0), (y-y_0), (z-z_0)$
+
+$\vec{M_0M}\cdot\vec{n}=A(x-x_0), B(y-y_0), C(z-z_0)$
+
+上式就叫做平面的点法式方程
+
+* 平面的一般方程
+
+  
+由点法式整理得
+$$Ax+By+Cz+D=0 \qquad
+D=-(Ax_0+By_0+Cz_0)$$
+其中 A, B, C 不同时为0
+
+可以快速得出法向量坐标（任何一个三元一次方程）
+
+* 平面的截距式方程
+
+当平面与三个坐标轴的交点分别为$(a, 0, 0)(0, b, 0)(0, 0, c)$时
+
+平面的方程为
+$$\frac{x}{a}+\frac{y}{b}+\frac{z}{c}=1$$
+其中$a, b, c$称作截距
+
+### 两平面的夹角
+
+当夹角为$\theta$时
+$$cos\theta=\frac{\vec{n_1\cdot\vec{n_2}}}{|\vec{n_1|\cdot|\vec{n_2}|}}$$
+
+### 点到平面的距离
+
+> 投影的绝对值
+
+由数量积计算公式和点乘运算法则得
+
+$$
+d=\frac{|\vec{n}\cdot\vec{P_0P_1}|}{|\vec{n}|}=\frac{|Ax_0+By_0+Cz_0+D|}{\sqrt{A^2+B^2+C^2}}
+$$
+
+## 空间的直线及其方程
+
+### 空间的直线方程
+
+* 直线的参数方程和对称式方程
+
+* 方向向量
+
