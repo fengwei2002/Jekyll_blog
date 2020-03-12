@@ -231,8 +231,10 @@ $\begin{cases}
 $\begin{cases}
   x=x(t) \\
   y=y(t) \\
-  z=z(t )\\
-\end{cases}$ 称为空间曲线的参数方程
+  z=z(t)\\
+\end{cases}$ 
+
+称为空间曲线的参数方程
 
 ## 用 MATLAB 绘制空间图形
 
