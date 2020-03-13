@@ -7,7 +7,7 @@ date: 2020-03-13
 
 ***
 
-## 伸展树
+## **伸展树**
 
 AVL树需要每时每刻都特别小心；所以就有了一种范围更宽的平衡规则
 
@@ -92,7 +92,7 @@ $\qquad$第一种为普通操作；第二种为优化后的操作；先从祖父
 
 当节点v只有父亲没有祖父时，此时节点v的父亲是树根；因为只会出现一次，所以视具体形态，做相应的单次旋转
 
-### 实现：伸展树
+### **实现：**
 
 * 模板类的实现：
 
@@ -135,7 +135,7 @@ BinaryNodePosition(T) Splay<T>::splay( BinaryNodePosition(T) v ){
 
 ![26d9a17b77a266dd2bc573a23e0ebb6.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/26d9a17b77a266dd2bc573a23e0ebb6.jpg)
 
-### 查找算法
+### **查找算法**
 
 ``` cpp
 template <typename T>BinaryNodePosition(T) & Splay<T>::search( const T & e ){
@@ -148,17 +148,39 @@ template <typename T>BinaryNodePosition(T) & Splay<T>::search( const T & e ){
 }
 ```
 
-### 插入算法
+### **插入算法**
 
-先调用serch接口（查找失败）splay split join 
+先调用之前已经实现的 serch 接口（查找失败）splay split join 
 
-``` cpp
+![Screenshot_20200313_162315_tv.danmaku.bili.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/fengwei2002/pictureScreenshot_20200313_162315_tv.danmaku.bili.jpg)
 
-```
+### **删除算法**
 
-### 删除算法
+![Screenshot_20200313_163849_tv.danmaku.bili.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/fengwei2002/pictureScreenshot_20200313_163849_tv.danmaku.bili.jpg)
 
-``` cpp
+### **评价**
 
-```
+* 编程实现简单易行  
+* 分摊复杂度也与AVL树相当  
+* 局部性强，缓存命中率极高
+* 效率更高（自适应$O\log_k$）
+* 不适用于对效率极其敏感的场合（手术）
+
+> 操作系统的设计也通常利用自适应调整的特点
+
+## **B-树**
+
+### **越来越小的内存**
+
+系统存储容量的增长速度$<<$应用问题的增长规模
+
+所以相对而言内存容量就是在不断减少
+
+### **高速缓存**
+
+不同容量的存储器，访问速度差异悬殊 $10^5$ 
+
+> 一秒与一天
+
+多数存储系统，都是分级组织的$\qquad$他的最常用的数据尽可能放在更高层，更小的存储器中，实在找不到，才像更低层，更大的存储器索取空间
 
