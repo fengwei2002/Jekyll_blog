@@ -2,20 +2,22 @@
 layout: post
 title: 第八章：高级搜索树
 tags: [数据结构]
-date: 2020-03-09
+date: 2020-03-13
 ---
 
 ***
 
 ## 伸展树
 
-AVL树需要每时每刻都特别小心；所以需要一种范围更宽的平衡规则
+AVL树需要每时每刻都特别小心；所以就有了一种范围更宽的平衡规则
 
-### 局部性
+### **局部性**
 
-Locality: 刚被访问过的数据；极有可能很快的再次被访问；这一现象在信息处理过程中屡见不鲜
+**Locality**: 刚被访问过的数据；极有可能很快的再次被访问；这一现象在信息处理过程中屡见不鲜
 
-BST: 所以下一个即将访问的节点，极有可能就在刚刚被访问过的节点的附近
+**BST**: 所以下一个即将访问的节点，极有可能就在刚刚被访问过的节点的附近
+
+### **自适应调整**
 
 > 以列表为例：
 
@@ -23,24 +25,24 @@ BST: 所以下一个即将访问的节点，极有可能就在刚刚被访问过
 
 ![a5bb8c9927709f8e82620535895527c.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/a5bb8c9927709f8e82620535895527c.jpg)
 
-所以推广至BST中；就是将最常访问的节点尽量放在根节点附近（想办法降低节点对应深度）
+所以推广至 **BST** 中；就是将最常访问的节点尽量放在根节点附近（想办法降低节点对应深度）
 
-## 逐层伸展
+### **逐层伸展**
 
 节点 v 一旦被访问，随即转移至树根
 
-> 使用之前的zig zag 操作；可以使目标节点与其父节点交换而不打乱BST的规则
+> 使用之前的 zig zag 操作；可以使目标节点与其父节点交换而不打乱BST的规则
 
 ![d818f51a590b6fac264a71918e30349.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/d818f51a590b6fac264a71918e30349.jpg)
 
-所以反复使用以上两个技巧组合便可以使 要访问的节点逐层上升，直至根节点；达到常数时间访问到目标节点的目的
+所以**反复使用**以上两个技巧组合便可以使 要访问的节点逐层上升，直至根节点；达到常数时间访问到目标节点的目的
 
 概括而言：  
 自下而上；逐层单旋； `zig( v->parent )`  `zag (v-。parent)` 直到节点 v 被推送到树根
 
 > 一步一步往上爬
 
-### 最坏情况
+### **最坏情况**
 
 ![7b81fcf7b3bb9bea8c47205179cbdc1.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/7b81fcf7b3bb9bea8c47205179cbdc1.jpg)
 
@@ -52,16 +54,111 @@ BST: 所以下一个即将访问的节点，极有可能就在刚刚被访问过
 
 那么如何改进呢？
 
-## 双层伸展
+### **双层伸展**
 
 Tarjan 
 
 构思的精髓： 向上追溯两层，而并非一层
 
 * 反复考察祖孙三代： `g = parent(p)` , ` p = parent(v)` , ` v` 
-* 根据它们的相对位置；经过至多<u>两次旋转</u>使得v上升两层，成为子树根
+* 根据它们的相对位置；经过至多**两次旋转**使得v上升两层，成为子树根
+
+之字形的情况：
 
 ![deba6d84a5d42233c25d766bc2a86ef.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/deba6d84a5d42233c25d766bc2a86ef.jpg)
 
-> 3.2.3  复习
+> 与 AVL 双旋等效，与逐层伸展别无二致
+
+### **zig-zig** **zag-zag** 操作的优化
+
+![3de54cf2e6fffe6b12259c681076d67.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/3de54cf2e6fffe6b12259c681076d67.jpg)
+
+$\qquad$第一种为普通操作；第二种为优化后的操作；先从祖父节点开始执行而不是从父节点开始操作 
+
+> 这种方法有着颠覆性的效果（最终被访问元素父节点不动，被访问节点与祖父节点交换）
+
+例：
+
+![c448663c5a90a967d2354d32453fa8b.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/c448663c5a90a967d2354d32453fa8b.jpg)
+
+![55a7b88812ba39837c7c58556c5f97e.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/55a7b88812ba39837c7c58556c5f97e.jpg)
+
+![016562e67113d1970225173f965f1d7.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/016562e67113d1970225173f965f1d7.jpg)
+
+> 整颗树的树高作为该过程的**副产品**也有了本质性的改变，树高大概缩减为原来的一半
+>  
+
+**折叠效果：** 当节点变多时，效果更加明显，缩短树高这个功能就显得及其重要（每访问一次最后的节点树高就缩短一半左右）最坏情况不会持续发生
+
+当节点v只有父亲没有祖父时，此时节点v的父亲是树根；因为只会出现一次，所以视具体形态，做相应的单次旋转
+
+### 实现：伸展树
+
+* 模板类的实现：
+
+``` cpp
+template<typename T>
+class Splay : public BST<T> { //由BST派生
+  protected: 
+    BinaryNodePosition(T) splay(BinaryNodePosition(T) v ); //将节点v伸展到树根
+  public: //伸展树的查找也会引起整个树的结构调整，故 search( )接口也要重写
+    BinaryNodePosition(T) & search (const T & e ); //重写查找
+    BinaryNodePosition(T) insert (const T & e); //重写插入
+    bool remove( const T & e); //重写删除
+}
+```
+
+* splay实现：
+
+``` cpp
+template<typename T> 
+BinaryNodePosition(T) Splay<T>::splay( BinaryNodePosition(T) v ){
+  if( ! v ) return NULL; BinaryNodePosition(T)p;BinaryNodePosition(T) g //创建传入函数的 父亲 祖父 节点
+  while( (p=v->parent)&&(g=p->parent) ) { //自上而下，同时存在就反复逐层伸展
+      BinaryNodePosition(T) gg = g->parent; //每轮之后v以原先曾祖父为父
+      if (IsLChild( *v ))   //四种情况
+        if(IsLChild( *p )) {/*zig-zig*/}else {/*zig-zag*/}
+      else if(IsRChild( *p )){/*zag-zag*/} else{/*zag-zig*/}
+
+      if (!gg) v->parent = NULL; 
+      else(g=gg->lc)? attachAsLChild(gg,v):attachAsRChild(gg,v);
+      updateHeight(g);updateHeight(p);updateHeight(v);
+  }
+  if(p=v->parent){/*若p果真为假，只需再额外单旋(至多一次)*/} 
+  v->parent = NULL; return v;
+}
+```
+
+* 四种情况中 zig-zig 的实现
+
+  
+
+![26d9a17b77a266dd2bc573a23e0ebb6.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/26d9a17b77a266dd2bc573a23e0ebb6.jpg)
+
+### 查找算法
+
+``` cpp
+template <typename T>BinaryNodePosition(T) & Splay<T>::search( const T & e ){
+    //调用标准BST的内部接口定位目标节点
+    BinaryNodePosition(T) p = searchIn( _root,e,_hot = NULL );
+    //无论成功与否，最后被访问的节点都将伸展到树根
+    _root = Splay( p ? p : _hot );
+    //总是返回根节点
+    return _root;
+}
+```
+
+### 插入算法
+
+先调用serch接口（查找失败）splay split join 
+
+``` cpp
+
+```
+
+### 删除算法
+
+``` cpp
+
+```
 
