@@ -26,7 +26,7 @@ date: 2020-02-06
 
 结果可能美丽或者不美丽，但这种一个人为了目标认真努力的过程其实更重要
 
-* [ ] html-css-js-jq-javase-数据库-jsp-servlet-Struts2-hibernate -mybatis -spring4-springmvc-ssh-ssm
+* [ ] html-css-js-Node.js-vue.js 
 
 * [ ] 深入理解计算机系统
 
@@ -41,6 +41,7 @@ date: 2020-02-06
 * [ ] 学习Web基础（HTML/CSS/JS) + 服务器端技术 (LAMP)
 
 * [ ] 简单的学习Java
+* [ ] 实现一个vscode插件（汉字intelliSense补全）
 
 ## 尽量完成
 

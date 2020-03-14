@@ -184,3 +184,85 @@ template <typename T>BinaryNodePosition(T) & Splay<T>::search( const T & e ){
 
 多数存储系统，都是分级组织的$\qquad$他的最常用的数据尽可能放在更高层，更小的存储器中，实在找不到，才像更低层，更大的存储器索取空间
 
+* 但从磁盘中读写 `1B` ，与读写 `1KB` 几乎一样快
+* 批量式访问：以页和块为单位使用缓存区
+
+### B-树的结构
+
+![47b3e6f7d8f9268feb8b45b5d35db26.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/47b3e6f7d8f9268feb8b45b5d35db26.jpg)
+
+B-树显得更宽更矮（平衡的多路搜索树），具有超级节点（含有多个关键码），逻辑上与BBST等价
+
+多级存储系统中使用B—树，可针对外部查找，将其查找的特点（每次多个数据）转化为相应的优点，大大减少I/O 操作（每次读入一组关键码）
+
+### B-树的定义
+
+* 所谓m阶B-树，即m路平衡搜索树
+* 所有叶节点的深度统一相等
+* 外部节点的深度统一相等（数值为空且不存在的节点）
+
+内部节点各有
+
+* 不超过m-1个关键码
+* 不超过m个分支
+
+内部节点的分支数 n+1 也不能太少，具体的
+
+* 树根： $n+1 \geq 2$
+* 其余：$n+1 \geq [m/2]$
+
+故B-树也叫做$([m/2], m)$ 树 （超级节点的下限上限）
+
+（4，7)树，(2, 4)树 
+
+### **紧凑表示**
+
+* 将左右引用简化为一个点
+* 将外部节点省略掉
+
+![ad47571454b496dd83a6e140e6178c1.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/ad47571454b496dd83a6e140e6178c1.jpg)
+
+### **BTNode**
+
+一个B树节点的结构为：
+
+![e54eb6c866a18ad109428e59262e36e.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/e54eb6c866a18ad109428e59262e36e.jpg)
+
+所以可以使用两个向量表示：
+
+![16007b91ace5a298fb6feeae778cc68.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/16007b91ace5a298fb6feeae778cc68.jpg)
+
+``` cpp
+template <typename T > struct BTNode {
+  BTNodePosition(T) parent; //父
+  Vector<T> key;  //数值向量
+  Vector<BTNodePosition(T)> child; //孩子向量
+  BTNode() { parent = NULL; child.insert( 0,NULL); } //构造一个空节点
+  BTNode( T e,BTNodePosition(T) lc = NULL,BTNodePosition(T) rc = NULL) {
+    parent = NULL;  //做为根节点，并且初始时 
+    key.insert( 0,e ); //仅有一个关键码 e
+    child.insert( 0,lc ); child.insert( 1,rc ); //以及两个孩子
+    if ( lc ) lc->parent = this;if (rc) rc->parent = this;
+  }
+}
+```
+
+### BTree
+
+``` cpp
+#define BTNodePosition(T) BTNode<T>* 
+template <typename T> class BTree {
+  protected:
+    int _size; int _order;BTNodePosition(T) _root; //关键码总数，阶次，根
+    BTNodePosition(T) _hot;  //search最后访问的非空节点的位置
+    void solveOverFlow (BTNodePosition(T) ) ; //因插入而上溢出的分裂处理
+    void solveUnderFlow (BTNodePosition(T) ) ;//删除而下溢出后的合并处理
+  public:
+    BTNodePosition(T) search( const T & e);
+    bool insert(const T & e);
+    bool remove(const T & e);
+}
+```
+
+### B-tree 查找算法
+
