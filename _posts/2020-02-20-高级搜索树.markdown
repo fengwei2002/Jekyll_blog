@@ -266,3 +266,23 @@ template <typename T> class BTree {
 
 ### B-tree 查找算法
 
+`search` 借助B树的外部节点，我们可以将不同的B树通过外部节点连接起来，构成一个更大的B树 
+
+！【】（）
+
+每次查找确定一个下一步要开始地方的引用，失败处都在叶节点中子外部节点处
+B
+实现：
+
+``` cpp
+template <typename T> BTNodePosition(T) BTree<T>::search(const T & e){
+  BTNodePosition(T) v = _root; _hot = NULL;
+  while (v) {
+    Rank r = v->key.search(e);
+    if ( 0<=r && e == v->key[r] ) return v;
+    _hot =v; v= v->child[r+1];
+  }
+  return NULL;
+}
+```
+
