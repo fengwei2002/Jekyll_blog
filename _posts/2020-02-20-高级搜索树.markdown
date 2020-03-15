@@ -170,6 +170,8 @@ template <typename T>BinaryNodePosition(T) & Splay<T>::search( const T & e ){
 
 ## **B-树**
 
+我们了解了几种特殊的二叉树的功能及特点，知道了它们在进行查找数据时可以提高效率，但需要注意的是，这是指在内存中进行查找。如果有海量的数据，不可能一次性读取到内存中，这时候就要考虑的是，如何在磁盘中快速找到需要的数据。
+
 ### **越来越小的内存**
 
 系统存储容量的增长速度$<<$应用问题的增长规模
@@ -177,6 +179,8 @@ template <typename T>BinaryNodePosition(T) & Splay<T>::search( const T & e ){
 所以相对而言内存容量就是在不断减少
 
 ### **高速缓存**
+
+B 树、B+ 树”，他们的使用场景是：查找磁盘中的大量数据。
 
 不同容量的存储器，访问速度差异悬殊 $10^5$ 
 
@@ -187,7 +191,7 @@ template <typename T>BinaryNodePosition(T) & Splay<T>::search( const T & e ){
 * 但从磁盘中读写 `1B` ，与读写 `1KB` 几乎一样快
 * 批量式访问：以页和块为单位使用缓存区
 
-### B-树的结构
+### **B-树的结构**
 
 ![47b3e6f7d8f9268feb8b45b5d35db26.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/47b3e6f7d8f9268feb8b45b5d35db26.jpg)
 
@@ -195,11 +199,22 @@ B-树显得更宽更矮（平衡的多路搜索树），具有超级节点（含
 
 多级存储系统中使用B—树，可针对外部查找，将其查找的特点（每次多个数据）转化为相应的优点，大大减少I/O 操作（每次读入一组关键码）
 
-### B-树的定义
+### **B-树的定义**
+
+它和平衡二叉树的不同有这么几点：
+
+* 平衡二叉树节点最多有两个子树，而 B 树每个节点可以有多个子树，M 阶 B 树表示该树每个节点最多有 M 个子树
+* 平衡二叉树每个节点只有一个数据和两个指向孩子的指针，而 B 树**每个中间节点**有 **k-1** 个关键字（可以理解为数据）和 **k**个子树（ k 介于阶数 M 和 M/2 之间，M/2 向上取整）
+* B 树的所有叶子节点都在同一层，并且叶子节点只有关键字，指向孩子的指针为 null ，null可以再链接其他B树
+* 和平衡二叉树相同的点在于：B 树的节点数据大小也是按照左小右大，子树与节点的大小比较决定了子树指针所处位置。
 
 * 所谓m阶B-树，即m路平衡搜索树
 * 所有叶节点的深度统一相等
 * 外部节点的深度统一相等（数值为空且不存在的节点）
+
+* 若根结点不是终端结点，则至少有2棵子树   
+* 除根节点以外的所有非叶结点至少有 M/2 棵子树，至多有 M 个子树（关键字数为子树减一）   
+* 所有的叶子结点都位于同一层   
 
 内部节点各有
 
@@ -215,7 +230,7 @@ B-树显得更宽更矮（平衡的多路搜索树），具有超级节点（含
 
 （4，7)树，(2, 4)树 
 
-### **紧凑表示**
+### **紧凑表示**   
 
 * 将左右引用简化为一个点
 * 将外部节点省略掉
@@ -247,7 +262,7 @@ template <typename T > struct BTNode {
 }
 ```
 
-### BTree
+### **BTree**
 
 ``` cpp
 #define BTNodePosition(T) BTNode<T>* 
@@ -264,11 +279,11 @@ template <typename T> class BTree {
 }
 ```
 
-### B-tree 查找算法
+### **B-tree 查找算法**
 
 `search` 借助B树的外部节点，我们可以将不同的B树通过外部节点连接起来，构成一个更大的B树 
 
-！【】（）
+![2554d92fe70da3bc6f64ee422b5c441.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/2554d92fe70da3bc6f64ee422b5c441.jpg)
 
 每次查找确定一个下一步要开始地方的引用，失败处都在叶节点中子外部节点处
 B
@@ -276,13 +291,84 @@ B
 
 ``` cpp
 template <typename T> BTNodePosition(T) BTree<T>::search(const T & e){
-  BTNodePosition(T) v = _root; _hot = NULL;
-  while (v) {
-    Rank r = v->key.search(e);
-    if ( 0<=r && e == v->key[r] ) return v;
-    _hot =v; v= v->child[r+1];
-  }
+  BTNodePosition(T) v = _root; _hot = NULL;  //从根节点出发
+  while (v) { //逐层查找
+    Rank r = v->key.search(e); //在当前节点对应的向量中顺序查找
+    if ( 0<=r && e == v->key[r] ) return v; //若成功就返回
+    _hot =v; v= v->child[r+1]; //否则 沿用引用转到对应的下层子树，v
+  } //若因！V退出，则意味着抵达外部节点
   return NULL;
 }
 ```
+
+复杂度主要受树的高度$hv$的影响，
+
+### **最大树高**$\qquad$3.6.5
+
+### **最小高度**$\qquad$3.6.6
+
+## **B-树的动态操作**
+
+### **插入算法**
+
+![88282675ca4348a8508dc6561010f22.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/88282675ca4348a8508dc6561010f22.jpg)
+
+``` cpp
+template<typename T> 
+bool BTree<T>::insert( const T & e ) {
+  BTNodePosition(T) v = search( e  ); //调用查找算法
+  if (v) return false; 
+  Rank r = _hot->key.search( e ); //_hot 再调用超级节点查找算法查找确定位置，这里的search是向量接口
+  _hot->k.insert( r+1,e); //插入新关键码
+  _hot->child.insert( r+2,NULL); //关键码增加后，分支也应该加一个（右分支）
+  //若分支都为空，所以直接在最后创建一个空子树指针
+  _size++; solveOverFlow( _hot );//如发生上溢，需要分裂 (插入节点后违反B树的约定)
+  return true; //插入成功
+}
+```
+
+### **分裂**
+
+为了分裂的均衡：设上溢节点中的关键码依次为$k_0, k_1\dots , k_m-1$
+取中位数（向量中秩居中的元素）$s=[m/2]$, 以关键码$k_s$为界划分为三段
+
+$k_s$上升一层，并将左右两部分作为左右孩子, 将$k_s$插入上一行（父节点）中间，所以父节点又会有上溢风险  
+
+所以再次执行中位数分裂方法即可
+
+* **分裂到根**
+
+因为使用中位数创建的那个新节点只有两个分支 所以B树的那条规则就是为了上溢的根节点规定的
+
+整个插入算法的时间应该线性正比于树的高度
+
+实例： `4.1.5` 
+
+### **B树的删除操作**
+
+``` cpp
+template <typename T>bool BTree<T>::remove( const T & e ) {
+  BTNodePosition(T) v = search( e );
+  if( !v ) return false;
+  Rank r = v->key.search(e); //确定e所对应的秩
+  if(v->child[0]) { //如果v不是子叶
+    BTNodePosition(T) u =v->child[r+1]; //在右子树中一直向左
+    while(u->child[0] ) u = u->child[0]; //找到e的后继
+    v->key[r] = u->key[0]; v = u; r =0 ; //并与之交换位置 uv 互换
+  } //现在v在最底层 且其中第r个关键码就是待删除者
+  v->key.remove(r); v->child.remove(r+1);_size--; //删除
+  solveUnderFlow( v ); return true; //对下溢做合并处理
+}
+```
+
+### 旋转
+
+若节点 v 下溢，必然恰好包含$\frac{m}{2}-1$个分支 $\frac{m}{2}-2$个关键码
+
+* 所以可以从$\geq \frac{m}{2}$兄弟那里借一个关键码，达到两者都平衡的状态
+* 但B树仍然满足顺序性，所以简单的交换就会打乱这个局部的顺序性
+* 又因为这两个子节点中间的上一层肯定存在介于两者之间的那个关键码（左右引用分别是这两个子节点）
+* 所以采用类似旋转的一个操作
+
+![ddb644d574d1c88f477cea007fb810e.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/ddb644d574d1c88f477cea007fb810e.jpg)
 
