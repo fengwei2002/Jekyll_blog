@@ -62,7 +62,7 @@ path(V)上的节点，均为v的祖先(ancestor) v 是他们的后代(descendent
 
 ### **树的接口设计**
 
-![A1A669469932A264ECD45FB0121803C7.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureA1A669469932A264ECD45FB0121803C7.jpg)
+![A1A669469932A264ECD45FB0121803C7.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_01A1A669469932A264ECD45FB0121803C7.jpg)
 
 将顶点的children组成一个新的序列，度数就是孩子的数目，可以加快查找孩子的速度
 
@@ -86,13 +86,13 @@ child数据集的长度相差较大
 
 每个节点的粗度都是偶数，0 or 2 虚拟模拟
 
-![75E71F923C483C9403256E58E91CFED6.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture75E71F923C483C9403256E58E91CFED6.jpg)
+![75E71F923C483C9403256E58E91CFED6.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_0175E71F923C483C9403256E58E91CFED6.jpg)
 
 ### **用二叉树描述多叉树**
 
 有根且有序的树都能通过二叉树表示和实现（长子兄弟法）
 
-![3A2536F3E5918997190B0AF48297710E.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture3A2536F3E5918997190B0AF48297710E.jpg)
+![3A2536F3E5918997190B0AF48297710E.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_013A2536F3E5918997190B0AF48297710E.jpg)
 
 ## **二叉树的实现**
 
@@ -190,7 +190,7 @@ return x->rChild; //返回右节点（执行插入的位置）
 遍历：按照某种次序，每一个节点都恰好被访问一次，只要根节点和左右子节点可以确定一种顺序，那么便可以执行下去
 先序中序后序就是根据 根节点的先后来区分的    
 
-![89B2747A227ED7347DECFEDC58C24E05.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture89B2747A227ED7347DECFEDC58C24E05.jpg)
+![89B2747A227ED7347DECFEDC58C24E05.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_0189B2747A227ED7347DECFEDC58C24E05.jpg)
 
 层次遍历和广度遍历以后会有讨论
 
@@ -226,13 +226,13 @@ void travPre_I(BinaryNodePosition(T) x,VST & visit){
 }               妙啊
 ```
 
-![AC70CB6322098BC7C6204D083FB726E4.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureAC70CB6322098BC7C6204D083FB726E4.jpg)
+![AC70CB6322098BC7C6204D083FB726E4.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_01AC70CB6322098BC7C6204D083FB726E4.jpg)
 
 但这种不易于推广至中序遍历
 
 迭代2 思路
 
-![15604BB676F81A604F0C13C81599E1ED.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture15604BB676F81A604F0C13C81599E1ED.jpg)
+![15604BB676F81A604F0C13C81599E1ED.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_0115604BB676F81A604F0C13C81599E1ED.jpg)
 
 根->左->左->右(没有左侧链时)->左->左
 
@@ -284,7 +284,7 @@ void traverse (BinaryNodePosition(T) x ,VST & visit){
 } O(n)
 ```
 
-![B1F82B041FE46B22A84B46E144D6B5E9.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureB1F82B041FE46B22A84B46E144D6B5E9.jpg)
+![B1F82B041FE46B22A84B46E144D6B5E9.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_01B1F82B041FE46B22A84B46E144D6B5E9.jpg)
 
 每一次都是从左孩子的最左者(没有左孩子的那一个)开始执行  从根出发沿左分支下行，直至最深的节点  他就是全局最先被访问者  
 [思路解析-1](http://www.bilibili.com/video/av82410486?p=198&share_medium=android&share_source=copy_link&bbid=PQk6Cz4KOAtoDjYHewd7infoc&ts=1582976891652

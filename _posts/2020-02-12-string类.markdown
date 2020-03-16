@@ -208,23 +208,23 @@ void insert(iterator it, int n, char c);//在it处插入n个字符c 插入单个
 
 使用 `c_str` 适应传统需求
 
-![Screenshot_20200214_164800.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureScreenshot_20200214_164800.jpg)
+![Screenshot_20200214_164800.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_01Screenshot_20200214_164800.jpg)
 
 成员函数 `data()` 
 
-![Screenshot_20200214_164746.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureScreenshot_20200214_164746.jpg)
+![Screenshot_20200214_164746.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_01Screenshot_20200214_164746.jpg)
 
 ### 字符串拷贝函数
 
 成员函数 `copy()` 
 
-![Screenshot_20200214_164707.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureScreenshot_20200214_164707.jpg)
+![Screenshot_20200214_164707.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_01Screenshot_20200214_164707.jpg)
 
 ### 字符串流处理
 
-![Screenshot_20200214_164623.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureScreenshot_20200214_164623.jpg)
+![Screenshot_20200214_164623.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_01Screenshot_20200214_164623.jpg)
 
-![Screenshot_20200214_164648.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureScreenshot_20200214_164648.jpg)
+![Screenshot_20200214_164648.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_01Screenshot_20200214_164648.jpg)
 
-![Screenshot_20200214_164718.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureScreenshot_20200214_164718.jpg)
+![Screenshot_20200214_164718.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_01Screenshot_20200214_164718.jpg)
 

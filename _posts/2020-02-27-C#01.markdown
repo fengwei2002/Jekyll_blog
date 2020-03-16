@@ -34,7 +34,7 @@ private void button2_Click(object sender, EventArgs e)
 
 ``` 
 
-![9AL52OK4J}JOHOQ(YT`Y_{I.png](https://raw.githubusercontent.com/fengwei2002/picture/master/picture9AL52OK4J%7DJOHOQ(YT%60Y_%7BI.png)
+![9AL52OK4J}JOHOQ(YT`Y_{I.png](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_019AL52OK4J%7DJOHOQ(YT%60Y_%7BI.png)
 
 ```C#
 private void Form1_MouseMove(object sender, MouseEventArgs e)//，双击 mouse move事件 label显示鼠标的坐标{

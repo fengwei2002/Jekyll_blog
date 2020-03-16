@@ -196,7 +196,7 @@ int insert(Tv const & vertex) {
 }
 ```
 
-![55979011192C1C19F761DB08F6E2A7E7.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture55979011192C1C19F761DB08F6E2A7E7.jpg)
+![55979011192C1C19F761DB08F6E2A7E7.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_0155979011192C1C19F761DB08F6E2A7E7.jpg)
 
 顶点删除
 
@@ -242,7 +242,7 @@ Tv remove(int i) {  //删除顶点及其关联边，返回该顶点信息
 
 > 这样：
 
-![C2C06A8479FC35379AC4684A29C17EC5.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/image_for_blogC2C06A8479FC35379AC4684A29C17EC5.jpg)
+![C2C06A8479FC35379AC4684A29C17EC5.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/image_for_blogC2C06A8479FC35379AC4684A29C17EC5.jpg)
 
 保留原先顶点通往新节点的边，而那些顶点间连有不同的边不予采纳  
 
@@ -252,7 +252,7 @@ Tv remove(int i) {  //删除顶点及其关联边，返回该顶点信息
 
 >  
 
-![6BCB46A5695E0110C5CA0F2EF26709CC.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/image_for_blog6BCB46A5695E0110C5CA0F2EF26709CC.jpg)
+![6BCB46A5695E0110C5CA0F2EF26709CC.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/image_for_blog6BCB46A5695E0110C5CA0F2EF26709CC.jpg)
 
 一幅巨大的无环图，这么看就变成了一颗树（刚好包含图中的所有节点的树）
 
@@ -313,7 +313,7 @@ while (!Q.empty() ) {  //反复的
 
 > 这样的，小三幅图构成的一整幅图
 
-![4A7CB62C6F312E36996795D3C3FCDB3D.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/image_for_blog4A7CB62C6F312E36996795D3C3FCDB3D.jpg)
+![4A7CB62C6F312E36996795D3C3FCDB3D.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/image_for_blog4A7CB62C6F312E36996795D3C3FCDB3D.jpg)
 
 所以再引入一次循环才是最优实现方法
 
@@ -349,7 +349,7 @@ void Graph<Tv, Te>::bfs( int s ) {  //s 为起始顶点
 
 简述：访问顶点 S 若 S 有未被访问的邻居，则邻居中未访问节点**任取其一** u ；递归执行 DFS(u) 否则；返回
 
-![CA72103EB56DD8C22DBB2749A8B916A9.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/image_for_blogCA72103EB56DD8C22DBB2749A8B916A9.jpg)
+![CA72103EB56DD8C22DBB2749A8B916A9.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/image_for_blogCA72103EB56DD8C22DBB2749A8B916A9.jpg)
 
 ## **DFS的一种实现方式**
 

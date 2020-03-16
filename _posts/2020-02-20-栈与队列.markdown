@@ -80,13 +80,13 @@ bool brackets_match(const char exp[] ,int low,int high){
 以上思路及算法，可便捷的推广至多种括号并存的情况 ，而不能使用多个计数器实现这种功能  
 反例 `[(])` 而栈就可以  
 
-![352F858B92B1DC394CB70505FB5CCC66.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture352F858B92B1DC394CB70505FB5CCC66.jpg)
+![352F858B92B1DC394CB70505FB5CCC66.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_01352F858B92B1DC394CB70505FB5CCC66.jpg)
 
 甚至，只需约定“括号”的通用格式，而不必事先固定括号的类型和数目
 
 ### 典例：栈混洗
 
-![20A3EFF03FDEF4618F43AC2C37C7CFD6.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture20A3EFF03FDEF4618F43AC2C37C7CFD6.jpg)
+![20A3EFF03FDEF4618F43AC2C37C7CFD6.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_0120A3EFF03FDEF4618F43AC2C37C7CFD6.jpg)
 
 计数
 对于长度为n的序列，可能混洗的情况有几种
@@ -110,7 +110,7 @@ bool brackets_match(const char exp[] ,int low,int high){
 算法具有单调性，
 求值算法=栈+扫描  
 
-![E9F86A63DB3107612B3735D2B98368BA.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureE9F86A63DB3107612B3735D2B98368BA.jpg)
+![E9F86A63DB3107612B3735D2B98368BA.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_01E9F86A63DB3107612B3735D2B98368BA.jpg)
 
 实现：
 

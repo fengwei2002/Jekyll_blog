@@ -23,7 +23,7 @@ AVL树需要每时每刻都特别小心；所以就有了一种范围更宽的�
 
 若访问规则具有极高的局部性；每次访问完成后就将访问过的元素放在 list 的开始部分（保证下一次访问相同元素变得最快），最后效果就是最常用的访问节点都在列表的前一部分
 
-![a5bb8c9927709f8e82620535895527c.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/a5bb8c9927709f8e82620535895527c.jpg)
+![a5bb8c9927709f8e82620535895527c.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/a5bb8c9927709f8e82620535895527c.jpg)
 
 所以推广至 **BST** 中；就是将最常访问的节点尽量放在根节点附近（想办法降低节点对应深度）
 
@@ -33,7 +33,7 @@ AVL树需要每时每刻都特别小心；所以就有了一种范围更宽的�
 
 > 使用之前的 zig zag 操作；可以使目标节点与其父节点交换而不打乱BST的规则
 
-![d818f51a590b6fac264a71918e30349.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/d818f51a590b6fac264a71918e30349.jpg)
+![d818f51a590b6fac264a71918e30349.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/d818f51a590b6fac264a71918e30349.jpg)
 
 所以**反复使用**以上两个技巧组合便可以使 要访问的节点逐层上升，直至根节点；达到常数时间访问到目标节点的目的
 
@@ -44,11 +44,11 @@ AVL树需要每时每刻都特别小心；所以就有了一种范围更宽的�
 
 ### **最坏情况**
 
-![7b81fcf7b3bb9bea8c47205179cbdc1.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/7b81fcf7b3bb9bea8c47205179cbdc1.jpg)
+![7b81fcf7b3bb9bea8c47205179cbdc1.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/7b81fcf7b3bb9bea8c47205179cbdc1.jpg)
 
 从 001 开始全部访问一遍后；该结构并没有发生变化；但是依照上面的执行步骤却走了很多步且没有任何效果 
 
-![396be0e02d7344432ccadb00b511871.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/396be0e02d7344432ccadb00b511871.jpg)
+![396be0e02d7344432ccadb00b511871.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/396be0e02d7344432ccadb00b511871.jpg)
 
 这样的话；复杂度就退化的和基本数据结构List vector 一样了；但并不是技巧不对，而是使用技巧的方法出现了问题；
 
@@ -65,13 +65,13 @@ Tarjan
 
 之字形的情况：
 
-![deba6d84a5d42233c25d766bc2a86ef.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/deba6d84a5d42233c25d766bc2a86ef.jpg)
+![deba6d84a5d42233c25d766bc2a86ef.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/deba6d84a5d42233c25d766bc2a86ef.jpg)
 
 > 与 AVL 双旋等效，与逐层伸展别无二致
 
 ### **zig-zig** **zag-zag** 操作的优化
 
-![3de54cf2e6fffe6b12259c681076d67.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/3de54cf2e6fffe6b12259c681076d67.jpg)
+![3de54cf2e6fffe6b12259c681076d67.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/3de54cf2e6fffe6b12259c681076d67.jpg)
 
 $\qquad$第一种为普通操作；第二种为优化后的操作；先从祖父节点开始执行而不是从父节点开始操作 
 
@@ -79,11 +79,11 @@ $\qquad$第一种为普通操作；第二种为优化后的操作；先从祖父
 
 例：
 
-![c448663c5a90a967d2354d32453fa8b.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/c448663c5a90a967d2354d32453fa8b.jpg)
+![c448663c5a90a967d2354d32453fa8b.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/c448663c5a90a967d2354d32453fa8b.jpg)
 
-![55a7b88812ba39837c7c58556c5f97e.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/55a7b88812ba39837c7c58556c5f97e.jpg)
+![55a7b88812ba39837c7c58556c5f97e.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/55a7b88812ba39837c7c58556c5f97e.jpg)
 
-![016562e67113d1970225173f965f1d7.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/016562e67113d1970225173f965f1d7.jpg)
+![016562e67113d1970225173f965f1d7.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/016562e67113d1970225173f965f1d7.jpg)
 
 > 整颗树的树高作为该过程的**副产品**也有了本质性的改变，树高大概缩减为原来的一半
 >  
@@ -133,7 +133,7 @@ BinaryNodePosition(T) Splay<T>::splay( BinaryNodePosition(T) v ){
 
   
 
-![26d9a17b77a266dd2bc573a23e0ebb6.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/26d9a17b77a266dd2bc573a23e0ebb6.jpg)
+![26d9a17b77a266dd2bc573a23e0ebb6.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/26d9a17b77a266dd2bc573a23e0ebb6.jpg)
 
 ### **查找算法**
 
@@ -152,11 +152,11 @@ template <typename T>BinaryNodePosition(T) & Splay<T>::search( const T & e ){
 
 先调用之前已经实现的 serch 接口（查找失败）splay split join 
 
-![Screenshot_20200313_162315_tv.danmaku.bili.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/fengwei2002/pictureScreenshot_20200313_162315_tv.danmaku.bili.jpg)
+![Screenshot_20200313_162315_tv.danmaku.bili.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/fengwei2002/Pictures_01Screenshot_20200313_162315_tv.danmaku.bili.jpg)
 
 ### **删除算法**
 
-![Screenshot_20200313_163849_tv.danmaku.bili.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/fengwei2002/pictureScreenshot_20200313_163849_tv.danmaku.bili.jpg)
+![Screenshot_20200313_163849_tv.danmaku.bili.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/fengwei2002/Pictures_01Screenshot_20200313_163849_tv.danmaku.bili.jpg)
 
 ### **评价**
 
@@ -193,7 +193,7 @@ B 树、B+ 树”，他们的使用场景是：查找磁盘中的大量数据。
 
 ### **B-树的结构**
 
-![47b3e6f7d8f9268feb8b45b5d35db26.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/47b3e6f7d8f9268feb8b45b5d35db26.jpg)
+![47b3e6f7d8f9268feb8b45b5d35db26.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/47b3e6f7d8f9268feb8b45b5d35db26.jpg)
 
 B-树显得更宽更矮（平衡的多路搜索树），具有超级节点（含有多个关键码），逻辑上与BBST等价
 
@@ -235,17 +235,17 @@ B-树显得更宽更矮（平衡的多路搜索树），具有超级节点（含
 * 将左右引用简化为一个点
 * 将外部节点省略掉
 
-![ad47571454b496dd83a6e140e6178c1.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/ad47571454b496dd83a6e140e6178c1.jpg)
+![ad47571454b496dd83a6e140e6178c1.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/ad47571454b496dd83a6e140e6178c1.jpg)
 
 ### **BTNode**
 
 一个B树节点的结构为：
 
-![e54eb6c866a18ad109428e59262e36e.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/e54eb6c866a18ad109428e59262e36e.jpg)
+![e54eb6c866a18ad109428e59262e36e.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/e54eb6c866a18ad109428e59262e36e.jpg)
 
 所以可以使用两个向量表示：
 
-![16007b91ace5a298fb6feeae778cc68.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/16007b91ace5a298fb6feeae778cc68.jpg)
+![16007b91ace5a298fb6feeae778cc68.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/16007b91ace5a298fb6feeae778cc68.jpg)
 
 ``` cpp
 template <typename T > struct BTNode {
@@ -283,7 +283,7 @@ template <typename T> class BTree {
 
 `search` 借助B树的外部节点，我们可以将不同的B树通过外部节点连接起来，构成一个更大的B树 
 
-![2554d92fe70da3bc6f64ee422b5c441.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/2554d92fe70da3bc6f64ee422b5c441.jpg)
+![2554d92fe70da3bc6f64ee422b5c441.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/2554d92fe70da3bc6f64ee422b5c441.jpg)
 
 每次查找确定一个下一步要开始地方的引用，失败处都在叶节点中子外部节点处
 B
@@ -311,7 +311,7 @@ template <typename T> BTNodePosition(T) BTree<T>::search(const T & e){
 
 ### **插入算法**
 
-![88282675ca4348a8508dc6561010f22.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/88282675ca4348a8508dc6561010f22.jpg)
+![88282675ca4348a8508dc6561010f22.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/88282675ca4348a8508dc6561010f22.jpg)
 
 ``` cpp
 template<typename T> 
@@ -361,7 +361,7 @@ template <typename T>bool BTree<T>::remove( const T & e ) {
 }
 ```
 
-### 旋转
+### **旋转**
 
 若节点 v 下溢，必然恰好包含$\frac{m}{2}-1$个分支 $\frac{m}{2}-2$个关键码
 
@@ -370,5 +370,31 @@ template <typename T>bool BTree<T>::remove( const T & e ) {
 * 又因为这两个子节点中间的上一层肯定存在介于两者之间的那个关键码（左右引用分别是这两个子节点）
 * 所以采用类似旋转的一个操作
 
-![ddb644d574d1c88f477cea007fb810e.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/ddb644d574d1c88f477cea007fb810e.jpg)
+![ddb644d574d1c88f477cea007fb810e.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/ddb644d574d1c88f477cea007fb810e.jpg)
+
+经过两次变换，顺序性没有变化，也实现了下溢节点的修复
+
+### **合并**
+
+当下溢节点没有邻近的节点（左或者右）或者邻近的节点不足以借出一个节点时：
+采取以下的合并方法修复
+
+
+![d8254c129377b4dcfc9aff38fba2775.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/d8254c129377b4dcfc9aff38fba2775.jpg)
+
+
+执行这个过程后父节点也有可能发生下溢（旋转和合并修复），合并后的当前节点也有可能发生上溢（分裂修复）中途停止这个过程或者抵达到根部
+
+4.2.4 实例展示（根节点处理时省去一分支无关键码那一个节点）
+
+## 红黑树
+
+一种特色鲜明的BBST
+
+![dbe0f19342ab57427ae713828558404.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/dbe0f19342ab57427ae713828558404.jpg)
+
+
+
+
+
 

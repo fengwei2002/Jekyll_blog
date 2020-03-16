@@ -55,7 +55,7 @@ int main()
 }
 ```
 
-![20200224142210.png](https://raw.githubusercontent.com/fengwei2002/picture/master/picture20200224142210.png)
+![20200224142210.png](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_0120200224142210.png)
 
 # 祖玛
 

@@ -122,7 +122,7 @@ void Vector<T>::expand{//向量空间不足时扩容
 
 概率分布，加权平均  
 
-![34D26A3AC10EA77D875667FD5EE4CB26.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture34D26A3AC10EA77D875667FD5EE4CB26.jpg)
+![34D26A3AC10EA77D875667FD5EE4CB26.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_0134D26A3AC10EA77D875667FD5EE4CB26.jpg)
 
 ## 无序向量常用算法
 
@@ -482,7 +482,7 @@ template <typename T> bool vector<T>::bubble(Rank lo,Rank hi){
 }
 ```
 
-![73D855517EB452D30E580DC71C1D97A3.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture73D855517EB452D30E580DC71C1D97A3.jpg)
+![73D855517EB452D30E580DC71C1D97A3.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_0173D855517EB452D30E580DC71C1D97A3.jpg)
 
 ### 再改进
 
@@ -504,7 +504,7 @@ template <typename T> Rank vector<T>::bubble(Rank lo,Rank hi){
 }//前一版本的逻辑性标志sorted，改为秩 last
 ```
 
-![677F7EC91F0CE611E7CD6E0BCC2FA017.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture677F7EC91F0CE611E7CD6E0BCC2FA017.jpg)
+![677F7EC91F0CE611E7CD6E0BCC2FA017.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_01677F7EC91F0CE611E7CD6E0BCC2FA017.jpg)
 
 > 用 PicGo 添加GitHub图床图片时，激活扩展那一步慢一点点(10 s，激活后 `ctrl+alt+u` 秒传(1s内
 
@@ -550,7 +550,7 @@ void vector<T>::merge_sort(Rank lo,Rank hi){
 
 ### 二路归并原理:
 
-![A694737ABA974F081B1E00390E7180A7.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureA694737ABA974F081B1E00390E7180A7.jpg)
+![A694737ABA974F081B1E00390E7180A7.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_01A694737ABA974F081B1E00390E7180A7.jpg)
 
 注意力只关注在两个序列的首元素上，每次将两个首元素中更小的那个元素取出排在输出队列中
 

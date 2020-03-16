@@ -190,7 +190,7 @@ $f(\pm\sqrt{x^2+y^2}, z)=0$ 此为旋转曲面上满足的方程；
 
 > 绕哪个轴转动，另外一个量用其余两坐标的平方和的平方根表示 
 
-![15040f508b3f70b339498ce35c15fba.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/15040f508b3f70b339498ce35c15fba.jpg)
+![15040f508b3f70b339498ce35c15fba.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/15040f508b3f70b339498ce35c15fba.jpg)
 
 ### **二次曲面**
 
@@ -206,14 +206,14 @@ $\frac{x^2}{2p}+\frac{y^2}{2q}=z$ $p, q$同号
 
 * 双曲面
 
-![a60ceb2ce4eda5f68c05cdb6c28ba24.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/a60ceb2ce4eda5f68c05cdb6c28ba24.jpg)
+![a60ceb2ce4eda5f68c05cdb6c28ba24.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/a60ceb2ce4eda5f68c05cdb6c28ba24.jpg)
 
 * 双叶双曲面
 * 二次锥面
 
   
 
-![9fdad2898caff5b4cebe590b00421e8.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/9fdad2898caff5b4cebe590b00421e8.jpg)
+![9fdad2898caff5b4cebe590b00421e8.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/9fdad2898caff5b4cebe590b00421e8.jpg)
 
 ### **空间曲线的一般方程**
 
@@ -224,7 +224,7 @@ $\begin{cases}
   G(x, y, z)=0  \\
 \end{cases}$
 
-![6776ac1a7fe026daa9eb48ced8d5b47.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/6776ac1a7fe026daa9eb48ced8d5b47.jpg)
+![6776ac1a7fe026daa9eb48ced8d5b47.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/6776ac1a7fe026daa9eb48ced8d5b47.jpg)
 
 ### **空间曲线的参数方程**
 

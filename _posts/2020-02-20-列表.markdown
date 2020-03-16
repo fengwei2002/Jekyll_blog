@@ -62,7 +62,7 @@ struct ListNode {//列表节点模板类(以双向链表的形式实现)
 }
 ```
 
-![C409AF3F97AF28C28609429D7BE6D6F8.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureC409AF3F97AF28C28609429D7BE6D6F8.jpg)
+![C409AF3F97AF28C28609429D7BE6D6F8.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_01C409AF3F97AF28C28609429D7BE6D6F8.jpg)
 
 ### 列表：list模板类
 
@@ -79,7 +79,7 @@ public:
 };
 ```
 
-![A4559D864A315EFEB0681362CCAFF9A3.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureA4559D864A315EFEB0681362CCAFF9A3.jpg)
+![A4559D864A315EFEB0681362CCAFF9A3.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_01A4559D864A315EFEB0681362CCAFF9A3.jpg)
 
 ### 构造
 
@@ -219,7 +219,7 @@ template <typename T> int List<T>::wuxu_weiyi(){
 
 $O(n)$
 
-![B5AC9147EF4F0277EE4E42A0694416D4.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureB5AC9147EF4F0277EE4E42A0694416D4.jpg)
+![B5AC9147EF4F0277EE4E42A0694416D4.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_01B5AC9147EF4F0277EE4E42A0694416D4.jpg)
 
 ``` cpp
 template<typename T> int List<T>::uniquify(){
@@ -252,7 +252,7 @@ position(T) List<T>::search(T const& e,int n, position(T) p)const {
 
 每一次挑选一直挑选最大的元素(selection_sort)
 
-![500591EBC197ECF3152D89E54882B9AF.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture500591EBC197ECF3152D89E54882B9AF.jpg)
+![500591EBC197ECF3152D89E54882B9AF.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_01500591EBC197ECF3152D89E54882B9AF.jpg)
 
 bubble_sort 其实也是不折不扣的 selection_sort  
 $O(n^2)$ -> $O(n)$
@@ -277,7 +277,7 @@ template <typename T> void List<T>::selection_sort(position(T) p ,int n){
 
 > 当文件名出现特殊字符或者重复文件时picgo插件就会报错🙃，我以为怎么了🍕
 
-![testqqqqqqqqq.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picturetestqqqqqqqqq.jpg)
+![testqqqqqqqqq.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_01testqqqqqqqqq.jpg)
 
 如图 ↗ 白色的为列表总长度
 
@@ -304,7 +304,7 @@ position(T) List<T>::selection_max(position(T) p ,int n ){
 
 > //painter's algorithm
 
-![B3FF0673943B894B615904DE74352C54.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureB3FF0673943B894B615904DE74352C54.jpg)
+![B3FF0673943B894B615904DE74352C54.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_01B3FF0673943B894B615904DE74352C54.jpg)
 
 ### 性能
 
@@ -317,7 +317,7 @@ position(T) List<T>::selection_max(position(T) p ,int n ){
 
 一个习以为常的算法
 
-![E8F3BD20BAFD9016F7428F3142A2B4D5.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureE8F3BD20BAFD9016F7428F3142A2B4D5.jpg)
+![E8F3BD20BAFD9016F7428F3142A2B4D5.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_01E8F3BD20BAFD9016F7428F3142A2B4D5.jpg)
 
 $2b$ 插入动作既是名字由来
 
@@ -327,7 +327,7 @@ $2b$ 插入动作既是名字由来
 
 后面元素有多大和此前归入列表中的元素无任何关系，且对未排序的元素没有任何限制（数量，大小）
 
-![A0A893B049CA9E8E69D215FAFA1DB1BF.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/pictureA0A893B049CA9E8E69D215FAFA1DB1BF.jpg)
+![A0A893B049CA9E8E69D215FAFA1DB1BF.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_01A0A893B049CA9E8E69D215FAFA1DB1BF.jpg)
 
 ### 实现
 

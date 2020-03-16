@@ -84,7 +84,7 @@ $\displaystyle\Rightarrow \lim_{x\to x_0}f(x)=A$, $A$为常数
 
 ### **两边夹定理**
 
-![1a8e8f6f447b445d4feb5dc5ec09868.jpg](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/1a8e8f6f447b445d4feb5dc5ec09868.jpg)
+![1a8e8f6f447b445d4feb5dc5ec09868.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/1a8e8f6f447b445d4feb5dc5ec09868.jpg)
 
 > 而$\lim_{x\to x_0}[\phi(x)-g(x)]=0$不能推得$f(x)$存在
 > 因为未说明两个函数得极限是否分别存在

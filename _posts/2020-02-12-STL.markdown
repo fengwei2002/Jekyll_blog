@@ -69,7 +69,7 @@ STL 容器所提供的都是值(value)寓意，而非引用(reference)寓意，�
 
 ## **STL 容器使用时机**
 
-![20200218122438.png](https://raw.githubusercontent.com/fengwei2002/picture/master/picture20200218122438.png)
+![20200218122438.png](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_0120200218122438.png)
 
 1. vector的使用场景：比如软件历史操作记录的存储，我们经常要查看历史记录，比如
 

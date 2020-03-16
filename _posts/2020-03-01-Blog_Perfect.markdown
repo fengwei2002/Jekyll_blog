@@ -226,7 +226,7 @@ https://fearlessroy.net/2018/01/29/binddomain/
 > 这样：
 >  
 
-![46AE5778012E9A0825C0CA51EEB3A56A.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture46AE5778012E9A0825C0CA51EEB3A56A.jpg)
+![46AE5778012E9A0825C0CA51EEB3A56A.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_0146AE5778012E9A0825C0CA51EEB3A56A.jpg)
 
 * [ ] 赞赏模块(没用)
 
@@ -236,7 +236,7 @@ https://fearlessroy.net/2018/01/29/binddomain/
 
 > 比下面这个透明度再高一些
 
-![36D86354C88A093D009CC82EC44D50E7.jpg](https://raw.githubusercontent.com/fengwei2002/picture/master/picture36D86354C88A093D009CC82EC44D50E7.jpg)
+![36D86354C88A093D009CC82EC44D50E7.jpg](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/Pictures_0136D86354C88A093D009CC82EC44D50E7.jpg)
 
 * [ ] 完成一个自定义的live2D模块
 

@@ -25,7 +25,7 @@ vscode加PicGo插件 (找了好长时间，这个方法最好用
 
 * 
 
-![20200305170541.png](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/20200305170541.png)
+![20200305170541.png](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/20200305170541.png)
 
 然后试一下热键，发现就成功了  　　
 跳回你的GitHub里面看一下，就会发现仓库下面已经有这个图片了  
@@ -54,7 +54,7 @@ Windows / Unix： `Ctrl + Alt + o`
 * 当上传重复文件时会报错
 * 有时剪切板会上传失败(image uploading 卡住) ，这时需要采用本地文件夹进行上传 **`Ctrl + Alt + e`**
 
-![aaaa.png](https://raw.githubusercontent.com/fengwei2002/picture/master/fengwei2002/pictureaaaaaaaaaaaaaaaaaaaaaa.png)
+![aaaa.png](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/fengwei2002/Pictures_01aaaaaaaaaaaaaaaaaaaaaa.png)
 
 03-05 16:43 解决（用了一整天）
 
@@ -65,11 +65,11 @@ Windows / Unix： `Ctrl + Alt + o`
 * 获取token ：TOKEN 只勾选 rope下面的内容即可
 * 下图为参考
 
-![QQ截图20200305164214.png](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/QQ%E6%88%AA%E5%9B%BE20200305164214.png)
+![QQ截图20200305164214.png](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/QQ%E6%88%AA%E5%9B%BE20200305164214.png)
 
 这样在我的GitHub中就出现
 
-![20200305170620.png](https://raw.githubusercontent.com/fengwei2002/picgotest/master/img/20200305170620.png)
+![20200305170620.png](https://raw.githubusercontent.com/fengwei2002/Pictures_02/master/img/20200305170620.png)
 
 成功 ！  
 PS：QQ 设置热键可以 win 中可以实现快速截图

@@ -26,7 +26,7 @@ date: 2020-02-10
 
 靡不有初，鲜克有终 
 
-![QQ图片20200304201636.png](https://raw.githubusercontent.com/fengwei2002/picture/master/image_for_blogQQ%E5%9B%BE%E7%89%8720200304201636.png)
+![QQ图片20200304201636.png](https://raw.githubusercontent.com/fengwei2002/Pictures_01/master/image_for_blogQQ%E5%9B%BE%E7%89%8720200304201636.png)
 
 高数要命。sorry
 
